@@ -6,7 +6,7 @@
       "build_output_subfolder": "webview2-win32",
       "locale": "en-us",
       "monikers": [],
-      "moniker_ranges": [],
+      "moniker_ranges": ["Moniker name1", "Moniker name2", "Moniker name..."],
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content"
