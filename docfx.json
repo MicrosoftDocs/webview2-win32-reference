@@ -18,6 +18,9 @@
           "LICENSE-CODE",
           "ThirdPartyNotices.md"
         ]
+      },
+      {
+        "files": ["breadcrumb/toc.yml"]
       }
     ],
     "resource": [
@@ -39,7 +42,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "breadcrumb_path": "/microsoft-edge/webview2/reference/breadcrumb/toc.json",
+      "breadcrumb_path": "/microsoft-edge/webview2/reference/win32/breadcrumb/toc.json",
       "extendBreadcrumb": true,
       "feedback_system": "None"
     },

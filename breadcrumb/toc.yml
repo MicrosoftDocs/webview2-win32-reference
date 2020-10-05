@@ -1,3 +1,15 @@
 - name: Docs
   tocHref: /
   topicHref: /
+  items:
+  - name: Microsoft Edge documentation
+    tocHref: /microsoft-edge/
+    topicHref: /microsoft-edge/index
+    items:
+    - name: WebView2 (Chromium)
+      tocHref: /microsoft-edge/webview2/
+      topicHref: /microsoft-edge/webview2/index
+      items:
+      - name: Reference
+        tocHref: /microsoft-edge/webview2/
+        topicHref: /microsoft-edge/webview2/webview2-api-reference
