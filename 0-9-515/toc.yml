@@ -109,15 +109,3 @@
           href: icorewebview2windowcloserequestedeventhandler.md
         - name: ICoreWebView2ZoomFactorChangedEventHandler
           href: icorewebview2zoomfactorchangedeventhandler.md
-    - name: Experimental
-      items:
-        - name: ICoreWebView2ExperimentalCompositionController
-          href: icorewebview2experimentalcompositioncontroller.md
-        - name: ICoreWebView2ExperimentalCreateCoreWebView2CompositionControllerCompletedHandler
-          href: icorewebview2experimentalcreatecorewebview2compositioncontrollercompletedhandler.md
-        - name: ICoreWebView2ExperimentalCursorChangedEventHandler
-          href: icorewebview2experimentalcursorchangedeventhandler.md
-        - name: ICoreWebView2ExperimentalEnvironment
-          href: icorewebview2experimentalenvironment.md
-        - name: ICoreWebView2ExperimentalPointerInfo
-          href: icorewebview2experimentalpointerinfo.md

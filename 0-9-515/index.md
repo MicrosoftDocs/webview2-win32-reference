@@ -78,11 +78,3 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 *   [ICoreWebView2WebResourceRequestedEventHandler](icorewebview2webresourcerequestedeventhandler.md)
 *   [ICoreWebView2WindowCloseRequestedEventHandler](icorewebview2windowcloserequestedeventhandler.md)
 *   [ICoreWebView2ZoomFactorChangedEventHandler](icorewebview2zoomfactorchangedeventhandler.md)
-
-### Experimental
-
-*   [ICoreWebView2ExperimentalCompositionController](icorewebview2experimentalcompositioncontroller.md)
-*   [ICoreWebView2ExperimentalCreateCoreWebView2CompositionControllerCompletedHandler](icorewebview2experimentalcreatecorewebview2compositioncontrollercompletedhandler.md)
-*   [ICoreWebView2ExperimentalCursorChangedEventHandler](icorewebview2experimentalcursorchangedeventhandler.md)
-*   [ICoreWebView2ExperimentalEnvironment](icorewebview2experimentalenvironment.md)
-*   [ICoreWebView2ExperimentalPointerInfo](icorewebview2experimentalpointerinfo.md)
