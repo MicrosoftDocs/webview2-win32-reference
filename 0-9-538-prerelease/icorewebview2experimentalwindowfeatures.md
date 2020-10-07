@@ -1,5 +1,5 @@
 ---
-description: 
+description: Window features for a WebView popup window.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalWindowFeatures
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -12,8 +12,9 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 
 # interface ICoreWebView2ExperimentalWindowFeatures 
 
-[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
+[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
 interface ICoreWebView2ExperimentalWindowFeatures

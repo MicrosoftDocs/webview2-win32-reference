@@ -1,5 +1,5 @@
 ---
-description: ## Summary
+description: A Receiver is created for a particular DevTools Protocol event and allows you to subscribe and unsubsribe from that event.
 title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceiver
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2DevToolsProtocolEventReceiver 
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2DevToolsProtocolEventReceiver

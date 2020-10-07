@@ -1,5 +1,5 @@
 ---
-description: ## Summary
+description: Defines properties that enable, disable, or modify WebView features.
 title: WebView2 Win32 C++ ICoreWebView2Settings
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2Settings 
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2Settings

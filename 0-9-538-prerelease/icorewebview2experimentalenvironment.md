@@ -1,5 +1,5 @@
 ---
-description: 
+description: This interface is an extension of the ICoreWebView2Environment.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironment
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -12,8 +12,9 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 
 # interface ICoreWebView2ExperimentalEnvironment 
 
-[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
+[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
 interface ICoreWebView2ExperimentalEnvironment

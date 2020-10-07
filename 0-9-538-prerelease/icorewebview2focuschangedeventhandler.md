@@ -1,5 +1,5 @@
 ---
-description: ## Summary
+description: The caller implements this method to receive the GotFocus and LostFocus events.
 title: WebView2 Win32 C++ ICoreWebView2FocusChangedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2FocusChangedEventHandler 
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2FocusChangedEventHandler
