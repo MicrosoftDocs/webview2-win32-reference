@@ -1,5 +1,5 @@
 ---
-description: Embed web technologies (HTML, CSS, and JavaScript) in your native applications with the Microsoft Edge WebView2 control
+description: Fires when a response for a request is received for a Web resource in the webview.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalWebResourceResponseReceivedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel

@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: This interface is the owner of the CoreWebView2 object, and provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
 title: WebView2 Win32 C++ ICoreWebView2Controller
 author: MSEdgeTeam
 ms.author: msedgedevrel

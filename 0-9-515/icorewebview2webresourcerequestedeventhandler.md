@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: Fires when an HTTP request is made in the webview.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceRequestedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel

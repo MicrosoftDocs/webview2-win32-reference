@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: Iterator for a collection of HTTP headers.
 title: WebView2 Win32 C++ ICoreWebView2HttpHeadersCollectionIterator
 author: MSEdgeTeam
 ms.author: msedgedevrel

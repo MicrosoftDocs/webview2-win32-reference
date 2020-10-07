@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: This interface is used to complete deferrals on event args that support getting deferrals via their GetDeferral method.
 title: WebView2 Win32 C++ ICoreWebView2Deferral
 author: MSEdgeTeam
 ms.author: msedgedevrel

@@ -1,5 +1,5 @@
 ---
-description: Embed web technologies (HTML, CSS, and JavaScript) in your native applications with the Microsoft Edge WebView2 control
+description: The caller implements this interface to receive the CoreWebView2Controller created via CreateCoreWebView2CompositionController.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCreateCoreWebView2CompositionControllerCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel

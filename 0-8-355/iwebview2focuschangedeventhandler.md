@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: The caller implements this method to receive the GotFocus and LostFocus events.
 title: WebView2 Win32 C++ IWebView2FocusChangedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel

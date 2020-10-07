@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: WebView2 enables you to host web content using the latest Edge web browser technology.
 title: WebView2 Win32 C++ IWebView2WebView
 author: MSEdgeTeam
 ms.author: msedgedevrel

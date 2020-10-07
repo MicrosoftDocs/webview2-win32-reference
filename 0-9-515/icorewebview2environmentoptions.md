@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: Options used to create WebView2 Environment.
 title: WebView2 Win32 C++ ICoreWebView2EnvironmentOptions
 author: MSEdgeTeam
 ms.author: msedgedevrel

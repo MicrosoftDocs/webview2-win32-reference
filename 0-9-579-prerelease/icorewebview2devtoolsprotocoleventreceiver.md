@@ -1,5 +1,5 @@
 ---
-description: Embed web technologies (HTML, CSS, and JavaScript) in your native applications with the Microsoft Edge WebView2 control
+description: A Receiver is created for a particular DevTools Protocol event and allows you to subscribe and unsubscribe from that event.
 title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceiver
 author: MSEdgeTeam
 ms.author: msedgedevrel

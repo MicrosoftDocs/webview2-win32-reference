@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: Defines properties that enable, disable, or modify WebView features.
 title: WebView2 Win32 C++ IWebView2Settings2
 author: MSEdgeTeam
 ms.author: msedgedevrel

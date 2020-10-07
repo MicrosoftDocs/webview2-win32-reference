@@ -1,5 +1,5 @@
 ---
-description: Embed web technologies (HTML, CSS, and JavaScript) in your native applications with the Microsoft Edge WebView2 control
+description: Event args for the WebMessageReceived event.
 title: WebView2 Win32 C++ ICoreWebView2WebMessageReceivedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel

@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: The caller implements this interface to receive the WebView created via CreateWebView.
 title: WebView2 Win32 C++ IWebView2CreateWebViewCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel

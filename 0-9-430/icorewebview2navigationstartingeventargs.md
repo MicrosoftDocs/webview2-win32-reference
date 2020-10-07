@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: Event args for the NavigationStarting event.
 title: WebView2 Win32 C++ ICoreWebView2NavigationStartingEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel

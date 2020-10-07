@@ -1,5 +1,5 @@
 ---
-description: Embed web technologies (HTML, CSS, and JavaScript) in your native applications with the Microsoft Edge WebView2 control
+description: This interface is an extension of the ICoreWebView2Controller interface to support visual hosting.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController
 author: MSEdgeTeam
 ms.author: msedgedevrel

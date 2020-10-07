@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: Additional functionality implemented by the Environment object.
 title: WebView2 Win32 C++ IWebView2Environment3
 author: MSEdgeTeam
 ms.author: msedgedevrel

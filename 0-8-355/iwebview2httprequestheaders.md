@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: HTTP request headers.
 title: WebView2 Win32 C++ IWebView2HttpRequestHeaders
 author: MSEdgeTeam
 ms.author: msedgedevrel

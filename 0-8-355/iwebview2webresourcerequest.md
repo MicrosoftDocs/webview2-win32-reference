@@ -1,5 +1,5 @@
 ---
-description: Host web content in your Win32 app with the Microsoft Edge WebView2 control
+description: An HTTP request used with the WebResourceRequested event.
 title: WebView2 Win32 C++ IWebView2WebResourceRequest
 author: MSEdgeTeam
 ms.author: msedgedevrel
