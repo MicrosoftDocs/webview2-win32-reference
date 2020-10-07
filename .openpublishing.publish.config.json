@@ -6,7 +6,18 @@
       "build_output_subfolder": "webview2-win32",
       "locale": "en-us",
       "monikers": [],
-      "moniker_ranges": ["Moniker name1", "Moniker name2", "Moniker name..."],
+      "moniker_ranges": [
+        "webview2-0.9.628-prerelease",
+        "webview2-0.9.622",
+        "webview2-0.9.579",
+        "webview2-0.9.579-prerelease",
+        "webview2-0.9.538",
+        "webview2-0.9.538-prerelease",
+        "webview2-0.9.515",
+        "webview2-0.9.488",
+        "webview2-0.9.488-prerelease",
+        "webview2-0.9.430",
+        "webview2-0.9.355"],
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content"

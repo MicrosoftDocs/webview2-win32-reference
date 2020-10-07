@@ -3,8 +3,6 @@
     "content": [
       {
         "files": [
-          "**/*.md",
-          "**/*.yml"
         ],
         "exclude": [
           "**/obj/**",
@@ -21,6 +19,94 @@
       },
       {
         "files": ["breadcrumb/toc.yml"]
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-628-prerelease",
+        "src": "0-9-628-prerelease"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-622-11",
+        "src": "0-9-622-11"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-579",
+        "src": "0-9-579"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-579-prerelease",
+        "src": "0-9-579-prerelease"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-538",
+        "src": "0-9-538"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-538-prerelease",
+        "src": "0-9-538-prerelease"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-515",
+        "src": "0-9-515"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-488",
+        "src": "0-9-488"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-488-prerelease",
+        "src": "0-9-488-prerelease"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-430",
+        "src": "0-9-430"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-355",
+        "src": "0-8-355"
       }
     ],
     "resource": [
@@ -49,6 +135,52 @@
     "fileMetadata": {},
     "template": [],
     "dest": "webview2-win32",
+    "groups": {
+      "webview2-628-prerelease": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.628-prerelease"
+      },
+      "webview2-622-11": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.622"
+      },
+      "webview2-579": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.579"
+      },
+      "webview2-579-prerelease": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.579-prerelease"
+      },
+      "webview2-538": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.538"
+      },
+      "webview2-538-prerelease": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.538-prerelease"
+      },
+      "webview2-515": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.515"
+      },
+      "webview2-488": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.488"
+      },
+      "webview2-488-prerelease": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.488-prerelease"
+      },
+      "webview2-430": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.9.430"
+      },
+      "webview2-355": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-0.8.355"
+      }
+    },
     "markdownEngineName": "markdig"
   }
 }
