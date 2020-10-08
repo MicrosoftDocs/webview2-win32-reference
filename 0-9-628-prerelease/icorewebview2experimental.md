@@ -1,5 +1,5 @@
 ---
-description: ## Summary
+description: This interface is an extension of the ICoreWebView2.
 title: WebView2 Win32 C++ ICoreWebView2Experimental
 author: MSEdgeTeam
 ms.author: msedgedevrel
