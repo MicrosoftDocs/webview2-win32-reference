@@ -1,5 +1,5 @@
 ---
-description: Defines properties that enable, disable, or modify WebView features.
+description: IWebView2Settings2. Defines properties that enable, disable, or modify WebView features.
 title: WebView2 Win32 C++ IWebView2Settings2
 author: MSEdgeTeam
 ms.author: msedgedevrel

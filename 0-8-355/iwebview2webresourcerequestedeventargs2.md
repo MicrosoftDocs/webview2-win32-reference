@@ -1,5 +1,5 @@
 ---
-description: Event args for the WebResourceRequested event.
+description: IWebView2WebResourceRequestedEventArgs2. Event args for the WebResourceRequested event.
 title: WebView2 Win32 C++ IWebView2WebResourceRequestedEventArgs2
 author: MSEdgeTeam
 ms.author: msedgedevrel

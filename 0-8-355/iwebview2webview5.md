@@ -1,5 +1,5 @@
 ---
-description: Additional functionality implemented by the primary WebView object.
+description: IWebView2WebView5. Additional functionality implemented by the primary WebView object.
 title: WebView2 Win32 C++ IWebView2WebView5
 author: MSEdgeTeam
 ms.author: msedgedevrel

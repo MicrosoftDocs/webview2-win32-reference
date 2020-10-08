@@ -1,5 +1,5 @@
 ---
-description: Additional functionality implemented by the Environment object.
+description: IWebView2Environment2. Additional functionality implemented by the Environment object.
 title: WebView2 Win32 C++ IWebView2Environment2
 author: MSEdgeTeam
 ms.author: msedgedevrel
