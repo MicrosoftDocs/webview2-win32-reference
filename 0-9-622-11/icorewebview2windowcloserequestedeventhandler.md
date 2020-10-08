@@ -1,5 +1,5 @@
 ---
-description: The caller implements this interface to receive NewWindowRequested events.
+description: The caller implements this interface to receive WindowCloseRequested events.
 title: WebView2 Win32 C++ ICoreWebView2WindowCloseRequestedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -17,7 +17,7 @@ interface ICoreWebView2WindowCloseRequestedEventHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive NewWindowRequested events.
+The caller implements this interface to receive WindowCloseRequested events.
 
 ## Summary
 
