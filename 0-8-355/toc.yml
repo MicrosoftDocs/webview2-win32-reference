@@ -1,0 +1,115 @@
+- name: Win32 C++
+  href: index.md
+  items:
+    - name: IWebView2Deferral
+      href: iwebview2deferral.md
+    - name: IWebView2Environment
+      href: iwebview2environment.md
+    - name: IWebView2Environment2
+      href: iwebview2environment2.md
+    - name: IWebView2Environment3
+      href: iwebview2environment3.md
+    - name: IWebView2HttpHeadersCollectionIterator
+      href: iwebview2httpheaderscollectioniterator.md
+    - name: IWebView2HttpRequestHeaders
+      href: iwebview2httprequestheaders.md
+    - name: IWebView2HttpResponseHeaders
+      href: iwebview2httpresponseheaders.md
+    - name: IWebView2Settings
+      href: iwebview2settings.md
+    - name: IWebView2Settings2
+      href: iwebview2settings2.md
+    - name: IWebView2WebResourceRequest
+      href: iwebview2webresourcerequest.md
+    - name: IWebView2WebResourceRequestedEventArgs2
+      href: iwebview2webresourcerequestedeventargs2.md
+    - name: IWebView2WebResourceResponse
+      href: iwebview2webresourceresponse.md
+    - name: IWebView2WebView
+      href: iwebview2webview.md
+    - name: IWebView2WebView2
+      href: iwebview2webview2.md
+    - name: IWebView2WebView3
+      href: iwebview2webview3.md
+    - name: IWebView2WebView4
+      href: iwebview2webview4.md
+    - name: IWebView2WebView5
+      href: iwebview2webview5.md
+    - name: Globals
+      href: webview2-idl.md
+    - name: Event arguments
+      items:
+        - name: IWebView2AcceleratorKeyPressedEventArgs
+          href: iwebview2acceleratorkeypressedeventargs.md
+        - name: IWebView2DevToolsProtocolEventReceivedEventArgs
+          href: iwebview2devtoolsprotocoleventreceivedeventargs.md
+        - name: IWebView2DocumentStateChangedEventArgs
+          href: iwebview2documentstatechangedeventargs.md
+        - name: IWebView2MoveFocusRequestedEventArgs
+          href: iwebview2movefocusrequestedeventargs.md
+        - name: IWebView2NavigationCompletedEventArgs
+          href: iwebview2navigationcompletedeventargs.md
+        - name: IWebView2NavigationStartingEventArgs
+          href: iwebview2navigationstartingeventargs.md
+        - name: IWebView2NewVersionAvailableEventArgs
+          href: iwebview2newversionavailableeventargs.md
+        - name: IWebView2NewWindowRequestedEventArgs
+          href: iwebview2newwindowrequestedeventargs.md
+        - name: IWebView2PermissionRequestedEventArgs
+          href: iwebview2permissionrequestedeventargs.md
+        - name: IWebView2ProcessFailedEventArgs
+          href: iwebview2processfailedeventargs.md
+        - name: IWebView2ScriptDialogOpeningEventArgs
+          href: iwebview2scriptdialogopeningeventargs.md
+        - name: IWebView2WebMessageReceivedEventArgs
+          href: iwebview2webmessagereceivedeventargs.md
+        - name: IWebView2WebResourceRequestedEventArgs
+          href: iwebview2webresourcerequestedeventargs.md
+    - name: Delegates
+      items:
+        - name: IWebView2AcceleratorKeyPressedEventHandler
+          href: iwebview2acceleratorkeypressedeventhandler.md
+        - name: IWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler
+          href: iwebview2addscripttoexecuteondocumentcreatedcompletedhandler.md
+        - name: IWebView2CallDevToolsProtocolMethodCompletedHandler
+          href: iwebview2calldevtoolsprotocolmethodcompletedhandler.md
+        - name: IWebView2CapturePreviewCompletedHandler
+          href: iwebview2capturepreviewcompletedhandler.md
+        - name: IWebView2ContainsFullScreenElementChangedEventHandler
+          href: iwebview2containsfullscreenelementchangedeventhandler.md
+        - name: IWebView2CreateWebView2EnvironmentCompletedHandler
+          href: iwebview2createwebview2environmentcompletedhandler.md
+        - name: IWebView2CreateWebViewCompletedHandler
+          href: iwebview2createwebviewcompletedhandler.md
+        - name: IWebView2DevToolsProtocolEventReceivedEventHandler
+          href: iwebview2devtoolsprotocoleventreceivedeventhandler.md
+        - name: IWebView2DocumentStateChangedEventHandler
+          href: iwebview2documentstatechangedeventhandler.md
+        - name: IWebView2DocumentTitleChangedEventHandler
+          href: iwebview2documenttitlechangedeventhandler.md
+        - name: IWebView2ExecuteScriptCompletedHandler
+          href: iwebview2executescriptcompletedhandler.md
+        - name: IWebView2FocusChangedEventHandler
+          href: iwebview2focuschangedeventhandler.md
+        - name: IWebView2MoveFocusRequestedEventHandler
+          href: iwebview2movefocusrequestedeventhandler.md
+        - name: IWebView2NavigationCompletedEventHandler
+          href: iwebview2navigationcompletedeventhandler.md
+        - name: IWebView2NavigationStartingEventHandler
+          href: iwebview2navigationstartingeventhandler.md
+        - name: IWebView2NewVersionAvailableEventHandler
+          href: iwebview2newversionavailableeventhandler.md
+        - name: IWebView2NewWindowRequestedEventHandler
+          href: iwebview2newwindowrequestedeventhandler.md
+        - name: IWebView2PermissionRequestedEventHandler
+          href: iwebview2permissionrequestedeventhandler.md
+        - name: IWebView2ProcessFailedEventHandler
+          href: iwebview2processfailedeventhandler.md
+        - name: IWebView2ScriptDialogOpeningEventHandler
+          href: iwebview2scriptdialogopeningeventhandler.md
+        - name: IWebView2WebMessageReceivedEventHandler
+          href: iwebview2webmessagereceivedeventhandler.md
+        - name: IWebView2WebResourceRequestedEventHandler
+          href: iwebview2webresourcerequestedeventhandler.md
+        - name: IWebView2ZoomFactorChangedEventHandler
+          href: iwebview2zoomfactorchangedeventhandler.md
