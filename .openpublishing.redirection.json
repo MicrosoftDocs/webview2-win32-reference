@@ -316,7 +316,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "microsoft-edge/webview2/reference/win32/0-9-430/icorewebview2.md",
+      "source_path": "0-9-430/icorewebview2.md",
       "redirect_url": "/microsoft-edge/webview2/reference/win32/icorewebview2",
       "redirect_document_id": false
     },
