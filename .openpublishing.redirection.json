@@ -1,12 +1,12 @@
 {
   "redirections": [
     {
-      "source_path": "microsoft-edge/webview2/reference/win32/0-8-190-reference-webview2.md",
+      "source_path": "0-8-190-reference-webview2.md",
       "redirect_url": "/microsoft-edge/webview2/reference/win32",
       "redirect_document_id": false
     },
     {
-      "source_path": "microsoft-edge/webview2/reference/win32/0-9-430-reference-webview2.md",
+      "source_path": "0-9-430-reference-webview2.md",
       "redirect_url": "/microsoft-edge/webview2/reference/win32",
       "redirect_document_id": false
     },
