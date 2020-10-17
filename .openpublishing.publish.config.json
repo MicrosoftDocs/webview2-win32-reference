@@ -8,6 +8,7 @@
       "monikers": [],
       "moniker_ranges": [
         "webview2-0.9.628-prerelease",
+        "webview2-1.0.622.22",
         "webview2-0.9.622",
         "webview2-0.9.579",
         "webview2-0.9.579-prerelease",
