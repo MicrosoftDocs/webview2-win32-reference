@@ -22,6 +22,12 @@
       },
       {
         "files": [
+          "**/*.md"
+        ],
+        "src": "non-version"
+      },
+      {
+        "files": [
           "**/*.md",
           "**/*.yml"
         ],
