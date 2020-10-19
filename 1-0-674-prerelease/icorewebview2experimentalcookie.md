@@ -3,7 +3,7 @@ description: Provides a set of properties that are used to manage an ICoreWebVie
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCookie
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/17/2020
+ms.date: 10/19/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

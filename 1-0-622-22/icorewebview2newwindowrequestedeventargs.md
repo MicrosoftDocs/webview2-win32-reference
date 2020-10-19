@@ -3,7 +3,7 @@ description: Event args for the NewWindowRequested event.
 title: WebView2 Win32 C++ ICoreWebView2NewWindowRequestedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/17/2020
+ms.date: 10/19/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

@@ -3,7 +3,7 @@ description: This interface is continuation of the [ICoreWebView2ExperimentalCom
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController2
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/18/2020
+ms.date: 10/19/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

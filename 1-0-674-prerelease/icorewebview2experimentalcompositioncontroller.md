@@ -3,7 +3,7 @@ description: This interface is an extension of the [ICoreWebView2Controller](ico
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/17/2020
+ms.date: 10/19/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

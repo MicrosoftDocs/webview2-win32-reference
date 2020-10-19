@@ -3,7 +3,7 @@ description: WebView2 Win32 C++ Reference
 title: WebView2 Win32 C++ Reference
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/18/2020
+ms.date: 10/19/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

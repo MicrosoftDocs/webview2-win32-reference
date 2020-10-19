@@ -3,7 +3,7 @@ description: An HTTP request used with the WebResourceRequested event.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceRequest
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/17/2020
+ms.date: 10/19/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
