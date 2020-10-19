@@ -3,7 +3,7 @@ description: This interface is continuation of the [ICoreWebView2ExperimentalCom
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController2
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/17/2020
+ms.date: 10/18/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -35,7 +35,7 @@ The current system cursor ID reported by the underlying rendering engine for Web
 
 > public HRESULT [get_SystemCursorId](#get_systemcursorid)(UINT32 * systemCursorId)
 
-For example, most of the time, when the cursor is over text, this will return the int value for IDC_IBEAM. The systemCursorId is only valid if the rendering engine reports a default Windows cursor resource value. See: [https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-loadcursorw](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-loadcursorw) Otherwise, if custom CSS cursors are being used, this will return 0. To actually use systemCursorId in LoadCursor or LoadImage, MAKEINTRESOURCE must be called on it first.
+For example, most of the time, when the cursor is over text, this will return the int value for IDC_IBEAM. The systemCursorId is only valid if the rendering engine reports a default Windows cursor resource value. Navigate to [LoadCursorW](/windows/win32/api/winuser/nf-winuser-loadcursorw) for more details. Otherwise, if custom CSS cursors are being used, this will return 0. To actually use systemCursorId in LoadCursor or LoadImage, MAKEINTRESOURCE must be called on it first.
 
 ```cpp
                         UINT32 cursorId;

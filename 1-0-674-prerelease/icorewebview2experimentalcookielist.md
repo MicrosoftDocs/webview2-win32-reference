@@ -25,7 +25,7 @@ A list of cookie objects.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_Count](#get_count) | The number of cookies contained in the [ICoreWebView2ExperimentalCookieList](#icorewebview2experimentalcookielist).
+[get_Count](#get_count) | The number of cookies contained in the ICoreWebView2ExperimentalCookieList.
 [GetValueAtIndex](#getvalueatindex) | Gets the cookie object at the given index.
 
 See [ICoreWebView2ExperimentalCookie](icorewebview2experimentalcookie.md). 
@@ -81,7 +81,7 @@ See [ICoreWebView2ExperimentalCookie](icorewebview2experimentalcookie.md).
 
 #### get_Count 
 
-The number of cookies contained in the [ICoreWebView2ExperimentalCookieList](#icorewebview2experimentalcookielist).
+The number of cookies contained in the ICoreWebView2ExperimentalCookieList.
 
 > public HRESULT [get_Count](#get_count)(UINT * count)
 

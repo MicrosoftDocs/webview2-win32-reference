@@ -1,5 +1,5 @@
 ---
-description: Provides a set of properties that are used to manage an [ICoreWebView2ExperimentalCookie](#icorewebview2experimentalcookie).
+description: Provides a set of properties that are used to manage an ICoreWebView2ExperimentalCookie.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCookie
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -19,7 +19,7 @@ interface ICoreWebView2ExperimentalCookie
   : public IUnknown
 ```
 
-Provides a set of properties that are used to manage an [ICoreWebView2ExperimentalCookie](#icorewebview2experimentalcookie).
+Provides a set of properties that are used to manage an ICoreWebView2ExperimentalCookie.
 
 ## Summary
 

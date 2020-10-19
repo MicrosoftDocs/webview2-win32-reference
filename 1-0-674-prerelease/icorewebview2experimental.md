@@ -27,7 +27,7 @@ WebView2 enables you to host web content using the latest Edge web browser techn
 --------------------------------|---------------------------------------------
 [add_DOMContentLoaded](#add_domcontentloaded) | Add an event handler for the DOMContentLoaded event.
 [add_WebResourceResponseReceived](#add_webresourceresponsereceived) | Add an event handler for the WebResourceResponseReceived event.
-[get_CookieManager](#get_cookiemanager) | Gets the cookie manager object associated with this [ICoreWebView2Experimental](#icorewebview2experimental).
+[get_CookieManager](#get_cookiemanager) | Gets the cookie manager object associated with this ICoreWebView2Experimental.
 [get_Environment](#get_environment) | Exposes the CoreWebView2Environment used to create this CoreWebView2.
 [NavigateWithWebResourceRequest](#navigatewithwebresourcerequest) | Navigates using a constructed WebResourceRequest object.
 [remove_DOMContentLoaded](#remove_domcontentloaded) | Remove an event handler previously added with add_DOMContentLoaded.
@@ -107,7 +107,7 @@ WebResourceResponseReceived is raised when the WebView receives the response for
 
 #### get_CookieManager 
 
-Gets the cookie manager object associated with this [ICoreWebView2Experimental](#icorewebview2experimental).
+Gets the cookie manager object associated with this ICoreWebView2Experimental.
 
 > public HRESULT [get_CookieManager](#get_cookiemanager)([ICoreWebView2ExperimentalCookieManager](icorewebview2experimentalcookiemanager.md) ** cookieManager)
 
