@@ -1,5 +1,5 @@
 ---
-description: This interface is continuation of the [ICoreWebView2ExperimentalCompositionController](icorewebview2experimentalcompositioncontroller.md) interface.
+description: This interface is continuation of the ICoreWebView2ExperimentalCompositionController interface.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController2
 author: MSEdgeTeam
 ms.author: msedgedevrel
