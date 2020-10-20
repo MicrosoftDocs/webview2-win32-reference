@@ -1,5 +1,5 @@
 ---
-description: This interface is an extension of the [ICoreWebView2Controller](icorewebview2controller.md) interface to support visual hosting.
+description: This interface is an extension of the ICoreWebView2Controller interface to support visual hosting.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController
 author: MSEdgeTeam
 ms.author: msedgedevrel

@@ -1,5 +1,5 @@
 ---
-description: This interface is an extension of the [ICoreWebView2Environment](icorewebview2environment.md).
+description: This interface is an extension of the ICoreWebView2Environment.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironment
 author: MSEdgeTeam
 ms.author: msedgedevrel
