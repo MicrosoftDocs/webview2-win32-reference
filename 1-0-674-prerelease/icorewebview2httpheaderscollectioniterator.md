@@ -27,7 +27,8 @@ Iterator for a collection of HTTP headers.
 [GetCurrentHeader](#getcurrentheader) | Get the name and value of the current HTTP header of the iterator.
 [MoveNext](#movenext) | Move the iterator to the next HTTP header in the collection.
 
-For more information, navigate to [[ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md)][MicrosoftEdgeWebview2ReferenceWin32Icorewebview2httprequestheaders] and [[ICoreWebView2HttpResponseHeaders](icorewebview2httpresponseheaders.md)][MicrosoftEdgeWebview2ReferenceWin32Icorewebview2httpresponseheaders] 
+For more information, navigate to [[ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md)][MicrosoftEdgeWebview2ReferenceWin32Icorewebview2httprequestheaders] and [[ICoreWebView2HttpResponseHeaders](icorewebview2httpresponseheaders.md)][MicrosoftEdgeWebview2ReferenceWin32Icorewebview2httpresponseheaders].
+
 ```cpp
 std::wstring RequestHeadersToJsonString(ICoreWebView2HttpRequestHeaders* requestHeaders)
 {

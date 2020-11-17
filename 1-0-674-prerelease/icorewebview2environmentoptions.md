@@ -82,7 +82,11 @@ The default display language for WebView.
 
 It applies to browser UI such as context menu and dialogs. It also applies to the `accept-languages` HTTP header that WebView sends to websites. It is in the format of `language[-country]` where `language` is the 2-letter code from
 
-[ISO 639][ISO639LanguageCodesHtml] and `country` is the 2-letter code from [ISO 3166][ISOStandard72482Html] [ISO639LanguageCodesHtml]: [https://www.iso.org/iso-639-language-codes.html](https://www.iso.org/iso-639-language-codes.html) "ISO 639 | ISO" [ISOStandard72482Html]: [https://www.iso.org/standard/72482.html](https://www.iso.org/standard/72482.html) "ISO 3166-1:2020 | ISO"
+[ISO 639][ISO639LanguageCodesHtml] and `country` is the 2-letter code from [ISO 3166][ISOStandard72482Html].
+
+[ISO639LanguageCodesHtml]: [https://www.iso.org/iso-639-language-codes.html](https://www.iso.org/iso-639-language-codes.html) "ISO 639 | ISO"
+
+[ISOStandard72482Html]: [https://www.iso.org/standard/72482.html](https://www.iso.org/standard/72482.html) "ISO 3166-1:2020 | ISO"
 
 #### get_TargetCompatibleBrowserVersion 
 

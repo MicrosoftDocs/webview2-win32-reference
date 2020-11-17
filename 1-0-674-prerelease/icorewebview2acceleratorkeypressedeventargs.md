@@ -52,7 +52,11 @@ The `LPARAM` value that accompanied the window message.
 
 > public HRESULT [get_KeyEventLParam](#get_keyeventlparam)(INT * lParam)
 
-For more information, navigate to [WM_KEYDOWN][WindowsWin32InputdevWmKeydown] and [WM_KEYUP][WindowsWin32InputdevWmKeyup] [WindowsWin32InputdevWmKeydown]: /windows/win32/inputdev/wm-keydown "WM_KEYDOWN message | Microsoft Docs" [WindowsWin32InputdevWmKeyup]: /windows/win32/inputdev/wm-keyup "WM_KEYUP message | Microsoft Docs"
+For more information, navigate to [WM_KEYDOWN][WindowsWin32InputdevWmKeydown] and [WM_KEYUP][WindowsWin32InputdevWmKeyup].
+
+[WindowsWin32InputdevWmKeydown]: /windows/win32/inputdev/wm-keydown "WM_KEYDOWN message | Microsoft Docs"
+
+[WindowsWin32InputdevWmKeyup]: /windows/win32/inputdev/wm-keyup "WM_KEYUP message | Microsoft Docs"
 
 #### get_PhysicalKeyStatus 
 

@@ -630,6 +630,22 @@ Add an event handler for the `WebMessageReceived` event.
 `WebMessageReceived` runs when the `ICoreWebView2Settings::IsWebMessageEnabled` setting is set and the top-level document of the WebView runs `window.chrome.webview.postMessage`. The `postMessage` function is `void postMessage(object)` where object is any object supported by JSON conversion.
 
 ```html
+        window.chrome.webview.addEventListener('message', arg => {
+            if ("SetColor" in arg.data) {
+                document.getElementById("colorable").style.color = arg.data.SetColor;
+            }
+            if ("WindowBounds" in arg.data) {
+                document.getElementById("window-bounds").value = arg.data.WindowBounds;
+            }
+        });
+
+        function SetTitleText() {
+            let titleText = document.getElementById("title-text");
+            window.chrome.webview.postMessage(`SetTitleText ${titleText.value}`);
+        }
+        function GetWindowBounds() {
+            window.chrome.webview.postMessage("GetWindowBounds");
+        }
 ```
  When `postMessage` is run, the `Invoke` method of the `handler` is run with the `object` parameter of the `postMessage` converted to a JSON string.
 
@@ -817,8 +833,72 @@ For example, suppose you have a COM object with the following interface.
  In the HTML document, use the COM object using `chrome.webview.hostObjects.sample`.
 
 ```html
+        document.getElementById("getPropertyAsyncButton").addEventListener("click", async () => {
+        const propertyValue = await chrome.webview.hostObjects.sample.property;
+        document.getElementById("getPropertyAsyncOutput").textContent = propertyValue;
+        });
+
+        document.getElementById("getPropertySyncButton").addEventListener("click", () => {
+        const propertyValue = chrome.webview.hostObjects.sync.sample.property;
+        document.getElementById("getPropertySyncOutput").textContent = propertyValue;
+        });
+
+        document.getElementById("setPropertyAsyncButton").addEventListener("click", async () => {
+        const propertyValue = document.getElementById("setPropertyAsyncInput").value;
+        // The following line will work but it will return immediately before the property value has actually been set.
+        // If you need to set the property and wait for the property to change value, use the setHostProperty function.
+        chrome.webview.hostObjects.sample.property = propertyValue;
+        document.getElementById("setPropertyAsyncOutput").textContent = "Set";
+        });
+
+        document.getElementById("setPropertyExplicitAsyncButton").addEventListener("click", async () => {
+        const propertyValue = document.getElementById("setPropertyExplicitAsyncInput").value;
+        // If you care about waiting until the property has actually changed value use the setHostProperty function.
+        await chrome.webview.hostObjects.sample.setHostProperty("property", propertyValue);
+        document.getElementById("setPropertyExplicitAsyncOutput").textContent = "Set";
+        });
+
+        document.getElementById("setPropertySyncButton").addEventListener("click", () => {
+        const propertyValue = document.getElementById("setPropertySyncInput").value;
+        chrome.webview.hostObjects.sync.sample.property = propertyValue;
+        document.getElementById("setPropertySyncOutput").textContent = "Set";
+        });
+
+        document.getElementById("getIndexedPropertyAsyncButton").addEventListener("click", async () => {
+        const index = parseInt(document.getElementById("getIndexedPropertyAsyncParam").value);
+        const resultValue = await chrome.webview.hostObjects.sample.IndexedProperty[index];
+        document.getElementById("getIndexedPropertyAsyncOutput").textContent = resultValue;
+        });
+        document.getElementById("setIndexedPropertyAsyncButton").addEventListener("click", async () => {
+        const index = parseInt(document.getElementById("setIndexedPropertyAsyncParam1").value);
+        const value = document.getElementById("setIndexedPropertyAsyncParam2").value;;
+        chrome.webview.hostObjects.sample.IndexedProperty[index] = value;
+        document.getElementById("setIndexedPropertyAsyncOutput").textContent = "Set";
+        });
+        document.getElementById("invokeMethodAsyncButton").addEventListener("click", async () => {
+        const paramValue1 = document.getElementById("invokeMethodAsyncParam1").value;
+        const paramValue2 = parseInt(document.getElementById("invokeMethodAsyncParam2").value);
+        const resultValue = await chrome.webview.hostObjects.sample.MethodWithParametersAndReturnValue(paramValue1, paramValue2);
+        document.getElementById("invokeMethodAsyncOutput").textContent = resultValue;
+        });
+
+        document.getElementById("invokeMethodSyncButton").addEventListener("click", () => {
+        const paramValue1 = document.getElementById("invokeMethodSyncParam1").value;
+        const paramValue2 = parseInt(document.getElementById("invokeMethodSyncParam2").value);
+        const resultValue = chrome.webview.hostObjects.sync.sample.MethodWithParametersAndReturnValue(paramValue1, paramValue2);
+        document.getElementById("invokeMethodSyncOutput").textContent = resultValue;
+        });
+
+        let callbackCount = 0;
+        document.getElementById("invokeCallbackButton").addEventListener("click", async () => {
+        chrome.webview.hostObjects.sample.CallCallbackAsynchronously(() => {
+        document.getElementById("invokeCallbackOutput").textContent = "Native object called the callback " + (++callbackCount) + " time(s).";
+        });
+        });
 ```
- Exposing host objects to script has security risk. For more information about best practices, navigate to [Best practices for developing secure WebView2 applications][MicrosoftEdgeWebview2ConceptsSecurity] [MicrosoftEdgeWebview2ConceptsSecurity]: /microsoft-edge/webview2/concepts/security "Best practices for developing secure WebView2 applications | Microsoft Docs"
+ Exposing host objects to script has security risk. For more information about best practices, navigate to [Best practices for developing secure WebView2 applications][MicrosoftEdgeWebview2ConceptsSecurity].
+
+[MicrosoftEdgeWebview2ConceptsSecurity]: /microsoft-edge/webview2/concepts/security "Best practices for developing secure WebView2 applications | Microsoft Docs"
 
 #### AddScriptToExecuteOnDocumentCreated 
 
@@ -861,7 +941,9 @@ void ScriptComponent::AddInitializeScript()
     }
 }
 ```
- [MdnDocsWebHtmlElementIframeAttrSandbox]: [https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) "sandbox - <iframe>: The Inline Frame element | MDN" [MdnDocsWebHttpHeadersContentSecurityPolicy]: [https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) "Content-Security-Policy | MDN"
+ [MdnDocsWebHtmlElementIframeAttrSandbox]: [https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) "sandbox - &lt;iframe&gt;: The Inline Frame element | MDN"
+
+[MdnDocsWebHttpHeadersContentSecurityPolicy]: [https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) "Content-Security-Policy | MDN"
 
 #### AddWebResourceRequestedFilter 
 
@@ -1140,7 +1222,9 @@ Cause a navigation of the top-level document to run to the specified URI.
 
 > public HRESULT [Navigate](#navigate)(LPCWSTR uri)
 
-For more information, navigate to [Navigation events].
+For more information, navigate to [Navigation events][MicrosoftEdgeWebview2ConceptsNavigationevents].
+
+[MicrosoftEdgeWebview2ConceptsNavigationevents]: /microsoft-edge/webview2/concepts/navigation-events "Navigation events | Microsoft Docs"
 
 > [!NOTE] This operation starts a navigation and the corresponding `NavigationStarting` event triggers sometime after `Navigate` runs.
 
@@ -1476,7 +1560,9 @@ Contains the information packed into the `LPARAM` sent to a Win32 key event.
 
 > typedef [COREWEBVIEW2_PHYSICAL_KEY_STATUS](#corewebview2_physical_key_status)
 
-For more information about `WM_KEYDOWN`, navigate to [WM_KEYDOWN message][WindowsWin32InputdevWmKeydown] [WindowsWin32InputdevWmKeydown]: /windows/win32/inputdev/wm-keydown "WM_KEYDOWN message | Microsoft Docs"
+For more information about `WM_KEYDOWN`, navigate to [WM_KEYDOWN message][WindowsWin32InputdevWmKeydown].
+
+[WindowsWin32InputdevWmKeydown]: /windows/win32/inputdev/wm-keydown "WM_KEYDOWN message | Microsoft Docs"
 
 #### COREWEBVIEW2_PROCESS_FAILED_KIND 
 
