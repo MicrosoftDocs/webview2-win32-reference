@@ -1,9 +1,9 @@
 ---
-description: Event args for the ScriptDialogOpening event.
+description: Event args for the `ScriptDialogOpening` event.
 title: WebView2 Win32 C++ ICoreWebView2ScriptDialogOpeningEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,30 +17,30 @@ interface ICoreWebView2ScriptDialogOpeningEventArgs
   : public IUnknown
 ```
 
-Event args for the ScriptDialogOpening event.
+Event args for the `ScriptDialogOpening` event.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Accept](#accept) | The host may call this to respond with OK to confirm, prompt, and beforeunload dialogs or not call this method to indicate cancel.
+[Accept](#accept) | The host may run this to respond with **OK** to `confirm`, `prompt`, and `beforeunload` dialogs run (or not) this method to indicate cancel.
 [get_DefaultText](#get_defaulttext) | The second parameter passed to the JavaScript prompt dialog.
 [get_Kind](#get_kind) | The kind of JavaScript dialog box.
 [get_Message](#get_message) | The message of the dialog box.
-[get_ResultText](#get_resulttext) | The return value from the JavaScript prompt function if Accept is called.
+[get_ResultText](#get_resulttext) | The return value from the JavaScript prompt function if `Accept` is run.
 [get_Uri](#get_uri) | The URI of the page that requested the dialog box.
-[GetDeferral](#getdeferral) | GetDeferral can be called to return an [ICoreWebView2Deferral](icorewebview2deferral.md) object.
-[put_ResultText](#put_resulttext) | Set the ResultText property.
+[GetDeferral](#getdeferral) | Returns an `[ICoreWebView2Deferral](icorewebview2deferral.md)` object.
+[put_ResultText](#put_resulttext) | Sets the `ResultText` property.
 
 ## Members
 
 #### Accept 
 
-The host may call this to respond with OK to confirm, prompt, and beforeunload dialogs or not call this method to indicate cancel.
+The host may run this to respond with **OK** to `confirm`, `prompt`, and `beforeunload` dialogs run (or not) this method to indicate cancel.
 
 > public HRESULT [Accept](#accept)()
 
-From JavaScript, this means that the confirm and beforeunload function returns true if Accept is called. And for the prompt function it returns the value of ResultText if Accept is called and returns false otherwise.
+From JavaScript, this means that the `confirm` and `beforeunload` function returns `TRUE` if `Accept` is run. And for the prompt function it returns the value of `ResultText` if `Accept` is run and otherwise returns `FALSE`.
 
 #### get_DefaultText 
 
@@ -48,7 +48,7 @@ The second parameter passed to the JavaScript prompt dialog.
 
 > public HRESULT [get_DefaultText](#get_defaulttext)(LPWSTR * defaultText)
 
-This is the default value to use for the result of the prompt JavaScript function.
+The result of the prompt JavaScript function uses this value as the default value.
 
 #### get_Kind 
 
@@ -56,7 +56,7 @@ The kind of JavaScript dialog box.
 
 > public HRESULT [get_Kind](#get_kind)(COREWEBVIEW2_SCRIPT_DIALOG_KIND * kind)
 
-Accept, confirm, prompt, or beforeunload.
+`alert`, `confirm`, `prompt`, or `beforeunload`.
 
 #### get_Message 
 
@@ -64,15 +64,15 @@ The message of the dialog box.
 
 > public HRESULT [get_Message](#get_message)(LPWSTR * message)
 
-From JavaScript this is the first parameter passed to alert, confirm, and prompt and is empty for beforeunload.
+From JavaScript this is the first parameter passed to `alert`, `confirm`, and `prompt` and is empty for `beforeunload`.
 
 #### get_ResultText 
 
-The return value from the JavaScript prompt function if Accept is called.
+The return value from the JavaScript prompt function if `Accept` is run.
 
 > public HRESULT [get_ResultText](#get_resulttext)(LPWSTR * resultText)
 
-This is ignored for dialog kinds other than prompt. If Accept is not called this value is ignored and false is returned from prompt.
+This value is ignored for dialog kinds other than prompt. If `Accept` is not run, this value is ignored and `FALSE` is returned from prompt.
 
 #### get_Uri 
 
@@ -82,15 +82,15 @@ The URI of the page that requested the dialog box.
 
 #### GetDeferral 
 
-GetDeferral can be called to return an [ICoreWebView2Deferral](icorewebview2deferral.md) object.
+Returns an `[ICoreWebView2Deferral](icorewebview2deferral.md)` object.
 
 > public HRESULT [GetDeferral](#getdeferral)([ICoreWebView2Deferral](icorewebview2deferral.md) ** deferral)
 
-You can use this to complete the event at a later time.
+Use this operation to complete the event at a later time.
 
 #### put_ResultText 
 
-Set the ResultText property.
+Sets the `ResultText` property.
 
 > public HRESULT [put_ResultText](#put_resulttext)(LPCWSTR resultText)
 

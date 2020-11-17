@@ -1,9 +1,9 @@
 ---
-description: The caller implements this interface to receive ZoomFactorChanged events.
+description: Implements the interface to receive `ZoomFactorChanged` events.
 title: WebView2 Win32 C++ ICoreWebView2ZoomFactorChangedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,23 +17,23 @@ interface ICoreWebView2ZoomFactorChangedEventHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive ZoomFactorChanged events.
+Implements the interface to receive `ZoomFactorChanged` events.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the event args for the corresponding event.
+[Invoke](#invoke) | Provides the event args for the corresponding event.
 
-Use the ICoreWebView2Controller.ZoomFactor property to get the modified zoom factor.
+Use the `ICoreWebView2Controller.ZoomFactor` property to get the modified zoom factor.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the event args for the corresponding event.
+Provides the event args for the corresponding event.
 
 > public HRESULT [Invoke](#invoke)(ICoreWebView2Controller * sender, IUnknown * args)
 
-There are no event args and the args parameter will be null.
+No event args exist and the `args` parameter is set to `null`.
 

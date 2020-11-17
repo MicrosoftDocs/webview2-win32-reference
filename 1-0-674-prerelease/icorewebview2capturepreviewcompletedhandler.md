@@ -1,9 +1,9 @@
 ---
-description: The caller implements this method to receive the result of the CapturePreview method.
+description: Receives the result of the `CapturePreview` method.
 title: WebView2 Win32 C++ ICoreWebView2CapturePreviewCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,21 +17,21 @@ interface ICoreWebView2CapturePreviewCompletedHandler
   : public IUnknown
 ```
 
-The caller implements this method to receive the result of the CapturePreview method.
+Receives the result of the `CapturePreview` method.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the completion status of the corresponding asynchronous method call.
+[Invoke](#invoke) | Provides the completion status of the corresponding asynchronous method.
 
-The result is written to the stream provided in the CapturePreview method call.
+The result is written to the stream provided in the `CapturePreview` method.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the completion status of the corresponding asynchronous method call.
+Provides the completion status of the corresponding asynchronous method.
 
 > public HRESULT [Invoke](#invoke)(HRESULT errorCode)
 

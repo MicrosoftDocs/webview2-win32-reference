@@ -3,8 +3,16 @@
   items:
     - name: ICoreWebView2
       href: icorewebview2.md
+    - name: ICoreWebView2_2
+      href: icorewebview2_2.md
     - name: ICoreWebView2Controller
       href: icorewebview2controller.md
+    - name: ICoreWebView2Cookie
+      href: icorewebview2cookie.md
+    - name: ICoreWebView2CookieList
+      href: icorewebview2cookielist.md
+    - name: ICoreWebView2CookieManager
+      href: icorewebview2cookiemanager.md
     - name: ICoreWebView2Deferral
       href: icorewebview2deferral.md
     - name: ICoreWebView2DevToolsProtocolEventReceiver
@@ -25,6 +33,8 @@
       href: icorewebview2webresourcerequest.md
     - name: ICoreWebView2WebResourceResponse
       href: icorewebview2webresourceresponse.md
+    - name: ICoreWebView2WebResourceResponseView
+      href: icorewebview2webresourceresponseview.md
     - name: ICoreWebView2WindowFeatures
       href: icorewebview2windowfeatures.md
     - name: Globals
@@ -37,6 +47,8 @@
           href: icorewebview2contentloadingeventargs.md
         - name: ICoreWebView2DevToolsProtocolEventReceivedEventArgs
           href: icorewebview2devtoolsprotocoleventreceivedeventargs.md
+        - name: ICoreWebView2DOMContentLoadedEventArgs
+          href: icorewebview2domcontentloadedeventargs.md
         - name: ICoreWebView2MoveFocusRequestedEventArgs
           href: icorewebview2movefocusrequestedeventargs.md
         - name: ICoreWebView2NavigationCompletedEventArgs
@@ -57,6 +69,8 @@
           href: icorewebview2webmessagereceivedeventargs.md
         - name: ICoreWebView2WebResourceRequestedEventArgs
           href: icorewebview2webresourcerequestedeventargs.md
+        - name: ICoreWebView2WebResourceResponseReceivedEventArgs
+          href: icorewebview2webresourceresponsereceivedeventargs.md
     - name: Delegates
       items:
         - name: ICoreWebView2AcceleratorKeyPressedEventHandler
@@ -79,10 +93,14 @@
           href: icorewebview2devtoolsprotocoleventreceivedeventhandler.md
         - name: ICoreWebView2DocumentTitleChangedEventHandler
           href: icorewebview2documenttitlechangedeventhandler.md
+        - name: ICoreWebView2DOMContentLoadedEventHandler
+          href: icorewebview2domcontentloadedeventhandler.md
         - name: ICoreWebView2ExecuteScriptCompletedHandler
           href: icorewebview2executescriptcompletedhandler.md
         - name: ICoreWebView2FocusChangedEventHandler
           href: icorewebview2focuschangedeventhandler.md
+        - name: ICoreWebView2GetCookiesCompletedHandler
+          href: icorewebview2getcookiescompletedhandler.md
         - name: ICoreWebView2HistoryChangedEventHandler
           href: icorewebview2historychangedeventhandler.md
         - name: ICoreWebView2MoveFocusRequestedEventHandler
@@ -107,43 +125,33 @@
           href: icorewebview2webmessagereceivedeventhandler.md
         - name: ICoreWebView2WebResourceRequestedEventHandler
           href: icorewebview2webresourcerequestedeventhandler.md
+        - name: ICoreWebView2WebResourceResponseReceivedEventHandler
+          href: icorewebview2webresourceresponsereceivedeventhandler.md
+        - name: ICoreWebView2WebResourceResponseViewGetContentCompletedHandler
+          href: icorewebview2webresourceresponseviewgetcontentcompletedhandler.md
         - name: ICoreWebView2WindowCloseRequestedEventHandler
           href: icorewebview2windowcloserequestedeventhandler.md
         - name: ICoreWebView2ZoomFactorChangedEventHandler
           href: icorewebview2zoomfactorchangedeventhandler.md
     - name: Experimental
       items:
-        - name: ICoreWebView2Experimental
-          href: icorewebview2experimental.md
+        - name: ICoreWebView2Experimental2
+          href: icorewebview2experimental2.md
         - name: ICoreWebView2ExperimentalCompositionController
           href: icorewebview2experimentalcompositioncontroller.md
         - name: ICoreWebView2ExperimentalCompositionController2
           href: icorewebview2experimentalcompositioncontroller2.md
-        - name: ICoreWebView2ExperimentalCookie
-          href: icorewebview2experimentalcookie.md
-        - name: ICoreWebView2ExperimentalCookieList
-          href: icorewebview2experimentalcookielist.md
-        - name: ICoreWebView2ExperimentalCookieManager
-          href: icorewebview2experimentalcookiemanager.md
+        - name: ICoreWebView2ExperimentalCompositionController3
+          href: icorewebview2experimentalcompositioncontroller3.md
+        - name: ICoreWebView2ExperimentalController
+          href: icorewebview2experimentalcontroller.md
         - name: ICoreWebView2ExperimentalCreateCoreWebView2CompositionControllerCompletedHandler
           href: icorewebview2experimentalcreatecorewebview2compositioncontrollercompletedhandler.md
         - name: ICoreWebView2ExperimentalCursorChangedEventHandler
           href: icorewebview2experimentalcursorchangedeventhandler.md
-        - name: ICoreWebView2ExperimentalDOMContentLoadedEventArgs
-          href: icorewebview2experimentaldomcontentloadedeventargs.md
-        - name: ICoreWebView2ExperimentalDOMContentLoadedEventHandler
-          href: icorewebview2experimentaldomcontentloadedeventhandler.md
         - name: ICoreWebView2ExperimentalEnvironment
           href: icorewebview2experimentalenvironment.md
-        - name: ICoreWebView2ExperimentalGetCookiesCompletedHandler
-          href: icorewebview2experimentalgetcookiescompletedhandler.md
         - name: ICoreWebView2ExperimentalPointerInfo
           href: icorewebview2experimentalpointerinfo.md
-        - name: ICoreWebView2ExperimentalWebResourceResponseReceivedEventArgs
-          href: icorewebview2experimentalwebresourceresponsereceivedeventargs.md
-        - name: ICoreWebView2ExperimentalWebResourceResponseReceivedEventHandler
-          href: icorewebview2experimentalwebresourceresponsereceivedeventhandler.md
-        - name: ICoreWebView2ExperimentalWebResourceResponseView
-          href: icorewebview2experimentalwebresourceresponseview.md
-        - name: ICoreWebView2ExperimentalWebResourceResponseViewGetContentCompletedHandler
-          href: icorewebview2experimentalwebresourceresponseviewgetcontentcompletedhandler.md
+        - name: ICoreWebView2ExperimentalRasterizationScaleChangedEventHandler
+          href: icorewebview2experimentalrasterizationscalechangedeventhandler.md

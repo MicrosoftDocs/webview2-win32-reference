@@ -1,9 +1,9 @@
 ---
-description: This represents the WebView2 Environment.
+description: Represents the WebView2 Environment.
 title: WebView2 Win32 C++ ICoreWebView2Environment
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,17 +17,17 @@ interface ICoreWebView2Environment
   : public IUnknown
 ```
 
-This represents the WebView2 Environment.
+Represents the WebView2 Environment.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[add_NewBrowserVersionAvailable](#add_newbrowserversionavailable) | Add an event handler for the NewBrowserVersionAvailable event.
+[add_NewBrowserVersionAvailable](#add_newbrowserversionavailable) | Add an event handler for the `NewBrowserVersionAvailable` event.
 [CreateCoreWebView2Controller](#createcorewebview2controller) | Asynchronously create a new WebView.
 [CreateWebResourceResponse](#createwebresourceresponse) | Create a new web resource response object.
-[get_BrowserVersionString](#get_browserversionstring) | The browser version info of the current [ICoreWebView2Environment](), including channel name if it is not the stable channel.
-[remove_NewBrowserVersionAvailable](#remove_newbrowserversionavailable) | Remove an event handler previously added with add_NewBrowserVersionAvailable.
+[get_BrowserVersionString](#get_browserversionstring) | The browser version info of the current `[ICoreWebView2Environment]()`, including channel name if it is not the stable channel.
+[remove_NewBrowserVersionAvailable](#remove_newbrowserversionavailable) | Remove an event handler previously added with `add_NewBrowserVersionAvailable`.
 
 WebViews created from an environment run on the browser process specified with environment parameters and objects created from an environment should be used in the same environment. Using it in different environments are not guaranteed to be compatible and may fail.
 
@@ -35,13 +35,13 @@ WebViews created from an environment run on the browser process specified with e
 
 #### add_NewBrowserVersionAvailable 
 
-Add an event handler for the NewBrowserVersionAvailable event.
+Add an event handler for the `NewBrowserVersionAvailable` event.
 
 > public HRESULT [add_NewBrowserVersionAvailable](#add_newbrowserversionavailable)([ICoreWebView2NewBrowserVersionAvailableEventHandler](icorewebview2newbrowserversionavailableeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-NewBrowserVersionAvailable fires when a newer version of the Edge browser is installed and available for use via WebView2. To use the newer version of the browser you must create a new environment and WebView. This event will only be fired for new version from the same Edge channel that the code is running from. When not running with installed Edge, no event will be fired.
+`NewBrowserVersionAvailable` runs when a newer version of the WebView2 Runtime is installed and available using WebView2. To use the newer version of the browser you must create a new environment and WebView. The event only runs for new version from the same WebView2 Runtime from which the code is running. When not running with installed WebView2 Runtime, no event is run.
 
-Because a user data folder can only be used by one browser process at a time, if you want to use the same user data folder in the WebViews using the new version of the browser, you must close the environment and WebViews that are using the older version of the browser first. Or simply prompt the user to restart the app.
+Because a user data folder is only able to be used by one browser process at a time, if you want to use the same user data folder in the WebView using the new version of the browser, you must close the environment and instance of WebView that are using the older version of the browser first. Or simply prompt the user to restart the app.
 
 ```cpp
     // After the environment is successfully created,
@@ -86,9 +86,10 @@ Asynchronously create a new WebView.
 
 > public HRESULT [CreateCoreWebView2Controller](#createcorewebview2controller)(HWND parentWindow, [ICoreWebView2CreateCoreWebView2ControllerCompletedHandler](icorewebview2createcorewebview2controllercompletedhandler.md) * handler)
 
-parentWindow is the HWND in which the WebView should be displayed and from which receive input. The WebView will add a child window to the provided window during WebView creation. Z-order and other things impacted by sibling window order will be affected accordingly.
+`parentWindow` is the `HWND` in which the WebView should be displayed and from which receive input. The WebView adds a child window to the provided window during WebView creation. Z-order and other things impacted by sibling window order are affected accordingly.
 
-It is recommended that the application set Application User Model ID for the process or the application window. If none is set, during WebView creation a generated Application User Model ID is set to root window of parentWindow. 
+It is recommended that the app set Application User Model ID for the process or the app window. If none is set, during WebView creation a generated Application User Model ID is set to root window of `parentWindow`.
+
 ```cpp
 // Create or recreate the WebView and its environment.
 void AppWindow::InitializeWebView()
@@ -194,7 +195,8 @@ HRESULT AppWindow::OnCreateEnvironmentCompleted(
     return S_OK;
 }
 ```
- It is recommended that the application handles restart manager messages so that it can be restarted gracefully in the case when the app is using Edge for WebView from a certain installation and that installation is being uninstalled. For example, if a user installs Edge from Dev channel and opts to use Edge from that channel for testing the app, and then uninstalls Edge from that channel without closing the app, the app will be restarted to allow uninstallation of the dev channel to succeed. 
+ It is recommended that the app handles restart manager messages, to gracefully restart it in the case when the app is using the WebView2 Runtime from a certain installation and that installation is being uninstalled. For example, if a user installs a version of the WebView2 Runtime and opts to use another version of the WebView2 Runtime for testing the app, and then uninstalls the 1st version of the WebView2 Runtime without closing the app, the app restarts to allow un-installation to succeed.
+
 ```cpp
     case WM_QUERYENDSESSION:
     {
@@ -216,9 +218,9 @@ HRESULT AppWindow::OnCreateEnvironmentCompleted(
     }
     break;
 ```
- When the application retries CreateCoreWebView2Controller upon failure, it is recommended that the application restarts from creating a new WebView2 Environment. If an Edge update happens, the version associated with a WebView2 Environment could have been removed and causing the object to no longer work. Creating a new WebView2 Environment will work as it uses the latest version.
+ When the app retries `CreateCoreWebView2Controller` upon failure, it is recommended that the app restarts from creating a new WebView2 Environment. If an WebView2 Runtime update happens, the version associated with a WebView2 Environment may have been removed and causing the object to no longer work. Creating a new WebView2 Environment works since it uses the latest version.
 
-WebView creation will fail if there is already a running instance using the same user data folder, and the Environment objects have different EnvironmentOptions. For example, if there is already a WebView created with one language, trying to create a WebView with a different language using the same user data folder will fail.
+WebView creation fails if a running instance using the same user data folder exists, and the Environment objects have different `EnvironmentOptions`. For example, if a WebView was created with one language, an attempt to create a WebView with a different language using the same user data folder fails.
 
 #### CreateWebResourceResponse 
 
@@ -226,8 +228,7 @@ Create a new web resource response object.
 
 > public HRESULT [CreateWebResourceResponse](#createwebresourceresponse)(IStream * content, int statusCode, LPCWSTR reasonPhrase, LPCWSTR headers, [ICoreWebView2WebResourceResponse](icorewebview2webresourceresponse.md) ** response)
 
-The headers is the raw response header string delimited by newline. It's also possible to create this object with null headers string and then use the [ICoreWebView2HttpResponseHeaders](icorewebview2httpresponseheaders.md) to construct the headers line by line. For information on other parameters see [ICoreWebView2WebResourceResponse](icorewebview2webresourceresponse.md).
-
+The `headers` parameter is the raw response header string delimited by newline. It is also possible to create this object with null headers string and then use the `[ICoreWebView2HttpResponseHeaders](icorewebview2httpresponseheaders.md)` to construct the headers line by line. For more information about other parameters, navigate to [[ICoreWebView2WebResourceResponse](icorewebview2webresourceresponse.md)][MicrosoftEdgeWebview2ReferenceWin32Icorewebview2webresourceresponse] 
 ```cpp
         if (m_blockImages)
         {
@@ -248,10 +249,10 @@ The headers is the raw response header string delimited by newline. It's also po
                         // Override the response with an empty one to block the image.
                         // If put_Response is not called, the request will continue as normal.
                         wil::com_ptr<ICoreWebView2WebResourceResponse> response;
-                        wil::com_ptr<ICoreWebView2Experimental> m_webViewExperimental =
-                            m_webView.try_query<ICoreWebView2Experimental>();
                         wil::com_ptr<ICoreWebView2Environment> environment;
-                        CHECK_FAILURE(m_webViewExperimental->get_Environment(&environment));
+                        wil::com_ptr<ICoreWebView2_2> webview2;
+                        CHECK_FAILURE(m_webView->QueryInterface(IID_PPV_ARGS(&webview2)));
+                        CHECK_FAILURE(webview2->get_Environment(&environment));
                         CHECK_FAILURE(environment->CreateWebResourceResponse(
                             nullptr, 403 /*NoContent*/, L"Blocked", L"", &response));
                         CHECK_FAILURE(args->put_Response(response.get()));
@@ -266,14 +267,15 @@ The headers is the raw response header string delimited by newline. It's also po
                 m_webResourceRequestedTokenForImageBlocking));
         }
 ```
+ [MicrosoftEdgeWebview2ReferenceWin32Icorewebview2webresourceresponse]: /microsoft-edge/webview2/reference/win32/icorewebview2webresourceresponse "interface ICoreWebView2WebResourceResponse | Microsoft Docs"
 
 #### get_BrowserVersionString 
 
-The browser version info of the current [ICoreWebView2Environment](), including channel name if it is not the stable channel.
+The browser version info of the current `[ICoreWebView2Environment]()`, including channel name if it is not the stable channel.
 
 > public HRESULT [get_BrowserVersionString](#get_browserversionstring)(LPWSTR * versionInfo)
 
-This matches the format of the GetAvailableCoreWebView2BrowserVersionString API. Channel names are 'beta', 'dev', and 'canary'.
+It matches the format of the `GetAvailableCoreWebView2BrowserVersionString` API. Channel names are `beta`, `dev`, and `canary`.
 
 ```cpp
         wil::unique_cotaskmem_string version_info;
@@ -285,7 +287,7 @@ This matches the format of the GetAvailableCoreWebView2BrowserVersionString API.
 
 #### remove_NewBrowserVersionAvailable 
 
-Remove an event handler previously added with add_NewBrowserVersionAvailable.
+Remove an event handler previously added with `add_NewBrowserVersionAvailable`.
 
 > public HRESULT [remove_NewBrowserVersionAvailable](#remove_newbrowserversionavailable)(EventRegistrationToken token)
 

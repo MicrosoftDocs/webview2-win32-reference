@@ -1,9 +1,9 @@
 ---
-description: Event args for the SourceChanged event.
+description: Event args for the `SourceChanged` event.
 title: WebView2 Win32 C++ ICoreWebView2SourceChangedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,19 +17,19 @@ interface ICoreWebView2SourceChangedEventArgs
   : public IUnknown
 ```
 
-Event args for the SourceChanged event.
+Event args for the `SourceChanged` event.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_IsNewDocument](#get_isnewdocument) | True if the page being navigated to is a new document.
+[get_IsNewDocument](#get_isnewdocument) | `TRUE` if the page being navigated to is a new document.
 
 ## Members
 
 #### get_IsNewDocument 
 
-True if the page being navigated to is a new document.
+`TRUE` if the page being navigated to is a new document.
 
 > public HRESULT [get_IsNewDocument](#get_isnewdocument)(BOOL * isNewDocument)
 

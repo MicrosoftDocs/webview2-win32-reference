@@ -3,7 +3,7 @@ description: WebView2 Win32 C++ Reference
 title: WebView2 Win32 C++ Reference
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -21,7 +21,11 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 ## Interfaces
 
 *   [ICoreWebView2](icorewebview2.md)
+*   [ICoreWebView2_2](icorewebview2_2.md)
 *   [ICoreWebView2Controller](icorewebview2controller.md)
+*   [ICoreWebView2Cookie](icorewebview2cookie.md)
+*   [ICoreWebView2CookieList](icorewebview2cookielist.md)
+*   [ICoreWebView2CookieManager](icorewebview2cookiemanager.md)
 *   [ICoreWebView2Deferral](icorewebview2deferral.md)
 *   [ICoreWebView2DevToolsProtocolEventReceiver](icorewebview2devtoolsprotocoleventreceiver.md)
 *   [ICoreWebView2Environment](icorewebview2environment.md)
@@ -32,6 +36,7 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 *   [ICoreWebView2Settings](icorewebview2settings.md)
 *   [ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md)
 *   [ICoreWebView2WebResourceResponse](icorewebview2webresourceresponse.md)
+*   [ICoreWebView2WebResourceResponseView](icorewebview2webresourceresponseview.md)
 *   [ICoreWebView2WindowFeatures](icorewebview2windowfeatures.md)
 
 ### Event arguments
@@ -39,6 +44,7 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 *   [ICoreWebView2AcceleratorKeyPressedEventArgs](icorewebview2acceleratorkeypressedeventargs.md)
 *   [ICoreWebView2ContentLoadingEventArgs](icorewebview2contentloadingeventargs.md)
 *   [ICoreWebView2DevToolsProtocolEventReceivedEventArgs](icorewebview2devtoolsprotocoleventreceivedeventargs.md)
+*   [ICoreWebView2DOMContentLoadedEventArgs](icorewebview2domcontentloadedeventargs.md)
 *   [ICoreWebView2MoveFocusRequestedEventArgs](icorewebview2movefocusrequestedeventargs.md)
 *   [ICoreWebView2NavigationCompletedEventArgs](icorewebview2navigationcompletedeventargs.md)
 *   [ICoreWebView2NavigationStartingEventArgs](icorewebview2navigationstartingeventargs.md)
@@ -49,6 +55,7 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 *   [ICoreWebView2SourceChangedEventArgs](icorewebview2sourcechangedeventargs.md)
 *   [ICoreWebView2WebMessageReceivedEventArgs](icorewebview2webmessagereceivedeventargs.md)
 *   [ICoreWebView2WebResourceRequestedEventArgs](icorewebview2webresourcerequestedeventargs.md)
+*   [ICoreWebView2WebResourceResponseReceivedEventArgs](icorewebview2webresourceresponsereceivedeventargs.md)
 
 ### Delegates
 
@@ -62,8 +69,10 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 *   [ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler](icorewebview2createcorewebview2environmentcompletedhandler.md)
 *   [ICoreWebView2DevToolsProtocolEventReceivedEventHandler](icorewebview2devtoolsprotocoleventreceivedeventhandler.md)
 *   [ICoreWebView2DocumentTitleChangedEventHandler](icorewebview2documenttitlechangedeventhandler.md)
+*   [ICoreWebView2DOMContentLoadedEventHandler](icorewebview2domcontentloadedeventhandler.md)
 *   [ICoreWebView2ExecuteScriptCompletedHandler](icorewebview2executescriptcompletedhandler.md)
 *   [ICoreWebView2FocusChangedEventHandler](icorewebview2focuschangedeventhandler.md)
+*   [ICoreWebView2GetCookiesCompletedHandler](icorewebview2getcookiescompletedhandler.md)
 *   [ICoreWebView2HistoryChangedEventHandler](icorewebview2historychangedeventhandler.md)
 *   [ICoreWebView2MoveFocusRequestedEventHandler](icorewebview2movefocusrequestedeventhandler.md)
 *   [ICoreWebView2NavigationCompletedEventHandler](icorewebview2navigationcompletedeventhandler.md)
@@ -76,25 +85,20 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 *   [ICoreWebView2SourceChangedEventHandler](icorewebview2sourcechangedeventhandler.md)
 *   [ICoreWebView2WebMessageReceivedEventHandler](icorewebview2webmessagereceivedeventhandler.md)
 *   [ICoreWebView2WebResourceRequestedEventHandler](icorewebview2webresourcerequestedeventhandler.md)
+*   [ICoreWebView2WebResourceResponseReceivedEventHandler](icorewebview2webresourceresponsereceivedeventhandler.md)
+*   [ICoreWebView2WebResourceResponseViewGetContentCompletedHandler](icorewebview2webresourceresponseviewgetcontentcompletedhandler.md)
 *   [ICoreWebView2WindowCloseRequestedEventHandler](icorewebview2windowcloserequestedeventhandler.md)
 *   [ICoreWebView2ZoomFactorChangedEventHandler](icorewebview2zoomfactorchangedeventhandler.md)
 
 ### Experimental
 
-*   [ICoreWebView2Experimental](icorewebview2experimental.md)
+*   [ICoreWebView2Experimental2](icorewebview2experimental2.md)
 *   [ICoreWebView2ExperimentalCompositionController](icorewebview2experimentalcompositioncontroller.md)
 *   [ICoreWebView2ExperimentalCompositionController2](icorewebview2experimentalcompositioncontroller2.md)
-*   [ICoreWebView2ExperimentalCookie](icorewebview2experimentalcookie.md)
-*   [ICoreWebView2ExperimentalCookieList](icorewebview2experimentalcookielist.md)
-*   [ICoreWebView2ExperimentalCookieManager](icorewebview2experimentalcookiemanager.md)
+*   [ICoreWebView2ExperimentalCompositionController3](icorewebview2experimentalcompositioncontroller3.md)
+*   [ICoreWebView2ExperimentalController](icorewebview2experimentalcontroller.md)
 *   [ICoreWebView2ExperimentalCreateCoreWebView2CompositionControllerCompletedHandler](icorewebview2experimentalcreatecorewebview2compositioncontrollercompletedhandler.md)
 *   [ICoreWebView2ExperimentalCursorChangedEventHandler](icorewebview2experimentalcursorchangedeventhandler.md)
-*   [ICoreWebView2ExperimentalDOMContentLoadedEventArgs](icorewebview2experimentaldomcontentloadedeventargs.md)
-*   [ICoreWebView2ExperimentalDOMContentLoadedEventHandler](icorewebview2experimentaldomcontentloadedeventhandler.md)
 *   [ICoreWebView2ExperimentalEnvironment](icorewebview2experimentalenvironment.md)
-*   [ICoreWebView2ExperimentalGetCookiesCompletedHandler](icorewebview2experimentalgetcookiescompletedhandler.md)
 *   [ICoreWebView2ExperimentalPointerInfo](icorewebview2experimentalpointerinfo.md)
-*   [ICoreWebView2ExperimentalWebResourceResponseReceivedEventArgs](icorewebview2experimentalwebresourceresponsereceivedeventargs.md)
-*   [ICoreWebView2ExperimentalWebResourceResponseReceivedEventHandler](icorewebview2experimentalwebresourceresponsereceivedeventhandler.md)
-*   [ICoreWebView2ExperimentalWebResourceResponseView](icorewebview2experimentalwebresourceresponseview.md)
-*   [ICoreWebView2ExperimentalWebResourceResponseViewGetContentCompletedHandler](icorewebview2experimentalwebresourceresponseviewgetcontentcompletedhandler.md)
+*   [ICoreWebView2ExperimentalRasterizationScaleChangedEventHandler](icorewebview2experimentalrasterizationscalechangedeventhandler.md)

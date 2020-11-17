@@ -1,9 +1,9 @@
 ---
-description: Event args for the NavigationCompleted event.
+description: Event args for the `NavigationCompleted` event.
 title: WebView2 Win32 C++ ICoreWebView2NavigationCompletedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,13 +17,13 @@ interface ICoreWebView2NavigationCompletedEventArgs
   : public IUnknown
 ```
 
-Event args for the NavigationCompleted event.
+Event args for the `NavigationCompleted` event.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_IsSuccess](#get_issuccess) | True when the navigation is successful.
+[get_IsSuccess](#get_issuccess) | `TRUE` when the navigation is successful.
 [get_NavigationId](#get_navigationid) | The ID of the navigation.
 [get_WebErrorStatus](#get_weberrorstatus) | The error code if the navigation failed.
 
@@ -31,11 +31,11 @@ Event args for the NavigationCompleted event.
 
 #### get_IsSuccess 
 
-True when the navigation is successful.
+`TRUE` when the navigation is successful.
 
 > public HRESULT [get_IsSuccess](#get_issuccess)(BOOL * isSuccess)
 
-This is false for a navigation that ended up in an error page (failures due to no network, DNS lookup failure, HTTP server responds with 4xx), but could also be false for additional scenarios such as window.stop() called on navigated page.
+`FALSE` for a navigation that ended up in an error page (failures due to no network, DNS lookup failure, HTTP server responds with 4xx), but may also be `FALSE` for additional scenarios such as `window.stop()` run on navigated page.
 
 #### get_NavigationId 
 

@@ -3,7 +3,7 @@ description: WebView2 Win32 Globals
 title: Globals
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,9 +17,9 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
 [CompareBrowserVersions](#comparebrowserversions) | This method is for anyone want to compare version correctly to determine which version is newer, older or same.
-[CreateCoreWebView2Environment](#createcorewebview2environment) | Creates an evergreen WebView2 Environment using the installed Edge version.
-[CreateCoreWebView2EnvironmentWithOptions](#createcorewebview2environmentwithoptions) | DLL export to create a WebView2 environment with a custom version of Edge, user data directory and/or additional options.
-[GetAvailableCoreWebView2BrowserVersionString](#getavailablecorewebview2browserversionstring) | Get the browser version info including channel name if it is not the stable channel or the Embedded Edge.
+[CreateCoreWebView2Environment](#createcorewebview2environment) | Creates an evergreen WebView2 Environment using the installed WebView2 Runtime version.
+[CreateCoreWebView2EnvironmentWithOptions](#createcorewebview2environmentwithoptions) | DLL export to create a WebView2 environment with a custom version of WebView2 Runtime, user data folder with or without additional options.
+[GetAvailableCoreWebView2BrowserVersionString](#getavailablecorewebview2browserversionstring) | Get the browser version info including channel name if it is not the Stable channel or the Embedded Edge.
 
 ## Members
 
@@ -29,138 +29,130 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 
 This method is for anyone want to compare version correctly to determine which version is newer, older or same.
 
-It can be used to determine whether to use webview2 or certain feature base on version. Sets the value of result to -1, 0 or 1 if version1 is less than, equal or greater than version2 respectively. Returns E_INVALIDARG if it fails to parse any of the version strings or any input parameter is null. Input can directly use the versionInfo obtained from GetAvailableCoreWebView2BrowserVersionString, channel info will be ignored.
+Use it to determine whether to use webview2 or certain feature based upon version. Sets the value of result to `-1`, `0` or `1` if `version1` is less than, equal or greater than `version2` respectively. Returns `E_INVALIDARG` if it fails to parse any of the version strings or any input parameter is `null`. Directly use the `versionInfo` obtained from `GetAvailableCoreWebView2BrowserVersionString` with input, channel information is ignored.
 
 #### CreateCoreWebView2Environment 
 
 > public STDAPI [CreateCoreWebView2Environment](#createcorewebview2environment)(ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler * environmentCreatedHandler)
 
-Creates an evergreen WebView2 Environment using the installed Edge version.
+Creates an evergreen WebView2 Environment using the installed WebView2 Runtime version.
 
-This is equivalent to calling CreateCoreWebView2EnvironmentWithOptions with nullptr for browserExecutableFolder, userDataFolder, additionalBrowserArguments. See CreateCoreWebView2EnvironmentWithOptions for more details.
+This is equivalent to running `CreateCoreWebView2EnvironmentWithOptions` with `nullptr` for `browserExecutableFolder`, `userDataFolder`, `additionalBrowserArguments`. For more information, navigate to `CreateCoreWebView2EnvironmentWithOptions`.
 
 #### CreateCoreWebView2EnvironmentWithOptions 
 
 > public STDAPI [CreateCoreWebView2EnvironmentWithOptions](#createcorewebview2environmentwithoptions)(PCWSTR browserExecutableFolder, PCWSTR userDataFolder, [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md) * environmentOptions, [ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler](icorewebview2createcorewebview2environmentcompletedhandler.md) * environmentCreatedHandler)
 
-DLL export to create a WebView2 environment with a custom version of Edge, user data directory and/or additional options.
+DLL export to create a WebView2 environment with a custom version of WebView2 Runtime, user data folder with or without additional options.
 
-The WebView2 environment and all other WebView2 objects are single threaded and have dependencies on Windows components that require COM to be initialized for a single-threaded apartment. The application is expected to call CoInitializeEx before calling CreateCoreWebView2EnvironmentWithOptions.
+The WebView2 environment and all other WebView2 objects are single threaded and have dependencies on Windows components that require COM to be initialized for a single-threaded apartment. The app is expected to run `CoInitializeEx` before running `CreateCoreWebView2EnvironmentWithOptions`.
 
-```
+```text
 CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
 ```
 
-If CoInitializeEx was not called or has been previously called with COINIT_MULTITHREADED, CreateCoreWebView2EnvironmentWithOptions will fail with one of the following errors.
+If `CoInitializeEx` did not run or previously ran with `COINIT_MULTITHREADED`, `CreateCoreWebView2EnvironmentWithOptions` fails with one of the following errors.
 
-```
+```text
 CO_E_NOTINITIALIZED (if CoInitializeEx was not called)
 RPC_E_CHANGED_MODE  (if CoInitializeEx was previously called with
                      COINIT_MULTITHREADED)
 ```
 
-Use `browserExecutableFolder` to specify whether WebView2 controls use a fixed or installed version of the WebView2 Runtime that exists on a client machine. To use a fixed version of the WebView2 Runtime, pass the relative path of the folder that contains the fixed version of the WebView2 Runtime to `browserExecutableFolder`. To create WebView2 controls that use the installed version of the WebView2 Runtime that exists on client machines, pass a null or empty string to `browserExecutableFolder`. In this scenario, the API tries to find a compatible version of the WebView2 Runtime that is installed on the client machine (first at the machine level, and then per user) using the selected channel preference. The path of fixed version of the WebView2 Runtime should not contain `\Edge\Application\`. When such a path is used, the API will fail with ERROR_NOT_SUPPORTED.
+Use `browserExecutableFolder` to specify whether WebView2 controls use a fixed or installed version of the WebView2 Runtime that exists on a user machine. To use a fixed version of the WebView2 Runtime, pass the relative folder path that contains the fixed version of the WebView2 Runtime to `browserExecutableFolder`. To create WebView2 controls that use the installed version of the WebView2 Runtime that exists on user machines, pass a `null` or empty string to `browserExecutableFolder`. In this scenario, the API tries to find a compatible version of the WebView2 Runtime that is installed on the user machine (first at the machine level, and then per user) using the selected channel preference. The path of fixed version of the WebView2 Runtime should not contain `\Edge\Application\`. When such a path is used, the API fails with the following error.
 
-The default channel search order is the WebView2 Runtime, Beta, Dev, and Canary. When there is an override WEBVIEW2_RELEASE_CHANNEL_PREFERENCE environment variable or applicable releaseChannelPreference registry value with the value of 1, the channel search order is reversed.
-
-userDataFolder can be specified to change the default user data folder location for WebView2. The path can be an absolute file path or a relative file path that is interpreted as relative to the current process's executable. Otherwise, for UWP apps, the default user data folder will be the app data folder for the package; for non-UWP apps, the default user data folder `{Executable File Name}.WebView2` will be created in the same directory next to the app executable. WebView2 creation can fail if the executable is running in a directory that the process doesn't have permission to create a new folder in. The app is responsible to clean up its user data folder when it is done.
-
-Note that as a browser process might be shared among WebViews, WebView creation will fail with HRESULT_FROM_WIN32(ERROR_INVALID_STATE) if the specified options does not match the options of the WebViews that are currently running in the shared browser process.
-
-environmentCreatedHandler is the handler result to the async operation which will contain the WebView2Environment that got created.
-
-The browserExecutableFolder, userDataFolder and additionalBrowserArguments of the environmentOptions may be overridden by values either specified in environment variables or in the registry.
-
-When creating a WebView2Environment the following environment variables are checked:
-
+```text
+ERROR_NOT_SUPPORTED
 ```
+
+The default channel search order is the WebView2 Runtime, Beta, Dev, and Canary. When an override `WEBVIEW2_RELEASE_CHANNEL_PREFERENCE` environment variable or applicable `releaseChannelPreference` registry value is set to `1`, the channel search order is reversed.
+
+You may specify the `userDataFolder` to change the default user data folder location for WebView2. The path is either an absolute file path or a relative file path that is interpreted as relative to the compiled code for the current process. For UWP apps, the default user data folder is the app data folder for the package. For non-UWP apps, the default user data (`{Executable File Name}.WebView2`) folder is created in the same directory next to the compiled code for the app. WebView2 creation fails if the compiled code is running in a directory in which the process does not have permission to create a new directory. The app is responsible to clean up the associated user data folder when it is done.
+
+> [!NOTE] As a browser process may be shared among WebViews, WebView creation fails with `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)` if the specified options does not match the options of the WebViews that are currently running in the shared browser process.
+
+`environmentCreatedHandler` is the handler result to the async operation that contains the `WebView2Environment` that was created.
+
+The `browserExecutableFolder`, `userDataFolder` and `additionalBrowserArguments` of the `environmentOptions` may be overridden by values either specified in environment variables or in the registry.
+
+When creating a `WebView2Environment` the following environment variables are verified.
+
+```text
 WEBVIEW2_BROWSER_EXECUTABLE_FOLDER
 WEBVIEW2_USER_DATA_FOLDER
 WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS
 WEBVIEW2_RELEASE_CHANNEL_PREFERENCE
 ```
 
-If an override environment variable is found then we use the browserExecutableFolder and userDataFolder values as replacements for the corresponding values in CreateCoreWebView2EnvironmentWithOptions parameters. If additionalBrowserArguments specified in environment variable or in the registry, it will be appended to the correspinding values in CreateCoreWebView2EnvironmentWithOptions parameters.
+If you find an override environment variable, use the `browserExecutableFolder` and `userDataFolder` values as replacements for the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters. If `additionalBrowserArguments` is specified in environment variable or in the registry, it is appended to the correspinding values in `CreateCoreWebView2EnvironmentWithOptions` parameters.
 
-While not strictly overrides, there exists additional environment variables that can be set:
+While not strictly overrides, additional environment variables may be set.
 
-```
+```text
 WEBVIEW2_WAIT_FOR_SCRIPT_DEBUGGER
 ```
 
-When found with a non-empty value, this indicates that the WebView is being launched under a script debugger. In this case, the WebView will issue a `Page.waitForDebugger` CDP command that will cause script execution inside the WebView to pause on launch, until a debugger issues a corresponding `Runtime.runIfWaitingForDebugger` CDP command to resume execution. Note: There is no registry key equivalent of this environment variable.
+When found with a non-empty value, this indicates that the WebView is being launched under a script debugger. In this case, the WebView issues a `Page.waitForDebugger` CDP command that runs the script inside the WebView to pause on launch, until a debugger issues a corresponding `Runtime.runIfWaitingForDebugger` CDP command to resume the runtime.
 
-```
-WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER
-```
+> [!NOTE] The following environment variable does not have a registry key equivalent: `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER`.
 
-When found with a non-empty value, this indicates that the WebView is being launched under a script debugger that also supports host applications that use multiple WebViews. The value is used as the identifier for a named pipe that will be opened and written to when a new WebView is created by the host application. The payload will match that of the remote-debugging-port JSON target and can be used by the external debugger to attach to a specific WebView instance. The format of the pipe created by the debugger should be: `\\.\pipe\WebView2\Debugger\{app_name}\{pipe_name}` where:
+When found with a non-empty value, it indicates that the WebView is being launched under a script debugger that also supports host apps that use multiple WebViews. The value is used as the identifier for a named pipe that is opened and written to when a new WebView is created by the host app. The payload should match the payload of the `remote-debugging-port` JSON target and an external debugger may use it to attach to a specific WebView instance. The format of the pipe created by the debugger should be `\\.\pipe\WebView2\Debugger\{app_name}\{pipe_name}`, where the following are true.
 
-* `{app_name}` is the host application exe filename, e.g. WebView2Example.exe
+* `{app_name}` is the host app exe file name, for example, `WebView2Example.exe`
 
-* `{pipe_name}` is the value set for WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER.
+* `{pipe_name}` is the value set for `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER`
 
-To enable debugging of the targets identified by the JSON you will also need to set the WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS environment variable to send `--remote-debugging-port={port_num}` where:
+To enable debugging of the targets identified by the JSON ,you must set the `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variable to send `--remote-debugging-port={port_num}`, where the following is true.
 
-* `{port_num}` is the port on which the CDP server will bind.
+* `{port_num}` is the port on which the CDP server binds.
 
-Be aware that setting both the WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER and WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS environment variables will cause the WebViews hosted in your application and their contents to be exposed to 3rd party applications such as debuggers.
+> [!WARNING] If you set both `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER` and `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variables, the WebViews hosted in your app and associated contents may exposed to 3rd party apps such as debuggers.
 
-Note: There is no registry key equivalent of this environment variable.
+> [!NOTE] The following environment variable does not have a registry key equivalent: `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS`.
 
-If none of those environment variables exist, then the registry is examined next. The following registry values are checked:
+If none of those environment variables exist, then the registry is examined next. The following registry values are verified.
 
-```
-[{Root}]\Software\Policies\Microsoft\Edge\WebView2\browserExecutableFolder
+```text
+[{Root}]\Software\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder
 "{AppId}"=""
 
-[{Root}]\Software\Policies\Microsoft\Edge\WebView2\releaseChannelPreference
+[{Root}]\Software\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference
 "{AppId}"=""
 
-[{Root}]\Software\Policies\Microsoft\Edge\WebView2\additionalBrowserArguments
+[{Root}]\Software\Policies\Microsoft\Edge\WebView2\AdditionalBrowserArguments
 "{AppId}"=""
 
-[{Root}]\Software\Policies\Microsoft\Edge\WebView2\userDataFolder
+[{Root}]\Software\Policies\Microsoft\Edge\WebView2\UserDataFolder
 "{AppId}"=""
 ```
 
-browserExecutableFolder and releaseChannelPreference can be configured using group policy under Administrative Templates > Microsoft Edge WebView2. The old registry location will be deprecated soon:
+Use a group policy under **Administrative Templates** > **Microsoft Edge WebView2** to configure `browserExecutableFolder` and `releaseChannelPreference`.
 
-```
-[{Root}\Software\Policies\Microsoft\EmbeddedBrowserWebView\LoaderOverride\{AppId}]
-"releaseChannelPreference"=dword:00000000
-"browserExecutableFolder"=""
-"userDataFolder"=""
-"additionalBrowserArguments"=""
-```
+In the unlikely scenario where some instances of WebView are open during a browser update, the deletion of the previous WebView2 Runtime may be blocked. To avoid running out of disk space, a new WebView creation fails with the following error if it detects that too many previous WebView2 Runtime versions exist.
 
-In the unlikely scenario where some instances of WebView are open during a browser update we could end up blocking the deletion of old Edge browsers. To avoid running out of disk space a new WebView creation will fail with the next error if it detects that there are many old versions present.
-
-```
+```text
 ERROR_DISK_FULL
 ```
 
-The default maximum number of Edge versions allowed is 20.
+The default maximum number of WebView2 Runtime versions allowed is `20`. To override the maximum number of the previous WebView2 Runtime versions allowed, set the value of the following environment variable.
 
-The maximum number of old Edge versions allowed can be overwritten with the value of the following environment variable.
-
-```
+```text
 WEBVIEW2_MAX_INSTANCES
 ```
 
-If the Webview depends on an installed Edge and it is uninstalled any subsequent creation will fail with the next error
+If the Webview depends upon an installed WebView2 Runtime version and it is uninstalled, any subsequent creation fails with the following error.
 
-```
+```text
 ERROR_PRODUCT_UNINSTALLED
 ```
 
-First we check with Root as HKLM and then HKCU. AppId is first set to the Application User Model ID of the caller's process, then if there's no corresponding registry key the AppId is set to the executable name of the caller's process, or if that isn't a registry key then '*'. If an override registry key is found, then we use the browserExecutableFolder and userDataFolder registry values as replacements and append additionalBrowserArguments registry values for the corresponding values in CreateCoreWebView2EnvironmentWithOptions parameters.
+First verify with Root as `HKLM` and then `HKCU`. `AppId` is first set to the Application User Model ID of the process, then if no corresponding registry key, the `AppId` is set to the compiled code name of the process, or if that is not a registry key then `*`. If an override registry key is found, use the `browserExecutableFolder` and `userDataFolder` registry values as replacements and append `additionalBrowserArguments` registry values for the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters.
 
 #### GetAvailableCoreWebView2BrowserVersionString 
 
 > public STDAPI [GetAvailableCoreWebView2BrowserVersionString](#getavailablecorewebview2browserversionstring)(PCWSTR browserExecutableFolder, LPWSTR * versionInfo)
 
-Get the browser version info including channel name if it is not the stable channel or the Embedded Edge.
+Get the browser version info including channel name if it is not the Stable channel or the Embedded Edge.
 
-Channel names are beta, dev, and canary. If an override exists for the browserExecutableFolder or the channel preference, the override will be used. If there isn't an override, then the parameter passed to GetAvailableCoreWebView2BrowserVersionString is used.
+Channel names are Beta, Dev, and Canary. If an override exists for the `browserExecutableFolder` or the channel preference, the override is used. If an override is not specified, then the parameter value passed to `GetAvailableCoreWebView2BrowserVersionString` is used.
 

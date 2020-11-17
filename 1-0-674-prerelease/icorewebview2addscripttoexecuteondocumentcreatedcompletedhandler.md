@@ -1,9 +1,9 @@
 ---
-description: The caller implements this interface to receive the result of the AddScriptToExecuteOnDocumentCreated method.
+description: Receives the result of the `AddScriptToExecuteOnDocumentCreated` method.
 title: WebView2 Win32 C++ ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,19 +17,19 @@ interface ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive the result of the AddScriptToExecuteOnDocumentCreated method.
+Receives the result of the `AddScriptToExecuteOnDocumentCreated` method.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the completion status and result of the corresponding asynchronous method call.
+[Invoke](#invoke) | Provide the completion status and result of the corresponding asynchronous method.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the completion status and result of the corresponding asynchronous method call.
+Provide the completion status and result of the corresponding asynchronous method.
 
 > public HRESULT [Invoke](#invoke)(HRESULT errorCode, LPCWSTR id)
 

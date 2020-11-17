@@ -1,9 +1,9 @@
 ---
-description: This interface is used to complete deferrals on event args that support getting deferrals via their GetDeferral method.
+description: This interface is used to complete deferrals on event args that support getting deferrals using the `GetDeferral` method.
 title: WebView2 Win32 C++ ICoreWebView2Deferral
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,7 +17,7 @@ interface ICoreWebView2Deferral
   : public IUnknown
 ```
 
-This interface is used to complete deferrals on event args that support getting deferrals via their GetDeferral method.
+This interface is used to complete deferrals on event args that support getting deferrals using the `GetDeferral` method.
 
 ## Summary
 
@@ -33,5 +33,5 @@ Completes the associated deferred event.
 
 > public HRESULT [Complete](#complete)()
 
-Complete should only be called once for each deferral taken.
+Complete should only be run once for each deferral taken.
 

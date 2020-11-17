@@ -1,9 +1,9 @@
 ---
-description: The caller implements this interface to receive the CoreWebView2Controller created via CreateCoreWebView2Controller.
+description: Receives the `CoreWebView2Controller` created using `CreateCoreWebView2Controller`.
 title: WebView2 Win32 C++ ICoreWebView2CreateCoreWebView2ControllerCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,19 +17,19 @@ interface ICoreWebView2CreateCoreWebView2ControllerCompletedHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive the CoreWebView2Controller created via CreateCoreWebView2Controller.
+Receives the `CoreWebView2Controller` created using `CreateCoreWebView2Controller`.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the completion status and result of the corresponding asynchronous method call.
+[Invoke](#invoke) | Provides the completion status and result of the corresponding asynchronous method.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the completion status and result of the corresponding asynchronous method call.
+Provides the completion status and result of the corresponding asynchronous method.
 
 > public HRESULT [Invoke](#invoke)(HRESULT errorCode, [ICoreWebView2Controller](icorewebview2controller.md) * createdController)
 

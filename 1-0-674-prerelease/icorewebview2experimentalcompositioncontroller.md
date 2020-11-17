@@ -3,7 +3,7 @@ description: This interface is an extension of the ICoreWebView2Controller inter
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -34,13 +34,14 @@ This interface is an extension of the [ICoreWebView2Controller](icorewebview2con
 [remove_CursorChanged](#remove_cursorchanged) | Remove an event handler previously added with add_CursorChanged.
 [SendMouseInput](#sendmouseinput) | If eventKind is COREWEBVIEW2_MOUSE_EVENT_KIND_HORIZONTAL_WHEEL or COREWEBVIEW2_MOUSE_EVENT_KIND_WHEEL, then mouseData specifies the amount of wheel movement.
 [SendPointerInput](#sendpointerinput) | SendPointerInput accepts touch or pen pointer input of types defined in COREWEBVIEW2_POINTER_EVENT_KIND.
-[COREWEBVIEW2_COOKIE_SAME_SITE_KIND](#corewebview2_cookie_same_site_kind) | Kind of cookie SameSite status used in the ICoreWebView2ExperimentalCookie interface.
+[COREWEBVIEW2_BOUNDS_MODE](#corewebview2_bounds_mode) | Mode for how the Bounds property is interpreted in relation to the RasterizationScale property.
+[COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND](#corewebview2_host_resource_access_kind) | Kind of cross origin resource access allowed for host resources during download.
 [COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4) | Matrix that represents a 3D transform.
 [COREWEBVIEW2_MOUSE_EVENT_KIND](#corewebview2_mouse_event_kind) | Mouse event type used by SendMouseInput to convey the type of mouse event being sent to WebView.
 [COREWEBVIEW2_MOUSE_EVENT_VIRTUAL_KEYS](#corewebview2_mouse_event_virtual_keys) | Mouse event virtual keys associated with a COREWEBVIEW2_MOUSE_EVENT_KIND for SendMouseInput.
 [COREWEBVIEW2_POINTER_EVENT_KIND](#corewebview2_pointer_event_kind) | Pointer event type used by SendPointerInput to convey the type of pointer event being sent to WebView.
 
-An object implementing the ICoreWebView2ExperimentalCompositionController interface will also implement [ICoreWebView2Controller](icorewebview2controller.md). Callers are expected to use [ICoreWebView2Controller](icorewebview2controller.md) for resizing, visibility, focus, and so on, and then use ICoreWebView2ExperimentalCompositionController to connect to a composition tree and provide input meant for the WebView.
+An object implementing the [ICoreWebView2ExperimentalCompositionController](#icorewebview2experimentalcompositioncontroller) interface will also implement [ICoreWebView2Controller](icorewebview2controller.md). Callers are expected to use [ICoreWebView2Controller](icorewebview2controller.md) for resizing, visibility, focus, and so on, and then use [ICoreWebView2ExperimentalCompositionController](#icorewebview2experimentalcompositioncontroller) to connect to a composition tree and provide input meant for the WebView.
 
 ## Members
 
@@ -290,19 +291,34 @@ SendPointerInput accepts touch or pen pointer input of types defined in COREWEBV
 
 Any pointer input from the system must be converted into an [ICoreWebView2ExperimentalPointerInfo](icorewebview2experimentalpointerinfo.md) first.
 
-#### COREWEBVIEW2_COOKIE_SAME_SITE_KIND 
+#### COREWEBVIEW2_BOUNDS_MODE 
 
-Kind of cookie SameSite status used in the [ICoreWebView2ExperimentalCookie](icorewebview2experimentalcookie.md) interface.
+Mode for how the Bounds property is interpreted in relation to the RasterizationScale property.
 
-> enum [COREWEBVIEW2_COOKIE_SAME_SITE_KIND](#corewebview2_cookie_same_site_kind)
+> enum [COREWEBVIEW2_BOUNDS_MODE](#corewebview2_bounds_mode)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_COOKIE_SAME_SITE_KIND_NONE            | None SameSite type. No restrictions on cross-site requests.
-COREWEBVIEW2_COOKIE_SAME_SITE_KIND_LAX            | Lax SameSite type. The cookie will be sent with "same-site" requests, and with "cross-site" top level navigation.
-COREWEBVIEW2_COOKIE_SAME_SITE_KIND_STRICT            | Strict SameSite type. The cookie will only be sent along with "same-site" requests.
+COREWEBVIEW2_USE_RAW_PIXELS            | Bounds property represents raw pixels. Physical size of Webview is not impacted by RasterizationScale.
+COREWEBVIEW2_USE_RASTERIZATION_SCALE            | Bounds property represents logicl pixels and the RasterizationScale property is used to get the physical size of the WebView.
 
-These fields match those as specified in [https://developer.mozilla.org/docs/Web/HTTP/Cookies#](https://developer.mozilla.org/docs/Web/HTTP/Cookies#). Learn more about SameSite cookies here: [https://tools.ietf.org/html/draft-west-first-party-cookies-07](https://tools.ietf.org/html/draft-west-first-party-cookies-07)
+#### COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND 
+
+Kind of cross origin resource access allowed for host resources during download.
+
+> enum [COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND](#corewebview2_host_resource_access_kind)
+
+ Values                         | Descriptions
+--------------------------------|---------------------------------------------
+COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY            | All cross origin resource access is denied, including normal sub resource access as src of a script or image element.
+COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_ALLOW            | All cross origin resource access is allowed, including accesses that are subject to Cross-Origin Resource Sharing(CORS) check.
+COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY_CORS            | Cross origin resource access is allowed for normal sub resource access like as src of a script or image element, while any access that subjects to CORS check will be denied.
+
+Note that other normal access checks like same origin DOM access check and [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) still apply. The following table illustrates the host resource cross origin access according to access context and `COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND`. 
+Cross Origin Access Context  |DENY  |ALLOW  |DENY_CORS
+--------- | --------- | --------- | ---------
+From DOM like src of img, script or iframe element  |Deny  |Allow  |Allow
+From Script like Fetch or XMLHttpRequest  |Deny  |Allow  |Deny
 
 #### COREWEBVIEW2_MATRIX_4X4 
 

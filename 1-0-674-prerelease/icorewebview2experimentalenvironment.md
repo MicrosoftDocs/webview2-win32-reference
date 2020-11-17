@@ -3,7 +3,7 @@ description: This interface is an extension of the ICoreWebView2Environment.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironment
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -27,7 +27,7 @@ This interface is an extension of the [ICoreWebView2Environment](icorewebview2en
 --------------------------------|---------------------------------------------
 [CreateCoreWebView2CompositionController](#createcorewebview2compositioncontroller) | Asynchronously create a new WebView for use with visual hosting.
 [CreateCoreWebView2PointerInfo](#createcorewebview2pointerinfo) | Create an empty [ICoreWebView2ExperimentalPointerInfo](icorewebview2experimentalpointerinfo.md).
-[CreateWebResourceRequest](#createwebresourcerequest) | Create a new web resource request object.
+[CreateWebResourceRequestDeprecated](#createwebresourcerequestdeprecated) | Create a new web resource request object.
 [GetProviderForHwnd](#getproviderforhwnd) | Returns the UI Automation Provider for the ICoreWebView2CompositionController that corresponds with the given HWND.
 
 An object implementing the [ICoreWebView2ExperimentalEnvironment]() interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
@@ -181,29 +181,29 @@ Create an empty [ICoreWebView2ExperimentalPointerInfo](icorewebview2experimental
 
 The returned [ICoreWebView2ExperimentalPointerInfo](icorewebview2experimentalpointerinfo.md) needs to be populated with all of the relevant info before calling SendPointerInput.
 
-#### CreateWebResourceRequest 
+#### CreateWebResourceRequestDeprecated 
 
 Create a new web resource request object.
 
-> public HRESULT [CreateWebResourceRequest](#createwebresourcerequest)(LPCWSTR uri, LPCWSTR method, IStream * postData, LPCWSTR headers, [ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md) ** request)
+> public HRESULT [CreateWebResourceRequestDeprecated](#createwebresourcerequestdeprecated)(LPCWSTR uri, LPCWSTR method, IStream * postData, LPCWSTR headers, [ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md) ** request)
 
 URI parameter must be absolute URI. The headers string is the raw request header string delimited by CRLF (optional in last header). It's also possible to create this object with null headers string and then use the [ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md) to construct the headers line by line. For information on other parameters see [ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md).
 
 ```cpp
-        wil::com_ptr<ICoreWebView2Experimental> webviewExperimental;
-        CHECK_FAILURE(appWindow->GetWebView()->QueryInterface(IID_PPV_ARGS(&webviewExperimental)));
-        wil::com_ptr<ICoreWebView2ExperimentalEnvironment> webviewEnvironmentExperimental;
+        wil::com_ptr<ICoreWebView2Environment2> webviewEnvironment2;
         CHECK_FAILURE(appWindow->GetWebViewEnvironment()->QueryInterface(
-            IID_PPV_ARGS(&webviewEnvironmentExperimental)));
+            IID_PPV_ARGS(&webviewEnvironment2)));
         wil::com_ptr<ICoreWebView2WebResourceRequest> webResourceRequest;
         wil::com_ptr<IStream> postDataStream = SHCreateMemStream(
             reinterpret_cast<const BYTE*>(postDataBytes.get()), sizeNeededForMultiByte);
 
         // This is acts as a form submit to https://www.w3schools.com/action_page.php
-        CHECK_FAILURE(webviewEnvironmentExperimental->CreateWebResourceRequest(
+        CHECK_FAILURE(webviewEnvironment2->CreateWebResourceRequest(
             L"https://www.w3schools.com/action_page.php", L"POST", postDataStream.get(),
             L"Content-Type: application/x-www-form-urlencoded", &webResourceRequest));
-        CHECK_FAILURE(webviewExperimental->NavigateWithWebResourceRequest(webResourceRequest.get()));
+        wil::com_ptr<ICoreWebView2_2> webview2;
+        CHECK_FAILURE(m_appWindow->GetWebView()->QueryInterface(IID_PPV_ARGS(&webview2)));
+        CHECK_FAILURE(webview2->NavigateWithWebResourceRequest(webResourceRequest.get()));
 ```
 
 #### GetProviderForHwnd 

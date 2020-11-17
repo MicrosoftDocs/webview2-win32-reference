@@ -3,7 +3,7 @@ description: Iterator for a collection of HTTP headers.
 title: WebView2 Win32 C++ ICoreWebView2HttpHeadersCollectionIterator
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -23,12 +23,11 @@ Iterator for a collection of HTTP headers.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_HasCurrentHeader](#get_hascurrentheader) | True when the iterator hasn't run out of headers.
+[get_HasCurrentHeader](#get_hascurrentheader) | `TRUE` when the iterator has not run out of headers.
 [GetCurrentHeader](#getcurrentheader) | Get the name and value of the current HTTP header of the iterator.
 [MoveNext](#movenext) | Move the iterator to the next HTTP header in the collection.
 
-See [ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md) and [ICoreWebView2HttpResponseHeaders](icorewebview2httpresponseheaders.md).
-
+For more information, navigate to [[ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md)][MicrosoftEdgeWebview2ReferenceWin32Icorewebview2httprequestheaders] and [[ICoreWebView2HttpResponseHeaders](icorewebview2httpresponseheaders.md)][MicrosoftEdgeWebview2ReferenceWin32Icorewebview2httpresponseheaders] 
 ```cpp
 std::wstring RequestHeadersToJsonString(ICoreWebView2HttpRequestHeaders* requestHeaders)
 {
@@ -57,16 +56,17 @@ std::wstring RequestHeadersToJsonString(ICoreWebView2HttpRequestHeaders* request
     return result + L"]";
 }
 ```
+ [MicrosoftEdgeWebview2ReferenceWin32Icorewebview2httprequestheaders]: /microsoft-edge/webview2/reference/win32/icorewebview2httprequestheaders "interface ICoreWebView2HttpRequestHeaders | Microsoft Docs" [MicrosoftEdgeWebview2ReferenceWin32Icorewebview2httpresponseheaders]: /microsoft-edge/webview2/reference/win32/icorewebview2httpresponseheaders "interface ICoreWebView2HttpResponseHeaders | Microsoft Docs"
 
 ## Members
 
 #### get_HasCurrentHeader 
 
-True when the iterator hasn't run out of headers.
+`TRUE` when the iterator has not run out of headers.
 
 > public HRESULT [get_HasCurrentHeader](#get_hascurrentheader)(BOOL * hasCurrent)
 
-If the collection over which the iterator is iterating is empty or if the iterator has gone past the end of the collection then this is false.
+If the collection over which the iterator is iterating is empty or if the iterator has gone past the end of the collection then this is `FALSE`.
 
 #### GetCurrentHeader 
 
@@ -74,7 +74,7 @@ Get the name and value of the current HTTP header of the iterator.
 
 > public HRESULT [GetCurrentHeader](#getcurrentheader)(LPWSTR * name, LPWSTR * value)
 
-This method will fail if the last call to MoveNext set hasNext to FALSE.
+If the previous `MoveNext` operation set the `hasNext` parameter to `FALSE`, this method fails.
 
 #### MoveNext 
 
@@ -82,5 +82,5 @@ Move the iterator to the next HTTP header in the collection.
 
 > public HRESULT [MoveNext](#movenext)(BOOL * hasNext)
 
-The hasNext parameter will be set to FALSE if there are no more HTTP headers. After this occurs the GetCurrentHeader method will fail if called.
+> [!NOTE] If no more HTTP headers exist, the `hasNext` parameter is set to `FALSE`. After this occurs the `GetCurrentHeader` method fails.
 

@@ -1,9 +1,9 @@
 ---
-description: The caller implements this interface to receive the HistoryChanged event.
+description: Receives `HistoryChanged` events.
 title: WebView2 Win32 C++ ICoreWebView2HistoryChangedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,19 +17,21 @@ interface ICoreWebView2HistoryChangedEventHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive the HistoryChanged event.
+Receives `HistoryChanged` events.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | There are no event args and the args parameter will be null.
+[Invoke](#invoke) | Provides the event args for the corresponding event.
 
 ## Members
 
 #### Invoke 
 
-There are no event args and the args parameter will be null.
+Provides the event args for the corresponding event.
 
 > public HRESULT [Invoke](#invoke)([ICoreWebView2](icorewebview2.md) * sender, IUnknown * args)
+
+No event args exist and the `args` parameter is set to `null`.
 

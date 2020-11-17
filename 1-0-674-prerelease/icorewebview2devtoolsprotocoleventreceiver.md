@@ -3,7 +3,7 @@ description: A Receiver is created for a particular DevTools Protocol event and 
 title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceiver
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -23,20 +23,20 @@ A Receiver is created for a particular DevTools Protocol event and allows you to
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[add_DevToolsProtocolEventReceived](#add_devtoolsprotocoleventreceived) | Subscribe to a DevToolsProtocol event.
-[remove_DevToolsProtocolEventReceived](#remove_devtoolsprotocoleventreceived) | Remove an event handler previously added with add_DevToolsProtocolEventReceived.
+[add_DevToolsProtocolEventReceived](#add_devtoolsprotocoleventreceived) | Subscribe to a `DevToolsProtocol` event.
+[remove_DevToolsProtocolEventReceived](#remove_devtoolsprotocoleventreceived) | Remove an event handler previously added with `add_DevToolsProtocolEventReceived`.
 
-Obtained from the WebView object via GetDevToolsProtocolEventReceiver.
+Obtained from the WebView object using `GetDevToolsProtocolEventReceiver`.
 
 ## Members
 
 #### add_DevToolsProtocolEventReceived 
 
-Subscribe to a DevToolsProtocol event.
+Subscribe to a `DevToolsProtocol` event.
 
 > public HRESULT [add_DevToolsProtocolEventReceived](#add_devtoolsprotocoleventreceived)([ICoreWebView2DevToolsProtocolEventReceivedEventHandler](icorewebview2devtoolsprotocoleventreceivedeventhandler.md) * handler, EventRegistrationToken * token)
 
-The handler's Invoke method will be called whenever the corresponding DevToolsProtocol event fires. Invoke will be called with an event args object containing the DevTools Protocol event's parameter object as a JSON string.
+The `Invoke` method of the `handler` runs whenever the corresponding `DevToolsProtocol` event runs. `Invoke` runs with an event args object containing the parameter object of the DevTools Protocol event as a JSON string.
 
 ```cpp
 // Prompt the user to name a CDP event, and then subscribe to that event.
@@ -85,7 +85,7 @@ void ScriptComponent::SubscribeToCdpEvent()
 
 #### remove_DevToolsProtocolEventReceived 
 
-Remove an event handler previously added with add_DevToolsProtocolEventReceived.
+Remove an event handler previously added with `add_DevToolsProtocolEventReceived`.
 
 > public HRESULT [remove_DevToolsProtocolEventReceived](#remove_devtoolsprotocoleventreceived)(EventRegistrationToken token)
 

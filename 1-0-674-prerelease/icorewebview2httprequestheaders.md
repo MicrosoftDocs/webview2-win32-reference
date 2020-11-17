@@ -3,7 +3,7 @@ description: HTTP request headers.
 title: WebView2 Win32 C++ ICoreWebView2HttpRequestHeaders
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -23,20 +23,22 @@ HTTP request headers.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Contains](#contains) | Checks whether the headers contain an entry matching the header name.
+[Contains](#contains) | Verifies that the headers contain an entry that matches the header name.
 [GetHeader](#getheader) | Gets the header value matching the name.
-[GetHeaders](#getheaders) | Gets the header value matching the name via an iterator.
+[GetHeaders](#getheaders) | Gets the header value matching the name using an iterator.
 [GetIterator](#getiterator) | Gets an iterator over the collection of request headers.
 [RemoveHeader](#removeheader) | Removes header that matches the name.
 [SetHeader](#setheader) | Adds or updates header that matches the name.
 
-Used to inspect the HTTP request on WebResourceRequested event and NavigationStarting event. Note, you can modify the HTTP request headers from a WebResourceRequested event, but not from a NavigationStarting event.
+Used to inspect the HTTP request on `WebResourceRequested` event and `NavigationStarting` event.
+
+> [!NOTE] It is possible to modify the HTTP request from a `WebResourceRequested` event, but not from a `NavigationStarting` event.
 
 ## Members
 
 #### Contains 
 
-Checks whether the headers contain an entry matching the header name.
+Verifies that the headers contain an entry that matches the header name.
 
 > public HRESULT [Contains](#contains)(LPCWSTR name, BOOL * contains)
 
@@ -48,7 +50,7 @@ Gets the header value matching the name.
 
 #### GetHeaders 
 
-Gets the header value matching the name via an iterator.
+Gets the header value matching the name using an iterator.
 
 > public HRESULT [GetHeaders](#getheaders)(LPCWSTR name, [ICoreWebView2HttpHeadersCollectionIterator](icorewebview2httpheaderscollectioniterator.md) ** iterator)
 

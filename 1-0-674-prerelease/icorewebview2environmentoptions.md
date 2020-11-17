@@ -3,7 +3,7 @@ description: Options used to create WebView2 Environment.
 title: WebView2 Win32 C++ ICoreWebView2EnvironmentOptions
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -23,16 +23,16 @@ Options used to create WebView2 Environment.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_AdditionalBrowserArguments](#get_additionalbrowserarguments) | AdditionalBrowserArguments can be specified to change the behavior of the WebView.
-[get_AllowSingleSignOnUsingOSPrimaryAccount](#get_allowsinglesignonusingosprimaryaccount) | The AllowSingleSignOnUsingOSPrimaryAccount property is used to enable single sign on with Azure Active Directory (AAD) resources inside WebView using the logged in Windows account and single sign on with web sites using Microsoft account associated with the login in Windows account.
-[get_Language](#get_language) | The default language that WebView will run with.
-[get_TargetCompatibleBrowserVersion](#get_targetcompatiblebrowserversion) | The version of the Edge WebView2 Runtime binaries required to be compatible with the calling application.
-[put_AdditionalBrowserArguments](#put_additionalbrowserarguments) | Set the AdditionalBrowserArguments property.
-[put_AllowSingleSignOnUsingOSPrimaryAccount](#put_allowsinglesignonusingosprimaryaccount) | Set the AllowSingleSignOnUsingOSPrimaryAccount property.
-[put_Language](#put_language) | Set the Language property.
-[put_TargetCompatibleBrowserVersion](#put_targetcompatiblebrowserversion) | Set the TargetCompatibleBrowserVersion property.
+[get_AdditionalBrowserArguments](#get_additionalbrowserarguments) | Changes the behavior of the WebView.
+[get_AllowSingleSignOnUsingOSPrimaryAccount](#get_allowsinglesignonusingosprimaryaccount) | The `AllowSingleSignOnUsingOSPrimaryAccount` property is used to enable single sign on with Azure Active Directory (AAD) resources inside WebView2 using the logged in Windows account and single sign on (SSO) with web sites using Microsoft account associated with the login in Windows account.
+[get_Language](#get_language) | The default display language for WebView.
+[get_TargetCompatibleBrowserVersion](#get_targetcompatiblebrowserversion) | Specifies the version of the WebView2 Runtime binaries required to be compatible with your app.
+[put_AdditionalBrowserArguments](#put_additionalbrowserarguments) | Sets the `AdditionalBrowserArguments` property.
+[put_AllowSingleSignOnUsingOSPrimaryAccount](#put_allowsinglesignonusingosprimaryaccount) | Sets the `AllowSingleSignOnUsingOSPrimaryAccount` property.
+[put_Language](#put_language) | Sets the `Language` property.
+[put_TargetCompatibleBrowserVersion](#put_targetcompatiblebrowserversion) | Sets the `TargetCompatibleBrowserVersion` property.
 
-A default implementation is provided in WebView2EnvironmentOptions.h.
+A default implementation is provided in `WebView2EnvironmentOptions.h`.
 
 ```cpp
     auto options = Microsoft::WRL::Make<CoreWebView2EnvironmentOptions>();
@@ -51,57 +51,68 @@ A default implementation is provided in WebView2EnvironmentOptions.h.
 
 #### get_AdditionalBrowserArguments 
 
-AdditionalBrowserArguments can be specified to change the behavior of the WebView.
+Changes the behavior of the WebView.
 
 > public HRESULT [get_AdditionalBrowserArguments](#get_additionalbrowserarguments)(LPWSTR * value)
 
-These will be passed to the browser process as part of the command line. See [Run Chromium with Flags](https://aka.ms/RunChromiumWithFlags) for more information about command line switches to browser process. If the app is launched with a command line switch `--edge-webview-switches=xxx` the value of that switch (xxx in the above example) will also be appended to the browser process command line. Certain switches like `--user-data-dir` are internal and important to WebView. Those switches will be ignored even if specified. If the same switches are specified multiple times, the last one wins. There is no attempt to merge the different values of the same switch, except for disabled and enabled features. The features specified by `--enable-features` and `--disable-features` will be merged with simple logic: the features will be the union of the specified features and built-in features, and if a feature is disabled, it will be removed from the enabled features list. App process's command line `--edge-webview-switches` value are processed after the additionalBrowserArguments parameter is processed. Certain features are disabled internally and can't be enabled. If parsing failed for the specified switches, they will be ignored. Default is to run browser process with no extra flags.
+The arguments are passed to the browser process as part of the command. For more information about using command-line switches with Chromium browser processes, navigate to [Run Chromium with Flags][ChromiumDevelopersHowTosRunWithFlags] . The value appended to a switch is appended to the browser process, for example, in `--edge-webview-switches=xxx` the value is `xxx`. If you specify a switch that is important to WebView functionality, it is ignored, for example, `--user-data-dir`. Specific features are disabled internally and blocked from being enabled. If a switch is specified multiple times, only the last instance is used.
+
+> [!NOTE] A merge of the different values of the same switch is not attempted, except for disabled and enabled features. The features specified by `--enable-features` and `--disable-features` are merged with simple logic.<br/>
+> * The features is the union of the specified features and built-in features. If a feature is disabled, it is removed from the enabled features list.
+
+If you specify command-line switches and use the `additionalBrowserArguments` parameter, the `--edge-webview-switches` value takes precedence and is processed last. If a switch fails to parse, the switched is ignored. The default state for the operation is to run the browser process with no extra flags.
+
+[ChromiumDevelopersHowTosRunWithFlags]: [https://www.chromium.org/developers/how-tos/run-chromium-with-flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) "Run Chromium with flags | The Chromium Projects"
 
 #### get_AllowSingleSignOnUsingOSPrimaryAccount 
 
-The AllowSingleSignOnUsingOSPrimaryAccount property is used to enable single sign on with Azure Active Directory (AAD) resources inside WebView using the logged in Windows account and single sign on with web sites using Microsoft account associated with the login in Windows account.
+The `AllowSingleSignOnUsingOSPrimaryAccount` property is used to enable single sign on with Azure Active Directory (AAD) resources inside WebView2 using the logged in Windows account and single sign on (SSO) with web sites using Microsoft account associated with the login in Windows account.
 
 > public HRESULT [get_AllowSingleSignOnUsingOSPrimaryAccount](#get_allowsinglesignonusingosprimaryaccount)(BOOL * allow)
 
-Default is disabled. Universal Windows Platform apps must also declare enterpriseCloudSSO [restricted capability](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) for the single sign on to work.
+Default is disabled. Universal Windows Platform apps must also declare `enterpriseCloudSSO` [Restricted capabilities][WindowsUwpPackagingAppCapabilityDeclarationsRestrictedCapabilities] for the single sign on (SSO) to work.
+
+[WindowsUwpPackagingAppCapabilityDeclarationsRestrictedCapabilities]: /windows/uwp/packaging/app-capability-declarations#restricted-capabilities "Restricted capabilities - App capability declarations | Microsoft Docs"
 
 #### get_Language 
 
-The default language that WebView will run with.
+The default display language for WebView.
 
 > public HRESULT [get_Language](#get_language)(LPWSTR * value)
 
-It applies to browser UIs like context menu and dialogs. It also applies to the accept-languages HTTP header that WebView sends to web sites. It is in the format of `language[-country]` where `language` is the 2 letter code from ISO 639 and `country` is the 2 letter code from ISO 3166.
+It applies to browser UI such as context menu and dialogs. It also applies to the `accept-languages` HTTP header that WebView sends to websites. It is in the format of `language[-country]` where `language` is the 2-letter code from
+
+[ISO 639][ISO639LanguageCodesHtml] and `country` is the 2-letter code from [ISO 3166][ISOStandard72482Html] [ISO639LanguageCodesHtml]: [https://www.iso.org/iso-639-language-codes.html](https://www.iso.org/iso-639-language-codes.html) "ISO 639 | ISO" [ISOStandard72482Html]: [https://www.iso.org/standard/72482.html](https://www.iso.org/standard/72482.html) "ISO 3166-1:2020 | ISO"
 
 #### get_TargetCompatibleBrowserVersion 
 
-The version of the Edge WebView2 Runtime binaries required to be compatible with the calling application.
+Specifies the version of the WebView2 Runtime binaries required to be compatible with your app.
 
 > public HRESULT [get_TargetCompatibleBrowserVersion](#get_targetcompatiblebrowserversion)(LPWSTR * value)
 
-This defaults to the Edge WebView2 Runtime version that corresponds with the version of the SDK the application is using. The format of this value is the same as the format of the BrowserVersionString property and other BrowserVersion values. Only the version part of the BrowserVersion value is respected. The channel suffix, if it exists, is ignored. The version of the Edge WebView2 Runtime binaries actually used may be different from the specified TargetCompatibleBrowserVersion. They are only guaranteed to be compatible. You can check the actual version on the BrowserVersionString property on the ICoreWebView2Environment.
+This defaults to the WebView2 Runtime version that corresponds with the version of the SDK the app is using. The format of this value is the same as the format of the `BrowserVersionString` property and other `BrowserVersion` values. Only the version part of the `BrowserVersion` value is respected. The channel suffix, if it exists, is ignored. The version of the WebView2 Runtime binaries actually used may be different from the specified `TargetCompatibleBrowserVersion`. The binaries are only guaranteed to be compatible. Verify the actual version on the `BrowserVersionString` property on the `ICoreWebView2Environment`.
 
 #### put_AdditionalBrowserArguments 
 
-Set the AdditionalBrowserArguments property.
+Sets the `AdditionalBrowserArguments` property.
 
 > public HRESULT [put_AdditionalBrowserArguments](#put_additionalbrowserarguments)(LPCWSTR value)
 
 #### put_AllowSingleSignOnUsingOSPrimaryAccount 
 
-Set the AllowSingleSignOnUsingOSPrimaryAccount property.
+Sets the `AllowSingleSignOnUsingOSPrimaryAccount` property.
 
 > public HRESULT [put_AllowSingleSignOnUsingOSPrimaryAccount](#put_allowsinglesignonusingosprimaryaccount)(BOOL allow)
 
 #### put_Language 
 
-Set the Language property.
+Sets the `Language` property.
 
 > public HRESULT [put_Language](#put_language)(LPCWSTR value)
 
 #### put_TargetCompatibleBrowserVersion 
 
-Set the TargetCompatibleBrowserVersion property.
+Sets the `TargetCompatibleBrowserVersion` property.
 
 > public HRESULT [put_TargetCompatibleBrowserVersion](#put_targetcompatiblebrowserversion)(LPCWSTR value)
 

@@ -1,9 +1,9 @@
 ---
-description: An HTTP response used with the WebResourceRequested event.
+description: An HTTP response used with the `WebResourceRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceResponse
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,7 +17,7 @@ interface ICoreWebView2WebResourceResponse
   : public IUnknown
 ```
 
-An HTTP response used with the WebResourceRequested event.
+An HTTP response used with the `WebResourceRequested` event.
 
 ## Summary
 
@@ -27,9 +27,9 @@ An HTTP response used with the WebResourceRequested event.
 [get_Headers](#get_headers) | Overridden HTTP response headers.
 [get_ReasonPhrase](#get_reasonphrase) | The HTTP response reason phrase.
 [get_StatusCode](#get_statuscode) | The HTTP response status code.
-[put_Content](#put_content) | Set the Content property.
-[put_ReasonPhrase](#put_reasonphrase) | Set the ReasonPhrase property.
-[put_StatusCode](#put_statuscode) | Set the StatusCode property.
+[put_Content](#put_content) | Sets the `Content` property.
+[put_ReasonPhrase](#put_reasonphrase) | Sets the `ReasonPhrase` property.
+[put_StatusCode](#put_statuscode) | Sets the `StatusCode` property.
 
 ## Members
 
@@ -39,7 +39,7 @@ HTTP response content as stream.
 
 > public HRESULT [get_Content](#get_content)(IStream ** content)
 
-Stream must have all the content data available by the time this response's WebResourceRequested event deferral is completed. Stream should be agile or be created from a background thread to prevent performance impact to the UI thread. Null means no content data. IStream semantics apply (return S_OK to Read calls until all data is exhausted).
+Stream must have all the content data available by the time the `WebResourceRequested` event deferral of this response is completed. Stream should be agile or be created from a background thread to prevent performance impact to the UI thread. `Null` means no content data. `IStream` semantics apply (return `S_OK` to `Read` runs until all data is exhausted).
 
 #### get_Headers 
 
@@ -61,19 +61,19 @@ The HTTP response status code.
 
 #### put_Content 
 
-Set the Content property.
+Sets the `Content` property.
 
 > public HRESULT [put_Content](#put_content)(IStream * content)
 
 #### put_ReasonPhrase 
 
-Set the ReasonPhrase property.
+Sets the `ReasonPhrase` property.
 
 > public HRESULT [put_ReasonPhrase](#put_reasonphrase)(LPCWSTR reasonPhrase)
 
 #### put_StatusCode 
 
-Set the StatusCode property.
+Sets the `StatusCode` property.
 
 > public HRESULT [put_StatusCode](#put_statuscode)(int statusCode)
 

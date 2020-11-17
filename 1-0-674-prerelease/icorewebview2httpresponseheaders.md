@@ -3,7 +3,7 @@ description: HTTP response headers.
 title: WebView2 Win32 C++ ICoreWebView2HttpResponseHeaders
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -24,12 +24,12 @@ HTTP response headers.
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
 [AppendHeader](#appendheader) | Appends header line with name and value.
-[Contains](#contains) | Checks whether the headers contain entries matching the header name.
+[Contains](#contains) | Verifies that the headers contain entries that match the header name.
 [GetHeader](#getheader) | Gets the first header value in the collection matching the name.
 [GetHeaders](#getheaders) | Gets the header values matching the name.
 [GetIterator](#getiterator) | Gets an iterator over the collection of entire response headers.
 
-Used to construct a WebResourceResponse for the WebResourceRequested event.
+Used to construct a `WebResourceResponse` for the `WebResourceRequested` event.
 
 ## Members
 
@@ -41,7 +41,7 @@ Appends header line with name and value.
 
 #### Contains 
 
-Checks whether the headers contain entries matching the header name.
+Verifies that the headers contain entries that match the header name.
 
 > public HRESULT [Contains](#contains)(LPCWSTR name, BOOL * contains)
 

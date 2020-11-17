@@ -1,9 +1,9 @@
 ---
-description: WebView2 enables you to host web content using the latest Edge web browser technology.
+description: WebView2 enables you to host web content using the latest Microsoft Edge browser and web technology.
 title: WebView2 Win32 C++ ICoreWebView2
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,90 +17,91 @@ interface ICoreWebView2
   : public IUnknown
 ```
 
-WebView2 enables you to host web content using the latest Edge web browser technology.
+WebView2 enables you to host web content using the latest Microsoft Edge browser and web technology.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[add_ContainsFullScreenElementChanged](#add_containsfullscreenelementchanged) | Add an event handler for the ContainsFullScreenElementChanged event.
-[add_ContentLoading](#add_contentloading) | Add an event handler for the ContentLoading event.
-[add_DocumentTitleChanged](#add_documenttitlechanged) | Add an event handler for the DocumentTitleChanged event.
-[add_FrameNavigationCompleted](#add_framenavigationcompleted) | Add an event handler for the FrameNavigationCompleted event.
-[add_FrameNavigationStarting](#add_framenavigationstarting) | Add an event handler for the FrameNavigationStarting event.
-[add_HistoryChanged](#add_historychanged) | Add an event handler for the HistoryChanged event.
-[add_NavigationCompleted](#add_navigationcompleted) | Add an event handler for the NavigationCompleted event.
-[add_NavigationStarting](#add_navigationstarting) | Add an event handler for the NavigationStarting event.
-[add_NewWindowRequested](#add_newwindowrequested) | Add an event handler for the NewWindowRequested event.
-[add_PermissionRequested](#add_permissionrequested) | Add an event handler for the PermissionRequested event.
-[add_ProcessFailed](#add_processfailed) | Add an event handler for the ProcessFailed event.
-[add_ScriptDialogOpening](#add_scriptdialogopening) | Add an event handler for the ScriptDialogOpening event.
-[add_SourceChanged](#add_sourcechanged) | Add an event handler for the SourceChanged event.
-[add_WebMessageReceived](#add_webmessagereceived) | Add an event handler for the WebMessageReceived event.
-[add_WebResourceRequested](#add_webresourcerequested) | Add an event handler for the WebResourceRequested event.
-[add_WindowCloseRequested](#add_windowcloserequested) | Add an event handler for the WindowCloseRequested event.
+[add_ContainsFullScreenElementChanged](#add_containsfullscreenelementchanged) | Add an event handler for the `ContainsFullScreenElementChanged` event.
+[add_ContentLoading](#add_contentloading) | Add an event handler for the `ContentLoading` event.
+[add_DocumentTitleChanged](#add_documenttitlechanged) | Add an event handler for the `DocumentTitleChanged` event.
+[add_FrameNavigationCompleted](#add_framenavigationcompleted) | Add an event handler for the `FrameNavigationCompleted` event.
+[add_FrameNavigationStarting](#add_framenavigationstarting) | Add an event handler for the `FrameNavigationStarting` event.
+[add_HistoryChanged](#add_historychanged) | Add an event handler for the `HistoryChanged` event.
+[add_NavigationCompleted](#add_navigationcompleted) | Add an event handler for the `NavigationCompleted` event.
+[add_NavigationStarting](#add_navigationstarting) | Add an event handler for the `NavigationStarting` event.
+[add_NewWindowRequested](#add_newwindowrequested) | Add an event handler for the `NewWindowRequested` event.
+[add_PermissionRequested](#add_permissionrequested) | Add an event handler for the `PermissionRequested` event.
+[add_ProcessFailed](#add_processfailed) | Add an event handler for the `ProcessFailed` event.
+[add_ScriptDialogOpening](#add_scriptdialogopening) | Add an event handler for the `ScriptDialogOpening` event.
+[add_SourceChanged](#add_sourcechanged) | Add an event handler for the `SourceChanged` event.
+[add_WebMessageReceived](#add_webmessagereceived) | Add an event handler for the `WebMessageReceived` event.
+[add_WebResourceRequested](#add_webresourcerequested) | Add an event handler for the `WebResourceRequested` event.
+[add_WindowCloseRequested](#add_windowcloserequested) | Add an event handler for the `WindowCloseRequested` event.
 [AddHostObjectToScript](#addhostobjecttoscript) | Add the provided host object to script running in the WebView with the specified name.
-[AddScriptToExecuteOnDocumentCreated](#addscripttoexecuteondocumentcreated) | Add the provided JavaScript to a list of scripts that should be executed after the global object has been created, but before the HTML document has been parsed and before any other script included by the HTML document is executed.
-[AddWebResourceRequestedFilter](#addwebresourcerequestedfilter) | Adds a URI and resource context filter to the WebResourceRequested event.
-[CallDevToolsProtocolMethod](#calldevtoolsprotocolmethod) | Call an asynchronous DevToolsProtocol method.
+[AddScriptToExecuteOnDocumentCreated](#addscripttoexecuteondocumentcreated) | Add the provided JavaScript to a list of scripts that should be run after the global object has been created, but before the HTML document has been parsed and before any other script included by the HTML document is run.
+[AddWebResourceRequestedFilter](#addwebresourcerequestedfilter) | Adds a URI and resource context filter to the `WebResourceRequested` event.
+[CallDevToolsProtocolMethod](#calldevtoolsprotocolmethod) | Runs an asynchronous `DevToolsProtocol` method.
 [CapturePreview](#capturepreview) | Capture an image of what WebView is displaying.
-[ExecuteScript](#executescript) | Execute JavaScript code from the javascript parameter in the current top level document rendered in the WebView.
-[get_BrowserProcessId](#get_browserprocessid) | The process id of the browser process that hosts the WebView.
-[get_CanGoBack](#get_cangoback) | Returns true if the WebView can navigate to a previous page in the navigation history.
-[get_CanGoForward](#get_cangoforward) | Returns true if the WebView can navigate to a next page in the navigation history.
+[ExecuteScript](#executescript) | Run JavaScript code from the javascript parameter in the current top-level document rendered in the WebView.
+[get_BrowserProcessId](#get_browserprocessid) | The process ID of the browser process that hosts the WebView.
+[get_CanGoBack](#get_cangoback) | `TRUE` if the WebView is able to navigate to a previous page in the navigation history.
+[get_CanGoForward](#get_cangoforward) | `TRUE` if the WebView is able to navigate to a next page in the navigation history.
 [get_ContainsFullScreenElement](#get_containsfullscreenelement) | Indicates if the WebView contains a fullscreen HTML element.
-[get_DocumentTitle](#get_documenttitle) | The title for the current top level document.
-[get_Settings](#get_settings) | The [ICoreWebView2Settings](icorewebview2settings.md) object contains various modifiable settings for the running WebView.
+[get_DocumentTitle](#get_documenttitle) | The title for the current top-level document.
+[get_Settings](#get_settings) | The `[ICoreWebView2Settings](icorewebview2settings.md)` object contains various modifiable settings for the running WebView.
 [get_Source](#get_source) | The URI of the current top level document.
 [GetDevToolsProtocolEventReceiver](#getdevtoolsprotocoleventreceiver) | Get a DevTools Protocol event receiver that allows you to subscribe to a DevTools Protocol event.
 [GoBack](#goback) | Navigates the WebView to the previous page in the navigation history.
 [GoForward](#goforward) | Navigates the WebView to the next page in the navigation history.
-[Navigate](#navigate) | Cause a navigation of the top level document to the specified URI.
+[Navigate](#navigate) | Cause a navigation of the top-level document to run to the specified URI.
 [NavigateToString](#navigatetostring) | Initiates a navigation to htmlContent as source HTML of a new document.
 [OpenDevToolsWindow](#opendevtoolswindow) | Opens the DevTools window for the current document in the WebView.
 [PostWebMessageAsJson](#postwebmessageasjson) | Post the specified webMessage to the top level document in this WebView.
-[PostWebMessageAsString](#postwebmessageasstring) | This is a helper for posting a message that is a simple string rather than a JSON string representation of a JavaScript object.
+[PostWebMessageAsString](#postwebmessageasstring) | Posts a message that is a simple string rather than a JSON string representation of a JavaScript object.
 [Reload](#reload) | Reload the current page.
-[remove_ContainsFullScreenElementChanged](#remove_containsfullscreenelementchanged) | Remove an event handler previously added with add_ContainsFullScreenElementChanged.
-[remove_ContentLoading](#remove_contentloading) | Remove an event handler previously added with add_ContentLoading.
-[remove_DocumentTitleChanged](#remove_documenttitlechanged) | Remove an event handler previously added with add_DocumentTitleChanged.
-[remove_FrameNavigationCompleted](#remove_framenavigationcompleted) | Remove an event handler previously added with add_FrameNavigationCompleted.
-[remove_FrameNavigationStarting](#remove_framenavigationstarting) | Remove an event handler previously added with add_FrameNavigationStarting.
-[remove_HistoryChanged](#remove_historychanged) | Remove an event handler previously added with add_HistoryChanged.
-[remove_NavigationCompleted](#remove_navigationcompleted) | Remove an event handler previously added with add_NavigationCompleted.
-[remove_NavigationStarting](#remove_navigationstarting) | Remove an event handler previously added with add_NavigationStarting.
-[remove_NewWindowRequested](#remove_newwindowrequested) | Remove an event handler previously added with add_NewWindowRequested.
-[remove_PermissionRequested](#remove_permissionrequested) | Remove an event handler previously added with add_PermissionRequested.
+[remove_ContainsFullScreenElementChanged](#remove_containsfullscreenelementchanged) | Remove an event handler previously added with `add_ContainsFullScreenElementChanged`.
+[remove_ContentLoading](#remove_contentloading) | Remove an event handler previously added with `add_ContentLoading`.
+[remove_DocumentTitleChanged](#remove_documenttitlechanged) | Remove an event handler previously added with `add_DocumentTitleChanged`.
+[remove_FrameNavigationCompleted](#remove_framenavigationcompleted) | Remove an event handler previously added with `add_FrameNavigationCompleted`.
+[remove_FrameNavigationStarting](#remove_framenavigationstarting) | Remove an event handler previously added with `add_FrameNavigationStarting`.
+[remove_HistoryChanged](#remove_historychanged) | Remove an event handler previously added with `add_HistoryChanged`.
+[remove_NavigationCompleted](#remove_navigationcompleted) | Remove an event handler previously added with `add_NavigationCompleted`.
+[remove_NavigationStarting](#remove_navigationstarting) | Remove an event handler previously added with `add_NavigationStarting`.
+[remove_NewWindowRequested](#remove_newwindowrequested) | Remove an event handler previously added with `add_NewWindowRequested`.
+[remove_PermissionRequested](#remove_permissionrequested) | Remove an event handler previously added with `add_PermissionRequested`.
 [remove_ProcessFailed](#remove_processfailed) | Remove an event handler previously added with add_ProcessFailed.
-[remove_ScriptDialogOpening](#remove_scriptdialogopening) | Remove an event handler previously added with add_ScriptDialogOpening.
-[remove_SourceChanged](#remove_sourcechanged) | Remove an event handler previously added with add_SourceChanged.
-[remove_WebMessageReceived](#remove_webmessagereceived) | Remove an event handler previously added with add_WebMessageReceived.
-[remove_WebResourceRequested](#remove_webresourcerequested) | Remove an event handler previously added with add_WebResourceRequested.
-[remove_WindowCloseRequested](#remove_windowcloserequested) | Remove an event handler previously added with add_WindowCloseRequested.
+[remove_ScriptDialogOpening](#remove_scriptdialogopening) | Remove an event handler previously added with `add_ScriptDialogOpening`.
+[remove_SourceChanged](#remove_sourcechanged) | Remove an event handler previously added with `add_SourceChanged`.
+[remove_WebMessageReceived](#remove_webmessagereceived) | Remove an event handler previously added with `add_WebMessageReceived`.
+[remove_WebResourceRequested](#remove_webresourcerequested) | Remove an event handler previously added with `add_WebResourceRequested`.
+[remove_WindowCloseRequested](#remove_windowcloserequested) | Remove an event handler previously added with `add_WindowCloseRequested`.
 [RemoveHostObjectFromScript](#removehostobjectfromscript) | Remove the host object specified by the name so that it is no longer accessible from JavaScript code in the WebView.
-[RemoveScriptToExecuteOnDocumentCreated](#removescripttoexecuteondocumentcreated) | Remove the corresponding JavaScript added using `AddScriptToExecuteOnDocumentCreated` with the specified script id.
-[RemoveWebResourceRequestedFilter](#removewebresourcerequestedfilter) | Removes a matching WebResource filter that was previously added for the WebResourceRequested event.
-[Stop](#stop) | Stop all navigations and pending resource fetches.
-[COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT](#corewebview2_capture_preview_image_format) | Image format used by the ICoreWebView2::CapturePreview method.
-[COREWEBVIEW2_KEY_EVENT_KIND](#corewebview2_key_event_kind) | The type of key event that triggered an AcceleratorKeyPressed event.
-[COREWEBVIEW2_MOVE_FOCUS_REASON](#corewebview2_move_focus_reason) | Reason for moving focus.
-[COREWEBVIEW2_PERMISSION_KIND](#corewebview2_permission_kind) | The type of a permission request.
-[COREWEBVIEW2_PERMISSION_STATE](#corewebview2_permission_state) | Response to a permission request.
-[COREWEBVIEW2_PHYSICAL_KEY_STATUS](#corewebview2_physical_key_status) | A structure representing the information packed into the LPARAM given to a Win32 key event.
-[COREWEBVIEW2_PROCESS_FAILED_KIND](#corewebview2_process_failed_kind) | Kind of process failure used in the ICoreWebView2ProcessFailedEventHandler interface.
-[COREWEBVIEW2_SCRIPT_DIALOG_KIND](#corewebview2_script_dialog_kind) | Kind of JavaScript dialog used in the ICoreWebView2ScriptDialogOpeningEventHandler interface.
-[COREWEBVIEW2_WEB_ERROR_STATUS](#corewebview2_web_error_status) | Error status values for web navigations.
-[COREWEBVIEW2_WEB_RESOURCE_CONTEXT](#corewebview2_web_resource_context) | Enum for web resource request contexts.
+[RemoveScriptToExecuteOnDocumentCreated](#removescripttoexecuteondocumentcreated) | Remove the corresponding JavaScript added using `AddScriptToExecuteOnDocumentCreated` with the specified script ID.
+[RemoveWebResourceRequestedFilter](#removewebresourcerequestedfilter) | Removes a matching WebResource filter that was previously added for the `WebResourceRequested` event.
+[Stop](#stop) | Stop all navigations and pending resource fetches. Does not stop scripts.
+[COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT](#corewebview2_capture_preview_image_format) | Specifies the image format for the `[ICoreWebView2::CapturePreview](#capturepreview)` method.
+[COREWEBVIEW2_COOKIE_SAME_SITE_KIND](#corewebview2_cookie_same_site_kind) | Kind of cookie SameSite status used in the ICoreWebView2Cookie interface.
+[COREWEBVIEW2_KEY_EVENT_KIND](#corewebview2_key_event_kind) | Specifies the key event type that triggered an `AcceleratorKeyPressed` event.
+[COREWEBVIEW2_MOVE_FOCUS_REASON](#corewebview2_move_focus_reason) | Specifies the reason for moving focus.
+[COREWEBVIEW2_PERMISSION_KIND](#corewebview2_permission_kind) | Indicates the type of a permission request.
+[COREWEBVIEW2_PERMISSION_STATE](#corewebview2_permission_state) | Specifies the response to a permission request.
+[COREWEBVIEW2_PHYSICAL_KEY_STATUS](#corewebview2_physical_key_status) | Contains the information packed into the `LPARAM` sent to a Win32 key event.
+[COREWEBVIEW2_PROCESS_FAILED_KIND](#corewebview2_process_failed_kind) | Specifies the process failure type used in the `ICoreWebView2ProcessFailedEventHandler` interface.
+[COREWEBVIEW2_SCRIPT_DIALOG_KIND](#corewebview2_script_dialog_kind) | Specifies the JavaScript dialog type used in the `ICoreWebView2ScriptDialogOpeningEventHandler` interface.
+[COREWEBVIEW2_WEB_ERROR_STATUS](#corewebview2_web_error_status) | Indicates the error status values for web navigations.
+[COREWEBVIEW2_WEB_RESOURCE_CONTEXT](#corewebview2_web_resource_context) | Specifies the web resource request contexts.
 
 ## Members
 
 #### add_ContainsFullScreenElementChanged 
 
-Add an event handler for the ContainsFullScreenElementChanged event.
+Add an event handler for the `ContainsFullScreenElementChanged` event.
 
 > public HRESULT [add_ContainsFullScreenElementChanged](#add_containsfullscreenelementchanged)([ICoreWebView2ContainsFullScreenElementChangedEventHandler](icorewebview2containsfullscreenelementchangedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-ContainsFullScreenElementChanged fires when the ContainsFullScreenElement property changes. This means that an HTML element inside the WebView is entering fullscreen to the size of the WebView or leaving fullscreen. This event is useful when, for example, a video element requests to go fullscreen. The listener of ContainsFullScreenElementChanged can then resize the WebView in response.
+`ContainsFullScreenElementChanged` triggers when the `ContainsFullScreenElement` property changes. An HTML element inside the WebView may enter fullscreen to the size of the WebView or leave fullscreen. This event is useful when, for example, a video element requests to go fullscreen. The listener of `ContainsFullScreenElementChanged` may resize the WebView in response.
 
 ```cpp
     // Register a handler for the ContainsFullScreenChanged event.
@@ -128,19 +129,19 @@ ContainsFullScreenElementChanged fires when the ContainsFullScreenElement proper
 
 #### add_ContentLoading 
 
-Add an event handler for the ContentLoading event.
+Add an event handler for the `ContentLoading` event.
 
 > public HRESULT [add_ContentLoading](#add_contentloading)([ICoreWebView2ContentLoadingEventHandler](icorewebview2contentloadingeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-ContentLoading fires before any content is loaded, including scripts added with AddScriptToExecuteOnDocumentCreated. ContentLoading will not fire if a same page navigation occurs (such as through fragment navigations or history.pushState navigations). This follows the NavigationStarting and SourceChanged events and precedes the HistoryChanged and NavigationCompleted events.
+`ContentLoading` triggers before any content is loaded, including scripts added with `AddScriptToExecuteOnDocumentCreated`. `ContentLoading` does not trigger if a same page navigation occurs (such as through `fragment` navigations or `history.pushState` navigations). This operation follows the `NavigationStarting` and `SourceChanged` events and precedes the `HistoryChanged` and `NavigationCompleted` events.
 
 #### add_DocumentTitleChanged 
 
-Add an event handler for the DocumentTitleChanged event.
+Add an event handler for the `DocumentTitleChanged` event.
 
 > public HRESULT [add_DocumentTitleChanged](#add_documenttitlechanged)([ICoreWebView2DocumentTitleChangedEventHandler](icorewebview2documenttitlechangedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-DocumentTitleChanged fires when the DocumentTitle property of the WebView changes and may fire before or after the NavigationCompleted event.
+`DocumentTitleChanged` runs when the `DocumentTitle` property of the WebView changes and may run before or after the `NavigationCompleted` event.
 
 ```cpp
     // Register a handler for the DocumentTitleChanged event.
@@ -159,11 +160,11 @@ DocumentTitleChanged fires when the DocumentTitle property of the WebView change
 
 #### add_FrameNavigationCompleted 
 
-Add an event handler for the FrameNavigationCompleted event.
+Add an event handler for the `FrameNavigationCompleted` event.
 
 > public HRESULT [add_FrameNavigationCompleted](#add_framenavigationcompleted)([ICoreWebView2NavigationCompletedEventHandler](icorewebview2navigationcompletedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-FrameNavigationCompleted fires when a child frame has completely loaded (body.onload has fired) or loading stopped with error.
+`FrameNavigationCompleted` triggers when a child frame has completely loaded (`body.onload` has triggered) or loading stopped with error.
 
 ```cpp
     // Register a handler for the FrameNavigationCompleted event.
@@ -198,13 +199,13 @@ FrameNavigationCompleted fires when a child frame has completely loaded (body.on
 
 #### add_FrameNavigationStarting 
 
-Add an event handler for the FrameNavigationStarting event.
+Add an event handler for the `FrameNavigationStarting` event.
 
 > public HRESULT [add_FrameNavigationStarting](#add_framenavigationstarting)([ICoreWebView2NavigationStartingEventHandler](icorewebview2navigationstartingeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-FrameNavigationStarting fires when a child frame in the WebView requests permission to navigate to a different URI. This will fire for redirects as well.
+`FrameNavigationStarting` triggers when a child frame in the WebView requests permission to navigate to a different URI. Redirects trigger this operation as well.
 
-Corresponding navigations can be blocked until the event handler returns.
+You may block corresponding navigations until the event handler returns.
 
 ```cpp
     // Register a handler for the FrameNavigationStarting event.
@@ -227,11 +228,11 @@ Corresponding navigations can be blocked until the event handler returns.
 
 #### add_HistoryChanged 
 
-Add an event handler for the HistoryChanged event.
+Add an event handler for the `HistoryChanged` event.
 
 > public HRESULT [add_HistoryChanged](#add_historychanged)([ICoreWebView2HistoryChangedEventHandler](icorewebview2historychangedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-HistoryChanged listens to the change of navigation history for the top level document. Use HistoryChanged to check if CanGoBack/CanGoForward value has changed. HistoryChanged also fires for using GoBack/GoForward. HistoryChanged fires after SourceChanged and ContentLoading.
+`HistoryChanged` listens to the change of navigation history for the top level document. Use `HistoryChanged` to verify that the `CanGoBack` or `CanGoForward` value has changed. `HistoryChanged` also runs for using `GoBack`or `GoForward`. `HistoryChanged` runs after `SourceChanged` and `ContentLoading`.
 
 ```cpp
     // Register a handler for the HistoryChanged event.
@@ -254,11 +255,11 @@ HistoryChanged listens to the change of navigation history for the top level doc
 
 #### add_NavigationCompleted 
 
-Add an event handler for the NavigationCompleted event.
+Add an event handler for the `NavigationCompleted` event.
 
 > public HRESULT [add_NavigationCompleted](#add_navigationcompleted)([ICoreWebView2NavigationCompletedEventHandler](icorewebview2navigationcompletedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-NavigationCompleted fires when the WebView has completely loaded (body.onload has fired) or loading stopped with error.
+`NavigationCompleted` runs when the WebView has completely loaded (`body.onload` runs) or loading stopped with error.
 
 ```cpp
     // Register a handler for the NavigationCompleted event.
@@ -291,13 +292,13 @@ NavigationCompleted fires when the WebView has completely loaded (body.onload ha
 
 #### add_NavigationStarting 
 
-Add an event handler for the NavigationStarting event.
+Add an event handler for the `NavigationStarting` event.
 
 > public HRESULT [add_NavigationStarting](#add_navigationstarting)([ICoreWebView2NavigationStartingEventHandler](icorewebview2navigationstartingeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-NavigationStarting fires when the WebView main frame is requesting permission to navigate to a different URI. This will fire for redirects as well.
+`NavigationStarting` runs when the WebView main frame is requesting permission to navigate to a different URI. Redirects trigger this operation as well.
 
-Corresponding navigations can be blocked until the event handler returns.
+You may block corresponding navigations until the event handler returns.
 
 ```cpp
     // Register a handler for the NavigationStarting event.
@@ -343,13 +344,13 @@ Corresponding navigations can be blocked until the event handler returns.
 
 #### add_NewWindowRequested 
 
-Add an event handler for the NewWindowRequested event.
+Add an event handler for the `NewWindowRequested` event.
 
 > public HRESULT [add_NewWindowRequested](#add_newwindowrequested)([ICoreWebView2NewWindowRequestedEventHandler](icorewebview2newwindowrequestedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-NewWindowRequested fires when content inside the WebView requests to open a new window, such as through window.open. The app can pass a target WebView that will be considered the opened window.
+`NewWindowRequested` runs when content inside the WebView requests to open a new window, such as through `window.open`. The app passes a target WebView that is considered the opened window.
 
-Scripts resulted in the new window requested can be blocked until the event handler returns if a deferral is not taken on the event args. If a deferral is taken, then scripts are blocked until the deferral is completed.
+If a deferral is not taken on the event args, scripts that resulted in the new window that are requested are blocked until the event handler returns. If a deferral is taken, then scripts are blocked until the deferral is completed.
 
 ```cpp
     // Register a handler for the NewWindowRequested event.
@@ -418,13 +419,13 @@ Scripts resulted in the new window requested can be blocked until the event hand
 
 #### add_PermissionRequested 
 
-Add an event handler for the PermissionRequested event.
+Add an event handler for the `PermissionRequested` event.
 
 > public HRESULT [add_PermissionRequested](#add_permissionrequested)([ICoreWebView2PermissionRequestedEventHandler](icorewebview2permissionrequestedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-PermissionRequested fires when content in a WebView requests permission to access some privileged resources.
+`PermissionRequested` runs when content in a WebView requests permission to access some privileged resources.
 
-If a deferral is not taken on the event args, the subsequent scripts can be blocked until the event handler returns. If a deferral is taken, then the scripts are blocked until the deferral is completed.
+If a deferral is not taken on the event args, the subsequent scripts are blocked until the event handler returns. If a deferral is taken, the scripts are blocked until the deferral is completed.
 
 ```cpp
     // Register a handler for the PermissionRequested event.
@@ -467,11 +468,11 @@ If a deferral is not taken on the event args, the subsequent scripts can be bloc
 
 #### add_ProcessFailed 
 
-Add an event handler for the ProcessFailed event.
+Add an event handler for the `ProcessFailed` event.
 
 > public HRESULT [add_ProcessFailed](#add_processfailed)([ICoreWebView2ProcessFailedEventHandler](icorewebview2processfailedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-ProcessFailed fires when a WebView process is terminated unexpectedly or becomes unresponsive.
+`ProcessFailed` runs when a WebView process ends unexpectedly or becomes unresponsive.
 
 ```cpp
     // Register a handler for the ProcessFailed event.
@@ -524,13 +525,13 @@ ProcessFailed fires when a WebView process is terminated unexpectedly or becomes
 
 #### add_ScriptDialogOpening 
 
-Add an event handler for the ScriptDialogOpening event.
+Add an event handler for the `ScriptDialogOpening` event.
 
 > public HRESULT [add_ScriptDialogOpening](#add_scriptdialogopening)([ICoreWebView2ScriptDialogOpeningEventHandler](icorewebview2scriptdialogopeningeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-ScriptDialogOpening fires when a JavaScript dialog (alert, confirm, prompt, or beforeunload) will show for the webview. This event only fires if the ICoreWebView2Settings::AreDefaultScriptDialogsEnabled property is set to false. The ScriptDialogOpening event can be used to suppress dialogs or replace default dialogs with custom dialogs.
+`ScriptDialogOpening` runs when a JavaScript dialog (`alert`, `confirm`, `prompt`, or `beforeunload`) displays for the webview. This event only triggers if the `ICoreWebView2Settings::AreDefaultScriptDialogsEnabled` property is set to `FALSE`. The `ScriptDialogOpening` event suppresses dialogs or replaces default dialogs with custom dialogs.
 
-If a deferral is not taken on the event args, the subsequent scripts can be blocked until the event handler returns. If a deferral is taken, then the scripts are blocked until the deferral is completed.
+If a deferral is not taken on the event args, the subsequent scripts are blocked until the event handler returns. If a deferral is taken, the scripts are blocked until the deferral is completed.
 
 ```cpp
     // Register a handler for the ScriptDialogOpening event.
@@ -592,11 +593,11 @@ If a deferral is not taken on the event args, the subsequent scripts can be bloc
 
 #### add_SourceChanged 
 
-Add an event handler for the SourceChanged event.
+Add an event handler for the `SourceChanged` event.
 
 > public HRESULT [add_SourceChanged](#add_sourcechanged)([ICoreWebView2SourceChangedEventHandler](icorewebview2sourcechangedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-SourceChanged fires when the Source property changes. SourceChanged fires for navigating to a different site or fragment navigations. It will not fire for other types of navigations such as page reloads or history.pushState with the same URL as the current page. SourceChanged fires before ContentLoading for navigation to a new document.
+`SourceChanged` triggers when the `Source` property changes. `SourceChanged` runs when navigating to a different site or fragment navigations. It does not trigger for other types of navigations such as page refreshes or `history.pushState` with the same URL as the current page. `SourceChanged` runs before `ContentLoading` for navigation to a new document.
 
 ```cpp
     // Register a handler for the SourceChanged event.
@@ -622,31 +623,15 @@ SourceChanged fires when the Source property changes. SourceChanged fires for na
 
 #### add_WebMessageReceived 
 
-Add an event handler for the WebMessageReceived event.
+Add an event handler for the `WebMessageReceived` event.
 
 > public HRESULT [add_WebMessageReceived](#add_webmessagereceived)([ICoreWebView2WebMessageReceivedEventHandler](icorewebview2webmessagereceivedeventhandler.md) * handler, EventRegistrationToken * token)
 
-WebMessageReceived fires when the ICoreWebView2Settings::IsWebMessageEnabled setting is set and the top level document of the WebView calls `window.chrome.webview.postMessage`. The postMessage function is `void postMessage(object)` where object is any object supported by JSON conversion.
+`WebMessageReceived` runs when the `ICoreWebView2Settings::IsWebMessageEnabled` setting is set and the top-level document of the WebView runs `window.chrome.webview.postMessage`. The `postMessage` function is `void postMessage(object)` where object is any object supported by JSON conversion.
 
 ```html
-        window.chrome.webview.addEventListener('message', arg => {
-            if ("SetColor" in arg.data) {
-                document.getElementById("colorable").style.color = arg.data.SetColor;
-            }
-            if ("WindowBounds" in arg.data) {
-                document.getElementById("window-bounds").value = arg.data.WindowBounds;
-            }
-        });
-
-        function SetTitleText() {
-            let titleText = document.getElementById("title-text");
-            window.chrome.webview.postMessage(`SetTitleText ${titleText.value}`);
-        }
-        function GetWindowBounds() {
-            window.chrome.webview.postMessage("GetWindowBounds");
-        }
 ```
- When postMessage is called, the handler's Invoke method will be called with the postMessage's object parameter converted to a JSON string.
+ When `postMessage` is run, the `Invoke` method of the `handler` is run with the `object` parameter of the `postMessage` converted to a JSON string.
 
 ```cpp
     // Setup the web message received event handler before navigating to
@@ -688,13 +673,13 @@ WebMessageReceived fires when the ICoreWebView2Settings::IsWebMessageEnabled set
 
 #### add_WebResourceRequested 
 
-Add an event handler for the WebResourceRequested event.
+Add an event handler for the `WebResourceRequested` event.
 
 > public HRESULT [add_WebResourceRequested](#add_webresourcerequested)([ICoreWebView2WebResourceRequestedEventHandler](icorewebview2webresourcerequestedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-WebResourceRequested fires when the WebView is performing a URL request to a matching URL and resource context filter that was added with AddWebResourceRequestedFilter. At least one filter must be added for the event to fire.
+`WebResourceRequested` runs when the WebView is performing a URL request to a matching URL and resource context filter that was added with `AddWebResourceRequestedFilter`. At least one filter must be added for the event to run.
 
-The web resource requested can be blocked until the event handler returns if a deferral is not taken on the event args. If a deferral is taken, then the web resource requested is blocked until the deferral is completed.
+The web resource requested may be blocked until the event handler returns if a deferral is not taken on the event args. If a deferral is taken, then the web resource requested is blocked until the deferral is completed.
 
 ```cpp
         if (m_blockImages)
@@ -716,10 +701,10 @@ The web resource requested can be blocked until the event handler returns if a d
                         // Override the response with an empty one to block the image.
                         // If put_Response is not called, the request will continue as normal.
                         wil::com_ptr<ICoreWebView2WebResourceResponse> response;
-                        wil::com_ptr<ICoreWebView2Experimental> m_webViewExperimental =
-                            m_webView.try_query<ICoreWebView2Experimental>();
                         wil::com_ptr<ICoreWebView2Environment> environment;
-                        CHECK_FAILURE(m_webViewExperimental->get_Environment(&environment));
+                        wil::com_ptr<ICoreWebView2_2> webview2;
+                        CHECK_FAILURE(m_webView->QueryInterface(IID_PPV_ARGS(&webview2)));
+                        CHECK_FAILURE(webview2->get_Environment(&environment));
                         CHECK_FAILURE(environment->CreateWebResourceResponse(
                             nullptr, 403 /*NoContent*/, L"Blocked", L"", &response));
                         CHECK_FAILURE(args->put_Response(response.get()));
@@ -737,11 +722,11 @@ The web resource requested can be blocked until the event handler returns if a d
 
 #### add_WindowCloseRequested 
 
-Add an event handler for the WindowCloseRequested event.
+Add an event handler for the `WindowCloseRequested` event.
 
 > public HRESULT [add_WindowCloseRequested](#add_windowcloserequested)([ICoreWebView2WindowCloseRequestedEventHandler](icorewebview2windowcloserequestedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-WindowCloseRequested fires when content inside the WebView requested to close the window, such as after window.close is called. The app should close the WebView and related app window if that makes sense to the app.
+`WindowCloseRequested` triggers when content inside the WebView requested to close the window, such as after `window.close` is run. The app should close the WebView and related app window if that makes sense to the app.
 
 ```cpp
     // Register a handler for the WindowCloseRequested event.
@@ -765,52 +750,35 @@ Add the provided host object to script running in the WebView with the specified
 
 > public HRESULT [AddHostObjectToScript](#addhostobjecttoscript)(LPCWSTR name, VARIANT * object)
 
-Host objects are exposed as host object proxies via `window.chrome.webview.hostObjects.<name>`. Host object proxies are promises and will resolve to an object representing the host object. The promise is rejected if the app has not added an object with the name. When JavaScript code access a property or method of the object, a promise is return, which will resolve to the value returned from the host for the property or method, or rejected in case of error such as there is no such property or method on the object or parameters are invalid. For example, when the application code does the following:
+Host objects are exposed as host object proxies using `window.chrome.webview.hostObjects.{name}`. Host object proxies are promises and resolves to an object representing the host object. The promise is rejected if the app has not added an object with the name. When JavaScript code access a property or method of the object, a promise is return, which resolves to the value returned from the host for the property or method, or rejected in case of error, for example, no property or method on the object or parameters are not valid.
 
-```
-VARIANT object;
-object.vt = VT_DISPATCH;
-object.pdispVal = appObject;
-webview->AddHostObjectToScript(L"host_object", &host);
-```
+> [!NOTE] While simple types, `IDispatch` and array are supported, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`.
 
-JavaScript code in the WebView will be able to access appObject as following and then access attributes and methods of appObject:
+Additionally, all host objects are exposed as `window.chrome.webview.hostObjects.sync.{name}`. Here the host objects are exposed as synchronous host object proxies. These are not promises and function runtimes or property access synchronously block running script waiting to communicate cross process for the host code to run. Accordingly the result may have reliability issues and it is recommended that you use the promise-based asynchronous `window.chrome.webview.hostObjects.{name}` API.
 
-```
-let app_object = await window.chrome.webview.hostObjects.host_object;
-let attr1 = await app_object.attr1;
-let result = await app_object.method1(parameters);
-```
+Synchronous host object proxies and asynchronous host object proxies may both use a proxy to the same host object. Remote changes made by one proxy propagates to any other proxy of that same host object whether the other proxies and synchronous or asynchronous.
 
-Note that while simple types, IDispatch and array are supported, generic IUnknown, VT_DECIMAL, or VT_RECORD variant is not supported. Remote JavaScript objects like callback functions are represented as an VT_DISPATCH VARIANT with the object implementing IDispatch. The JavaScript callback method may be invoked using DISPID_VALUE for the DISPID. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. VT_EMPTY and VT_NULL are mapped into JavaScript as null. In JavaScript null and undefined are mapped to VT_EMPTY.
+While JavaScript is blocked on a synchronous run to native code, that native code is unable to run back to JavaScript. Attempts to do so fail with `HRESULT_FROM_WIN32(ERROR_POSSIBLE_DEADLOCK)`.
 
-Additionally, all host objects are exposed as `window.chrome.webview.hostObjects.sync.<name>`. Here the host objects are exposed as synchronous host object proxies. These are not promises and calls to functions or property access synchronously block running script waiting to communicate cross process for the host code to run. Accordingly this can result in reliability issues and it is recommended that you use the promise based asynchronous `window.chrome.webview.hostObjects.<name>` API described above.
+Host object proxies are JavaScript Proxy objects that intercept all property get, property set, and method invocations. Properties or methods that are a part of the Function or Object prototype are run locally. Additionally any property or method in the `chrome.webview.hostObjects.options.forceLocalProperties` array are also run locally. This defaults to including optional methods that have meaning in JavaScript like `toJSON` and `Symbol.toPrimitive`. Add more to the array as required.
 
-Synchronous host object proxies and asynchronous host object proxies can both proxy the same host object. Remote changes made by one proxy will be reflected in any other proxy of that same host object whether the other proxies and synchronous or asynchronous.
+The `chrome.webview.hostObjects.cleanupSome` method performs a best effort garbage collection on host object proxies.
 
-While JavaScript is blocked on a synchronous call to native code, that native code is unable to call back to JavaScript. Attempts to do so will fail with HRESULT_FROM_WIN32(ERROR_POSSIBLE_DEADLOCK).
+Host object proxies additionally have the following methods which run locally.
 
-Host object proxies are JavaScript Proxy objects that intercept all property get, property set, and method invocations. Properties or methods that are a part of the Function or Object prototype are run locally. Additionally any property or method in the array `chrome.webview.hostObjects.options.forceLocalProperties` will also be run locally. This defaults to including optional methods that have meaning in JavaScript like `toJSON` and `Symbol.toPrimitive`. You can add more to this array as required.
+Method name  |Details
+--------- | ---------
+`applyHostFunction`, `getHostProperty`, `setHostProperty`|Perform a method invocation, property get, or property set on the host object. Use the methods to explicitly force a method or property to run remotely if a conflicting local method or property exists. For instance, `proxy.toString()` runs the local `toString` method on the proxy object. But proxy.applyHostFunction('toString') runs `toString` on the host proxied object instead.<br/>
+| `getLocalProperty`, `setLocalProperty` | Perform property get, or property set locally. Use the methods to force getting or setting a property on the host object proxy rather than on the host object it represents. For instance, `proxy.unknownProperty` gets the property named `unknownProperty` from the host proxied object. But proxy.getLocalProperty('unknownProperty') gets the value of the property `unknownProperty` on the proxy object. |<br/>
+| `sync` | Asynchronous host object proxies expose a sync method which returns a promise for a synchronous host object proxy for the same host object. For example, `chrome.webview.hostObjects.sample.methodCall()` returns an asynchronous host object proxy. Use the `sync` method to obtain a synchronous host object proxy instead: `const syncProxy = await chrome.webview.hostObjects.sample.methodCall().sync()` |<br/>
+| `async` | Synchronous host object proxies expose an async method which blocks and returns an asynchronous host object proxy for the same host object. For example, `chrome.webview.hostObjects.sync.sample.methodCall()` returns a synchronous host object proxy. Running the `async` method on this blocks and then returns an asynchronous host object proxy for the same host object: `const asyncProxy = chrome.webview.hostObjects.sync.sample.methodCall().async()` |<br/>
+| `then` | Asynchronous host object proxies have a `then` method. Allows proxies to be awaitable. `then` returns a promise that resolves with a representation of the host object. If the proxy represents a JavaScript literal, a copy of that is returned locally. If the proxy represents a function, a non-awaitable proxy is returned. If the proxy represents a JavaScript object with a mix of literal properties and function properties, the a copy of the object is returned with some properties as host object proxies. |
 
-There's a method `chrome.webview.hostObjects.cleanupSome` that will best effort garbage collect host object proxies.
+All other property and method invocations (other than the above Remote object proxy methods, `forceLocalProperties` list, and properties on Function and Object prototypes) are run remotely. Asynchronous host object proxies return a promise representing asynchronous completion of remotely invoking the method, or getting the property. The promise resolves after the remote operations complete and the promises resolve to the resulting value of the operation. Synchronous host object proxies work similarly, but block running JavaScript and wait for the remote operation to complete.
 
-Host object proxies additionally have the following methods which run locally:
+Setting a property on an asynchronous host object proxy works slightly differently. The set returns immediately and the return value is the value that is set. This is a requirement of the JavaScript Proxy object. If you need to asynchronously wait for the property set to complete, use the `setHostProperty` method which returns a promise as described above. Synchronous object property set property synchronously blocks until the property is set.
 
-* applyHostFunction, getHostProperty, setHostProperty: Perform a method invocation, property get, or property set on the host object. You can use these to explicitly force a method or property to run remotely if there is a conflicting local method or property. For instance, `proxy.toString()` will run the local toString method on the proxy object. But `proxy.applyHostFunction('toString')` runs `toString` on the host proxied object instead.
-
-* getLocalProperty, setLocalProperty: Perform property get, or property set locally. You can use these methods to force getting or setting a property on the host object proxy itself rather than on the host object it represents. For instance, `proxy.unknownProperty` will get the property named `unknownProperty` from the host proxied object. But `proxy.getLocalProperty('unknownProperty')` will get the value of the property `unknownProperty` on the proxy object itself.
-
-* sync: Asynchronous host object proxies expose a sync method which returns a promise for a synchronous host object proxy for the same host object. For example, `chrome.webview.hostObjects.sample.methodCall()` returns an asynchronous host object proxy. You can use the `sync` method to obtain a synchronous host object proxy instead: `const syncProxy = await chrome.webview.hostObjects.sample.methodCall().sync()`
-
-* async: Synchronous host object proxies expose an async method which blocks and returns an asynchronous host object proxy for the same host object. For example, `chrome.webview.hostObjects.sync.sample.methodCall()` returns a synchronous host object proxy. Calling the `async` method on this blocks and then returns an asynchronous host object proxy for the same host object: `const asyncProxy = chrome.webview.hostObjects.sync.sample.methodCall().async()`
-
-* then: Asynchronous host object proxies have a then method. This allows them to be awaitable. `then` will return a promise that resolves with a representation of the host object. If the proxy represents a JavaScript literal then a copy of that is returned locally. If the proxy represents a function then a non-awaitable proxy is returned. If the proxy represents a JavaScript object with a mix of literal properties and function properties, then the a copy of the object is returned with some properties as host object proxies.
-
-All other property and method invocations (other than the above Remote object proxy methods, forceLocalProperties list, and properties on Function and Object prototypes) are run remotely. Asynchronous host object proxies return a promise representing asynchronous completion of remotely invoking the method, or getting the property. The promise resolves after the remote operations complete and the promises resolve to the resulting value of the operation. Synchronous host object proxies work similarly but block JavaScript execution and wait for the remote operation to complete.
-
-Setting a property on an asynchronous host object proxy works slightly differently. The set returns immediately and the return value is the value that will be set. This is a requirement of the JavaScript Proxy object. If you need to asynchronously wait for the property set to complete, use the setHostProperty method which returns a promise as described above. Synchronous object property set property synchronously blocks until the property is set.
-
-For example, suppose you have a COM object with the following interface
+For example, suppose you have a COM object with the following interface.
 
 ```idl
     [uuid(3a14c9c0-bc3e-453f-a314-4ce4a0ec81d8), object, local]
@@ -831,7 +799,7 @@ For example, suppose you have a COM object with the following interface
 
     };
 ```
- We can add an instance of this interface into our JavaScript with `AddHostObjectToScript`. In this case we name it `sample`:
+ Add an instance of this interface into your JavaScript with `AddHostObjectToScript`. In this case, name it `sample`.
 
 ```cpp
             VARIANT remoteObjectAsVariant = {};
@@ -846,83 +814,21 @@ For example, suppose you have a COM object with the following interface
                 m_webView->AddHostObjectToScript(L"sample", &remoteObjectAsVariant));
             remoteObjectAsVariant.pdispVal->Release();
 ```
- Then in the HTML document we can use this COM object via `chrome.webview.hostObjects.sample`:
+ In the HTML document, use the COM object using `chrome.webview.hostObjects.sample`.
 
 ```html
-        document.getElementById("getPropertyAsyncButton").addEventListener("click", async () => {
-        const propertyValue = await chrome.webview.hostObjects.sample.property;
-        document.getElementById("getPropertyAsyncOutput").textContent = propertyValue;
-        });
-
-        document.getElementById("getPropertySyncButton").addEventListener("click", () => {
-        const propertyValue = chrome.webview.hostObjects.sync.sample.property;
-        document.getElementById("getPropertySyncOutput").textContent = propertyValue;
-        });
-
-        document.getElementById("setPropertyAsyncButton").addEventListener("click", async () => {
-        const propertyValue = document.getElementById("setPropertyAsyncInput").value;
-        // The following line will work but it will return immediately before the property value has actually been set.
-        // If you need to set the property and wait for the property to change value, use the setHostProperty function.
-        chrome.webview.hostObjects.sample.property = propertyValue;
-        document.getElementById("setPropertyAsyncOutput").textContent = "Set";
-        });
-
-        document.getElementById("setPropertyExplicitAsyncButton").addEventListener("click", async () => {
-        const propertyValue = document.getElementById("setPropertyExplicitAsyncInput").value;
-        // If you care about waiting until the property has actually changed value use the setHostProperty function.
-        await chrome.webview.hostObjects.sample.setHostProperty("property", propertyValue);
-        document.getElementById("setPropertyExplicitAsyncOutput").textContent = "Set";
-        });
-
-        document.getElementById("setPropertySyncButton").addEventListener("click", () => {
-        const propertyValue = document.getElementById("setPropertySyncInput").value;
-        chrome.webview.hostObjects.sync.sample.property = propertyValue;
-        document.getElementById("setPropertySyncOutput").textContent = "Set";
-        });
-
-        document.getElementById("getIndexedPropertyAsyncButton").addEventListener("click", async () => {
-        const index = parseInt(document.getElementById("getIndexedPropertyAsyncParam").value);
-        const resultValue = await chrome.webview.hostObjects.sample.IndexedProperty[index];
-        document.getElementById("getIndexedPropertyAsyncOutput").textContent = resultValue;
-        });
-        document.getElementById("setIndexedPropertyAsyncButton").addEventListener("click", async () => {
-        const index = parseInt(document.getElementById("setIndexedPropertyAsyncParam1").value);
-        const value = document.getElementById("setIndexedPropertyAsyncParam2").value;;
-        chrome.webview.hostObjects.sample.IndexedProperty[index] = value;
-        document.getElementById("setIndexedPropertyAsyncOutput").textContent = "Set";
-        });
-        document.getElementById("invokeMethodAsyncButton").addEventListener("click", async () => {
-        const paramValue1 = document.getElementById("invokeMethodAsyncParam1").value;
-        const paramValue2 = parseInt(document.getElementById("invokeMethodAsyncParam2").value);
-        const resultValue = await chrome.webview.hostObjects.sample.MethodWithParametersAndReturnValue(paramValue1, paramValue2);
-        document.getElementById("invokeMethodAsyncOutput").textContent = resultValue;
-        });
-
-        document.getElementById("invokeMethodSyncButton").addEventListener("click", () => {
-        const paramValue1 = document.getElementById("invokeMethodSyncParam1").value;
-        const paramValue2 = parseInt(document.getElementById("invokeMethodSyncParam2").value);
-        const resultValue = chrome.webview.hostObjects.sync.sample.MethodWithParametersAndReturnValue(paramValue1, paramValue2);
-        document.getElementById("invokeMethodSyncOutput").textContent = resultValue;
-        });
-
-        let callbackCount = 0;
-        document.getElementById("invokeCallbackButton").addEventListener("click", async () => {
-        chrome.webview.hostObjects.sample.CallCallbackAsynchronously(() => {
-        document.getElementById("invokeCallbackOutput").textContent = "Native object called the callback " + (++callbackCount) + " time(s).";
-        });
-        });
 ```
-Exposing host objects to script has security risk. Please follow [best practices](https://docs.microsoft.com/microsoft-edge/webview2/concepts/security).
+ Exposing host objects to script has security risk. For more information about best practices, navigate to [Best practices for developing secure WebView2 applications][MicrosoftEdgeWebview2ConceptsSecurity] [MicrosoftEdgeWebview2ConceptsSecurity]: /microsoft-edge/webview2/concepts/security "Best practices for developing secure WebView2 applications | Microsoft Docs"
 
 #### AddScriptToExecuteOnDocumentCreated 
 
-Add the provided JavaScript to a list of scripts that should be executed after the global object has been created, but before the HTML document has been parsed and before any other script included by the HTML document is executed.
+Add the provided JavaScript to a list of scripts that should be run after the global object has been created, but before the HTML document has been parsed and before any other script included by the HTML document is run.
 
-> public HRESULT [AddScriptToExecuteOnDocumentCreated](#addscripttoexecuteondocumentcreated)(LPCWSTR javaScript, [ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler](icorewebview2addscripttoexecuteondocumentcreatedcompletedhandler.md) * handler)
+> public HRESULT [AddScriptToExecuteOnDocumentCreated](#addscripttoexecuteondocumentcreated)(LPCWSTR javaScript, ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler * handler)
 
-This method injects a script that runs on all top-level document and child frame page navigations. This method runs asynchronously, and you must wait for the completion handler to finish before the injected script is ready to run. When this method completes, the handler's `Invoke` method is called with the `id` of the injected script. `id` is a string. To remove the injected script, use `RemoveScriptToExecuteOnDocumentCreated`.
+This method injects a script that runs on all top-level document and child frame page navigations. This method runs asynchronously, and you must wait for the completion handler to finish before the injected script is ready to run. When this method completes, the `Invoke` method of the handler is run with the `id` of the injected script. `id` is a string. To remove the injected script, use `RemoveScriptToExecuteOnDocumentCreated`.
 
-Note that if an HTML document has sandboxing of some kind via [sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) properties or the [Content-Security-Policy HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) this will affect the script run here. So, for example, if the 'allow-modals' keyword is not set then calls to the `alert` function will be ignored.
+> [!NOTE] If an HTML document is running in a sandbox of some kind using [sandbox][MdnDocsWebHtmlElementIframeAttrSandbox] properties or the [Content-Security-Policy][MdnDocsWebHttpHeadersContentSecurityPolicy] HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
 
 ```cpp
 // Prompt the user for some script and register it to execute whenever a new page loads.
@@ -955,22 +861,23 @@ void ScriptComponent::AddInitializeScript()
     }
 }
 ```
+ [MdnDocsWebHtmlElementIframeAttrSandbox]: [https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) "sandbox - <iframe>: The Inline Frame element | MDN" [MdnDocsWebHttpHeadersContentSecurityPolicy]: [https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) "Content-Security-Policy | MDN"
 
 #### AddWebResourceRequestedFilter 
 
-Adds a URI and resource context filter to the WebResourceRequested event.
+Adds a URI and resource context filter to the `WebResourceRequested` event.
 
-> public HRESULT [AddWebResourceRequestedFilter](#addwebresourcerequestedfilter)(LPCWSTR const uri, [COREWEBVIEW2_WEB_RESOURCE_CONTEXT](#corewebview2_web_resource_context) const resourceContext)
+> public HRESULT [AddWebResourceRequestedFilter](#addwebresourcerequestedfilter)(LPCWSTR const uri, COREWEBVIEW2_WEB_RESOURCE_CONTEXT const resourceContext)
 
-The URI parameter can be a wildcard string ('*': zero or more, '?': exactly one). nullptr is equivalent to L"". See COREWEBVIEW2_WEB_RESOURCE_CONTEXT enum for description of resource context filters.
+The `URI` parameter value may be set to a wildcard string (`*`: zero or more, `?`: exactly one). `nullptr` is equivalent to `L""`. For more information about resource context filters, navigate to [COREWEBVIEW2_WEB_RESOURCE_CONTEXT].
 
 #### CallDevToolsProtocolMethod 
 
-Call an asynchronous DevToolsProtocol method.
+Runs an asynchronous `DevToolsProtocol` method.
 
-> public HRESULT [CallDevToolsProtocolMethod](#calldevtoolsprotocolmethod)(LPCWSTR methodName, LPCWSTR parametersAsJson, [ICoreWebView2CallDevToolsProtocolMethodCompletedHandler](icorewebview2calldevtoolsprotocolmethodcompletedhandler.md) * handler)
+> public HRESULT [CallDevToolsProtocolMethod](#calldevtoolsprotocolmethod)(LPCWSTR methodName, LPCWSTR parametersAsJson, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler * handler)
 
-See the [DevTools Protocol Viewer](https://aka.ms/DevToolsProtocolDocs) for a list and description of available methods. The methodName parameter is the full name of the method in the format `{domain}.{method}`. The parametersAsJson parameter is a JSON formatted string containing the parameters for the corresponding method. The handler's Invoke method will be called when the method asynchronously completes. Invoke will be called with the method's return object as a JSON string.
+For more information about available methods, navigate to [DevTools Protocol Viewer][GithubChromedevtoolsDevtoolsProtocolTot] . The `methodName` parameter is the full name of the method in the `{domain}.{method}` format. The `parametersAsJson` parameter is a JSON formatted string containing the parameters for the corresponding method. The `Invoke` method of the `handler` is run when the method asynchronously completes. `Invoke` is run with the return object of the method as a JSON string.
 
 ```cpp
 // Prompt the user for the name and parameters of a CDP method, then call it.
@@ -1005,13 +912,15 @@ void ScriptComponent::CallCdpMethod()
 }
 ```
 
+[GithubChromedevtoolsDevtoolsProtocolTot]: [https://chromedevtools.github.io/devtools-protocol/tot](https://chromedevtools.github.io/devtools-protocol/tot) "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
+
 #### CapturePreview 
 
 Capture an image of what WebView is displaying.
 
 > public HRESULT [CapturePreview](#capturepreview)([COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT](#corewebview2_capture_preview_image_format) imageFormat, IStream * imageStream, [ICoreWebView2CapturePreviewCompletedHandler](icorewebview2capturepreviewcompletedhandler.md) * handler)
 
-Specify the format of the image with the imageFormat parameter. The resulting image binary data is written to the provided imageStream parameter. When CapturePreview finishes writing to the stream, the Invoke method on the provided handler parameter is called.
+Specify the format of the image with the `imageFormat` parameter. The resulting image binary data is written to the provided `imageStream` parameter. When `CapturePreview` finishes writing to the stream, the `Invoke` method on the provided `handler` parameter is run.
 
 ```cpp
 // Show the user a file selection dialog, then save a screenshot of the WebView
@@ -1053,11 +962,13 @@ void FileComponent::SaveScreenshot()
 
 #### ExecuteScript 
 
-Execute JavaScript code from the javascript parameter in the current top level document rendered in the WebView.
+Run JavaScript code from the javascript parameter in the current top-level document rendered in the WebView.
 
 > public HRESULT [ExecuteScript](#executescript)(LPCWSTR javaScript, [ICoreWebView2ExecuteScriptCompletedHandler](icorewebview2executescriptcompletedhandler.md) * handler)
 
-This will execute asynchronously and when complete, if a handler is provided in the ExecuteScriptCompletedHandler parameter, its Invoke method will be called with the result of evaluating the provided JavaScript. The result value is a JSON encoded string. If the result is undefined, contains a reference cycle, or otherwise cannot be encoded into JSON, the JSON null value will be returned as the string 'null'. Note that a function that has no explicit return value returns undefined. If the executed script throws an unhandled exception, then the result is also 'null'. This method is applied asynchronously. If the method is called after NavigationStarting event during a navigation, the script will be executed in the new document when loading it, around the time ContentLoading is fired. ExecuteScript will work even if ICoreWebView2Settings::IsScriptEnabled is set to FALSE.
+The result of evaluating the provided JavaScript is used in this parameter. The result value is a JSON encoded string. If the result is undefined, contains a reference cycle, or otherwise is not able to be encoded into JSON, the JSON `null` value is returned as the `null` string.
+
+> [!NOTE] A function that has no explicit return value returns undefined. If the script that was run throws an unhandled exception, then the result is also `null`. This method is applied asynchronously. If the method is run after the `NavigationStarting` event during a navigation, the script runs in the new document when loading it, around the time `ContentLoading` is run. This operation works even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
 
 ```cpp
 // Prompt the user for some script and then execute it.
@@ -1087,25 +998,25 @@ void ScriptComponent::InjectScript()
 
 #### get_BrowserProcessId 
 
-The process id of the browser process that hosts the WebView.
+The process ID of the browser process that hosts the WebView.
 
 > public HRESULT [get_BrowserProcessId](#get_browserprocessid)(UINT32 * value)
 
 #### get_CanGoBack 
 
-Returns true if the WebView can navigate to a previous page in the navigation history.
+`TRUE` if the WebView is able to navigate to a previous page in the navigation history.
 
 > public HRESULT [get_CanGoBack](#get_cangoback)(BOOL * canGoBack)
 
-The HistoryChanged event will fire if CanGoBack changes value.
+If `CanGoBack` changes value, the `HistoryChanged` event runs.
 
 #### get_CanGoForward 
 
-Returns true if the WebView can navigate to a next page in the navigation history.
+`TRUE` if the WebView is able to navigate to a next page in the navigation history.
 
 > public HRESULT [get_CanGoForward](#get_cangoforward)(BOOL * canGoForward)
 
-The HistoryChanged event will fire if CanGoForward changes value.
+If `CanGoForward` changes value, the `HistoryChanged` event runs.
 
 #### get_ContainsFullScreenElement 
 
@@ -1115,15 +1026,15 @@ Indicates if the WebView contains a fullscreen HTML element.
 
 #### get_DocumentTitle 
 
-The title for the current top level document.
+The title for the current top-level document.
 
 > public HRESULT [get_DocumentTitle](#get_documenttitle)(LPWSTR * title)
 
-If the document has no explicit title or is otherwise empty, a default that may or may not match the URI of the document will be used.
+If the document has no explicit title or is otherwise empty, a default that may or may not match the URI of the document is used.
 
 #### get_Settings 
 
-The [ICoreWebView2Settings](icorewebview2settings.md) object contains various modifiable settings for the running WebView.
+The `[ICoreWebView2Settings](icorewebview2settings.md)` object contains various modifiable settings for the running WebView.
 
 > public HRESULT [get_Settings](#get_settings)([ICoreWebView2Settings](icorewebview2settings.md) ** settings)
 
@@ -1133,7 +1044,7 @@ The URI of the current top level document.
 
 > public HRESULT [get_Source](#get_source)(LPWSTR * uri)
 
-This value potentially changes as a part of the SourceChanged event firing for some cases such as navigating to a different site or fragment navigations. It will remain the same for other types of navigations such as page reloads or history.pushState with the same URL as the current page.
+This value potentially changes as a part of the `SourceChanged` event that runs for some cases such as navigating to a different site or fragment navigations. It remains the same for other types of navigations such as page refreshes or `history.pushState` with the same URL as the current page.
 
 ```cpp
     // Register a handler for the SourceChanged event.
@@ -1161,10 +1072,9 @@ This value potentially changes as a part of the SourceChanged event firing for s
 
 Get a DevTools Protocol event receiver that allows you to subscribe to a DevTools Protocol event.
 
-> public HRESULT [GetDevToolsProtocolEventReceiver](#getdevtoolsprotocoleventreceiver)(LPCWSTR eventName, [ICoreWebView2DevToolsProtocolEventReceiver](icorewebview2devtoolsprotocoleventreceiver.md) ** receiver)
+> public HRESULT [GetDevToolsProtocolEventReceiver](#getdevtoolsprotocoleventreceiver)(LPCWSTR eventName, ICoreWebView2DevToolsProtocolEventReceiver ** receiver)
 
-The eventName parameter is the full name of the event in the format `{domain}.{event}`. See the [DevTools Protocol Viewer](https://aka.ms/DevToolsProtocolDocs) for a list of DevTools Protocol events description, and event args.
-
+The `eventName` parameter is the full name of the event in the format `{domain}.{event}`. For more information about DevTools Protocol events description and event args, navigate to [DevTools Protocol Viewer][GithubChromedevtoolsDevtoolsProtocolTot] 
 ```cpp
 // Prompt the user to name a CDP event, and then subscribe to that event.
 void ScriptComponent::SubscribeToCdpEvent()
@@ -1210,6 +1120,8 @@ void ScriptComponent::SubscribeToCdpEvent()
 }
 ```
 
+[GithubChromedevtoolsDevtoolsProtocolTot]: [https://chromedevtools.github.io/devtools-protocol/tot](https://chromedevtools.github.io/devtools-protocol/tot) "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
+
 #### GoBack 
 
 Navigates the WebView to the previous page in the navigation history.
@@ -1224,11 +1136,13 @@ Navigates the WebView to the next page in the navigation history.
 
 #### Navigate 
 
-Cause a navigation of the top level document to the specified URI.
+Cause a navigation of the top-level document to run to the specified URI.
 
 > public HRESULT [Navigate](#navigate)(LPCWSTR uri)
 
-See the navigation events for more information. Note that this starts a navigation and the corresponding NavigationStarting event will fire sometime after this Navigate call completes.
+For more information, navigate to [Navigation events].
+
+> [!NOTE] This operation starts a navigation and the corresponding `NavigationStarting` event triggers sometime after `Navigate` runs.
 
 ```cpp
 void ControlComponent::NavigateToAddressBar()
@@ -1267,7 +1181,7 @@ Initiates a navigation to htmlContent as source HTML of a new document.
 
 > public HRESULT [NavigateToString](#navigatetostring)(LPCWSTR htmlContent)
 
-The htmlContent parameter may not be larger than 2 MB in total size. The origin of the new page will be about:blank.
+The `htmlContent` parameter may not be larger than 2 MB in total size. The origin of the new page is `about:blank`.
 
 ```cpp
             static const PCWSTR htmlContent =
@@ -1283,7 +1197,7 @@ Opens the DevTools window for the current document in the WebView.
 
 > public HRESULT [OpenDevToolsWindow](#opendevtoolswindow)()
 
-Does nothing if called when the DevTools window is already open.
+Does nothing if run when the DevTools window is already open.
 
 #### PostWebMessageAsJson 
 
@@ -1291,14 +1205,14 @@ Post the specified webMessage to the top level document in this WebView.
 
 > public HRESULT [PostWebMessageAsJson](#postwebmessageasjson)(LPCWSTR webMessageAsJson)
 
-The top level document's window.chrome.webview's message event fires. JavaScript in that document may subscribe and unsubscribe to the event via the following:
+Runs the message event of the `window.chrome.webview` of the top-level document. JavaScript in that document may subscribe and unsubscribe to the event using the following code.
 
-```
+```cpp
 window.chrome.webview.addEventListener('message', handler)
 window.chrome.webview.removeEventListener('message', handler)
 ```
 
-The event args is an instance of `MessageEvent`. The ICoreWebView2Settings::IsWebMessageEnabled setting must be true or this method will fail with E_INVALIDARG. The event arg's data property is the webMessage string parameter parsed as a JSON string into a JavaScript object. The event arg's source property is a reference to the `window.chrome.webview` object. See add_WebMessageReceived for information on sending messages from the HTML document in the WebView to the host. This message is sent asynchronously. If a navigation occurs before the message is posted to the page, then the message will not be sent.
+The event args is an instance of `MessageEvent`. The `ICoreWebView2Settings::IsWebMessageEnabled` setting must be `TRUE` or this method fails with `E_INVALIDARG`. The `data` property of the event arg is the `webMessage` string parameter parsed as a JSON string into a JavaScript object. The `source` property of the event arg is a reference to the `window.chrome.webview` object. For information about sending messages from the HTML document in the WebView to the host, navigate to [add_WebMessageReceived]. The message is sent asynchronously. If a navigation occurs before the message is posted to the page, the message is not sent.
 
 ```cpp
     // Setup the web message received event handler before navigating to
@@ -1340,11 +1254,11 @@ The event args is an instance of `MessageEvent`. The ICoreWebView2Settings::IsWe
 
 #### PostWebMessageAsString 
 
-This is a helper for posting a message that is a simple string rather than a JSON string representation of a JavaScript object.
+Posts a message that is a simple string rather than a JSON string representation of a JavaScript object.
 
 > public HRESULT [PostWebMessageAsString](#postwebmessageasstring)(LPCWSTR webMessageAsString)
 
-This behaves in exactly the same manner as PostWebMessageAsJson but the `window.chrome.webview` message event arg's data property will be a string with the same value as webMessageAsString. Use this instead of PostWebMessageAsJson if you want to communicate via simple strings rather than JSON objects.
+This behaves in exactly the same manner as `PostWebMessageAsJson`, but the `data` property of the event arg of the `window.chrome.webview` message is a string with the same value as `webMessageAsString`. Use this instead of `PostWebMessageAsJson` if you want to communicate using simple strings rather than JSON objects.
 
 #### Reload 
 
@@ -1352,65 +1266,65 @@ Reload the current page.
 
 > public HRESULT [Reload](#reload)()
 
-This is similar to navigating to the URI of current top level document including all navigation events firing and respecting any entries in the HTTP cache. But, the back/forward history will not be modified.
+This is similar to navigating to the URI of current top level document including all navigation events firing and respecting any entries in the HTTP cache. But, the back or forward history are not modified.
 
 #### remove_ContainsFullScreenElementChanged 
 
-Remove an event handler previously added with add_ContainsFullScreenElementChanged.
+Remove an event handler previously added with `add_ContainsFullScreenElementChanged`.
 
 > public HRESULT [remove_ContainsFullScreenElementChanged](#remove_containsfullscreenelementchanged)(EventRegistrationToken token)
 
 #### remove_ContentLoading 
 
-Remove an event handler previously added with add_ContentLoading.
+Remove an event handler previously added with `add_ContentLoading`.
 
 > public HRESULT [remove_ContentLoading](#remove_contentloading)(EventRegistrationToken token)
 
 #### remove_DocumentTitleChanged 
 
-Remove an event handler previously added with add_DocumentTitleChanged.
+Remove an event handler previously added with `add_DocumentTitleChanged`.
 
 > public HRESULT [remove_DocumentTitleChanged](#remove_documenttitlechanged)(EventRegistrationToken token)
 
 #### remove_FrameNavigationCompleted 
 
-Remove an event handler previously added with add_FrameNavigationCompleted.
+Remove an event handler previously added with `add_FrameNavigationCompleted`.
 
 > public HRESULT [remove_FrameNavigationCompleted](#remove_framenavigationcompleted)(EventRegistrationToken token)
 
 #### remove_FrameNavigationStarting 
 
-Remove an event handler previously added with add_FrameNavigationStarting.
+Remove an event handler previously added with `add_FrameNavigationStarting`.
 
 > public HRESULT [remove_FrameNavigationStarting](#remove_framenavigationstarting)(EventRegistrationToken token)
 
 #### remove_HistoryChanged 
 
-Remove an event handler previously added with add_HistoryChanged.
+Remove an event handler previously added with `add_HistoryChanged`.
 
 > public HRESULT [remove_HistoryChanged](#remove_historychanged)(EventRegistrationToken token)
 
 #### remove_NavigationCompleted 
 
-Remove an event handler previously added with add_NavigationCompleted.
+Remove an event handler previously added with `add_NavigationCompleted`.
 
 > public HRESULT [remove_NavigationCompleted](#remove_navigationcompleted)(EventRegistrationToken token)
 
 #### remove_NavigationStarting 
 
-Remove an event handler previously added with add_NavigationStarting.
+Remove an event handler previously added with `add_NavigationStarting`.
 
 > public HRESULT [remove_NavigationStarting](#remove_navigationstarting)(EventRegistrationToken token)
 
 #### remove_NewWindowRequested 
 
-Remove an event handler previously added with add_NewWindowRequested.
+Remove an event handler previously added with `add_NewWindowRequested`.
 
 > public HRESULT [remove_NewWindowRequested](#remove_newwindowrequested)(EventRegistrationToken token)
 
 #### remove_PermissionRequested 
 
-Remove an event handler previously added with add_PermissionRequested.
+Remove an event handler previously added with `add_PermissionRequested`.
 
 > public HRESULT [remove_PermissionRequested](#remove_permissionrequested)(EventRegistrationToken token)
 
@@ -1422,31 +1336,31 @@ Remove an event handler previously added with add_ProcessFailed.
 
 #### remove_ScriptDialogOpening 
 
-Remove an event handler previously added with add_ScriptDialogOpening.
+Remove an event handler previously added with `add_ScriptDialogOpening`.
 
 > public HRESULT [remove_ScriptDialogOpening](#remove_scriptdialogopening)(EventRegistrationToken token)
 
 #### remove_SourceChanged 
 
-Remove an event handler previously added with add_SourceChanged.
+Remove an event handler previously added with `add_SourceChanged`.
 
 > public HRESULT [remove_SourceChanged](#remove_sourcechanged)(EventRegistrationToken token)
 
 #### remove_WebMessageReceived 
 
-Remove an event handler previously added with add_WebMessageReceived.
+Remove an event handler previously added with `add_WebMessageReceived`.
 
 > public HRESULT [remove_WebMessageReceived](#remove_webmessagereceived)(EventRegistrationToken token)
 
 #### remove_WebResourceRequested 
 
-Remove an event handler previously added with add_WebResourceRequested.
+Remove an event handler previously added with `add_WebResourceRequested`.
 
 > public HRESULT [remove_WebResourceRequested](#remove_webresourcerequested)(EventRegistrationToken token)
 
 #### remove_WindowCloseRequested 
 
-Remove an event handler previously added with add_WindowCloseRequested.
+Remove an event handler previously added with `add_WindowCloseRequested`.
 
 > public HRESULT [remove_WindowCloseRequested](#remove_windowcloserequested)(EventRegistrationToken token)
 
@@ -1456,176 +1370,188 @@ Remove the host object specified by the name so that it is no longer accessible 
 
 > public HRESULT [RemoveHostObjectFromScript](#removehostobjectfromscript)(LPCWSTR name)
 
-While new access attempts will be denied, if the object is already obtained by JavaScript code in the WebView, the JavaScript code will continue to have access to that object. Calling this method for a name that is already removed or never added will fail.
+While new access attempts are denied, if the object is already obtained by JavaScript code in the WebView, the JavaScript code continues to have access to that object. Run this method for a name that is already removed or never added fails.
 
 #### RemoveScriptToExecuteOnDocumentCreated 
 
-Remove the corresponding JavaScript added using `AddScriptToExecuteOnDocumentCreated` with the specified script id.
+Remove the corresponding JavaScript added using `AddScriptToExecuteOnDocumentCreated` with the specified script ID.
 
 > public HRESULT [RemoveScriptToExecuteOnDocumentCreated](#removescripttoexecuteondocumentcreated)(LPCWSTR id)
 
 #### RemoveWebResourceRequestedFilter 
 
-Removes a matching WebResource filter that was previously added for the WebResourceRequested event.
+Removes a matching WebResource filter that was previously added for the `WebResourceRequested` event.
 
 > public HRESULT [RemoveWebResourceRequestedFilter](#removewebresourcerequestedfilter)(LPCWSTR const uri, [COREWEBVIEW2_WEB_RESOURCE_CONTEXT](#corewebview2_web_resource_context) const resourceContext)
 
-If the same filter was added multiple times, then it will need to be removed as many times as it was added for the removal to be effective. Returns E_INVALIDARG for a filter that was never added.
+If the same filter was added multiple times, then it must be removed as many times as it was added for the removal to be effective. Returns `E_INVALIDARG` for a filter that was never added.
 
 #### Stop 
 
-Stop all navigations and pending resource fetches.
+Stop all navigations and pending resource fetches. Does not stop scripts.
 
 > public HRESULT [Stop](#stop)()
 
-Does not stop scripts.
-
 #### COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT 
 
-Image format used by the ICoreWebView2::CapturePreview method.
+Specifies the image format for the `[ICoreWebView2::CapturePreview](#capturepreview)` method.
 
 > enum [COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT](#corewebview2_capture_preview_image_format)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_PNG            | PNG image format.
-COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_JPEG            | JPEG image format.
+COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_PNG            | Indicates that the PNG image format is used.
+COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_JPEG            | Indicates the JPEG image format is used.
+
+#### COREWEBVIEW2_COOKIE_SAME_SITE_KIND 
+
+Kind of cookie SameSite status used in the [ICoreWebView2Cookie](icorewebview2cookie.md) interface.
+
+> enum [COREWEBVIEW2_COOKIE_SAME_SITE_KIND](#corewebview2_cookie_same_site_kind)
+
+ Values                         | Descriptions
+--------------------------------|---------------------------------------------
+COREWEBVIEW2_COOKIE_SAME_SITE_KIND_NONE            | None SameSite type. No restrictions on cross-site requests.
+COREWEBVIEW2_COOKIE_SAME_SITE_KIND_LAX            | Lax SameSite type. The cookie will be sent with "same-site" requests, and with "cross-site" top level navigation.
+COREWEBVIEW2_COOKIE_SAME_SITE_KIND_STRICT            | Strict SameSite type. The cookie will only be sent along with "same-site" requests.
+
+These fields match those as specified in [https://developer.mozilla.org/docs/Web/HTTP/Cookies#](https://developer.mozilla.org/docs/Web/HTTP/Cookies#). Learn more about SameSite cookies here: [https://tools.ietf.org/html/draft-west-first-party-cookies-07](https://tools.ietf.org/html/draft-west-first-party-cookies-07)
 
 #### COREWEBVIEW2_KEY_EVENT_KIND 
 
-The type of key event that triggered an AcceleratorKeyPressed event.
+Specifies the key event type that triggered an `AcceleratorKeyPressed` event.
 
 > enum [COREWEBVIEW2_KEY_EVENT_KIND](#corewebview2_key_event_kind)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_KEY_EVENT_KIND_KEY_DOWN            | Correspond to window message WM_KEYDOWN.
-COREWEBVIEW2_KEY_EVENT_KIND_KEY_UP            | Correspond to window message WM_KEYUP.
-COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_DOWN            | Correspond to window message WM_SYSKEYDOWN.
-COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_UP            | Correspond to window message WM_SYSKEYUP.
+COREWEBVIEW2_KEY_EVENT_KIND_KEY_DOWN            | Specifies that the key event type corresponds to window message `WM_KEYDOWN`.
+COREWEBVIEW2_KEY_EVENT_KIND_KEY_UP            | Specifies that the key event type corresponds to window message `WM_KEYUP`.
+COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_DOWN            | Specifies that the key event type corresponds to window message `WM_SYSKEYDOWN`.
+COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_UP            | Specifies that the key event type corresponds to window message `WM_SYSKEYUP`.
 
 #### COREWEBVIEW2_MOVE_FOCUS_REASON 
 
-Reason for moving focus.
+Specifies the reason for moving focus.
 
 > enum [COREWEBVIEW2_MOVE_FOCUS_REASON](#corewebview2_move_focus_reason)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC            | Code setting focus into WebView.
-COREWEBVIEW2_MOVE_FOCUS_REASON_NEXT            | Moving focus due to Tab traversal forward.
-COREWEBVIEW2_MOVE_FOCUS_REASON_PREVIOUS            | Moving focus due to Tab traversal backward.
+COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC            | Specifies that the code is setting focus into WebView.
+COREWEBVIEW2_MOVE_FOCUS_REASON_NEXT            | Specifies that the focus is moving due to Tab traversal forward.
+COREWEBVIEW2_MOVE_FOCUS_REASON_PREVIOUS            | Specifies that the focus is moving due to Tab traversal backward.
 
 #### COREWEBVIEW2_PERMISSION_KIND 
 
-The type of a permission request.
+Indicates the type of a permission request.
 
 > enum [COREWEBVIEW2_PERMISSION_KIND](#corewebview2_permission_kind)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION            | Unknown permission.
-COREWEBVIEW2_PERMISSION_KIND_MICROPHONE            | Permission to capture audio.
-COREWEBVIEW2_PERMISSION_KIND_CAMERA            | Permission to capture video.
-COREWEBVIEW2_PERMISSION_KIND_GEOLOCATION            | Permission to access geolocation.
-COREWEBVIEW2_PERMISSION_KIND_NOTIFICATIONS            | Permission to send web notifications.
-COREWEBVIEW2_PERMISSION_KIND_OTHER_SENSORS            | Permission to access generic sensor.
-COREWEBVIEW2_PERMISSION_KIND_CLIPBOARD_READ            | Permission to read system clipboard without a user gesture.
+COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION            | Indicates an unknown permission.
+COREWEBVIEW2_PERMISSION_KIND_MICROPHONE            | Indicates permission to capture audio.
+COREWEBVIEW2_PERMISSION_KIND_CAMERA            | Indicates permission to capture video.
+COREWEBVIEW2_PERMISSION_KIND_GEOLOCATION            | Indicates permission to access geolocation.
+COREWEBVIEW2_PERMISSION_KIND_NOTIFICATIONS            | Indicates permission to send web notifications.
+COREWEBVIEW2_PERMISSION_KIND_OTHER_SENSORS            | Indicates permission to access generic sensor.
+COREWEBVIEW2_PERMISSION_KIND_CLIPBOARD_READ            | Indicates permission to read the system clipboard without a user gesture.
 
 #### COREWEBVIEW2_PERMISSION_STATE 
 
-Response to a permission request.
+Specifies the response to a permission request.
 
 > enum [COREWEBVIEW2_PERMISSION_STATE](#corewebview2_permission_state)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_PERMISSION_STATE_DEFAULT            | Use default browser behavior, which normally prompt users for decision.
-COREWEBVIEW2_PERMISSION_STATE_ALLOW            | Grant the permission request.
-COREWEBVIEW2_PERMISSION_STATE_DENY            | Deny the permission request.
+COREWEBVIEW2_PERMISSION_STATE_DEFAULT            | Specifies that the default browser behavior is used, which normally prompt users for decision.
+COREWEBVIEW2_PERMISSION_STATE_ALLOW            | Specifies that the permission request is granted.
+COREWEBVIEW2_PERMISSION_STATE_DENY            | Specifies that the permission request is denied.
 
 #### COREWEBVIEW2_PHYSICAL_KEY_STATUS 
 
-A structure representing the information packed into the LPARAM given to a Win32 key event.
+Contains the information packed into the `LPARAM` sent to a Win32 key event.
 
 > typedef [COREWEBVIEW2_PHYSICAL_KEY_STATUS](#corewebview2_physical_key_status)
 
-See the documentation for WM_KEYDOWN for details at [https://docs.microsoft.com/windows/win32/inputdev/wm-keydown](https://docs.microsoft.com/windows/win32/inputdev/wm-keydown)
+For more information about `WM_KEYDOWN`, navigate to [WM_KEYDOWN message][WindowsWin32InputdevWmKeydown] [WindowsWin32InputdevWmKeydown]: /windows/win32/inputdev/wm-keydown "WM_KEYDOWN message | Microsoft Docs"
 
 #### COREWEBVIEW2_PROCESS_FAILED_KIND 
 
-Kind of process failure used in the ICoreWebView2ProcessFailedEventHandler interface.
+Specifies the process failure type used in the `ICoreWebView2ProcessFailedEventHandler` interface.
 
 > enum [COREWEBVIEW2_PROCESS_FAILED_KIND](#corewebview2_process_failed_kind)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_PROCESS_FAILED_KIND_BROWSER_PROCESS_EXITED            | Indicates the browser process terminated unexpectedly.
-COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_EXITED            | Indicates the render process terminated unexpectedly.
-COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_UNRESPONSIVE            | Indicates the render process becomes unresponsive.
+COREWEBVIEW2_PROCESS_FAILED_KIND_BROWSER_PROCESS_EXITED            | Indicates that the browser process ended unexpectedly.
+COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_EXITED            | Indicates that the render process ended unexpectedly.
+COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_UNRESPONSIVE            | Indicates that the render process is unresponsive.
 
 #### COREWEBVIEW2_SCRIPT_DIALOG_KIND 
 
-Kind of JavaScript dialog used in the ICoreWebView2ScriptDialogOpeningEventHandler interface.
+Specifies the JavaScript dialog type used in the `ICoreWebView2ScriptDialogOpeningEventHandler` interface.
 
 > enum [COREWEBVIEW2_SCRIPT_DIALOG_KIND](#corewebview2_script_dialog_kind)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_SCRIPT_DIALOG_KIND_ALERT            | A dialog invoked via the window.alert JavaScript function.
-COREWEBVIEW2_SCRIPT_DIALOG_KIND_CONFIRM            | A dialog invoked via the window.confirm JavaScript function.
-COREWEBVIEW2_SCRIPT_DIALOG_KIND_PROMPT            | A dialog invoked via the window.prompt JavaScript function.
-COREWEBVIEW2_SCRIPT_DIALOG_KIND_BEFOREUNLOAD            | A dialog invoked via the beforeunload JavaScript event.
+COREWEBVIEW2_SCRIPT_DIALOG_KIND_ALERT            | Indicates that the dialog uses the `window.alert` JavaScript function.
+COREWEBVIEW2_SCRIPT_DIALOG_KIND_CONFIRM            | Indicates that the dialog uses the `window.confirm` JavaScript function.
+COREWEBVIEW2_SCRIPT_DIALOG_KIND_PROMPT            | Indicates that the dialog uses the `window.prompt` JavaScript function.
+COREWEBVIEW2_SCRIPT_DIALOG_KIND_BEFOREUNLOAD            | Indicates that the dialog uses the `beforeunload` JavaScript event.
 
 #### COREWEBVIEW2_WEB_ERROR_STATUS 
 
-Error status values for web navigations.
+Indicates the error status values for web navigations.
 
 > enum [COREWEBVIEW2_WEB_ERROR_STATUS](#corewebview2_web_error_status)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_WEB_ERROR_STATUS_UNKNOWN            | An unknown error occurred.
-COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_COMMON_NAME_IS_INCORRECT            | The SSL certificate common name does not match the web address.
-COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_EXPIRED            | The SSL certificate has expired.
-COREWEBVIEW2_WEB_ERROR_STATUS_CLIENT_CERTIFICATE_CONTAINS_ERRORS            | The SSL client certificate contains errors.
-COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_REVOKED            | The SSL certificate has been revoked.
-COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_IS_INVALID            | The SSL certificate is invalid &ndash; this could mean the certificate did not match the public key pins for the host name, the certificate is signed by an untrusted authority or using a weak sign algorithm, the certificate claimed DNS names violate name constraints, the certificate contains a weak key, the certificate's validity period is too long, lack of revocation information or revocation mechanism, non-unique host name, lack of certificate transparency information, or the certificate is chained to a [legacy Symantec root](https://security.googleblog.com/2018/03/distrust-of-symantec-pki-immediate.html).
-COREWEBVIEW2_WEB_ERROR_STATUS_SERVER_UNREACHABLE            | The host is unreachable.
-COREWEBVIEW2_WEB_ERROR_STATUS_TIMEOUT            | The connection has timed out.
-COREWEBVIEW2_WEB_ERROR_STATUS_ERROR_HTTP_INVALID_SERVER_RESPONSE            | The server returned an invalid or unrecognized response.
-COREWEBVIEW2_WEB_ERROR_STATUS_CONNECTION_ABORTED            | The connection was aborted.
-COREWEBVIEW2_WEB_ERROR_STATUS_CONNECTION_RESET            | The connection was reset.
-COREWEBVIEW2_WEB_ERROR_STATUS_DISCONNECTED            | The Internet connection has been lost.
-COREWEBVIEW2_WEB_ERROR_STATUS_CANNOT_CONNECT            | Cannot connect to destination.
-COREWEBVIEW2_WEB_ERROR_STATUS_HOST_NAME_NOT_RESOLVED            | Could not resolve provided host name.
-COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED            | The operation was canceled.
-COREWEBVIEW2_WEB_ERROR_STATUS_REDIRECT_FAILED            | The request redirect failed.
-COREWEBVIEW2_WEB_ERROR_STATUS_UNEXPECTED_ERROR            | An unexpected error occurred.
+COREWEBVIEW2_WEB_ERROR_STATUS_UNKNOWN            | Indicates that an unknown error occurred.
+COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_COMMON_NAME_IS_INCORRECT            | Indicates that the SSL certificate common name does not match the web address.
+COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_EXPIRED            | Indicates that the SSL certificate has expired.
+COREWEBVIEW2_WEB_ERROR_STATUS_CLIENT_CERTIFICATE_CONTAINS_ERRORS            | Indicates that the SSL client certificate contains errors.
+COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_REVOKED            | Indicates that the SSL certificate has been revoked.
+COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_IS_INVALID            | Indicates that the SSL certificate is not valid.
+COREWEBVIEW2_WEB_ERROR_STATUS_SERVER_UNREACHABLE            | Indicates that the host is unreachable.
+COREWEBVIEW2_WEB_ERROR_STATUS_TIMEOUT            | Indicates that the connection has timed out.
+COREWEBVIEW2_WEB_ERROR_STATUS_ERROR_HTTP_INVALID_SERVER_RESPONSE            | Indicates that the server returned an invalid or unrecognized response.
+COREWEBVIEW2_WEB_ERROR_STATUS_CONNECTION_ABORTED            | Indicates that the connection was stopped.
+COREWEBVIEW2_WEB_ERROR_STATUS_CONNECTION_RESET            | Indicates that the connection was reset.
+COREWEBVIEW2_WEB_ERROR_STATUS_DISCONNECTED            | Indicates that the Internet connection has been lost.
+COREWEBVIEW2_WEB_ERROR_STATUS_CANNOT_CONNECT            | Indicates that a connection to the destination was not established.
+COREWEBVIEW2_WEB_ERROR_STATUS_HOST_NAME_NOT_RESOLVED            | Indicates that the provided host name was not able to be resolved.
+COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED            | Indicates that the operation was canceled.
+COREWEBVIEW2_WEB_ERROR_STATUS_REDIRECT_FAILED            | Indicates that the request redirect failed.
+COREWEBVIEW2_WEB_ERROR_STATUS_UNEXPECTED_ERROR            | Indicates that an unexpected error occurred.
 
 #### COREWEBVIEW2_WEB_RESOURCE_CONTEXT 
 
-Enum for web resource request contexts.
+Specifies the web resource request contexts.
 
 > enum [COREWEBVIEW2_WEB_RESOURCE_CONTEXT](#corewebview2_web_resource_context)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_ALL            | All resources.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_DOCUMENT            | Document resources.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_STYLESHEET            | CSS resources.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE            | Image resources.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MEDIA            | Other media resources such as videos.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_FONT            | Font resources.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SCRIPT            | Script resources.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_XML_HTTP_REQUEST            | XML HTTP requests.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_FETCH            | Fetch API communication.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_TEXT_TRACK            | TextTrack resources.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_EVENT_SOURCE            | EventSource API communication.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_WEBSOCKET            | WebSocket API communication.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MANIFEST            | Web App Manifests.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SIGNED_EXCHANGE            | Signed HTTP Exchanges.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_PING            | Ping requests.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_CSP_VIOLATION_REPORT            | CSP Violation Reports.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_OTHER            | Other resources.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_ALL            | Specifies all resources.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_DOCUMENT            | Specifies a document resource.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_STYLESHEET            | Specifies a CSS resource.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE            | Specifies an image resource.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MEDIA            | Specifies another media resource such as a video.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_FONT            | Specifies a font resource.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SCRIPT            | Specifies a script resource.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_XML_HTTP_REQUEST            | Specifies an XML HTTP request.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_FETCH            | Specifies a Fetch API communication.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_TEXT_TRACK            | Specifies a TextTrack resource.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_EVENT_SOURCE            | Specifies an EventSource API communication.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_WEBSOCKET            | Specifies a WebSocket API communication.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MANIFEST            | Specifies a Web App Manifest.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SIGNED_EXCHANGE            | Specifies a Signed HTTP Exchange.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_PING            | Specifies a Ping request.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_CSP_VIOLATION_REPORT            | Specifies a CSP Violation Report.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_OTHER            | Specifies an other resource.
 

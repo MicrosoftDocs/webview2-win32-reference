@@ -1,9 +1,9 @@
 ---
-description: The caller implements this method to receive the GotFocus and LostFocus events.
+description: Receives `GotFocus` and `LostFocus` events.
 title: WebView2 Win32 C++ ICoreWebView2FocusChangedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,23 +17,21 @@ interface ICoreWebView2FocusChangedEventHandler
   : public IUnknown
 ```
 
-The caller implements this method to receive the GotFocus and LostFocus events.
+Receives `GotFocus` and `LostFocus` events.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the event args for the corresponding event.
-
-There are no event args for this event.
+[Invoke](#invoke) | Provides the event args for the corresponding event.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the event args for the corresponding event.
+Provides the event args for the corresponding event.
 
 > public HRESULT [Invoke](#invoke)([ICoreWebView2Controller](icorewebview2controller.md) * sender, IUnknown * args)
 
-There are no event args and the args parameter will be null.
+No event args exist and the `args` parameter is set to `null`.
 

@@ -1,9 +1,9 @@
 ---
-description: The caller implements this interface to receive DevToolsProtocolEventReceived events from the WebView.
+description: Receives `DevToolsProtocolEventReceived` events from the WebView.
 title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceivedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,19 +17,19 @@ interface ICoreWebView2DevToolsProtocolEventReceivedEventHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive DevToolsProtocolEventReceived events from the WebView.
+Receives `DevToolsProtocolEventReceived` events from the WebView.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the event args for the corresponding event.
+[Invoke](#invoke) | Provides the event args for the corresponding event.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the event args for the corresponding event.
+Provides the event args for the corresponding event.
 
-> public HRESULT [Invoke](#invoke)([ICoreWebView2](icorewebview2.md) * sender, [ICoreWebView2DevToolsProtocolEventReceivedEventArgs](icorewebview2devtoolsprotocoleventreceivedeventargs.md) * args)
+> public HRESULT [Invoke](#invoke)(ICoreWebView2 * sender, ICoreWebView2DevToolsProtocolEventReceivedEventArgs * args)
 

@@ -1,9 +1,9 @@
 ---
-description: This interface is the owner of the CoreWebView2 object, and provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
+description: The owner of the `CoreWebView2` object that provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
 title: WebView2 Win32 C++ ICoreWebView2Controller
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,59 +17,61 @@ interface ICoreWebView2Controller
   : public IUnknown
 ```
 
-This interface is the owner of the CoreWebView2 object, and provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
+The owner of the `CoreWebView2` object that provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[add_AcceleratorKeyPressed](#add_acceleratorkeypressed) | Add an event handler for the AcceleratorKeyPressed event.
-[add_GotFocus](#add_gotfocus) | Add an event handler for the GotFocus event.
-[add_LostFocus](#add_lostfocus) | Add an event handler for the LostFocus event.
-[add_MoveFocusRequested](#add_movefocusrequested) | Add an event handler for the MoveFocusRequested event.
-[add_ZoomFactorChanged](#add_zoomfactorchanged) | Add an event handler for the ZoomFactorChanged event.
+[add_AcceleratorKeyPressed](#add_acceleratorkeypressed) | Adds an event handler for the `AcceleratorKeyPressed` event.
+[add_GotFocus](#add_gotfocus) | Adds an event handler for the `GotFocus` event.
+[add_LostFocus](#add_lostfocus) | Adds an event handler for the `LostFocus` event.
+[add_MoveFocusRequested](#add_movefocusrequested) | Adds an event handler for the `MoveFocusRequested` event.
+[add_ZoomFactorChanged](#add_zoomfactorchanged) | Adds an event handler for the `ZoomFactorChanged` event.
 [Close](#close) | Closes the WebView and cleans up the underlying browser instance.
 [get_Bounds](#get_bounds) | The WebView bounds.
-[get_CoreWebView2](#get_corewebview2) | Gets the CoreWebView2 associated with this CoreWebView2Controller.
-[get_IsVisible](#get_isvisible) | The IsVisible property determines whether to show or hide the WebView.
+[get_CoreWebView2](#get_corewebview2) | Gets the `CoreWebView2` associated with this `CoreWebView2Controller`.
+[get_IsVisible](#get_isvisible) | The `IsVisible` property determines whether to show or hide the WebView2.
 [get_ParentWindow](#get_parentwindow) | The parent window provided by the app that this WebView is using to render content.
 [get_ZoomFactor](#get_zoomfactor) | The zoom factor for the WebView.
-[MoveFocus](#movefocus) | Move focus into WebView.
-[NotifyParentWindowPositionChanged](#notifyparentwindowpositionchanged) | This is a notification separate from Bounds that tells WebView its parent (or any ancestor) HWND moved.
-[put_Bounds](#put_bounds) | Set the Bounds property.
-[put_IsVisible](#put_isvisible) | Set the IsVisible property.
-[put_ParentWindow](#put_parentwindow) | Set the parent window for the WebView.
-[put_ZoomFactor](#put_zoomfactor) | Set the ZoomFactor property.
-[remove_AcceleratorKeyPressed](#remove_acceleratorkeypressed) | Remove an event handler previously added with add_AcceleratorKeyPressed.
-[remove_GotFocus](#remove_gotfocus) | Remove an event handler previously added with add_GotFocus.
-[remove_LostFocus](#remove_lostfocus) | Remove an event handler previously added with add_LostFocus.
-[remove_MoveFocusRequested](#remove_movefocusrequested) | Remove an event handler previously added with add_MoveFocusRequested.
-[remove_ZoomFactorChanged](#remove_zoomfactorchanged) | Remove an event handler previously added with add_ZoomFactorChanged.
-[SetBoundsAndZoomFactor](#setboundsandzoomfactor) | Update Bounds and ZoomFactor properties at the same time.
+[MoveFocus](#movefocus) | Moves focus into WebView.
+[NotifyParentWindowPositionChanged](#notifyparentwindowpositionchanged) | This is a notification separate from `Bounds` that tells WebView that the main WebView parent (or any ancestor) `HWND` moved.
+[put_Bounds](#put_bounds) | Sets the `Bounds` property.
+[put_IsVisible](#put_isvisible) | Sets the `IsVisible` property.
+[put_ParentWindow](#put_parentwindow) | Sets the parent window for the WebView.
+[put_ZoomFactor](#put_zoomfactor) | Sets the `ZoomFactor` property.
+[remove_AcceleratorKeyPressed](#remove_acceleratorkeypressed) | Removes an event handler previously added with `add_AcceleratorKeyPressed`.
+[remove_GotFocus](#remove_gotfocus) | Removes an event handler previously added with `add_GotFocus`.
+[remove_LostFocus](#remove_lostfocus) | Removes an event handler previously added with `add_LostFocus`.
+[remove_MoveFocusRequested](#remove_movefocusrequested) | Removes an event handler previously added with `add_MoveFocusRequested`.
+[remove_ZoomFactorChanged](#remove_zoomfactorchanged) | Remove an event handler previously added with `add_ZoomFactorChanged`.
+[SetBoundsAndZoomFactor](#setboundsandzoomfactor) | Updates `Bounds` and `ZoomFactor` properties at the same time.
 
-The CoreWebView2Controller owns the CoreWebView2, and if all references to the CoreWebView2Controller go away, the WebView will be closed.
+The `CoreWebView2Controller` owns the `CoreWebView2`, and if all references to the `CoreWebView2Controller` go away, the WebView is closed.
 
 ## Members
 
 #### add_AcceleratorKeyPressed 
 
-Add an event handler for the AcceleratorKeyPressed event.
+Adds an event handler for the `AcceleratorKeyPressed` event.
 
 > public HRESULT [add_AcceleratorKeyPressed](#add_acceleratorkeypressed)([ICoreWebView2AcceleratorKeyPressedEventHandler](icorewebview2acceleratorkeypressedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-AcceleratorKeyPressed fires when an accelerator key or key combo is pressed or released while the WebView is focused. A key is considered an accelerator if either:
+`AcceleratorKeyPressed` runs when an accelerator key or key combo is pressed or released while the WebView is focused. A key is considered an accelerator if either of the following conditions are true.
 
-1. Ctrl or Alt is currently being held, or
+* Ctrl or Alt is currently being held.
 
-1. the pressed key does not map to a character. A few specific keys are never considered accelerators, such as Shift. The Escape key is always considered an accelerator.
+* The pressed key does not map to a character.
 
-Autorepeated key events caused by holding the key down will also fire this event. You can filter these out by checking the event args' KeyEventLParam or PhysicalKeyStatus.
+A few specific keys are never considered accelerators, such as Shift. The `Escape` key is always considered an accelerator.
 
-In windowed mode, this event handler is called synchronously. Until you call Handled() on the event args or the event handler returns, the browser process will be blocked and outgoing cross-process COM calls will fail with RPC_E_CANTCALLOUT_ININPUTSYNCCALL. All CoreWebView2 API methods will work, however.
+Auto-repeated key events caused by holding the key down also triggers this event. Filter out the auto-repeated key events by verifying the `KeyEventLParam` or `PhysicalKeyStatus` event args.
 
-In windowless mode, the event handler is called asynchronously. Further input will not reach the browser until the event handler returns or Handled() is called, but the browser process itself will not be blocked, and outgoing COM calls will work normally.
+In windowed mode, the event handler is run synchronously. Until you run `Handled()` on the event args or the event handler returns, the browser process is blocked and outgoing cross-process COM requests fail with `RPC_E_CANTCALLOUT_ININPUTSYNCCALL`. All `CoreWebView2` API methods work, however.
 
-It is recommended to call Handled(TRUE) as early as you can know that you want to handle the accelerator key.
+In windowless mode, the event handler is run asynchronously. Further input do not reach the browser until the event handler returns or `Handled()` is run, but the browser process is not blocked, and outgoing COM requests work normally.
+
+It is recommended to run `Handled(TRUE)` as early as are able to know that you want to handle the accelerator key.
 
 ```cpp
     // Register a handler for the AcceleratorKeyPressed event.
@@ -113,27 +115,27 @@ It is recommended to call Handled(TRUE) as early as you can know that you want t
 
 #### add_GotFocus 
 
-Add an event handler for the GotFocus event.
+Adds an event handler for the `GotFocus` event.
 
 > public HRESULT [add_GotFocus](#add_gotfocus)([ICoreWebView2FocusChangedEventHandler](icorewebview2focuschangedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-GotFocus fires when WebView got focus.
+`GotFocus` runs when WebView has focus.
 
 #### add_LostFocus 
 
-Add an event handler for the LostFocus event.
+Adds an event handler for the `LostFocus` event.
 
 > public HRESULT [add_LostFocus](#add_lostfocus)([ICoreWebView2FocusChangedEventHandler](icorewebview2focuschangedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-LostFocus fires when WebView lost focus. In the case where MoveFocusRequested event is fired, the focus is still on WebView when MoveFocusRequested event fires. LostFocus only fires afterwards when app's code or default action of MoveFocusRequested event set focus away from WebView.
+`LostFocus` runs when WebView loses focus. In the case where `MoveFocusRequested` event is run, the focus is still on WebView when `MoveFocusRequested` event runs. `LostFocus` only runs afterwards when code of the app or default action of `MoveFocusRequested` event set focus away from WebView.
 
 #### add_MoveFocusRequested 
 
-Add an event handler for the MoveFocusRequested event.
+Adds an event handler for the `MoveFocusRequested` event.
 
 > public HRESULT [add_MoveFocusRequested](#add_movefocusrequested)([ICoreWebView2MoveFocusRequestedEventHandler](icorewebview2movefocusrequestedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-MoveFocusRequested fires when user tries to tab out of the WebView. The WebView's focus has not changed when this event is fired.
+`MoveFocusRequested` runs when user tries to tab out of the WebView. The focus of the WebView has not changed when this event is run.
 
 ```cpp
     // Register a handler for the MoveFocusRequested event.
@@ -168,11 +170,11 @@ MoveFocusRequested fires when user tries to tab out of the WebView. The WebView'
 
 #### add_ZoomFactorChanged 
 
-Add an event handler for the ZoomFactorChanged event.
+Adds an event handler for the `ZoomFactorChanged` event.
 
 > public HRESULT [add_ZoomFactorChanged](#add_zoomfactorchanged)([ICoreWebView2ZoomFactorChangedEventHandler](icorewebview2zoomfactorchangedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-ZoomFactorChanged fires when the ZoomFactor property of the WebView changes. The event could fire because the caller modified the ZoomFactor property, or due to the user manually modifying the zoom. When it is modified by the caller via the ZoomFactor property, the internal zoom factor is updated immediately and there will be no ZoomFactorChanged event. WebView associates the last used zoom factor for each site. Therefore, it is possible for the zoom factor to change when navigating to a different page. When the zoom factor changes due to this, the ZoomFactorChanged event fires right after the ContentLoading event.
+`ZoomFactorChanged` runs when the `ZoomFactor` property of the WebView changes. The event may run because the `ZoomFactor` property was modified, or due to the user manually modifying the zoom. When it is modified using the `ZoomFactor` property, the internal zoom factor is updated immediately and no `ZoomFactorChanged` event is triggered. WebView associates the last used zoom factor for each site. It is possible for the zoom factor to change when navigating to a different page. When the zoom factor changes due to a navigation change, the `ZoomFactorChanged` event runs right after the `ContentLoading` event.
 
 ```cpp
     // Register a handler for the ZoomFactorChanged event.
@@ -198,11 +200,11 @@ Closes the WebView and cleans up the underlying browser instance.
 
 > public HRESULT [Close](#close)()
 
-Cleaning up the browser instance will release the resources powering the WebView. The browser instance will be shut down if there are no other WebViews using it.
+Cleaning up the browser instance releases the resources powering the WebView. The browser instance is shut down if no other WebViews are using it.
 
-After calling Close, all method calls will fail and event handlers will stop firing. Specifically, the WebView will release its references to its event handlers when Close is called.
+After running `Close`, all methods fail and event handlers stop running. Specifically, the WebView releases the associated references to any associated event handlers when `Close` is run.
 
-Close is implicitly called when the CoreWebView2Controller loses its final reference and is destructed. But it is best practice to explicitly call Close to avoid any accidental cycle of references between the WebView and the app code. Specifically, if you capture a reference to the WebView in an event handler you will create a reference cycle between the WebView and the event handler. Calling Close will break this cycle by releasing all event handlers. But to avoid this situation it is best practice both to explicitly call Close on the WebView and to not capture a reference to the WebView to ensure the WebView can be cleaned up correctly.
+`Close` is implicitly run when the `CoreWebView2Controller` loses the final reference and is destructed. But it is best practice to explicitly run `Close` to avoid any accidental cycle of references between the WebView and the app code. Specifically, if you capture a reference to the WebView in an event handler you create a reference cycle between the WebView and the event handler. Run `Close` to break the cycle by releasing all event handlers. But to avoid the situation, it is best to both explicitly run `Close` on the WebView and to not capture a reference to the WebView to ensure the WebView is cleaned up correctly.
 
 ```cpp
 // Close the WebView and deinitialize related state. This doesn't close the app window.
@@ -250,25 +252,27 @@ The WebView bounds.
 
 > public HRESULT [get_Bounds](#get_bounds)(RECT * bounds)
 
-Bounds are relative to the parent HWND. The app has two ways it can position a WebView:
+Bounds are relative to the parent `HWND`. The app has two ways to position a WebView.
 
-1. Create a child HWND that is the WebView parent HWND. Position this window where the WebView should be. In this case, use (0, 0) for the WebView's Bound's top left corner (the offset).
+* Create a child `HWND` that is the WebView parent `HWND`. Position the window where the WebView should be. Use `(0, 0)` for the top-left corner (the offset) of the `Bounds` of the WebView.
 
-1. Use the app's top most window as the WebView parent HWND. Set the WebView's Bound's top left corner so that the WebView is positioned correctly in the app. The Bound's values are in the host's coordinate space.
+* Use the top-most window of the app as the WebView parent HWND. For example, to position WebView correctly in the app, set the top-left corner of the Bound of the WebView.
+
+The values of `Bounds` are limited by the coordinate space of the host.
 
 #### get_CoreWebView2 
 
-Gets the CoreWebView2 associated with this CoreWebView2Controller.
+Gets the `CoreWebView2` associated with this `CoreWebView2Controller`.
 
 > public HRESULT [get_CoreWebView2](#get_corewebview2)([ICoreWebView2](icorewebview2.md) ** coreWebView2)
 
 #### get_IsVisible 
 
-The IsVisible property determines whether to show or hide the WebView.
+The `IsVisible` property determines whether to show or hide the WebView2.
 
 > public HRESULT [get_IsVisible](#get_isvisible)(BOOL * isVisible)
 
-If IsVisible is set to false, the WebView will be transparent and will not be rendered. However, this will not affect the window containing the WebView (the HWND parameter that was passed to CreateCoreWebView2Controller). If you want that window to disappear too, call ShowWindow on it directly in addition to modifying the IsVisible property. WebView as a child window won't get window messages when the top window is minimized or restored. For performance reason, developer should set IsVisible property of the WebView to false when the app window is minimized and back to true when app window is restored. App window can do this by handling SC_MINIMIZE and SC_RESTORE command upon receiving WM_SYSCOMMAND message.
+If `IsVisible` is set to `FALSE`, the WebView2 is transparent and is not rendered. However, this does not affect the window containing the WebView2 (the `HWND` parameter that was passed to `CreateCoreWebView2Controller`). If you want that window to disappear too, run `ShowWindow` on it directly in addition to modifying the `IsVisible` property. WebView2 as a child window does not get window messages when the top window is minimized or restored. For performance reason, developer should set `IsVisible` property of the WebView to `FALSE` when the app window is minimized and back to `TRUE` when app window is restored. App window does this by handling `SC_MINIMIZE and SC_RESTORE` command upon receiving `WM_SYSCOMMAND` message.
 
 ```cpp
 void ViewComponent::ToggleVisibility()
@@ -286,7 +290,7 @@ The parent window provided by the app that this WebView is using to render conte
 
 > public HRESULT [get_ParentWindow](#get_parentwindow)(HWND * parentWindow)
 
-This API initially returns the window passed into CreateCoreWebView2Controller.
+This API initially returns the window passed into `CreateCoreWebView2Controller`.
 
 #### get_ZoomFactor 
 
@@ -294,15 +298,15 @@ The zoom factor for the WebView.
 
 > public HRESULT [get_ZoomFactor](#get_zoomfactor)(double * zoomFactor)
 
-Note that changing zoom factor could cause `window.innerWidth/innerHeight` and page layout to change. A zoom factor that is applied by the host by calling ZoomFactor becomes the new default zoom for the WebView. This zoom factor applies across navigations and is the zoom factor WebView is returned to when the user presses ctrl+0. When the zoom factor is changed by the user (resulting in the app receiving ZoomFactorChanged), that zoom applies only for the current page. Any user applied zoom is only for the current page and is reset on a navigation. Specifying a zoomFactor less than or equal to 0 is not allowed. WebView also has an internal supported zoom factor range. When a specified zoom factor is out of that range, it will be normalized to be within the range, and a ZoomFactorChanged event will be fired for the real applied zoom factor. When this range normalization happens, the ZoomFactor property will report the zoom factor specified during the previous modification of the ZoomFactor property until the ZoomFactorChanged event is received after WebView applies the normalized zoom factor.
+> [!NOTE] Changing zoom factor may cause `window.innerWidth`, `window.innerHeight`, both, and page layout to change. A zoom factor that is applied by the host by running `ZoomFactor` becomes the new default zoom for the WebView. The zoom factor applies across navigations and is the zoom factor WebView is returned to when the user chooses Ctrl+0. When the zoom factor is changed by the user (resulting in the app receiving `ZoomFactorChanged`), that zoom applies only for the current page. Any user applied zoom is only for the current page and is reset on a navigation. Specifying a `zoomFactor` less than or equal to `0` is not allowed. WebView also has an internal supported zoom factor range. When a specified zoom factor is out of that range, it is normalized to be within the range, and a `ZoomFactorChanged` event is triggered for the real applied zoom factor. When the range normalization happens, the `ZoomFactor` property reports the zoom factor specified during the previous modification of the `ZoomFactor` property until the `ZoomFactorChanged` event is received after WebView applies the normalized zoom factor.
 
 #### MoveFocus 
 
-Move focus into WebView.
+Moves focus into WebView.
 
 > public HRESULT [MoveFocus](#movefocus)(COREWEBVIEW2_MOVE_FOCUS_REASON reason)
 
-WebView will get focus and focus will be set to correspondent element in the page hosted in the WebView. For Programmatic reason, focus is set to previously focused element or the default element if there is no previously focused element. For Next reason, focus is set to the first element. For Previous reason, focus is set to the last element. WebView can also got focus through user interaction like clicking into WebView or Tab into it. For tabbing, the app can call MoveFocus with Next or Previous to align with tab and shift+tab respectively when it decides the WebView is the next tabbable element. Or, the app can call IsDialogMessage as part of its message loop to allow the platform to auto handle tabbing. The platform will rotate through all windows with WS_TABSTOP. When the WebView gets focus from IsDialogMessage, it will internally put the focus on the first or last element for tab and shift+tab respectively.
+WebView gets focus and focus is set to correspondent element in the page hosted in the WebView. For Programmatic reason, focus is set to previously focused element or the default element if no previously focused element exists. For `Next` reason, focus is set to the first element. For `Previous` reason, focus is set to the last element. WebView changes focus through user interaction including selecting into a WebView or Tab into it. For tabbing, the app runs MoveFocus with Next or Previous to align with Tab and Shift+Tab respectively when it decides the WebView is the next element that may exist in a tab. Or, the app runs `IsDialogMessage` as part of the associated message loop to allow the platform to auto handle tabbing. The platform rotates through all windows with `WS_TABSTOP`. When the WebView gets focus from `IsDialogMessage`, it is internally put the focus on the first or last element for tab and Shift+Tab respectively.
 
 ```cpp
     while (GetMessage(&msg, nullptr, 0, 0))
@@ -381,11 +385,12 @@ void ControlComponent::TabBackwards(int currentIndex)
 
 #### NotifyParentWindowPositionChanged 
 
-This is a notification separate from Bounds that tells WebView its parent (or any ancestor) HWND moved.
+This is a notification separate from `Bounds` that tells WebView that the main WebView parent (or any ancestor) `HWND` moved.
 
 > public HRESULT [NotifyParentWindowPositionChanged](#notifyparentwindowpositionchanged)()
 
-This is needed for accessibility and certain dialogs in WebView to work correctly. 
+This is needed for accessibility and certain dialogs in WebView to work correctly.
+
 ```cpp
     if (message == WM_MOVE || message == WM_MOVING)
     {
@@ -396,7 +401,7 @@ This is needed for accessibility and certain dialogs in WebView to work correctl
 
 #### put_Bounds 
 
-Set the Bounds property.
+Sets the `Bounds` property.
 
 > public HRESULT [put_Bounds](#put_bounds)(RECT bounds)
 
@@ -449,7 +454,7 @@ void ViewComponent::ResizeWebView()
 
 #### put_IsVisible 
 
-Set the IsVisible property.
+Sets the `IsVisible` property.
 
 > public HRESULT [put_IsVisible](#put_isvisible)(BOOL isVisible)
 
@@ -475,55 +480,55 @@ Set the IsVisible property.
 
 #### put_ParentWindow 
 
-Set the parent window for the WebView.
+Sets the parent window for the WebView.
 
 > public HRESULT [put_ParentWindow](#put_parentwindow)(HWND parentWindow)
 
-This will cause the WebView to reparent its window to the newly provided window.
+This causes the WebView to re-parent the main WebView window to the newly provided window.
 
 #### put_ZoomFactor 
 
-Set the ZoomFactor property.
+Sets the `ZoomFactor` property.
 
 > public HRESULT [put_ZoomFactor](#put_zoomfactor)(double zoomFactor)
 
 #### remove_AcceleratorKeyPressed 
 
-Remove an event handler previously added with add_AcceleratorKeyPressed.
+Removes an event handler previously added with `add_AcceleratorKeyPressed`.
 
 > public HRESULT [remove_AcceleratorKeyPressed](#remove_acceleratorkeypressed)(EventRegistrationToken token)
 
 #### remove_GotFocus 
 
-Remove an event handler previously added with add_GotFocus.
+Removes an event handler previously added with `add_GotFocus`.
 
 > public HRESULT [remove_GotFocus](#remove_gotfocus)(EventRegistrationToken token)
 
 #### remove_LostFocus 
 
-Remove an event handler previously added with add_LostFocus.
+Removes an event handler previously added with `add_LostFocus`.
 
 > public HRESULT [remove_LostFocus](#remove_lostfocus)(EventRegistrationToken token)
 
 #### remove_MoveFocusRequested 
 
-Remove an event handler previously added with add_MoveFocusRequested.
+Removes an event handler previously added with `add_MoveFocusRequested`.
 
 > public HRESULT [remove_MoveFocusRequested](#remove_movefocusrequested)(EventRegistrationToken token)
 
 #### remove_ZoomFactorChanged 
 
-Remove an event handler previously added with add_ZoomFactorChanged.
+Remove an event handler previously added with `add_ZoomFactorChanged`.
 
 > public HRESULT [remove_ZoomFactorChanged](#remove_zoomfactorchanged)(EventRegistrationToken token)
 
 #### SetBoundsAndZoomFactor 
 
-Update Bounds and ZoomFactor properties at the same time.
+Updates `Bounds` and `ZoomFactor` properties at the same time.
 
 > public HRESULT [SetBoundsAndZoomFactor](#setboundsandzoomfactor)(RECT bounds, double zoomFactor)
 
-This operation is atomic from the host's perspective. After returning from this function, the Bounds and ZoomFactor properties will have both been updated if the function is successful, or neither will be updated if the function fails. If Bounds and ZoomFactor are both updated by the same scale (i.e. Bounds and ZoomFactor are both doubled), then the page will not see a change in window.innerWidth/innerHeight and the WebView will render the content at the new size and zoom without intermediate renderings. This function can also be used to update just one of ZoomFactor or Bounds by passing in the new value for one and the current value for the other.
+This operation is atomic from the perspective of the host. After returning from this function, the `Bounds` and `ZoomFactor` properties are both updated if the function is successful, or neither is updated if the function fails. If `Bounds` and `ZoomFactor` are both updated by the same scale (for example, `Bounds` and `ZoomFactor` are both doubled), then the page does not display a change in `window.innerWidth` or `window.innerHeight` and the WebView renders the content at the new size and zoom without intermediate renderings. This function also updates just one of `ZoomFactor` or `Bounds` by passing in the new value for one and the current value for the other.
 
 ```cpp
 void ViewComponent::SetScale(float scale)

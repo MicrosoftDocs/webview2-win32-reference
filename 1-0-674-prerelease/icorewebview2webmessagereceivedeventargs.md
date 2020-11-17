@@ -1,9 +1,9 @@
 ---
-description: Event args for the WebMessageReceived event.
+description: Event args for the `WebMessageReceived` event.
 title: WebView2 Win32 C++ ICoreWebView2WebMessageReceivedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,7 +17,7 @@ interface ICoreWebView2WebMessageReceivedEventArgs
   : public IUnknown
 ```
 
-Event args for the WebMessageReceived event.
+Event args for the `WebMessageReceived` event.
 
 ## Summary
 
@@ -25,7 +25,7 @@ Event args for the WebMessageReceived event.
 --------------------------------|---------------------------------------------
 [get_Source](#get_source) | The URI of the document that sent this web message.
 [get_WebMessageAsJson](#get_webmessageasjson) | The message posted from the WebView content to the host converted to a JSON string.
-[TryGetWebMessageAsString](#trygetwebmessageasstring) | If the message posted from the WebView content to the host is a string type, this method will return the value of that string.
+[TryGetWebMessageAsString](#trygetwebmessageasstring) | If the message posted from the WebView content to the host is a string type, this method returns the value of that string.
 
 ## Members
 
@@ -41,11 +41,11 @@ The message posted from the WebView content to the host converted to a JSON stri
 
 > public HRESULT [get_WebMessageAsJson](#get_webmessageasjson)(LPWSTR * webMessageAsJson)
 
-Use this to communicate via JavaScript objects.
+Run this operation to communicate using JavaScript objects.
 
-For example the following postMessage calls result in the following WebMessageAsJson values:
+For example, the following `postMessage` runs result in the following `WebMessageAsJson` values.
 
-```
+```json
 postMessage({'a': 'b'})      L"{\"a\": \"b\"}"
 postMessage(1.2)             L"1.2"
 postMessage('example')       L"\"example\""
@@ -53,15 +53,21 @@ postMessage('example')       L"\"example\""
 
 #### TryGetWebMessageAsString 
 
-If the message posted from the WebView content to the host is a string type, this method will return the value of that string.
+If the message posted from the WebView content to the host is a string type, this method returns the value of that string.
 
 > public HRESULT [TryGetWebMessageAsString](#trygetwebmessageasstring)(LPWSTR * webMessageAsString)
 
-If the message posted is some other kind of JavaScript type this method will fail with E_INVALIDARG. Use this to communicate via simple strings.
+If the message posted is some other kind of JavaScript type this method fails with the following error.
 
-For example the following postMessage calls result in the following WebMessageAsString values:
-
+```text
+E_INVALIDARG
 ```
+
+Run this operation to communicate using simple strings.
+
+For example, the following `postMessage` runs result in the following `WebMessageAsString` values.
+
+```json
 postMessage({'a': 'b'})      E_INVALIDARG
 postMessage(1.2)             E_INVALIDARG
 postMessage('example')       L"example"

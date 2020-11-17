@@ -1,9 +1,9 @@
 ---
-description: Event args for the PermissionRequested event.
+description: Event args for the `PermissionRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2PermissionRequestedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,28 +17,28 @@ interface ICoreWebView2PermissionRequestedEventArgs
   : public IUnknown
 ```
 
-Event args for the PermissionRequested event.
+Event args for the `PermissionRequested` event.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_IsUserInitiated](#get_isuserinitiated) | True when the permission request was initiated through a user gesture.
+[get_IsUserInitiated](#get_isuserinitiated) | `TRUE` when the permission request was initiated through a user gesture.
 [get_PermissionKind](#get_permissionkind) | The type of the permission that is requested.
-[get_State](#get_state) | The status of a permission request, i.e.
+[get_State](#get_state) | The status of a permission request, (for example is the request is granted).
 [get_Uri](#get_uri) | The origin of the web content that requests the permission.
-[GetDeferral](#getdeferral) | GetDeferral can be called to return an [ICoreWebView2Deferral](icorewebview2deferral.md) object.
-[put_State](#put_state) | Set the State property.
+[GetDeferral](#getdeferral) | Gets an `[ICoreWebView2Deferral](icorewebview2deferral.md)` object.
+[put_State](#put_state) | Sets the `State` property.
 
 ## Members
 
 #### get_IsUserInitiated 
 
-True when the permission request was initiated through a user gesture.
+`TRUE` when the permission request was initiated through a user gesture.
 
 > public HRESULT [get_IsUserInitiated](#get_isuserinitiated)(BOOL * isUserInitiated)
 
-Note that being initiated through a user gesture doesn't mean that user intended to access the associated resource.
+> [!NOTE] Being initiated through a user gesture does not mean that user intended to access the associated resource.
 
 #### get_PermissionKind 
 
@@ -48,11 +48,11 @@ The type of the permission that is requested.
 
 #### get_State 
 
-The status of a permission request, i.e.
+The status of a permission request, (for example is the request is granted).
 
 > public HRESULT [get_State](#get_state)(COREWEBVIEW2_PERMISSION_STATE * state)
 
-whether the request is granted. Default value is COREWEBVIEW2_PERMISSION_STATE_DEFAULT.
+The default value is `COREWEBVIEW2_PERMISSION_STATE_DEFAULT`.
 
 #### get_Uri 
 
@@ -62,15 +62,15 @@ The origin of the web content that requests the permission.
 
 #### GetDeferral 
 
-GetDeferral can be called to return an [ICoreWebView2Deferral](icorewebview2deferral.md) object.
+Gets an `[ICoreWebView2Deferral](icorewebview2deferral.md)` object.
 
 > public HRESULT [GetDeferral](#getdeferral)([ICoreWebView2Deferral](icorewebview2deferral.md) ** deferral)
 
-Developer can use the deferral object to make the permission decision at a later time.
+Use the deferral object to make the permission decision at a later time.
 
 #### put_State 
 
-Set the State property.
+Sets the `State` property.
 
 > public HRESULT [put_State](#put_state)(COREWEBVIEW2_PERMISSION_STATE state)
 

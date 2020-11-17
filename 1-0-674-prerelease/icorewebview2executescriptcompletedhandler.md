@@ -1,9 +1,9 @@
 ---
-description: The caller implements this interface to receive the result of the ExecuteScript method.
+description: Receives the result of the `ExecuteScript` method.
 title: WebView2 Win32 C++ ICoreWebView2ExecuteScriptCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,19 +17,19 @@ interface ICoreWebView2ExecuteScriptCompletedHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive the result of the ExecuteScript method.
+Receives the result of the `ExecuteScript` method.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the completion status and result of the corresponding asynchronous method call.
+[Invoke](#invoke) | Provide the implementer with the completion status and result of the corresponding asynchronous method.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the completion status and result of the corresponding asynchronous method call.
+Provide the implementer with the completion status and result of the corresponding asynchronous method.
 
 > public HRESULT [Invoke](#invoke)(HRESULT errorCode, LPCWSTR resultObjectAsJson)
 

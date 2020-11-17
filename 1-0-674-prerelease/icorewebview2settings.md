@@ -3,7 +3,7 @@ description: Defines properties that enable, disable, or modify WebView features
 title: WebView2 Win32 C++ ICoreWebView2Settings
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -23,36 +23,36 @@ Defines properties that enable, disable, or modify WebView features.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_AreDefaultContextMenusEnabled](#get_aredefaultcontextmenusenabled) | The AreDefaultContextMenusEnabled property is used to prevent default context menus from being shown to user in WebView.
-[get_AreDefaultScriptDialogsEnabled](#get_aredefaultscriptdialogsenabled) | AreDefaultScriptDialogsEnabled is used when loading a new HTML document.
-[get_AreDevToolsEnabled](#get_aredevtoolsenabled) | AreDevToolsEnabled controls whether the user is able to use the context menu or keyboard shortcuts to open the DevTools window.
-[get_AreHostObjectsAllowed](#get_arehostobjectsallowed) | The AreHostObjectsAllowed property is used to control whether host objects are accessible from the page in WebView.
-[get_IsBuiltInErrorPageEnabled](#get_isbuiltinerrorpageenabled) | The IsBuiltInErrorPageEnabled property is used to disable built in error page for navigation failure and render process failure.
-[get_IsScriptEnabled](#get_isscriptenabled) | Controls if JavaScript execution is enabled in all future navigations in the WebView.
-[get_IsStatusBarEnabled](#get_isstatusbarenabled) | IsStatusBarEnabled controls whether the status bar will be displayed.
-[get_IsWebMessageEnabled](#get_iswebmessageenabled) | The IsWebMessageEnabled property is used when loading a new HTML document.
-[get_IsZoomControlEnabled](#get_iszoomcontrolenabled) | The IsZoomControlEnabled property is used to prevent the user from impacting the zoom of the WebView.
-[put_AreDefaultContextMenusEnabled](#put_aredefaultcontextmenusenabled) | Set the AreDefaultContextMenusEnabled property.
-[put_AreDefaultScriptDialogsEnabled](#put_aredefaultscriptdialogsenabled) | Set the AreDefaultScriptDialogsEnabled property.
-[put_AreDevToolsEnabled](#put_aredevtoolsenabled) | Set the AreDevToolsEnabled property.
-[put_AreHostObjectsAllowed](#put_arehostobjectsallowed) | Set the AreHostObjectsAllowed property.
-[put_IsBuiltInErrorPageEnabled](#put_isbuiltinerrorpageenabled) | Set the IsBuiltInErrorPageEnabled property.
-[put_IsScriptEnabled](#put_isscriptenabled) | Set the IsScriptEnabled property.
-[put_IsStatusBarEnabled](#put_isstatusbarenabled) | Set the IsStatusBarEnabled property.
-[put_IsWebMessageEnabled](#put_iswebmessageenabled) | Set the IsWebMessageEnabled property.
-[put_IsZoomControlEnabled](#put_iszoomcontrolenabled) | Set the IsZoomControlEnabled property.
+[get_AreDefaultContextMenusEnabled](#get_aredefaultcontextmenusenabled) | The `AreDefaultContextMenusEnabled` property is used to prevent default context menus from being shown to user in WebView.
+[get_AreDefaultScriptDialogsEnabled](#get_aredefaultscriptdialogsenabled) | `AreDefaultScriptDialogsEnabled` is used when loading a new HTML document.
+[get_AreDevToolsEnabled](#get_aredevtoolsenabled) | `AreDevToolsEnabled` controls whether the user is able to use the context menu or keyboard shortcuts to open the DevTools window.
+[get_AreHostObjectsAllowed](#get_arehostobjectsallowed) | The `AreHostObjectsAllowed` property is used to control whether host objects are accessible from the page in WebView.
+[get_IsBuiltInErrorPageEnabled](#get_isbuiltinerrorpageenabled) | The `IsBuiltInErrorPageEnabled` property is used to disable built in error page for navigation failure and render process failure.
+[get_IsScriptEnabled](#get_isscriptenabled) | Controls if running JavaScript is enabled in all future navigations in the WebView.
+[get_IsStatusBarEnabled](#get_isstatusbarenabled) | `IsStatusBarEnabled` controls whether the status bar is displayed.
+[get_IsWebMessageEnabled](#get_iswebmessageenabled) | The `IsWebMessageEnabled` property is used when loading a new HTML document.
+[get_IsZoomControlEnabled](#get_iszoomcontrolenabled) | The `IsZoomControlEnabled` property is used to prevent the user from impacting the zoom of the WebView.
+[put_AreDefaultContextMenusEnabled](#put_aredefaultcontextmenusenabled) | Sets the `AreDefaultContextMenusEnabled` property.
+[put_AreDefaultScriptDialogsEnabled](#put_aredefaultscriptdialogsenabled) | Sets the `AreDefaultScriptDialogsEnabled` property.
+[put_AreDevToolsEnabled](#put_aredevtoolsenabled) | Sets the `AreDevToolsEnabled` property.
+[put_AreHostObjectsAllowed](#put_arehostobjectsallowed) | Sets the `AreHostObjectsAllowed` property.
+[put_IsBuiltInErrorPageEnabled](#put_isbuiltinerrorpageenabled) | Sets the `IsBuiltInErrorPageEnabled` property.
+[put_IsScriptEnabled](#put_isscriptenabled) | Sets the `IsScriptEnabled` property.
+[put_IsStatusBarEnabled](#put_isstatusbarenabled) | Sets the `IsStatusBarEnabled` property.
+[put_IsWebMessageEnabled](#put_iswebmessageenabled) | Sets the `IsWebMessageEnabled` property.
+[put_IsZoomControlEnabled](#put_iszoomcontrolenabled) | Sets the `IsZoomControlEnabled` property.
 
-Setting changes made after NavigationStarting event will not apply until the next top level navigation.
+Setting changes made after `NavigationStarting` event does not apply until the next top-level navigation.
 
 ## Members
 
 #### get_AreDefaultContextMenusEnabled 
 
-The AreDefaultContextMenusEnabled property is used to prevent default context menus from being shown to user in WebView.
+The `AreDefaultContextMenusEnabled` property is used to prevent default context menus from being shown to user in WebView.
 
 > public HRESULT [get_AreDefaultContextMenusEnabled](#get_aredefaultcontextmenusenabled)(BOOL * enabled)
 
-It is true by default.
+The default value is `TRUE`.
 
 ```cpp
             BOOL allowContextMenus;
@@ -74,27 +74,27 @@ It is true by default.
 
 #### get_AreDefaultScriptDialogsEnabled 
 
-AreDefaultScriptDialogsEnabled is used when loading a new HTML document.
+`AreDefaultScriptDialogsEnabled` is used when loading a new HTML document.
 
 > public HRESULT [get_AreDefaultScriptDialogsEnabled](#get_aredefaultscriptdialogsenabled)(BOOL * areDefaultScriptDialogsEnabled)
 
-If set to false, then WebView won't render the default JavaScript dialog box (Specifically those shown by the JavaScript alert, confirm, prompt functions and beforeunload event). Instead, if an event handler is set via add_ScriptDialogOpening, WebView will send an event that will contain all of the information for the dialog and allow the host app to show its own custom UI. It is true by default.
+If set to `FALSE`, WebView2 does not render the default JavaScript dialog box (Specifically those displayed by the JavaScript alert, confirm, prompt functions and `beforeunload` event). Instead, if an event handler is set using `add_ScriptDialogOpening`, WebView sends an event that contains all of the information for the dialog and allow the host app to show a custom UI. The default value is `TRUE`.
 
 #### get_AreDevToolsEnabled 
 
-AreDevToolsEnabled controls whether the user is able to use the context menu or keyboard shortcuts to open the DevTools window.
+`AreDevToolsEnabled` controls whether the user is able to use the context menu or keyboard shortcuts to open the DevTools window.
 
 > public HRESULT [get_AreDevToolsEnabled](#get_aredevtoolsenabled)(BOOL * areDevToolsEnabled)
 
-It is true by default.
+The default value is `TRUE`.
 
 #### get_AreHostObjectsAllowed 
 
-The AreHostObjectsAllowed property is used to control whether host objects are accessible from the page in WebView.
+The `AreHostObjectsAllowed` property is used to control whether host objects are accessible from the page in WebView.
 
 > public HRESULT [get_AreHostObjectsAllowed](#get_arehostobjectsallowed)(BOOL * allowed)
 
-It is true by default.
+The default value is `TRUE`.
 
 ```cpp
             BOOL allowHostObjects;
@@ -117,11 +117,11 @@ It is true by default.
 
 #### get_IsBuiltInErrorPageEnabled 
 
-The IsBuiltInErrorPageEnabled property is used to disable built in error page for navigation failure and render process failure.
+The `IsBuiltInErrorPageEnabled` property is used to disable built in error page for navigation failure and render process failure.
 
 > public HRESULT [get_IsBuiltInErrorPageEnabled](#get_isbuiltinerrorpageenabled)(BOOL * enabled)
 
-It is true by default. When disabled, blank page will be shown when related error happens.
+When disabled, a blank page is displayed when the related error happens. The default value is `TRUE`.
 
 ```cpp
             BOOL enabled;
@@ -144,11 +144,11 @@ It is true by default. When disabled, blank page will be shown when related erro
 
 #### get_IsScriptEnabled 
 
-Controls if JavaScript execution is enabled in all future navigations in the WebView.
+Controls if running JavaScript is enabled in all future navigations in the WebView.
 
 > public HRESULT [get_IsScriptEnabled](#get_isscriptenabled)(BOOL * isScriptEnabled)
 
-This only affects scripts in the document; scripts injected with ExecuteScript will run even if script is disabled. It is true by default.
+This only affects scripts in the document. Scripts injected with `ExecuteScript` runs even if script is disabled. The default value is `TRUE`.
 
 ```cpp
         // Changes to settings will apply at the next navigation, which includes the
@@ -166,19 +166,19 @@ This only affects scripts in the document; scripts injected with ExecuteScript w
 
 #### get_IsStatusBarEnabled 
 
-IsStatusBarEnabled controls whether the status bar will be displayed.
+`IsStatusBarEnabled` controls whether the status bar is displayed.
 
 > public HRESULT [get_IsStatusBarEnabled](#get_isstatusbarenabled)(BOOL * isStatusBarEnabled)
 
-The status bar is usually displayed in the lower left of the WebView and shows things such as the URI of a link when the user hovers over it and other information. It is true by default.
+The status bar is usually displayed in the lower left of the WebView and shows things such as the URI of a link when the user hovers over it and other information. The default value is `TRUE`.
 
 #### get_IsWebMessageEnabled 
 
-The IsWebMessageEnabled property is used when loading a new HTML document.
+The `IsWebMessageEnabled` property is used when loading a new HTML document.
 
 > public HRESULT [get_IsWebMessageEnabled](#get_iswebmessageenabled)(BOOL * isWebMessageEnabled)
 
-If set to true, communication from the host to the WebView's top level HTML document is allowed via PostWebMessageAsJson, PostWebMessageAsString, and window.chrome.webview's message event (see PostWebMessageAsJson documentation for details). Communication from the WebView's top level HTML document to the host is allowed via window.chrome.webview's postMessage function and add_WebMessageReceived method (see add_WebMessageReceived documentation for details). If set to false, then communication is disallowed. PostWebMessageAsJson and PostWebMessageAsString will fail with E_ACCESSDENIED and window.chrome.webview.postMessage will fail by throwing an instance of an Error object. It is true by default.
+If set to `TRUE`, communication from the host to the top-level HTML document of the WebView is allowed using `PostWebMessageAsJson`, `PostWebMessageAsString`, and message event of `window.chrome.webview`. For more information, navigate to [PostWebMessageAsJson]. Communication from the top-level HTML document of the WebView to the host is allowed using the postMessage function of `window.chrome.webview` and `add_WebMessageReceived` method. For more information, navigate to [add_WebMessageReceived]. If set to false, then communication is disallowed. `PostWebMessageAsJson` and `PostWebMessageAsString` fails with `E_ACCESSDENIED` and `window.chrome.webview.postMessage` fails by throwing an instance of an `Error` object. The default value is `TRUE`.
 
 ```cpp
     ComPtr<ICoreWebView2Settings> settings;
@@ -189,11 +189,11 @@ If set to true, communication from the host to the WebView's top level HTML docu
 
 #### get_IsZoomControlEnabled 
 
-The IsZoomControlEnabled property is used to prevent the user from impacting the zoom of the WebView.
+The `IsZoomControlEnabled` property is used to prevent the user from impacting the zoom of the WebView.
 
 > public HRESULT [get_IsZoomControlEnabled](#get_iszoomcontrolenabled)(BOOL * enabled)
 
-It is true by default. When disabled, user will not be able to zoom using ctrl+/- or ctrl+mouse wheel, but the zoom can be set via ZoomFactor API.
+When disabled, the user is not able to zoom using Ctrl++, Ctrl+-, or Ctrl+mouse wheel, but the zoom is set using `ZoomFactor` API. The default value is `TRUE`.
 
 ```cpp
             BOOL zoomControlEnabled;
@@ -216,55 +216,55 @@ It is true by default. When disabled, user will not be able to zoom using ctrl+/
 
 #### put_AreDefaultContextMenusEnabled 
 
-Set the AreDefaultContextMenusEnabled property.
+Sets the `AreDefaultContextMenusEnabled` property.
 
 > public HRESULT [put_AreDefaultContextMenusEnabled](#put_aredefaultcontextmenusenabled)(BOOL enabled)
 
 #### put_AreDefaultScriptDialogsEnabled 
 
-Set the AreDefaultScriptDialogsEnabled property.
+Sets the `AreDefaultScriptDialogsEnabled` property.
 
 > public HRESULT [put_AreDefaultScriptDialogsEnabled](#put_aredefaultscriptdialogsenabled)(BOOL areDefaultScriptDialogsEnabled)
 
 #### put_AreDevToolsEnabled 
 
-Set the AreDevToolsEnabled property.
+Sets the `AreDevToolsEnabled` property.
 
 > public HRESULT [put_AreDevToolsEnabled](#put_aredevtoolsenabled)(BOOL areDevToolsEnabled)
 
 #### put_AreHostObjectsAllowed 
 
-Set the AreHostObjectsAllowed property.
+Sets the `AreHostObjectsAllowed` property.
 
 > public HRESULT [put_AreHostObjectsAllowed](#put_arehostobjectsallowed)(BOOL allowed)
 
 #### put_IsBuiltInErrorPageEnabled 
 
-Set the IsBuiltInErrorPageEnabled property.
+Sets the `IsBuiltInErrorPageEnabled` property.
 
 > public HRESULT [put_IsBuiltInErrorPageEnabled](#put_isbuiltinerrorpageenabled)(BOOL enabled)
 
 #### put_IsScriptEnabled 
 
-Set the IsScriptEnabled property.
+Sets the `IsScriptEnabled` property.
 
 > public HRESULT [put_IsScriptEnabled](#put_isscriptenabled)(BOOL isScriptEnabled)
 
 #### put_IsStatusBarEnabled 
 
-Set the IsStatusBarEnabled property.
+Sets the `IsStatusBarEnabled` property.
 
 > public HRESULT [put_IsStatusBarEnabled](#put_isstatusbarenabled)(BOOL isStatusBarEnabled)
 
 #### put_IsWebMessageEnabled 
 
-Set the IsWebMessageEnabled property.
+Sets the `IsWebMessageEnabled` property.
 
 > public HRESULT [put_IsWebMessageEnabled](#put_iswebmessageenabled)(BOOL isWebMessageEnabled)
 
 #### put_IsZoomControlEnabled 
 
-Set the IsZoomControlEnabled property.
+Sets the `IsZoomControlEnabled` property.
 
 > public HRESULT [put_IsZoomControlEnabled](#put_iszoomcontrolenabled)(BOOL enabled)
 

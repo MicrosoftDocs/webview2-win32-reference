@@ -1,9 +1,9 @@
 ---
-description: The caller implements this interface to receive DocumentTitleChanged events.
+description: Receives `DocumentTitleChanged` events.
 title: WebView2 Win32 C++ ICoreWebView2DocumentTitleChangedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,23 +17,23 @@ interface ICoreWebView2DocumentTitleChangedEventHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive DocumentTitleChanged events.
+Receives `DocumentTitleChanged` events.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the event args for the corresponding event.
+[Invoke](#invoke) | Provides the event args for the corresponding event.
 
-Use the DocumentTitle property to get the modified title.
+Use the `DocumentTitle` property to get the modified title.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the event args for the corresponding event.
+Provides the event args for the corresponding event.
 
 > public HRESULT [Invoke](#invoke)([ICoreWebView2](icorewebview2.md) * sender, IUnknown * args)
 
-There are no event args and the args parameter will be null.
+No event args exist and the `args` parameter is set to `null`.
 

@@ -1,9 +1,9 @@
 ---
-description: Event args for the WebResourceRequested event.
+description: Event args for the `WebResourceRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceRequestedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,7 +17,7 @@ interface ICoreWebView2WebResourceRequestedEventArgs
   : public IUnknown
 ```
 
-Event args for the WebResourceRequested event.
+Event args for the `WebResourceRequested` event.
 
 ## Summary
 
@@ -26,8 +26,8 @@ Event args for the WebResourceRequested event.
 [get_Request](#get_request) | The Web resource request.
 [get_ResourceContext](#get_resourcecontext) | The web resource request context.
 [get_Response](#get_response) | A placeholder for the web resource response object.
-[GetDeferral](#getdeferral) | Obtain an [ICoreWebView2Deferral](icorewebview2deferral.md) object and put the event into a deferred state.
-[put_Response](#put_response) | Set the Response property.
+[GetDeferral](#getdeferral) | Obtain an `[ICoreWebView2Deferral](icorewebview2deferral.md)` object and put the event into a deferred state.
+[put_Response](#put_response) | Sets the `Response` property.
 
 ## Members
 
@@ -37,7 +37,7 @@ The Web resource request.
 
 > public HRESULT [get_Request](#get_request)([ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md) ** request)
 
-The request object may be missing some headers that are added by network stack later on.
+The request object may be missing some headers that are added by network stack at a later time.
 
 #### get_ResourceContext 
 
@@ -51,21 +51,21 @@ A placeholder for the web resource response object.
 
 > public HRESULT [get_Response](#get_response)([ICoreWebView2WebResourceResponse](icorewebview2webresourceresponse.md) ** response)
 
-If this object is set, the web resource request will be completed with this response.
+If this object is set, the web resource request is completed with the specified response.
 
 #### GetDeferral 
 
-Obtain an [ICoreWebView2Deferral](icorewebview2deferral.md) object and put the event into a deferred state.
+Obtain an `[ICoreWebView2Deferral](icorewebview2deferral.md)` object and put the event into a deferred state.
 
 > public HRESULT [GetDeferral](#getdeferral)([ICoreWebView2Deferral](icorewebview2deferral.md) ** deferral)
 
-You can use the [ICoreWebView2Deferral](icorewebview2deferral.md) object to complete the request at a later time.
+Use the `[ICoreWebView2Deferral](icorewebview2deferral.md)` object to complete the request at a later time.
 
 #### put_Response 
 
-Set the Response property.
+Sets the `Response` property.
 
 > public HRESULT [put_Response](#put_response)([ICoreWebView2WebResourceResponse](icorewebview2webresourceresponse.md) * response)
 
-An empty Web resource response object can be created with CreateWebResourceResponse and then modified to construct the response.
+Create an empty web resource response object with `CreateWebResourceResponse` and then modify it to construct the response.
 

@@ -1,9 +1,9 @@
 ---
-description: Event args for the ProcessFailed event.
+description: Event args for the `ProcessFailed` event.
 title: WebView2 Win32 C++ ICoreWebView2ProcessFailedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,7 +17,7 @@ interface ICoreWebView2ProcessFailedEventArgs
   : public IUnknown
 ```
 
-Event args for the ProcessFailed event.
+Event args for the `ProcessFailed` event.
 
 ## Summary
 

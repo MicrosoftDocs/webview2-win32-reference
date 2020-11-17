@@ -1,9 +1,9 @@
 ---
-description: Event args for the DevToolsProtocolEventReceived event.
+description: Event args for the `DevToolsProtocolEventReceived` event.
 title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceivedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,19 +17,19 @@ interface ICoreWebView2DevToolsProtocolEventReceivedEventArgs
   : public IUnknown
 ```
 
-Event args for the DevToolsProtocolEventReceived event.
+Event args for the `DevToolsProtocolEventReceived` event.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_ParameterObjectAsJson](#get_parameterobjectasjson) | The parameter object of the corresponding DevToolsProtocol event represented as a JSON string.
+[get_ParameterObjectAsJson](#get_parameterobjectasjson) | The parameter object of the corresponding `DevToolsProtocol` event represented as a JSON string.
 
 ## Members
 
 #### get_ParameterObjectAsJson 
 
-The parameter object of the corresponding DevToolsProtocol event represented as a JSON string.
+The parameter object of the corresponding `DevToolsProtocol` event represented as a JSON string.
 
 > public HRESULT [get_ParameterObjectAsJson](#get_parameterobjectasjson)(LPWSTR * parameterObjectAsJson)
 

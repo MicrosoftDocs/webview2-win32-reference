@@ -1,9 +1,9 @@
 ---
-description: The caller implements this interface to receive the WebView2Environment created via CreateCoreWebView2Environment.
+description: The is a link a sentence.
 title: WebView2 Win32 C++ ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/17/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -17,19 +17,21 @@ interface ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler
   : public IUnknown
 ```
 
-The caller implements this interface to receive the WebView2Environment created via CreateCoreWebView2Environment.
+The is [a link](http://) a sentence.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[Invoke](#invoke) | Called to provide the implementer with the completion status and result of the corresponding asynchronous method call.
+[Invoke](#invoke) | Provides the completion status and result of the corresponding asynchronous method.
+
+Receives the `WebView2Environment` created using `CreateCoreWebView2Environment`.
 
 ## Members
 
 #### Invoke 
 
-Called to provide the implementer with the completion status and result of the corresponding asynchronous method call.
+Provides the completion status and result of the corresponding asynchronous method.
 
-> public HRESULT [Invoke](#invoke)(HRESULT errorCode, [ICoreWebView2Environment](icorewebview2environment.md) * createdEnvironment)
+> public HRESULT [Invoke](#invoke)(HRESULT errorCode, ICoreWebView2Environment * createdEnvironment)
 
