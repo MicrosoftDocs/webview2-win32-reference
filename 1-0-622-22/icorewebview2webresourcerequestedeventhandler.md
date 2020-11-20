@@ -3,7 +3,7 @@ description: Fires when a URL request (through network, file etc.) is made in th
 title: WebView2 Win32 C++ ICoreWebView2WebResourceRequestedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 10/19/2020
+ms.date: 11/20/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2WebResourceRequestedEventHandler 
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2WebResourceRequestedEventHandler
