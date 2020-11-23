@@ -1,5 +1,5 @@
 ---
-description: This interface is continuation of the ICoreWebView2ExperimentalCompositionController interface.
+description: This interface is continuation of the ICoreWebView2ExperimentalCompositionController interface to manage drag and drop.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController3
 author: MSEdgeTeam
 ms.author: msedgedevrel

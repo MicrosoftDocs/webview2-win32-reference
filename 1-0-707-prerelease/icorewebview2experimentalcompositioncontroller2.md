@@ -1,5 +1,5 @@
 ---
-description: This interface is continuation of the ICoreWebView2ExperimentalCompositionController interface.
+description: This interface is continuation of the ICoreWebView2ExperimentalCompositionController interface to manage system cursor ID.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController2
 author: MSEdgeTeam
 ms.author: msedgedevrel
