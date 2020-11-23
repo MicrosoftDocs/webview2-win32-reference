@@ -38,7 +38,8 @@ Event args for the `PermissionRequested` event.
 
 > public HRESULT [get_IsUserInitiated](#get_isuserinitiated)(BOOL * isUserInitiated)
 
-> [!NOTE] Being initiated through a user gesture does not mean that user intended to access the associated resource.
+> [!NOTE]
+> Being initiated through a user gesture does not mean that user intended to access the associated resource.
 
 #### get_PermissionKind 
 

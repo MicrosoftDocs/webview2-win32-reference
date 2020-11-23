@@ -32,7 +32,8 @@ HTTP request headers.
 
 Used to inspect the HTTP request on `WebResourceRequested` event and `NavigationStarting` event.
 
-> [!NOTE] It is possible to modify the HTTP request from a `WebResourceRequested` event, but not from a `NavigationStarting` event.
+> [!NOTE]
+> It is possible to modify the HTTP request from a `WebResourceRequested` event, but not from a `NavigationStarting` event.
 
 ## Members
 

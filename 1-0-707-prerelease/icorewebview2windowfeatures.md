@@ -36,7 +36,7 @@ The window features for a WebView popup window.
 
 The fields match the `windowFeatures` passed to `window.open` as specified in [Window features][MdnDocsWebApiWindowOpenWindowFeatures] on MDN. There is no requirement for you to respect the values. If your app does not have corresponding UI features (for example, no toolbar) or if all instance of WebView are opened in tabs and do not have distinct size or positions, then your app does not respect the values. You may want to respect values, but perhaps only some apply to the UI of you app. Accordingly, you may respect all, some, or none of the properties as appropriate for your app. For all numeric properties, if the value that is passed to `window.open` is outside the range of an unsigned 32bit int, the resulting value is the absolute value of the maximum for unsigned 32bit integer. If you are not able to parse the value an integer, it is considered `0`. If the value is a floating point value, it is rounded down to an integer.
 
-[MdnDocsWebApiWindowOpenWindowFeatures]: [https://developer.mozilla.org/docs/Web/API/Window/open#Window_features](https://developer.mozilla.org/docs/Web/API/Window/open#Window_features) "Window features - Window.open() | MDN"
+[MdnDocsWebApiWindowOpenWindowFeatures]: https://developer.mozilla.org/docs/Web/API/Window/open#Window_features "Window features - Window.open() | MDN"
 
 ## Members
 

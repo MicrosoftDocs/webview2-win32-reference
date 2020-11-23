@@ -17,7 +17,7 @@ interface ICoreWebView2Cookie
   : public IUnknown
 ```
 
-Provides a set of properties that are used to manage an [ICoreWebView2Cookie](#icorewebview2cookie).
+Provides a set of properties that are used to manage an ICoreWebView2Cookie.
 
 ## Summary
 

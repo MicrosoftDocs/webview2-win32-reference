@@ -69,7 +69,8 @@ The default channel search order is the WebView2 Runtime, Beta, Dev, and Canary.
 
 You may specify the `userDataFolder` to change the default user data folder location for WebView2. The path is either an absolute file path or a relative file path that is interpreted as relative to the compiled code for the current process. For UWP apps, the default user data folder is the app data folder for the package. For non-UWP apps, the default user data (`{Executable File Name}.WebView2`) folder is created in the same directory next to the compiled code for the app. WebView2 creation fails if the compiled code is running in a directory in which the process does not have permission to create a new directory. The app is responsible to clean up the associated user data folder when it is done.
 
-> [!NOTE] As a browser process may be shared among WebViews, WebView creation fails with `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)` if the specified options does not match the options of the WebViews that are currently running in the shared browser process.
+> [!NOTE]
+> As a browser process may be shared among WebViews, WebView creation fails with `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)` if the specified options does not match the options of the WebViews that are currently running in the shared browser process.
 
 `environmentCreatedHandler` is the handler result to the async operation that contains the `WebView2Environment` that was created.
 
@@ -94,7 +95,8 @@ WEBVIEW2_WAIT_FOR_SCRIPT_DEBUGGER
 
 When found with a non-empty value, this indicates that the WebView is being launched under a script debugger. In this case, the WebView issues a `Page.waitForDebugger` CDP command that runs the script inside the WebView to pause on launch, until a debugger issues a corresponding `Runtime.runIfWaitingForDebugger` CDP command to resume the runtime.
 
-> [!NOTE] The following environment variable does not have a registry key equivalent: `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER`.
+> [!NOTE]
+> The following environment variable does not have a registry key equivalent: `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER`.
 
 When found with a non-empty value, it indicates that the WebView is being launched under a script debugger that also supports host apps that use multiple WebViews. The value is used as the identifier for a named pipe that is opened and written to when a new WebView is created by the host app. The payload should match the payload of the `remote-debugging-port` JSON target and an external debugger may use it to attach to a specific WebView instance. The format of the pipe created by the debugger should be `\\.\pipe\WebView2\Debugger\{app_name}\{pipe_name}`, where the following are true.
 
@@ -108,7 +110,8 @@ To enable debugging of the targets identified by the JSON ,you must set the `WEB
 
 > [!WARNING] If you set both `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER` and `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variables, the WebViews hosted in your app and associated contents may exposed to 3rd party apps such as debuggers.
 
-> [!NOTE] The following environment variable does not have a registry key equivalent: `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS`.
+> [!NOTE]
+> The following environment variable does not have a registry key equivalent: `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS`.
 
 If none of those environment variables exist, then the registry is examined next. The following registry values are verified.
 

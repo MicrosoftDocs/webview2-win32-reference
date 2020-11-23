@@ -769,7 +769,8 @@ Add the provided host object to script running in the WebView with the specified
 
 Host objects are exposed as host object proxies using `window.chrome.webview.hostObjects.{name}`. Host object proxies are promises and resolves to an object representing the host object. The promise is rejected if the app has not added an object with the name. When JavaScript code access a property or method of the object, a promise is return, which resolves to the value returned from the host for the property or method, or rejected in case of error, for example, no property or method on the object or parameters are not valid.
 
-> [!NOTE] While simple types, `IDispatch` and array are supported, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`.
+> [!NOTE]
+> While simple types, `IDispatch` and array are supported, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`.
 
 Additionally, all host objects are exposed as `window.chrome.webview.hostObjects.sync.{name}`. Here the host objects are exposed as synchronous host object proxies. These are not promises and function runtimes or property access synchronously block running script waiting to communicate cross process for the host code to run. Accordingly the result may have reliability issues and it is recommended that you use the promise-based asynchronous `window.chrome.webview.hostObjects.{name}` API.
 
@@ -909,7 +910,8 @@ Add the provided JavaScript to a list of scripts that should be run after the gl
 
 This method injects a script that runs on all top-level document and child frame page navigations. This method runs asynchronously, and you must wait for the completion handler to finish before the injected script is ready to run. When this method completes, the `Invoke` method of the handler is run with the `id` of the injected script. `id` is a string. To remove the injected script, use `RemoveScriptToExecuteOnDocumentCreated`.
 
-> [!NOTE] If an HTML document is running in a sandbox of some kind using [sandbox][MdnDocsWebHtmlElementIframeAttrSandbox] properties or the [Content-Security-Policy][MdnDocsWebHttpHeadersContentSecurityPolicy] HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
+> [!NOTE]
+> If an HTML document is running in a sandbox of some kind using [sandbox][MdnDocsWebHtmlElementIframeAttrSandbox] properties or the [Content-Security-Policy][MdnDocsWebHttpHeadersContentSecurityPolicy] HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
 
 ```cpp
 // Prompt the user for some script and register it to execute whenever a new page loads.
@@ -942,9 +944,10 @@ void ScriptComponent::AddInitializeScript()
     }
 }
 ```
- [MdnDocsWebHtmlElementIframeAttrSandbox]: [https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) "sandbox - &lt;iframe&gt;: The Inline Frame element | MDN"
 
-[MdnDocsWebHttpHeadersContentSecurityPolicy]: [https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) "Content-Security-Policy | MDN"
+[MdnDocsWebHtmlElementIframeAttrSandbox]: https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox "sandbox - &lt;iframe&gt;: The Inline Frame element | MDN"
+
+[MdnDocsWebHttpHeadersContentSecurityPolicy]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy "Content-Security-Policy | MDN"
 
 #### AddWebResourceRequestedFilter 
 
@@ -995,7 +998,7 @@ void ScriptComponent::CallCdpMethod()
 }
 ```
 
-[GithubChromedevtoolsDevtoolsProtocolTot]: [https://chromedevtools.github.io/devtools-protocol/tot](https://chromedevtools.github.io/devtools-protocol/tot) "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
+[GithubChromedevtoolsDevtoolsProtocolTot]: https://chromedevtools.github.io/devtools-protocol/tot "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
 
 #### CapturePreview 
 
@@ -1051,7 +1054,8 @@ Run JavaScript code from the javascript parameter in the current top-level docum
 
 The result of evaluating the provided JavaScript is used in this parameter. The result value is a JSON encoded string. If the result is undefined, contains a reference cycle, or otherwise is not able to be encoded into JSON, the JSON `null` value is returned as the `null` string.
 
-> [!NOTE] A function that has no explicit return value returns undefined. If the script that was run throws an unhandled exception, then the result is also `null`. This method is applied asynchronously. If the method is run after the `NavigationStarting` event during a navigation, the script runs in the new document when loading it, around the time `ContentLoading` is run. This operation works even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
+> [!NOTE] 
+> A function that has no explicit return value returns undefined. If the script that was run throws an unhandled exception, then the result is also `null`. This method is applied asynchronously. If the method is run after the `NavigationStarting` event during a navigation, the script runs in the new document when loading it, around the time `ContentLoading` is run. This operation works even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
 
 ```cpp
 // Prompt the user for some script and then execute it.
@@ -1204,7 +1208,7 @@ void ScriptComponent::SubscribeToCdpEvent()
 }
 ```
 
-[GithubChromedevtoolsDevtoolsProtocolTot]: [https://chromedevtools.github.io/devtools-protocol/tot](https://chromedevtools.github.io/devtools-protocol/tot) "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
+[GithubChromedevtoolsDevtoolsProtocolTot]: https://chromedevtools.github.io/devtools-protocol/tot "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
 
 #### GoBack 
 
@@ -1228,7 +1232,8 @@ For more information, navigate to [Navigation events][MicrosoftEdgeWebview2Conce
 
 [MicrosoftEdgeWebview2ConceptsNavigationevents]: /microsoft-edge/webview2/concepts/navigation-events "Navigation events | Microsoft Docs"
 
-> [!NOTE] This operation starts a navigation and the corresponding `NavigationStarting` event triggers sometime after `Navigate` runs.
+> [!NOTE]
+> This operation starts a navigation and the corresponding `NavigationStarting` event triggers sometime after `Navigate` runs.
 
 ```cpp
 void ControlComponent::NavigateToAddressBar()

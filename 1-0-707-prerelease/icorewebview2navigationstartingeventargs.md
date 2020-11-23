@@ -65,7 +65,8 @@ The HTTP request headers for the navigation.
 
 > public HRESULT [get_RequestHeaders](#get_requestheaders)([ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md) ** requestHeaders)
 
-> [!NOTE] You are not able to modify the HTTP request headers in a `NavigationStarting` event.
+> [!NOTE]
+> You are not able to modify the HTTP request headers in a `NavigationStarting` event.
 
 #### get_Uri 
 
