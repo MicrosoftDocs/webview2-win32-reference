@@ -108,7 +108,8 @@ To enable debugging of the targets identified by the JSON ,you must set the `WEB
 
 * `{port_num}` is the port on which the CDP server binds.
 
-> [!WARNING] If you set both `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER` and `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variables, the WebViews hosted in your app and associated contents may exposed to 3rd party apps such as debuggers.
+> [!WARNING]
+> If you set both `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER` and `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variables, the WebViews hosted in your app and associated contents may exposed to 3rd party apps such as debuggers.
 
 > [!NOTE]
 > The following environment variable does not have a registry key equivalent: `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS`.
