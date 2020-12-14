@@ -3,7 +3,7 @@ description: WebView2 Win32 C++ Reference
 title: WebView2 Win32 C++ Reference
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 12/08/2020
+ms.date: 12/14/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -29,6 +29,7 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 *   [ICoreWebView2Deferral](icorewebview2deferral.md)
 *   [ICoreWebView2DevToolsProtocolEventReceiver](icorewebview2devtoolsprotocoleventreceiver.md)
 *   [ICoreWebView2Environment](icorewebview2environment.md)
+*   [ICoreWebView2Environment2](icorewebview2environment2.md)
 *   [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md)
 *   [ICoreWebView2HttpHeadersCollectionIterator](icorewebview2httpheaderscollectioniterator.md)
 *   [ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md)
