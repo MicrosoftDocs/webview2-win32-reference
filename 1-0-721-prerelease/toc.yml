@@ -19,6 +19,8 @@
       href: icorewebview2devtoolsprotocoleventreceiver.md
     - name: ICoreWebView2Environment
       href: icorewebview2environment.md
+    - name: ICoreWebView2Environment2
+      href: icorewebview2environment2.md
     - name: ICoreWebView2EnvironmentOptions
       href: icorewebview2environmentoptions.md
     - name: ICoreWebView2HttpHeadersCollectionIterator

@@ -3,7 +3,7 @@ description: This interface is continuation of the ICoreWebView2ExperimentalComp
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController3
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 12/08/2020
+ms.date: 12/14/2020
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -19,7 +19,7 @@ interface ICoreWebView2ExperimentalCompositionController3
   : public IUnknown
 ```
 
-This interface is continuation of the [ICoreWebView2ExperimentalCompositionController](icorewebview2experimentalcompositioncontroller.md) interface.
+This interface is continuation of the [ICoreWebView2ExperimentalCompositionController](icorewebview2experimentalcompositioncontroller.md) interface to manage drag and drop.
 
 ## Summary
 
