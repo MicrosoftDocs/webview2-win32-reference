@@ -17,7 +17,7 @@ interface ICoreWebView2WebResourceResponseViewGetContentCompletedHandler
   : public IUnknown
 ```
 
-Receives the result of the `[ICoreWebView2WebResourceResponseView::GetContent](icorewebview2webresourceresponseview.md)` method.
+Receives the result of the [ICoreWebView2WebResourceResponseView::GetContent](icorewebview2webresourceresponseview.md) method.
 
 ## Summary
 
