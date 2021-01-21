@@ -3,7 +3,7 @@ description: Receives `ProcessFailed` events.
 title: WebView2 Win32 C++ ICoreWebView2ProcessFailedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 12/08/2020
+ms.date: 01/25/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2ProcessFailedEventHandler 
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2ProcessFailedEventHandler
