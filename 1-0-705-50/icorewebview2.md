@@ -10,9 +10,7 @@ ms.technology: webview
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2
 ---
 
-# interface ICoreWebView2 
-
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+# interface ICoreWebView2
 
 ```
 interface ICoreWebView2
@@ -52,7 +50,7 @@ WebView2 enables you to host web content using the latest Microsoft Edge browser
 [get_CanGoForward](#get_cangoforward) | `TRUE` if the WebView is able to navigate to a next page in the navigation history.
 [get_ContainsFullScreenElement](#get_containsfullscreenelement) | Indicates if the WebView contains a fullscreen HTML element.
 [get_DocumentTitle](#get_documenttitle) | The title for the current top-level document.
-[get_Settings](#get_settings) | The `[ICoreWebView2Settings](icorewebview2settings.md)` object contains various modifiable settings for the running WebView.
+[get_Settings](#get_settings) | The [ICoreWebView2Settings](icorewebview2settings.md) object contains various modifiable settings for the running WebView.
 [get_Source](#get_source) | The URI of the current top level document.
 [GetDevToolsProtocolEventReceiver](#getdevtoolsprotocoleventreceiver) | Get a DevTools Protocol event receiver that allows you to subscribe to a DevTools Protocol event.
 [GoBack](#goback) | Navigates the WebView to the previous page in the navigation history.
@@ -83,21 +81,28 @@ WebView2 enables you to host web content using the latest Microsoft Edge browser
 [RemoveScriptToExecuteOnDocumentCreated](#removescripttoexecuteondocumentcreated) | Remove the corresponding JavaScript added using `AddScriptToExecuteOnDocumentCreated` with the specified script ID.
 [RemoveWebResourceRequestedFilter](#removewebresourcerequestedfilter) | Removes a matching WebResource filter that was previously added for the `WebResourceRequested` event.
 [Stop](#stop) | Stop all navigations and pending resource fetches. Does not stop scripts.
-[COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT](#corewebview2_capture_preview_image_format) | Specifies the image format for the `[ICoreWebView2::CapturePreview](#capturepreview)` method.
+[COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT](#corewebview2_capture_preview_image_format) | Specifies the image format for the [ICoreWebView2::CapturePreview](#capturepreview) method.
 [COREWEBVIEW2_COOKIE_SAME_SITE_KIND](#corewebview2_cookie_same_site_kind) | Kind of cookie SameSite status used in the ICoreWebView2Cookie interface.
 [COREWEBVIEW2_KEY_EVENT_KIND](#corewebview2_key_event_kind) | Specifies the key event type that triggered an `AcceleratorKeyPressed` event.
 [COREWEBVIEW2_MOVE_FOCUS_REASON](#corewebview2_move_focus_reason) | Specifies the reason for moving focus.
 [COREWEBVIEW2_PERMISSION_KIND](#corewebview2_permission_kind) | Indicates the type of a permission request.
 [COREWEBVIEW2_PERMISSION_STATE](#corewebview2_permission_state) | Specifies the response to a permission request.
 [COREWEBVIEW2_PHYSICAL_KEY_STATUS](#corewebview2_physical_key_status) | Contains the information packed into the `LPARAM` sent to a Win32 key event.
-[COREWEBVIEW2_PROCESS_FAILED_KIND](#corewebview2_process_failed_kind) | Specifies the process failure type used in the `ICoreWebView2ProcessFailedEventHandler` interface.
-[COREWEBVIEW2_SCRIPT_DIALOG_KIND](#corewebview2_script_dialog_kind) | Specifies the JavaScript dialog type used in the `ICoreWebView2ScriptDialogOpeningEventHandler` interface.
+[COREWEBVIEW2_PROCESS_FAILED_KIND](#corewebview2_process_failed_kind) | Specifies the process failure type used in the ICoreWebView2ProcessFailedEventHandler interface.
+[COREWEBVIEW2_SCRIPT_DIALOG_KIND](#corewebview2_script_dialog_kind) | Specifies the JavaScript dialog type used in the ICoreWebView2ScriptDialogOpeningEventHandler interface.
 [COREWEBVIEW2_WEB_ERROR_STATUS](#corewebview2_web_error_status) | Indicates the error status values for web navigations.
 [COREWEBVIEW2_WEB_RESOURCE_CONTEXT](#corewebview2_web_resource_context) | Specifies the web resource request contexts.
 
+## Applies to
+
+Product                         | Introduced
+--------------------------------|---------------------------------------------
+WebView2 Win32            |    0.9.430
+WebView2 Win32 Prerelease |    0.9.488
+
 ## Members
 
-#### add_ContainsFullScreenElementChanged 
+#### add_ContainsFullScreenElementChanged
 
 Add an event handler for the `ContainsFullScreenElementChanged` event.
 
@@ -129,7 +134,7 @@ Add an event handler for the `ContainsFullScreenElementChanged` event.
         nullptr));
 ```
 
-#### add_ContentLoading 
+#### add_ContentLoading
 
 Add an event handler for the `ContentLoading` event.
 
@@ -137,7 +142,7 @@ Add an event handler for the `ContentLoading` event.
 
 `ContentLoading` triggers before any content is loaded, including scripts added with `AddScriptToExecuteOnDocumentCreated`. `ContentLoading` does not trigger if a same page navigation occurs (such as through `fragment` navigations or `history.pushState` navigations). This operation follows the `NavigationStarting` and `SourceChanged` events and precedes the `HistoryChanged` and `NavigationCompleted` events.
 
-#### add_DocumentTitleChanged 
+#### add_DocumentTitleChanged
 
 Add an event handler for the `DocumentTitleChanged` event.
 
@@ -160,7 +165,7 @@ Add an event handler for the `DocumentTitleChanged` event.
         &m_documentTitleChangedToken));
 ```
 
-#### add_FrameNavigationCompleted 
+#### add_FrameNavigationCompleted
 
 Add an event handler for the `FrameNavigationCompleted` event.
 
@@ -199,7 +204,7 @@ Add an event handler for the `FrameNavigationCompleted` event.
         &m_frameNavigationCompletedToken));
 ```
 
-#### add_FrameNavigationStarting 
+#### add_FrameNavigationStarting
 
 Add an event handler for the `FrameNavigationStarting` event.
 
@@ -214,21 +219,22 @@ You may block corresponding navigations until the event handler returns.
     // This handler will prevent a frame from navigating to a blocked domain.
     CHECK_FAILURE(m_webView->add_FrameNavigationStarting(
         Callback<ICoreWebView2NavigationStartingEventHandler>(
-            [this](ICoreWebView2* sender,
-                   ICoreWebView2NavigationStartingEventArgs* args) -> HRESULT
-    {
-        wil::unique_cotaskmem_string uri;
-        CHECK_FAILURE(args->get_Uri(&uri));
+            [this](ICoreWebView2* sender, ICoreWebView2NavigationStartingEventArgs* args)
+                -> HRESULT {
+                wil::unique_cotaskmem_string uri;
+                CHECK_FAILURE(args->get_Uri(&uri));
 
-        if (ShouldBlockUri(uri.get()))
-        {
-            CHECK_FAILURE(args->put_Cancel(true));
-        }
-        return S_OK;
-    }).Get(), &m_frameNavigationStartingToken));
+                if (ShouldBlockUri(uri.get()))
+                {
+                    CHECK_FAILURE(args->put_Cancel(true));
+                }
+                return S_OK;
+            })
+            .Get(),
+        &m_frameNavigationStartingToken));
 ```
 
-#### add_HistoryChanged 
+#### add_HistoryChanged
 
 Add an event handler for the `HistoryChanged` event.
 
@@ -255,7 +261,7 @@ Add an event handler for the `HistoryChanged` event.
         &m_historyChangedToken));
 ```
 
-#### add_NavigationCompleted 
+#### add_NavigationCompleted
 
 Add an event handler for the `NavigationCompleted` event.
 
@@ -292,7 +298,7 @@ Add an event handler for the `NavigationCompleted` event.
         &m_navigationCompletedToken));
 ```
 
-#### add_NavigationStarting 
+#### add_NavigationStarting
 
 Add an event handler for the `NavigationStarting` event.
 
@@ -310,41 +316,51 @@ You may block corresponding navigations until the event handler returns.
     // selected websites.
     CHECK_FAILURE(m_webView->add_NavigationStarting(
         Callback<ICoreWebView2NavigationStartingEventHandler>(
-            [this](ICoreWebView2* sender,
-                   ICoreWebView2NavigationStartingEventArgs* args) -> HRESULT
-    {
-        wil::unique_cotaskmem_string uri;
-        CHECK_FAILURE(args->get_Uri(&uri));
+            [this](ICoreWebView2* sender, ICoreWebView2NavigationStartingEventArgs* args)
+                -> HRESULT {
+                wil::unique_cotaskmem_string uri;
+                CHECK_FAILURE(args->get_Uri(&uri));
 
-        if (ShouldBlockUri(uri.get()))
-        {
-            CHECK_FAILURE(args->put_Cancel(true));
+                if (ShouldBlockUri(uri.get()))
+                {
+                    CHECK_FAILURE(args->put_Cancel(true));
 
-            // If the user clicked a link to navigate, show a warning page.
-            BOOL userInitiated;
-            CHECK_FAILURE(args->get_IsUserInitiated(&userInitiated));
-            static const PCWSTR htmlContent =
-              L"<h1>Domain Blocked</h1>"
-              L"<p>You've attempted to navigate to a domain in the blocked "
-              L"sites list. Press back to return to the previous page.</p>";
-            CHECK_FAILURE(sender->NavigateToString(htmlContent));
-        }
-        // Changes to settings will apply at the next navigation, which includes the
-        // navigation after a NavigationStarting event.  We can use this to change
-        // settings according to what site we're visiting.
-        if (ShouldBlockScriptForUri(uri.get()))
-        {
-            m_settings->put_IsScriptEnabled(FALSE);
-        }
-        else
-        {
-            m_settings->put_IsScriptEnabled(m_isScriptEnabled);
-        }
-        return S_OK;
-    }).Get(), &m_navigationStartingToken));
+                    // If the user clicked a link to navigate, show a warning page.
+                    BOOL userInitiated;
+                    CHECK_FAILURE(args->get_IsUserInitiated(&userInitiated));
+                    static const PCWSTR htmlContent =
+                        L"<h1>Domain Blocked</h1>"
+                        L"<p>You've attempted to navigate to a domain in the blocked "
+                        L"sites list. Press back to return to the previous page.</p>";
+                    CHECK_FAILURE(sender->NavigateToString(htmlContent));
+                }
+                // Changes to settings will apply at the next navigation, which includes the
+                // navigation after a NavigationStarting event.  We can use this to change
+                // settings according to what site we're visiting.
+                if (ShouldBlockScriptForUri(uri.get()))
+                {
+                    m_settings->put_IsScriptEnabled(FALSE);
+                }
+                else
+                {
+                    m_settings->put_IsScriptEnabled(m_isScriptEnabled);
+                }
+                static const PCWSTR url_compare_example = L"fourthcoffee.com";
+                wil::unique_bstr domain = GetDomainOfUri(uri.get());
+                const wchar_t* domains = domain.get();
+
+                if (wcscmp(url_compare_example, domains) == 0)
+                {
+                    SetUserAgent(L"example_navigation_ua");
+                }
+
+                return S_OK;
+            })
+            .Get(),
+        &m_navigationStartingToken));
 ```
 
-#### add_NewWindowRequested 
+#### add_NewWindowRequested
 
 Add an event handler for the `NewWindowRequested` event.
 
@@ -420,7 +436,7 @@ If a deferral is not taken on the event args, scripts that resulted in the new w
         nullptr));
 ```
 
-#### add_PermissionRequested 
+#### add_PermissionRequested
 
 Add an event handler for the `PermissionRequested` event.
 
@@ -435,41 +451,44 @@ If a deferral is not taken on the event args, the subsequent scripts are blocked
     // This handler prompts the user to allow or deny the request.
     CHECK_FAILURE(m_webView->add_PermissionRequested(
         Callback<ICoreWebView2PermissionRequestedEventHandler>(
-            [this](
-                ICoreWebView2* sender,
-                ICoreWebView2PermissionRequestedEventArgs* args) -> HRESULT
-    {
-        wil::unique_cotaskmem_string uri;
-        COREWEBVIEW2_PERMISSION_KIND kind = COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION;
-        BOOL userInitiated = FALSE;
+            [this](ICoreWebView2* sender, ICoreWebView2PermissionRequestedEventArgs* args)
+                -> HRESULT {
+                wil::unique_cotaskmem_string uri;
+                COREWEBVIEW2_PERMISSION_KIND kind =
+                    COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION;
+                BOOL userInitiated = FALSE;
 
-        CHECK_FAILURE(args->get_Uri(&uri));
-        CHECK_FAILURE(args->get_PermissionKind(&kind));
-        CHECK_FAILURE(args->get_IsUserInitiated(&userInitiated));
+                CHECK_FAILURE(args->get_Uri(&uri));
+                CHECK_FAILURE(args->get_PermissionKind(&kind));
+                CHECK_FAILURE(args->get_IsUserInitiated(&userInitiated));
 
-        std::wstring message = L"Do you want to grant permission for ";
-        message += NameOfPermissionKind(kind);
-        message += L" to the website at ";
-        message += uri.get();
-        message += L"?\n\n";
-        message += (userInitiated
-            ? L"This request came from a user gesture."
-            : L"This request did not come from a user gesture.");
+                std::wstring message = L"Do you want to grant permission for ";
+                message += NameOfPermissionKind(kind);
+                message += L" to the website at ";
+                message += uri.get();
+                message += L"?\n\n";
+                message +=
+                    (userInitiated ? L"This request came from a user gesture."
+                                   : L"This request did not come from a user gesture.");
 
-        int response = MessageBox(nullptr, message.c_str(), L"Permission Request",
-                                   MB_YESNOCANCEL | MB_ICONWARNING);
+                int response = MessageBox(
+                    nullptr, message.c_str(), L"Permission Request",
+                    MB_YESNOCANCEL | MB_ICONWARNING);
 
-        COREWEBVIEW2_PERMISSION_STATE state =
-              response == IDYES ? COREWEBVIEW2_PERMISSION_STATE_ALLOW
-            : response == IDNO  ? COREWEBVIEW2_PERMISSION_STATE_DENY
-            :                     COREWEBVIEW2_PERMISSION_STATE_DEFAULT;
-        CHECK_FAILURE(args->put_State(state));
+                COREWEBVIEW2_PERMISSION_STATE state =
+                    response == IDYES
+                        ? COREWEBVIEW2_PERMISSION_STATE_ALLOW
+                        : response == IDNO ? COREWEBVIEW2_PERMISSION_STATE_DENY
+                                           : COREWEBVIEW2_PERMISSION_STATE_DEFAULT;
+                CHECK_FAILURE(args->put_State(state));
 
-        return S_OK;
-    }).Get(), &m_permissionRequestedToken));
+                return S_OK;
+            })
+            .Get(),
+        &m_permissionRequestedToken));
 ```
 
-#### add_ProcessFailed 
+#### add_ProcessFailed
 
 Add an event handler for the `ProcessFailed` event.
 
@@ -526,7 +545,7 @@ Add an event handler for the `ProcessFailed` event.
     }).Get(), &m_processFailedToken));
 ```
 
-#### add_ScriptDialogOpening 
+#### add_ScriptDialogOpening
 
 Add an event handler for the `ScriptDialogOpening` event.
 
@@ -542,59 +561,54 @@ If a deferral is not taken on the event args, the subsequent scripts are blocked
     // and may defer the event if the setting to defer dialogs is enabled.
     CHECK_FAILURE(m_webView->add_ScriptDialogOpening(
         Callback<ICoreWebView2ScriptDialogOpeningEventHandler>(
-            [this](
-                ICoreWebView2* sender,
-                ICoreWebView2ScriptDialogOpeningEventArgs* args) -> HRESULT
-    {
-        wil::com_ptr<ICoreWebView2ScriptDialogOpeningEventArgs> eventArgs = args;
-        auto showDialog = [this, eventArgs]
-        {
-            wil::unique_cotaskmem_string uri;
-            COREWEBVIEW2_SCRIPT_DIALOG_KIND type;
-            wil::unique_cotaskmem_string message;
-            wil::unique_cotaskmem_string defaultText;
+            [this](ICoreWebView2* sender, ICoreWebView2ScriptDialogOpeningEventArgs* args)
+                -> HRESULT {
+                wil::com_ptr<ICoreWebView2ScriptDialogOpeningEventArgs> eventArgs = args;
+                auto showDialog = [this, eventArgs] {
+                    wil::unique_cotaskmem_string uri;
+                    COREWEBVIEW2_SCRIPT_DIALOG_KIND type;
+                    wil::unique_cotaskmem_string message;
+                    wil::unique_cotaskmem_string defaultText;
 
-            CHECK_FAILURE(eventArgs->get_Uri(&uri));
-            CHECK_FAILURE(eventArgs->get_Kind(&type));
-            CHECK_FAILURE(eventArgs->get_Message(&message));
-            CHECK_FAILURE(eventArgs->get_DefaultText(&defaultText));
+                    CHECK_FAILURE(eventArgs->get_Uri(&uri));
+                    CHECK_FAILURE(eventArgs->get_Kind(&type));
+                    CHECK_FAILURE(eventArgs->get_Message(&message));
+                    CHECK_FAILURE(eventArgs->get_DefaultText(&defaultText));
 
-            std::wstring promptString = std::wstring(L"The page at '")
-                + uri.get() + L"' says:";
-            TextInputDialog dialog(
-                m_appWindow->GetMainWindow(),
-                L"Script Dialog",
-                promptString.c_str(),
-                message.get(),
-                defaultText.get(),
-                /* readonly */ type != COREWEBVIEW2_SCRIPT_DIALOG_KIND_PROMPT);
-            if (dialog.confirmed)
-            {
-                CHECK_FAILURE(eventArgs->put_ResultText(dialog.input.c_str()));
-                CHECK_FAILURE(eventArgs->Accept());
-            }
-        };
+                    std::wstring promptString =
+                        std::wstring(L"The page at '") + uri.get() + L"' says:";
+                    TextInputDialog dialog(
+                        m_appWindow->GetMainWindow(), L"Script Dialog", promptString.c_str(),
+                        message.get(), defaultText.get(),
+                        /* readonly */ type != COREWEBVIEW2_SCRIPT_DIALOG_KIND_PROMPT);
+                    if (dialog.confirmed)
+                    {
+                        CHECK_FAILURE(eventArgs->put_ResultText(dialog.input.c_str()));
+                        CHECK_FAILURE(eventArgs->Accept());
+                    }
+                };
 
-        if (m_deferScriptDialogs)
-        {
-            wil::com_ptr<ICoreWebView2Deferral> deferral;
-            CHECK_FAILURE(args->GetDeferral(&deferral));
-            m_completeDeferredDialog = [showDialog, deferral]
-            {
-                showDialog();
-                CHECK_FAILURE(deferral->Complete());
-            };
-        }
-        else
-        {
-            showDialog();
-        }
+                if (m_deferScriptDialogs)
+                {
+                    wil::com_ptr<ICoreWebView2Deferral> deferral;
+                    CHECK_FAILURE(args->GetDeferral(&deferral));
+                    m_completeDeferredDialog = [showDialog, deferral] {
+                        showDialog();
+                        CHECK_FAILURE(deferral->Complete());
+                    };
+                }
+                else
+                {
+                    showDialog();
+                }
 
-        return S_OK;
-    }).Get(), &m_scriptDialogOpeningToken));
+                return S_OK;
+            })
+            .Get(),
+        &m_scriptDialogOpeningToken));
 ```
 
-#### add_SourceChanged 
+#### add_SourceChanged
 
 Add an event handler for the `SourceChanged` event.
 
@@ -624,7 +638,7 @@ Add an event handler for the `SourceChanged` event.
         &m_sourceChangedToken));
 ```
 
-#### add_WebMessageReceived 
+#### add_WebMessageReceived
 
 Add an event handler for the `WebMessageReceived` event.
 
@@ -690,7 +704,7 @@ Add an event handler for the `WebMessageReceived` event.
     }).Get(), &m_webMessageReceivedToken));
 ```
 
-#### add_WebResourceRequested 
+#### add_WebResourceRequested
 
 Add an event handler for the `WebResourceRequested` event.
 
@@ -703,15 +717,15 @@ The web resource requested may be blocked until the event handler returns if a d
 ```cpp
         if (m_blockImages)
         {
-            m_webView->AddWebResourceRequestedFilter(L"*", COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE);
+            m_webView->AddWebResourceRequestedFilter(
+                L"*", COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE);
             CHECK_FAILURE(m_webView->add_WebResourceRequested(
                 Callback<ICoreWebView2WebResourceRequestedEventHandler>(
                     [this](
                         ICoreWebView2* sender,
                         ICoreWebView2WebResourceRequestedEventArgs* args) {
                         COREWEBVIEW2_WEB_RESOURCE_CONTEXT resourceContext;
-                        CHECK_FAILURE(
-                            args->get_ResourceContext(&resourceContext));
+                        CHECK_FAILURE(args->get_ResourceContext(&resourceContext));
                         // Ensure that the type is image
                         if (resourceContext != COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE)
                         {
@@ -739,7 +753,7 @@ The web resource requested may be blocked until the event handler returns if a d
         }
 ```
 
-#### add_WindowCloseRequested 
+#### add_WindowCloseRequested
 
 Add an event handler for the `WindowCloseRequested` event.
 
@@ -763,7 +777,7 @@ Add an event handler for the `WindowCloseRequested` event.
         nullptr));
 ```
 
-#### AddHostObjectToScript 
+#### AddHostObjectToScript
 
 Add the provided host object to script running in the WebView with the specified name.
 
@@ -904,7 +918,7 @@ For example, suppose you have a COM object with the following interface.
 
 [MicrosoftEdgeWebview2ConceptsSecurity]: /microsoft-edge/webview2/concepts/security "Best practices for developing secure WebView2 applications | Microsoft Docs"
 
-#### AddScriptToExecuteOnDocumentCreated 
+#### AddScriptToExecuteOnDocumentCreated
 
 Add the provided JavaScript to a list of scripts that should be run after the global object has been created, but before the HTML document has been parsed and before any other script included by the HTML document is run.
 
@@ -946,12 +960,11 @@ void ScriptComponent::AddInitializeScript()
     }
 }
 ```
-
-[MdnDocsWebHtmlElementIframeAttrSandbox]: https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox "sandbox - &lt;iframe&gt;: The Inline Frame element | MDN"
+ [MdnDocsWebHtmlElementIframeAttrSandbox]: https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox "sandbox - &lt;iframe&gt;: The Inline Frame element | MDN"
 
 [MdnDocsWebHttpHeadersContentSecurityPolicy]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy "Content-Security-Policy | MDN"
 
-#### AddWebResourceRequestedFilter 
+#### AddWebResourceRequestedFilter
 
 Adds a URI and resource context filter to the `WebResourceRequested` event.
 
@@ -959,7 +972,7 @@ Adds a URI and resource context filter to the `WebResourceRequested` event.
 
 The `URI` parameter value may be set to a wildcard string (`*`: zero or more, `?`: exactly one). `nullptr` is equivalent to `L""`. For more information about resource context filters, navigate to [COREWEBVIEW2_WEB_RESOURCE_CONTEXT].
 
-#### CallDevToolsProtocolMethod 
+#### CallDevToolsProtocolMethod
 
 Runs an asynchronous `DevToolsProtocol` method.
 
@@ -1002,7 +1015,7 @@ void ScriptComponent::CallCdpMethod()
 
 [GithubChromedevtoolsDevtoolsProtocolTot]: https://chromedevtools.github.io/devtools-protocol/tot "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
 
-#### CapturePreview 
+#### CapturePreview
 
 Capture an image of what WebView is displaying.
 
@@ -1048,7 +1061,7 @@ void FileComponent::SaveScreenshot()
 }
 ```
 
-#### ExecuteScript 
+#### ExecuteScript
 
 Run JavaScript code from the javascript parameter in the current top-level document rendered in the WebView.
 
@@ -1085,13 +1098,13 @@ void ScriptComponent::InjectScript()
 }
 ```
 
-#### get_BrowserProcessId 
+#### get_BrowserProcessId
 
 The process ID of the browser process that hosts the WebView.
 
 > public HRESULT [get_BrowserProcessId](#get_browserprocessid)(UINT32 * value)
 
-#### get_CanGoBack 
+#### get_CanGoBack
 
 `TRUE` if the WebView is able to navigate to a previous page in the navigation history.
 
@@ -1099,7 +1112,7 @@ The process ID of the browser process that hosts the WebView.
 
 If `CanGoBack` changes value, the `HistoryChanged` event runs.
 
-#### get_CanGoForward 
+#### get_CanGoForward
 
 `TRUE` if the WebView is able to navigate to a next page in the navigation history.
 
@@ -1107,13 +1120,13 @@ If `CanGoBack` changes value, the `HistoryChanged` event runs.
 
 If `CanGoForward` changes value, the `HistoryChanged` event runs.
 
-#### get_ContainsFullScreenElement 
+#### get_ContainsFullScreenElement
 
 Indicates if the WebView contains a fullscreen HTML element.
 
 > public HRESULT [get_ContainsFullScreenElement](#get_containsfullscreenelement)(BOOL * containsFullScreenElement)
 
-#### get_DocumentTitle 
+#### get_DocumentTitle
 
 The title for the current top-level document.
 
@@ -1121,13 +1134,13 @@ The title for the current top-level document.
 
 If the document has no explicit title or is otherwise empty, a default that may or may not match the URI of the document is used.
 
-#### get_Settings 
+#### get_Settings
 
-The `[ICoreWebView2Settings](icorewebview2settings.md)` object contains various modifiable settings for the running WebView.
+The [ICoreWebView2Settings](icorewebview2settings.md) object contains various modifiable settings for the running WebView.
 
 > public HRESULT [get_Settings](#get_settings)([ICoreWebView2Settings](icorewebview2settings.md) ** settings)
 
-#### get_Source 
+#### get_Source
 
 The URI of the current top level document.
 
@@ -1157,7 +1170,7 @@ This value potentially changes as a part of the `SourceChanged` event that runs 
         &m_sourceChangedToken));
 ```
 
-#### GetDevToolsProtocolEventReceiver 
+#### GetDevToolsProtocolEventReceiver
 
 Get a DevTools Protocol event receiver that allows you to subscribe to a DevTools Protocol event.
 
@@ -1212,19 +1225,19 @@ void ScriptComponent::SubscribeToCdpEvent()
 
 [GithubChromedevtoolsDevtoolsProtocolTot]: https://chromedevtools.github.io/devtools-protocol/tot "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
 
-#### GoBack 
+#### GoBack
 
 Navigates the WebView to the previous page in the navigation history.
 
 > public HRESULT [GoBack](#goback)()
 
-#### GoForward 
+#### GoForward
 
 Navigates the WebView to the next page in the navigation history.
 
 > public HRESULT [GoForward](#goforward)()
 
-#### Navigate 
+#### Navigate
 
 Cause a navigation of the top-level document to run to the specified URI.
 
@@ -1268,7 +1281,7 @@ void ControlComponent::NavigateToAddressBar()
 }
 ```
 
-#### NavigateToString 
+#### NavigateToString
 
 Initiates a navigation to htmlContent as source HTML of a new document.
 
@@ -1277,14 +1290,14 @@ Initiates a navigation to htmlContent as source HTML of a new document.
 The `htmlContent` parameter may not be larger than 2 MB in total size. The origin of the new page is `about:blank`.
 
 ```cpp
-            static const PCWSTR htmlContent =
-              L"<h1>Domain Blocked</h1>"
-              L"<p>You've attempted to navigate to a domain in the blocked "
-              L"sites list. Press back to return to the previous page.</p>";
-            CHECK_FAILURE(sender->NavigateToString(htmlContent));
+                    static const PCWSTR htmlContent =
+                        L"<h1>Domain Blocked</h1>"
+                        L"<p>You've attempted to navigate to a domain in the blocked "
+                        L"sites list. Press back to return to the previous page.</p>";
+                    CHECK_FAILURE(sender->NavigateToString(htmlContent));
 ```
 
-#### OpenDevToolsWindow 
+#### OpenDevToolsWindow
 
 Opens the DevTools window for the current document in the WebView.
 
@@ -1292,7 +1305,7 @@ Opens the DevTools window for the current document in the WebView.
 
 Does nothing if run when the DevTools window is already open.
 
-#### PostWebMessageAsJson 
+#### PostWebMessageAsJson
 
 Post the specified webMessage to the top level document in this WebView.
 
@@ -1345,7 +1358,7 @@ The event args is an instance of `MessageEvent`. The `ICoreWebView2Settings::IsW
     }).Get(), &m_webMessageReceivedToken));
 ```
 
-#### PostWebMessageAsString 
+#### PostWebMessageAsString
 
 Posts a message that is a simple string rather than a JSON string representation of a JavaScript object.
 
@@ -1353,7 +1366,7 @@ Posts a message that is a simple string rather than a JSON string representation
 
 This behaves in exactly the same manner as `PostWebMessageAsJson`, but the `data` property of the event arg of the `window.chrome.webview` message is a string with the same value as `webMessageAsString`. Use this instead of `PostWebMessageAsJson` if you want to communicate using simple strings rather than JSON objects.
 
-#### Reload 
+#### Reload
 
 Reload the current page.
 
@@ -1361,103 +1374,103 @@ Reload the current page.
 
 This is similar to navigating to the URI of current top level document including all navigation events firing and respecting any entries in the HTTP cache. But, the back or forward history are not modified.
 
-#### remove_ContainsFullScreenElementChanged 
+#### remove_ContainsFullScreenElementChanged
 
 Remove an event handler previously added with `add_ContainsFullScreenElementChanged`.
 
 > public HRESULT [remove_ContainsFullScreenElementChanged](#remove_containsfullscreenelementchanged)(EventRegistrationToken token)
 
-#### remove_ContentLoading 
+#### remove_ContentLoading
 
 Remove an event handler previously added with `add_ContentLoading`.
 
 > public HRESULT [remove_ContentLoading](#remove_contentloading)(EventRegistrationToken token)
 
-#### remove_DocumentTitleChanged 
+#### remove_DocumentTitleChanged
 
 Remove an event handler previously added with `add_DocumentTitleChanged`.
 
 > public HRESULT [remove_DocumentTitleChanged](#remove_documenttitlechanged)(EventRegistrationToken token)
 
-#### remove_FrameNavigationCompleted 
+#### remove_FrameNavigationCompleted
 
 Remove an event handler previously added with `add_FrameNavigationCompleted`.
 
 > public HRESULT [remove_FrameNavigationCompleted](#remove_framenavigationcompleted)(EventRegistrationToken token)
 
-#### remove_FrameNavigationStarting 
+#### remove_FrameNavigationStarting
 
 Remove an event handler previously added with `add_FrameNavigationStarting`.
 
 > public HRESULT [remove_FrameNavigationStarting](#remove_framenavigationstarting)(EventRegistrationToken token)
 
-#### remove_HistoryChanged 
+#### remove_HistoryChanged
 
 Remove an event handler previously added with `add_HistoryChanged`.
 
 > public HRESULT [remove_HistoryChanged](#remove_historychanged)(EventRegistrationToken token)
 
-#### remove_NavigationCompleted 
+#### remove_NavigationCompleted
 
 Remove an event handler previously added with `add_NavigationCompleted`.
 
 > public HRESULT [remove_NavigationCompleted](#remove_navigationcompleted)(EventRegistrationToken token)
 
-#### remove_NavigationStarting 
+#### remove_NavigationStarting
 
 Remove an event handler previously added with `add_NavigationStarting`.
 
 > public HRESULT [remove_NavigationStarting](#remove_navigationstarting)(EventRegistrationToken token)
 
-#### remove_NewWindowRequested 
+#### remove_NewWindowRequested
 
 Remove an event handler previously added with `add_NewWindowRequested`.
 
 > public HRESULT [remove_NewWindowRequested](#remove_newwindowrequested)(EventRegistrationToken token)
 
-#### remove_PermissionRequested 
+#### remove_PermissionRequested
 
 Remove an event handler previously added with `add_PermissionRequested`.
 
 > public HRESULT [remove_PermissionRequested](#remove_permissionrequested)(EventRegistrationToken token)
 
-#### remove_ProcessFailed 
+#### remove_ProcessFailed
 
 Remove an event handler previously added with add_ProcessFailed.
 
 > public HRESULT [remove_ProcessFailed](#remove_processfailed)(EventRegistrationToken token)
 
-#### remove_ScriptDialogOpening 
+#### remove_ScriptDialogOpening
 
 Remove an event handler previously added with `add_ScriptDialogOpening`.
 
 > public HRESULT [remove_ScriptDialogOpening](#remove_scriptdialogopening)(EventRegistrationToken token)
 
-#### remove_SourceChanged 
+#### remove_SourceChanged
 
 Remove an event handler previously added with `add_SourceChanged`.
 
 > public HRESULT [remove_SourceChanged](#remove_sourcechanged)(EventRegistrationToken token)
 
-#### remove_WebMessageReceived 
+#### remove_WebMessageReceived
 
 Remove an event handler previously added with `add_WebMessageReceived`.
 
 > public HRESULT [remove_WebMessageReceived](#remove_webmessagereceived)(EventRegistrationToken token)
 
-#### remove_WebResourceRequested 
+#### remove_WebResourceRequested
 
 Remove an event handler previously added with `add_WebResourceRequested`.
 
 > public HRESULT [remove_WebResourceRequested](#remove_webresourcerequested)(EventRegistrationToken token)
 
-#### remove_WindowCloseRequested 
+#### remove_WindowCloseRequested
 
 Remove an event handler previously added with `add_WindowCloseRequested`.
 
 > public HRESULT [remove_WindowCloseRequested](#remove_windowcloserequested)(EventRegistrationToken token)
 
-#### RemoveHostObjectFromScript 
+#### RemoveHostObjectFromScript
 
 Remove the host object specified by the name so that it is no longer accessible from JavaScript code in the WebView.
 
@@ -1465,13 +1478,13 @@ Remove the host object specified by the name so that it is no longer accessible 
 
 While new access attempts are denied, if the object is already obtained by JavaScript code in the WebView, the JavaScript code continues to have access to that object. Run this method for a name that is already removed or never added fails.
 
-#### RemoveScriptToExecuteOnDocumentCreated 
+#### RemoveScriptToExecuteOnDocumentCreated
 
 Remove the corresponding JavaScript added using `AddScriptToExecuteOnDocumentCreated` with the specified script ID.
 
 > public HRESULT [RemoveScriptToExecuteOnDocumentCreated](#removescripttoexecuteondocumentcreated)(LPCWSTR id)
 
-#### RemoveWebResourceRequestedFilter 
+#### RemoveWebResourceRequestedFilter
 
 Removes a matching WebResource filter that was previously added for the `WebResourceRequested` event.
 
@@ -1479,15 +1492,15 @@ Removes a matching WebResource filter that was previously added for the `WebReso
 
 If the same filter was added multiple times, then it must be removed as many times as it was added for the removal to be effective. Returns `E_INVALIDARG` for a filter that was never added.
 
-#### Stop 
+#### Stop
 
 Stop all navigations and pending resource fetches. Does not stop scripts.
 
 > public HRESULT [Stop](#stop)()
 
-#### COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT 
+#### COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT
 
-Specifies the image format for the `[ICoreWebView2::CapturePreview](#capturepreview)` method.
+Specifies the image format for the [ICoreWebView2::CapturePreview](#capturepreview) method.
 
 > enum [COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT](#corewebview2_capture_preview_image_format)
 
@@ -1496,7 +1509,7 @@ Specifies the image format for the `[ICoreWebView2::CapturePreview](#captureprev
 COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_PNG            | Indicates that the PNG image format is used.
 COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT_JPEG            | Indicates the JPEG image format is used.
 
-#### COREWEBVIEW2_COOKIE_SAME_SITE_KIND 
+#### COREWEBVIEW2_COOKIE_SAME_SITE_KIND
 
 Kind of cookie SameSite status used in the [ICoreWebView2Cookie](icorewebview2cookie.md) interface.
 
@@ -1508,9 +1521,9 @@ COREWEBVIEW2_COOKIE_SAME_SITE_KIND_NONE            | None SameSite type. No rest
 COREWEBVIEW2_COOKIE_SAME_SITE_KIND_LAX            | Lax SameSite type. The cookie will be sent with "same-site" requests, and with "cross-site" top level navigation.
 COREWEBVIEW2_COOKIE_SAME_SITE_KIND_STRICT            | Strict SameSite type. The cookie will only be sent along with "same-site" requests.
 
-These fields match those as specified in [https://developer.mozilla.org/docs/Web/HTTP/Cookies#](https://developer.mozilla.org/docs/Web/HTTP/Cookies#). Learn more about SameSite cookies here: [https://tools.ietf.org/html/draft-west-first-party-cookies-07](https://tools.ietf.org/html/draft-west-first-party-cookies-07)
+These fields match those as specified in https://developer.mozilla.org/docs/Web/HTTP/Cookies#. Learn more about SameSite cookies here: https://tools.ietf.org/html/draft-west-first-party-cookies-07
 
-#### COREWEBVIEW2_KEY_EVENT_KIND 
+#### COREWEBVIEW2_KEY_EVENT_KIND
 
 Specifies the key event type that triggered an `AcceleratorKeyPressed` event.
 
@@ -1523,7 +1536,7 @@ COREWEBVIEW2_KEY_EVENT_KIND_KEY_UP            | Specifies that the key event typ
 COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_DOWN            | Specifies that the key event type corresponds to window message `WM_SYSKEYDOWN`.
 COREWEBVIEW2_KEY_EVENT_KIND_SYSTEM_KEY_UP            | Specifies that the key event type corresponds to window message `WM_SYSKEYUP`.
 
-#### COREWEBVIEW2_MOVE_FOCUS_REASON 
+#### COREWEBVIEW2_MOVE_FOCUS_REASON
 
 Specifies the reason for moving focus.
 
@@ -1535,7 +1548,7 @@ COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC            | Specifies that the code
 COREWEBVIEW2_MOVE_FOCUS_REASON_NEXT            | Specifies that the focus is moving due to Tab traversal forward.
 COREWEBVIEW2_MOVE_FOCUS_REASON_PREVIOUS            | Specifies that the focus is moving due to Tab traversal backward.
 
-#### COREWEBVIEW2_PERMISSION_KIND 
+#### COREWEBVIEW2_PERMISSION_KIND
 
 Indicates the type of a permission request.
 
@@ -1547,11 +1560,11 @@ COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION            | Indicates an unknow
 COREWEBVIEW2_PERMISSION_KIND_MICROPHONE            | Indicates permission to capture audio.
 COREWEBVIEW2_PERMISSION_KIND_CAMERA            | Indicates permission to capture video.
 COREWEBVIEW2_PERMISSION_KIND_GEOLOCATION            | Indicates permission to access geolocation.
-COREWEBVIEW2_PERMISSION_KIND_NOTIFICATIONS            | Indicates permission to send web notifications.
-COREWEBVIEW2_PERMISSION_KIND_OTHER_SENSORS            | Indicates permission to access generic sensor.
+COREWEBVIEW2_PERMISSION_KIND_NOTIFICATIONS            | Indicates permission to send web notifications. This permission request is currently auto-rejected and no event is run for it.
+COREWEBVIEW2_PERMISSION_KIND_OTHER_SENSORS            | Indicates permission to access generic sensor. Generic Sensor covering ambient-light-sensor, accelerometer, gyroscope, and magnetometer.
 COREWEBVIEW2_PERMISSION_KIND_CLIPBOARD_READ            | Indicates permission to read the system clipboard without a user gesture.
 
-#### COREWEBVIEW2_PERMISSION_STATE 
+#### COREWEBVIEW2_PERMISSION_STATE
 
 Specifies the response to a permission request.
 
@@ -1563,7 +1576,7 @@ COREWEBVIEW2_PERMISSION_STATE_DEFAULT            | Specifies that the default br
 COREWEBVIEW2_PERMISSION_STATE_ALLOW            | Specifies that the permission request is granted.
 COREWEBVIEW2_PERMISSION_STATE_DENY            | Specifies that the permission request is denied.
 
-#### COREWEBVIEW2_PHYSICAL_KEY_STATUS 
+#### COREWEBVIEW2_PHYSICAL_KEY_STATUS
 
 Contains the information packed into the `LPARAM` sent to a Win32 key event.
 
@@ -1573,21 +1586,21 @@ For more information about `WM_KEYDOWN`, navigate to [WM_KEYDOWN message][Window
 
 [WindowsWin32InputdevWmKeydown]: /windows/win32/inputdev/wm-keydown "WM_KEYDOWN message | Microsoft Docs"
 
-#### COREWEBVIEW2_PROCESS_FAILED_KIND 
+#### COREWEBVIEW2_PROCESS_FAILED_KIND
 
-Specifies the process failure type used in the `ICoreWebView2ProcessFailedEventHandler` interface.
+Specifies the process failure type used in the ICoreWebView2ProcessFailedEventHandler interface.
 
 > enum [COREWEBVIEW2_PROCESS_FAILED_KIND](#corewebview2_process_failed_kind)
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_PROCESS_FAILED_KIND_BROWSER_PROCESS_EXITED            | Indicates that the browser process ended unexpectedly.
-COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_EXITED            | Indicates that the render process ended unexpectedly.
+COREWEBVIEW2_PROCESS_FAILED_KIND_BROWSER_PROCESS_EXITED            | Indicates that the browser process ended unexpectedly. The WebView automatically moves to the Closed state. The app has to recreate a new WebView to recover from this failure.
+COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_EXITED            | Indicates that the render process ended unexpectedly. A new render process is created automatically and navigated to an error page. The app runs `Reload` to try to recover from the failure.
 COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_UNRESPONSIVE            | Indicates that the render process is unresponsive.
 
-#### COREWEBVIEW2_SCRIPT_DIALOG_KIND 
+#### COREWEBVIEW2_SCRIPT_DIALOG_KIND
 
-Specifies the JavaScript dialog type used in the `ICoreWebView2ScriptDialogOpeningEventHandler` interface.
+Specifies the JavaScript dialog type used in the ICoreWebView2ScriptDialogOpeningEventHandler interface.
 
 > enum [COREWEBVIEW2_SCRIPT_DIALOG_KIND](#corewebview2_script_dialog_kind)
 
@@ -1598,7 +1611,7 @@ COREWEBVIEW2_SCRIPT_DIALOG_KIND_CONFIRM            | Indicates that the dialog u
 COREWEBVIEW2_SCRIPT_DIALOG_KIND_PROMPT            | Indicates that the dialog uses the `window.prompt` JavaScript function.
 COREWEBVIEW2_SCRIPT_DIALOG_KIND_BEFOREUNLOAD            | Indicates that the dialog uses the `beforeunload` JavaScript event.
 
-#### COREWEBVIEW2_WEB_ERROR_STATUS 
+#### COREWEBVIEW2_WEB_ERROR_STATUS
 
 Indicates the error status values for web navigations.
 
@@ -1611,7 +1624,7 @@ COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_COMMON_NAME_IS_INCORRECT            | 
 COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_EXPIRED            | Indicates that the SSL certificate has expired.
 COREWEBVIEW2_WEB_ERROR_STATUS_CLIENT_CERTIFICATE_CONTAINS_ERRORS            | Indicates that the SSL client certificate contains errors.
 COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_REVOKED            | Indicates that the SSL certificate has been revoked.
-COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_IS_INVALID            | Indicates that the SSL certificate is not valid.
+COREWEBVIEW2_WEB_ERROR_STATUS_CERTIFICATE_IS_INVALID            | Indicates that the SSL certificate is not valid. The certificate may not match the public key pins for the host name, the certificate is signed by an untrusted authority or using a weak sign algorithm, the certificate claimed DNS names violate name constraints, the certificate contains a weak key, the validity period of the certificate is too long, lack of revocation information or revocation mechanism, non-unique host name, lack of certificate transparency information, or the certificate is chained to a [legacy Symantec root][GoogleblogSecurity201803DistrustSymantecPkiImmediateHtml].
 COREWEBVIEW2_WEB_ERROR_STATUS_SERVER_UNREACHABLE            | Indicates that the host is unreachable.
 COREWEBVIEW2_WEB_ERROR_STATUS_TIMEOUT            | Indicates that the connection has timed out.
 COREWEBVIEW2_WEB_ERROR_STATUS_ERROR_HTTP_INVALID_SERVER_RESPONSE            | Indicates that the server returned an invalid or unrecognized response.
@@ -1624,7 +1637,9 @@ COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED            | Indicates that the
 COREWEBVIEW2_WEB_ERROR_STATUS_REDIRECT_FAILED            | Indicates that the request redirect failed.
 COREWEBVIEW2_WEB_ERROR_STATUS_UNEXPECTED_ERROR            | Indicates that an unexpected error occurred.
 
-#### COREWEBVIEW2_WEB_RESOURCE_CONTEXT 
+[GoogleblogSecurity201803DistrustSymantecPkiImmediateHtml]: https://security.googleblog.com/2018/03/distrust-of-symantec-pki-immediate.html "Distrust of the Symantec PKI: Immediate action needed by site operators | Google Security Blog"
+
+#### COREWEBVIEW2_WEB_RESOURCE_CONTEXT
 
 Specifies the web resource request contexts.
 

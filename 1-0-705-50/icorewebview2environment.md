@@ -174,19 +174,19 @@ HRESULT AppWindow::OnCreateEnvironmentCompleted(
     CHECK_FAILURE(result);
     m_webViewEnvironment = environment;
 
-    auto webViewEnvironment3 =
-        m_webViewEnvironment.try_query<ICoreWebView2Environment3>();
-    if (webViewEnvironment3 && (m_dcompDevice || m_wincompCompositor))
+    auto webViewExperimentalEnvironment =
+        m_webViewEnvironment.try_query<ICoreWebView2ExperimentalEnvironment>();
+    if (webViewExperimentalEnvironment && (m_dcompDevice || m_wincompCompositor))
     {
-        CHECK_FAILURE(webViewEnvironment3->CreateCoreWebView2CompositionController(
+        CHECK_FAILURE(webViewExperimentalEnvironment->CreateCoreWebView2CompositionController(
             m_mainWindow,
             Callback<
-                ICoreWebView2CreateCoreWebView2CompositionControllerCompletedHandler>(
+                ICoreWebView2ExperimentalCreateCoreWebView2CompositionControllerCompletedHandler>(
                 [this](
                     HRESULT result,
-                    ICoreWebView2CompositionController* compositionController) -> HRESULT {
+                    ICoreWebView2ExperimentalCompositionController* compositionController) -> HRESULT {
                     auto controller =
-                        wil::com_ptr<ICoreWebView2CompositionController>(compositionController)
+                        wil::com_ptr<ICoreWebView2ExperimentalCompositionController>(compositionController)
                             .query<ICoreWebView2Controller>();
                     return OnCreateCoreWebView2ControllerCompleted(result, controller.get());
                 })
@@ -262,8 +262,7 @@ The `headers` parameter is the raw response header string delimited by newline. 
                         CHECK_FAILURE(m_webView->QueryInterface(IID_PPV_ARGS(&webview2)));
                         CHECK_FAILURE(webview2->get_Environment(&environment));
                         CHECK_FAILURE(environment->CreateWebResourceResponse(
-                            nullptr, 403 /*NoContent*/, L"Blocked", L"Content-Type: image/jpeg",
-                            &response));
+                            nullptr, 403 /*NoContent*/, L"Blocked", L"", &response));
                         CHECK_FAILURE(args->put_Response(response.get()));
                         return S_OK;
                     })
@@ -274,49 +273,6 @@ The `headers` parameter is the raw response header string delimited by newline. 
         {
             CHECK_FAILURE(m_webView->remove_WebResourceRequested(
                 m_webResourceRequestedTokenForImageBlocking));
-        }
-```
-
-```cpp
-        if (m_replaceImages)
-        {
-            m_webView->AddWebResourceRequestedFilter(
-                L"*", COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE);
-            CHECK_FAILURE(m_webView->add_WebResourceRequested(
-                Callback<ICoreWebView2WebResourceRequestedEventHandler>(
-                    [this](
-                        ICoreWebView2* sender,
-                        ICoreWebView2WebResourceRequestedEventArgs* args) {
-                        COREWEBVIEW2_WEB_RESOURCE_CONTEXT resourceContext;
-                        CHECK_FAILURE(args->get_ResourceContext(&resourceContext));
-                        // Ensure that the type is image
-                        if (resourceContext != COREWEBVIEW2_WEB_RESOURCE_CONTEXT_IMAGE)
-                        {
-                            return E_INVALIDARG;
-                        }
-                        // Override the response with an another image.
-                        // If put_Response is not called, the request will continue as normal.
-                        wil::com_ptr<IStream> stream;
-                        CHECK_FAILURE(SHCreateStreamOnFileEx(
-                            L"assets/EdgeWebView2-80.jpg", STGM_READ, FILE_ATTRIBUTE_NORMAL,
-                            FALSE, nullptr, &stream));
-                        wil::com_ptr<ICoreWebView2WebResourceResponse> response;
-                        wil::com_ptr<ICoreWebView2Environment> environment;
-                        wil::com_ptr<ICoreWebView2_2> webview2;
-                        CHECK_FAILURE(m_webView->QueryInterface(IID_PPV_ARGS(&webview2)));
-                        CHECK_FAILURE(webview2->get_Environment(&environment));
-                        CHECK_FAILURE(environment->CreateWebResourceResponse(
-                            stream.get(), 200, L"OK", L"Content-Type: image/jpeg", &response));
-                        CHECK_FAILURE(args->put_Response(response.get()));
-                        return S_OK;
-                    })
-                    .Get(),
-                &m_webResourceRequestedTokenForImageReplacing));
-        }
-        else
-        {
-            CHECK_FAILURE(m_webView->remove_WebResourceRequested(
-                m_webResourceRequestedTokenForImageReplacing));
         }
 ```
  [MicrosoftEdgeWebview2ReferenceWin32Icorewebview2webresourceresponse]: /microsoft-edge/webview2/reference/win32/icorewebview2webresourceresponse "interface ICoreWebView2WebResourceResponse | Microsoft Docs"
