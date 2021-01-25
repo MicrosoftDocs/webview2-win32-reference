@@ -28,7 +28,7 @@ This interface is an extension of the [ICoreWebView2CompositionController](icore
 [CreateCoreWebView2PointerInfoFromPointerId](#createcorewebview2pointerinfofrompointerid) | A helper function to convert a pointerId received from the system into an ICoreWebView2ExperimentalPointerInfo.
 [get_UIAProvider](#get_uiaprovider) | Returns the UI Automation Provider for the WebView.
 
-An object implementing [ICoreWebView2ExperimentalCompositionController4](#icorewebview2experimentalcompositioncontroller4) interface will also implement [ICoreWebView2CompositionController](icorewebview2compositioncontroller.md).
+An object implementing ICoreWebView2ExperimentalCompositionController4 interface will also implement [ICoreWebView2CompositionController](icorewebview2compositioncontroller.md).
 
 ## Applies to
 
@@ -43,9 +43,9 @@ WebView2 Win32 Prerelease |    1.0.773
 
 A helper function to convert a pointerId received from the system into an ICoreWebView2ExperimentalPointerInfo.
 
-> public HRESULT [CreateCoreWebView2PointerInfoFromPointerId](#createcorewebview2pointerinfofrompointerid)(UINT pointerId, HWND parentWindow, struct [COREWEBVIEW2_MATRIX_4X4](corewebview2_matrix_4x4.md) transform, [ICoreWebView2PointerInfo](icorewebview2pointerinfo.md) ** pointerInfo)
+> public HRESULT [CreateCoreWebView2PointerInfoFromPointerId](#createcorewebview2pointerinfofrompointerid)(UINT pointerId, HWND parentWindow, struct COREWEBVIEW2_MATRIX_4X4 transform, [ICoreWebView2PointerInfo](icorewebview2pointerinfo.md) ** pointerInfo)
 
-parentWindow is the HWND that contains the WebView. This can be any HWND in the hwnd tree that contains the WebView. The [COREWEBVIEW2_MATRIX_4X4](corewebview2_matrix_4x4.md) is the transform from that HWND to the WebView. The returned ICoreWebView2ExperimentalPointerInfo is used in SendPointerInfo. The pointer type must be either pen or touch or the function will fail.
+parentWindow is the HWND that contains the WebView. This can be any HWND in the hwnd tree that contains the WebView. The COREWEBVIEW2_MATRIX_4X4 is the transform from that HWND to the WebView. The returned ICoreWebView2ExperimentalPointerInfo is used in SendPointerInfo. The pointer type must be either pen or touch or the function will fail.
 
 #### get_UIAProvider
 

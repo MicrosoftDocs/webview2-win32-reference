@@ -23,7 +23,7 @@ A list of cookie objects.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_Count](#get_count) | The number of cookies contained in the [ICoreWebView2CookieList](#icorewebview2cookielist).
+[get_Count](#get_count) | The number of cookies contained in the ICoreWebViICoreWebView2Cookiew2Cookie.
 [GetValueAtIndex](#getvalueatindex) | Gets the cookie object at the given index.
 
 See [ICoreWebView2Cookie](icorewebview2cookie.md). 
@@ -86,7 +86,7 @@ WebView2 Win32 Prerelease |    1.0.721
 
 #### get_Count
 
-The number of cookies contained in the [ICoreWebView2CookieList](#icorewebview2cookielist).
+The number of cookies contained in the ICoreWebViICoreWebView2Cookiew2Cookie.
 
 > public HRESULT [get_Count](#get_count)(UINT * count)
 

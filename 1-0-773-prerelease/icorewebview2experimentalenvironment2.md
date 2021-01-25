@@ -27,7 +27,7 @@ This interface is an extension of the [ICoreWebView2Environment](icorewebview2en
 --------------------------------|---------------------------------------------
 [GetProviderForHwnd](#getproviderforhwnd) | Returns the UI Automation Provider for the [ICoreWebView2CompositionController](icorewebview2compositioncontroller.md) that corresponds with the given HWND.
 
-An object implementing the [ICoreWebView2ExperimentalEnvironment2](#icorewebview2experimentalenvironment2) interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
+An object implementing the ICoreWebView2ExperimentalEnvironment2 interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
 
 ## Applies to
 
