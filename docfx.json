@@ -31,8 +31,23 @@
           "**/*.md",
           "**/*.yml"
         ],
+        "group": "webview2-781-prerelease",
+        "src": "1-0-781-prerelease"
+      },      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
         "group": "webview2-721-prerelease",
         "src": "1-0-721-prerelease"
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "group": "webview2-705-50",
+        "src": "1-0-705-50"
       },
       {
         "files": [
@@ -174,9 +189,17 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
+      "webview2-781-prerelease": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-1.0.781-prerelease"
+      },
       "webview2-721-prerelease": {
         "dest": "webview2-win32",
         "moniker_range": "webview2-1.0.721-prerelease"
+      },
+      "webview2-705-50": {
+        "dest": "webview2-win32",
+        "moniker_range": "webview2-1.0.705.50"
       },
       "webview2-674-prerelease": {
         "dest": "webview2-win32",
