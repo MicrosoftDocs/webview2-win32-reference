@@ -3,7 +3,7 @@ description: A continuation of ICoreWebView2 interface.
 title: WebView2 Win32 C++ ICoreWebView2_2
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

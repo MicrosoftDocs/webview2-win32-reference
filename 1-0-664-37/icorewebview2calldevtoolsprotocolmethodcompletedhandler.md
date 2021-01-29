@@ -3,7 +3,7 @@ description: The caller implements this interface to receive CallDevToolsProtoco
 title: WebView2 Win32 C++ ICoreWebView2CallDevToolsProtocolMethodCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

@@ -3,7 +3,7 @@ description: WebView2 enables you to host web content using the latest Microsoft
 title: WebView2 Win32 C++ ICoreWebView2
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

@@ -3,7 +3,7 @@ description: Receives the `CoreWebView2Controller` created using `CreateCoreWebV
 title: WebView2 Win32 C++ ICoreWebView2CreateCoreWebView2ControllerCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

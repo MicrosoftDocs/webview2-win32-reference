@@ -3,7 +3,7 @@ description: Event args for the `NavigationStarting` event.
 title: WebView2 Win32 C++ ICoreWebView2NavigationStartingEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

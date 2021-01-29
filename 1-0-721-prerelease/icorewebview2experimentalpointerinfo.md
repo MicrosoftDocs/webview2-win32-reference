@@ -3,7 +3,7 @@ description: This mostly represents a combined win32 POINTER_INFO/POINTER_TOUCH_
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalPointerInfo
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

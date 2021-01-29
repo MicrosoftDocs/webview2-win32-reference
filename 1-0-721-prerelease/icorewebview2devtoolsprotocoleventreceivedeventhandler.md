@@ -3,7 +3,7 @@ description: Receives `DevToolsProtocolEventReceived` events from the WebView.
 title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceivedEventHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview

@@ -3,7 +3,7 @@ description: Event args for the ContentLoading event.
 title: WebView2 Win32 C++ ICoreWebView2ContentLoadingEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/25/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
