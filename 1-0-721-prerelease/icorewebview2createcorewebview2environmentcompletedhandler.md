@@ -3,7 +3,7 @@ description: The is a link a sentence.
 title: WebView2 Win32 C++ ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 01/19/2021
+ms.date: 01/29/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler
