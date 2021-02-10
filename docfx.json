@@ -31,8 +31,8 @@
           "**/*.md",
           "**/*.yml"
         ],
-        "group": "webview2-781-prerelease",
-        "src": "1-0-781-prerelease"
+        "group": "webview2-790-prerelease",
+        "src": "1-0-790-prerelease"
       },      {
         "files": [
           "**/*.md",
@@ -189,9 +189,9 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
-      "webview2-781-prerelease": {
+      "webview2-790-prerelease": {
         "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.781-prerelease"
+        "moniker_range": "webview2-1.0.790-prerelease"
       },
       "webview2-721-prerelease": {
         "dest": "webview2-win32",
