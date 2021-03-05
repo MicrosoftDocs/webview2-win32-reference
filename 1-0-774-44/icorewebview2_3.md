@@ -1,5 +1,5 @@
 ---
-description: A continuation of ICoreWebView2 interface.
+description: ICoreWebView2_3 is a continuation of ICoreWebView2 interface.
 title: WebView2 Win32 C++ ICoreWebView2_3
 author: MSEdgeTeam
 ms.author: msedgedevrel

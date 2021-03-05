@@ -1,5 +1,5 @@
 ---
-description: A continuation of the ICoreWebView2CompositionController interface.
+description: ICoreWebView2CompositionController2 is a continuation of the ICoreWebView2CompositionController interface.
 title: WebView2 Win32 C++ ICoreWebView2CompositionController2
 author: MSEdgeTeam
 ms.author: msedgedevrel

@@ -32,7 +32,7 @@ This interface is an extension of the [ICoreWebView2Controller](icorewebview2con
 [SendMouseInput](#sendmouseinput) | If eventKind is COREWEBVIEW2_MOUSE_EVENT_KIND_HORIZONTAL_WHEEL or COREWEBVIEW2_MOUSE_EVENT_KIND_WHEEL, then mouseData specifies the amount of wheel movement.
 [SendPointerInput](#sendpointerinput) | SendPointerInput accepts touch or pen pointer input of types defined in COREWEBVIEW2_POINTER_EVENT_KIND.
 
-An object implementing the [ICoreWebView2CompositionController](#icorewebview2compositioncontroller) interface will also implement [ICoreWebView2Controller](icorewebview2controller.md). Callers are expected to use [ICoreWebView2Controller](icorewebview2controller.md) for resizing, visibility, focus, and so on, and then use [ICoreWebView2CompositionController](#icorewebview2compositioncontroller) to connect to a composition tree and provide input meant for the WebView.
+An object implementing the ICoreWebView2CompositionController interface will also implement [ICoreWebView2Controller](icorewebview2controller.md). Callers are expected to use [ICoreWebView2Controller](icorewebview2controller.md) for resizing, visibility, focus, and so on, and then use ICoreWebView2CompositionController to connect to a composition tree and provide input meant for the WebView.
 
 ## Applies to
 

@@ -1,5 +1,5 @@
 ---
-description: A continuation of the ICoreWebView2Controller interface.
+description: ICoreWebView2Controller2 is a continuation of the ICoreWebView2Controller interface.
 title: WebView2 Win32 C++ ICoreWebView2Controller2
 author: MSEdgeTeam
 ms.author: msedgedevrel

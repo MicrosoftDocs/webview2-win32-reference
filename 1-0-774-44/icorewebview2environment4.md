@@ -1,5 +1,5 @@
 ---
-description: A continuation of ICoreWebViewEnvironment2 interface.
+description: ICoreWebView2Environment4 is a continuation of ICoreWebViewEnvironment interface.
 title: WebView2 Win32 C++ ICoreWebView2Environment4
 author: MSEdgeTeam
 ms.author: msedgedevrel
