@@ -1077,7 +1077,7 @@ Capture an image of what WebView is displaying.
 
 > public HRESULT [CapturePreview](#capturepreview)([COREWEBVIEW2_CAPTURE_PREVIEW_IMAGE_FORMAT](#corewebview2_capture_preview_image_format) imageFormat, IStream * imageStream, [ICoreWebView2CapturePreviewCompletedHandler](icorewebview2capturepreviewcompletedhandler.md) * handler)
 
-Specify the format of the image with the `imageFormat` parameter. The resulting image binary data is written to the provided `imageStream` parameter. When `CapturePreview` finishes writing to the stream, the `Invoke` method on the provided `handler` parameter is run.
+Specify the format of the image with the `imageFormat` parameter. The resulting image binary data is written to the provided `imageStream` parameter. When `CapturePreview` finishes writing to the stream, the `Invoke` method on the provided `handler` parameter is run. This method fails if called before the first ContentLoading event. For example if this is called in the NavigationStarting event for the first navigation it will fail. For subsequent navigations, the method may not fail, but will not capture an image of a given webpage until the ContentLoading event has been fired for it. Any call to this method prior to that will result in a capture of the page being navigated away from.
 
 ```cpp
 // Show the user a file selection dialog, then save a screenshot of the WebView
