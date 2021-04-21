@@ -26,7 +26,7 @@ Represents the WebView2 Environment.
 [add_NewBrowserVersionAvailable](#add_newbrowserversionavailable) | Add an event handler for the `NewBrowserVersionAvailable` event.
 [CreateCoreWebView2Controller](#createcorewebview2controller) | Asynchronously create a new WebView.
 [CreateWebResourceResponse](#createwebresourceresponse) | Create a new web resource response object.
-[get_BrowserVersionString](#get_browserversionstring) | The browser version info of the current [ICoreWebView2Environment](#icorewebview2environment), including channel name if it is not the WebView2 Runtime.
+[get_BrowserVersionString](#get_browserversionstring) | The browser version info of the current ICoreWebView2Environment, including channel name if it is not the WebView2 Runtime.
 [remove_NewBrowserVersionAvailable](#remove_newbrowserversionavailable) | Remove an event handler previously added with `add_NewBrowserVersionAvailable`.
 
 WebViews created from an environment run on the browser process specified with environment parameters and objects created from an environment should be used in the same environment. Using it in different environments are not guaranteed to be compatible and may fail.
@@ -323,7 +323,7 @@ The `headers` parameter is the raw response header string delimited by newline. 
 
 #### get_BrowserVersionString
 
-The browser version info of the current [ICoreWebView2Environment](#icorewebview2environment), including channel name if it is not the WebView2 Runtime.
+The browser version info of the current ICoreWebView2Environment, including channel name if it is not the WebView2 Runtime.
 
 > public HRESULT [get_BrowserVersionString](#get_browserversionstring)(LPWSTR * versionInfo)
 
