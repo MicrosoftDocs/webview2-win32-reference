@@ -12,6 +12,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 
 # interface ICoreWebView2Environment3 
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2Environment3
   : public ICoreWebView2Environment2
