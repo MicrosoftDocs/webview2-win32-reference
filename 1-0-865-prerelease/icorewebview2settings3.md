@@ -1,5 +1,5 @@
 ---
-description: A continuation of the ICoreWebView2Settings interface.
+description: A continuation of the ICoreWebView2Settings interface that manages whether browser accelerator keys are enabled.
 title: WebView2 Win32 C++ ICoreWebView2Settings3
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -17,7 +17,7 @@ interface ICoreWebView2Settings3
   : public ICoreWebView2Settings2
 ```
 
-A continuation of the [ICoreWebView2Settings](icorewebview2settings.md) interface.
+A continuation of the [ICoreWebView2Settings](icorewebview2settings.md) interface that manages whether browser accelerator keys are enabled.
 
 ## Summary
 

@@ -1,5 +1,5 @@
 ---
-description: A continuation of the ICoreWebView2Settings interface.
+description: A continuation of the ICoreWebView2Settings interface that manages the user agent.
 title: WebView2 Win32 C++ ICoreWebView2Settings2
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -17,7 +17,7 @@ interface ICoreWebView2Settings2
   : public ICoreWebView2Settings
 ```
 
-A continuation of the [ICoreWebView2Settings](icorewebview2settings.md) interface.
+A continuation of the [ICoreWebView2Settings](icorewebview2settings.md) interface that manages the user agent.
 
 ## Summary
 

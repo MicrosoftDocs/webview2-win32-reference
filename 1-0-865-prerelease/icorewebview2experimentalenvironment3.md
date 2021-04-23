@@ -1,5 +1,5 @@
 ---
-description: This interface is an extension of the ICoreWebView2Environment.
+description: This interface is an extension of the ICoreWebView2Environment to support UpdateRuntime API.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironment3
 author: MSEdgeTeam
 ms.author: msedgedevrel
