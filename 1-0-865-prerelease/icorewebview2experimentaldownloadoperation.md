@@ -3,7 +3,7 @@ description: Represents a download operation.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalDownloadOperation
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 04/23/2021
+ms.date: 05/27/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -31,15 +31,15 @@ Represents a download operation.
 [Cancel](#cancel) | Cancels the download.
 [get_BytesReceived](#get_bytesreceived) | The number of bytes that have been written to the download file.
 [get_CanResume](#get_canresume) | Returns true if an interrupted download can be resumed.
-[get_ContentDisposition](#get_contentdisposition) | The Content-Disposition??header??value??from??the download's HTTP??response.
+[get_ContentDisposition](#get_contentdisposition) | The Content-Disposition header value from the download's HTTP response.
 [get_EstimatedEndTime](#get_estimatedendtime) | The estimated end time in [ISO 8601 Date and Time Format](https://www.iso.org/iso-8601-date-and-time-format.html).
 [get_InterruptReason](#get_interruptreason) | The reason why connection with file host was broken.
-[get_MimeType](#get_mimetype) | ??MIME??type??of??the??downloaded??content.
-[get_ResultFilePath](#get_resultfilepath) | ??The??absolute path to the download file, including file name.
+[get_MimeType](#get_mimetype) | MIME type of the downloaded content.
+[get_ResultFilePath](#get_resultfilepath) | The absolute path to the download file, including file name.
 [get_State](#get_state) | The state of the download.
-[get_TotalBytesToReceive](#get_totalbytestoreceive) | ??The??expected size of the download in total??number??of??bytes based on the HTTP Content-Length header.
-[get_Uri](#get_uri) | The??URI??of??the??download.
-[Pause](#pause) | ??Pauses the download.
+[get_TotalBytesToReceive](#get_totalbytestoreceive) | The expected size of the download in total number of bytes based on the HTTP Content-Length header.
+[get_Uri](#get_uri) | The URI of the download.
+[Pause](#pause) | Pauses the download.
 [remove_BytesReceivedChanged](#remove_bytesreceivedchanged) | Remove an event handler previously added with `add_BytesReceivedChanged`.
 [remove_EstimatedEndTimeChanged](#remove_estimatedendtimechanged) | Remove an event handler previously added with `add_EstimatedEndTimeChanged`.
 [remove_StateChanged](#remove_statechanged) | Remove an event handler previously added with `add_StateChanged`.
@@ -137,7 +137,7 @@ Downloads with the following interrupt reasons may automatically resume without 
 
 #### get_ContentDisposition
 
-The Content-Disposition??header??value??from??the download's HTTP??response.
+The Content-Disposition header value from the download's HTTP response.
 
 > public HRESULT [get_ContentDisposition](#get_contentdisposition)(LPWSTR * contentDisposition)
 
@@ -155,13 +155,13 @@ The reason why connection with file host was broken.
 
 #### get_MimeType
 
-??MIME??type??of??the??downloaded??content.
+MIME type of the downloaded content.
 
 > public HRESULT [get_MimeType](#get_mimetype)(LPWSTR * mimeType)
 
 #### get_ResultFilePath
 
-??The??absolute path to the download file, including file name.
+The absolute path to the download file, including file name.
 
 > public HRESULT [get_ResultFilePath](#get_resultfilepath)(LPWSTR * resultFilePath)
 
@@ -177,7 +177,7 @@ A download can be in progress, interrupted, or completed. See `COREWEBVIEW2_DOWN
 
 #### get_TotalBytesToReceive
 
-??The??expected size of the download in total??number??of??bytes based on the HTTP Content-Length header.
+The expected size of the download in total number of bytes based on the HTTP Content-Length header.
 
 > public HRESULT [get_TotalBytesToReceive](#get_totalbytestoreceive)(INT64 * totalBytesToReceive)
 
@@ -185,13 +185,13 @@ Returns -1 if the size is unknown.
 
 #### get_Uri
 
-The??URI??of??the??download.
+The URI of the download.
 
 > public HRESULT [get_Uri](#get_uri)(LPWSTR * uri)
 
 #### Pause
 
-??Pauses the download.
+Pauses the download.
 
 > public HRESULT [Pause](#pause)()
 

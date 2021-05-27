@@ -3,7 +3,7 @@ description: Event args for the `DownloadStarting` event.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalDownloadStartingEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 04/23/2021
+ms.date: 05/27/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -25,14 +25,14 @@ Event args for the `DownloadStarting` event.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_Cancel](#get_cancel) | The??host??may??set??this??flag??to??cancel??the??download.
+[get_Cancel](#get_cancel) | The host may set this flag to cancel the download.
 [get_DownloadOperation](#get_downloadoperation) | Returns the ICoreWebView2ExperimentalDownloadOperation for the download that has started.
-[get_Handled](#get_handled) | The??host??may??set??this??flag??to??`TRUE` to hide??the??default download dialog for this download.
-[get_ResultFilePath](#get_resultfilepath) | ??The??path to the file.
+[get_Handled](#get_handled) | The host may set this flag to `TRUE` to hide the default download dialog for this download.
+[get_ResultFilePath](#get_resultfilepath) | The path to the file.
 [GetDeferral](#getdeferral) | Returns an ICoreWebView2Deferral object.
-[put_Cancel](#put_cancel) | ??Sets??the??`Cancel`??property.
-[put_Handled](#put_handled) | ??Sets??the??`Handled`??property.
-[put_ResultFilePath](#put_resultfilepath) | Sets??the??`ResultFilePath`??property.
+[put_Cancel](#put_cancel) | Sets the `Cancel` property.
+[put_Handled](#put_handled) | Sets the `Handled` property.
+[put_ResultFilePath](#put_resultfilepath) | Sets the `ResultFilePath` property.
 
 ## Applies to
 
@@ -45,7 +45,7 @@ WebView2 Win32 Prerelease |    1.0.865
 
 #### get_Cancel
 
-The??host??may??set??this??flag??to??cancel??the??download.
+The host may set this flag to cancel the download.
 
 > public HRESULT [get_Cancel](#get_cancel)(BOOL * cancel)
 
@@ -59,7 +59,7 @@ Returns the ICoreWebView2ExperimentalDownloadOperation for the download that has
 
 #### get_Handled
 
-The??host??may??set??this??flag??to??`TRUE` to hide??the??default download dialog for this download.
+The host may set this flag to `TRUE` to hide the default download dialog for this download.
 
 > public HRESULT [get_Handled](#get_handled)(BOOL * handled)
 
@@ -67,7 +67,7 @@ The download will progress as normal if it is not canceled, there will just be n
 
 #### get_ResultFilePath
 
-??The??path to the file.
+The path to the file.
 
 > public HRESULT [get_ResultFilePath](#get_resultfilepath)(LPWSTR * resultFilePath)
 
@@ -83,19 +83,19 @@ Use this operation to complete the event at a later time.
 
 #### put_Cancel
 
-??Sets??the??`Cancel`??property.
+Sets the `Cancel` property.
 
 > public HRESULT [put_Cancel](#put_cancel)(BOOL cancel)
 
 #### put_Handled
 
-??Sets??the??`Handled`??property.
+Sets the `Handled` property.
 
 > public HRESULT [put_Handled](#put_handled)(BOOL handled)
 
 #### put_ResultFilePath
 
-Sets??the??`ResultFilePath`??property.
+Sets the `ResultFilePath` property.
 
 > public HRESULT [put_ResultFilePath](#put_resultfilepath)(LPCWSTR resultFilePath)
 

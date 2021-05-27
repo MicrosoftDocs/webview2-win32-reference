@@ -3,7 +3,7 @@ description: This is an extension of the ICoreWebView2Settings Experimental inte
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalSettings4
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 04/23/2021
+ms.date: 05/27/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -25,7 +25,7 @@ This is an extension of the [ICoreWebView2Settings](icorewebview2settings.md) Ex
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_IsPinchZoomEnabled](#get_ispinchzoomenabled) | Pinch-zoom, referred to as ???Page Scale??? zoom, is performed as a post-rendering step, it changes the page scale factor property and scales the surface the web page is rendered onto when user perfoms a pinch zooming action.
+[get_IsPinchZoomEnabled](#get_ispinchzoomenabled) | Pinch-zoom, referred to as "Page Scale" zoom, is performed as a post-rendering step, it changes the page scale factor property and scales the surface the web page is rendered onto when user performs a pinch zooming action.
 [put_IsPinchZoomEnabled](#put_ispinchzoomenabled) | Set the `IsPinchZoomEnabled` property.
 
 ## Applies to
@@ -39,7 +39,7 @@ WebView2 Win32 Prerelease |    1.0.865
 
 #### get_IsPinchZoomEnabled
 
-Pinch-zoom, referred to as ???Page Scale??? zoom, is performed as a post-rendering step, it changes the page scale factor property and scales the surface the web page is rendered onto when user perfoms a pinch zooming action.
+Pinch-zoom, referred to as "Page Scale" zoom, is performed as a post-rendering step, it changes the page scale factor property and scales the surface the web page is rendered onto when user perfoms a pinch zooming action.
 
 > public HRESULT [get_IsPinchZoomEnabled](#get_ispinchzoomenabled)(BOOL * enabled)
 
