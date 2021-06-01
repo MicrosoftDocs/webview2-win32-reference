@@ -1,5 +1,5 @@
 ---
-description: This interface is an extension of the ICoreWebView2Environment.
+description: This interface is an extension of the ICoreWebView2Environment that supports BrowserProcessExited event.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironment4
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -19,7 +19,7 @@ interface ICoreWebView2ExperimentalEnvironment4
   : public IUnknown
 ```
 
-This interface is an extension of the [ICoreWebView2Environment](icorewebview2environment.md).
+This interface is an extension of the [ICoreWebView2Environment](icorewebview2environment.md) that supports BrowserProcessExited event.
 
 ## Summary
 

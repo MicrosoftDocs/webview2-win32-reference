@@ -1,5 +1,5 @@
 ---
-description: A continuation of the ICoreWebView2Settings interface.
+description: A continuation of the ICoreWebView2Settings interface to manage autofill.
 title: WebView2 Win32 C++ ICoreWebView2Settings4
 author: MSEdgeTeam
 ms.author: msedgedevrel
@@ -17,7 +17,7 @@ interface ICoreWebView2Settings4
   : public ICoreWebView2Settings3
 ```
 
-A continuation of the [ICoreWebView2Settings](icorewebview2settings.md) interface.
+A continuation of the [ICoreWebView2Settings](icorewebview2settings.md) interface to manage autofill.
 
 ## Summary
 
