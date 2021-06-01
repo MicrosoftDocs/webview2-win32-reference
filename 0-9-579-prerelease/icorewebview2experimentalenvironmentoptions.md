@@ -53,7 +53,7 @@ The IsSingleSignOnUsingOSPrimaryAccountEnabled property is used to enable single
 
 > public HRESULT [get_IsSingleSignOnUsingOSPrimaryAccountEnabled](#get_issinglesignonusingosprimaryaccountenabled)(BOOL * enabled)
 
-Default is disabled. Universal Windows Platform apps must also declare enterpriseCloudSSO [restricted capability](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) for the single sign on to work.
+Default is disabled. Universal Windows Platform apps must also declare enterpriseCloudSSO [restricted capability](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) for the single sign on to work.
 
 #### put_IsSingleSignOnUsingOSPrimaryAccountEnabled 
 
