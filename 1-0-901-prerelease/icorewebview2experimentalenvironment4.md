@@ -28,7 +28,7 @@ This interface is an extension of the [ICoreWebView2Environment](icorewebview2en
 [add_BrowserProcessExited](#add_browserprocessexited) | Add an event handler for the `BrowserProcessExited` event.
 [remove_BrowserProcessExited](#remove_browserprocessexited) | Remove an event handler previously added with `add_BrowserProcessExited`.
 
-An object implementing the [ICoreWebView2ExperimentalEnvironment4](#icorewebview2experimentalenvironment4) interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
+An object implementing the ICoreWebView2ExperimentalEnvironment4 interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
 
 ## Applies to
 

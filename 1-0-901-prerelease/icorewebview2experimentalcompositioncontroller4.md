@@ -28,7 +28,7 @@ This interface is an extension of the [ICoreWebView2CompositionController](icore
 [CreateCoreWebView2PointerInfoFromPointerId](#createcorewebview2pointerinfofrompointerid) | A helper function to convert a pointerId received from the system into an ICoreWebView2ExperimentalPointerInfo.
 [get_UIAProvider](#get_uiaprovider) | Returns the UI Automation Provider for the WebView.
 
-An object implementing [ICoreWebView2ExperimentalCompositionController4](#icorewebview2experimentalcompositioncontroller4) interface will also implement [ICoreWebView2CompositionController](icorewebview2compositioncontroller.md).
+An object implementing ICoreWebView2ExperimentalCompositionController4 interface will also implement [ICoreWebView2CompositionController](icorewebview2compositioncontroller.md).
 
 ## Applies to
 

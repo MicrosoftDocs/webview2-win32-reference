@@ -27,7 +27,7 @@ This interface is an extension of the [ICoreWebView2Environment](icorewebview2en
 --------------------------------|---------------------------------------------
 [UpdateRuntime](#updateruntime) | Try to update the installed Microsoft Edge WebView2 Runtime.
 
-An object implementing the [ICoreWebView2ExperimentalEnvironment3](#icorewebview2experimentalenvironment3) interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
+An object implementing the ICoreWebView2ExperimentalEnvironment3 interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
 
 ## Applies to
 
