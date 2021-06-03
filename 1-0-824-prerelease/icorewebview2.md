@@ -1612,7 +1612,8 @@ COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY            | All cross origin resour
 COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_ALLOW            | All cross origin resource access is allowed, including accesses that are subject to Cross-Origin Resource Sharing(CORS) check.
 COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY_CORS            | Cross origin resource access is allowed for normal sub resource access like as src of a script or image element, while any access that subjects to CORS check will be denied.
 
-Note that other normal access checks like same origin DOM access check and [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) still apply. The following table illustrates the host resource cross origin access according to access context and `COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND`. 
+Note that other normal access checks like same origin DOM access check and [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) still apply. The following table illustrates the host resource cross origin access according to access context and `COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND`.
+
 Cross Origin Access Context  |DENY  |ALLOW  |DENY_CORS
 --------- | --------- | --------- | ---------
 From DOM like src of img, script or iframe element  |Deny  |Allow  |Allow

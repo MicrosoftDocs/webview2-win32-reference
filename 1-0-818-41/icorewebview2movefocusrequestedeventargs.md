@@ -3,7 +3,7 @@ description: Event args for the `MoveFocusRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2MoveFocusRequestedEventArgs
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 04/21/2021
+ms.date: 06/01/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2MoveFocusRequestedEventArgs
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2MoveFocusRequestedEventArgs

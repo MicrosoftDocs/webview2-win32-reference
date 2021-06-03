@@ -899,7 +899,7 @@ For example, suppose you have a COM object with the following interface
         });
         });
 ```
-Exposing host objects to script has security risk. Please follow [best practices](https://docs.microsoft.com/microsoft-edge/webview2/concepts/security).
+Exposing host objects to script has security risk. Please follow [best practices](/microsoft-edge/webview2/concepts/security).
 
 #### AddScriptToExecuteOnDocumentCreated 
 
@@ -1537,7 +1537,7 @@ A structure representing the information packed into the LPARAM given to a Win32
 
 > typedef [COREWEBVIEW2_PHYSICAL_KEY_STATUS](#corewebview2_physical_key_status)
 
-See the documentation for WM_KEYDOWN for details at [https://docs.microsoft.com/windows/win32/inputdev/wm-keydown](https://docs.microsoft.com/windows/win32/inputdev/wm-keydown)
+See the documentation for [WM_KEYDOWN](/windows/win32/inputdev/wm-keydown) for details.
 
 #### COREWEBVIEW2_PROCESS_FAILED_KIND 
 

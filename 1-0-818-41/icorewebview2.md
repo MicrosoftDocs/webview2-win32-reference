@@ -3,7 +3,7 @@ description: WebView2 enables you to host web content using the latest Microsoft
 title: WebView2 Win32 C++ ICoreWebView2
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 04/21/2021
+ms.date: 06/01/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2
@@ -1608,7 +1610,8 @@ COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY            | All cross origin resour
 COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_ALLOW            | All cross origin resource access is allowed, including accesses that are subject to Cross-Origin Resource Sharing(CORS) check.
 COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY_CORS            | Cross origin resource access is allowed for normal sub resource access like as src of a script or image element, while any access that subjects to CORS check will be denied.
 
-Note that other normal access checks like same origin DOM access check and [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) still apply. The following table illustrates the host resource cross origin access according to access context and `COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND`. 
+Note that other normal access checks like same origin DOM access check and [Content Security Policy](https://developer.mozilla.org/docs/Web/HTTP/CSP) still apply. The following table illustrates the host resource cross origin access according to access context and `COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND`.
+
 Cross Origin Access Context  |DENY  |ALLOW  |DENY_CORS
 --------- | --------- | --------- | ---------
 From DOM like src of img, script or iframe element  |Deny  |Allow  |Allow
