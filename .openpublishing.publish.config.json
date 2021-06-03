@@ -7,7 +7,6 @@
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [
-        // "webview2-1.0.901-prerelease",
         "webview2-1.0.865-prerelease",
         "webview2-1.0.864.35",
         "webview2-1.0.824-prerelease",
