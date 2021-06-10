@@ -26,16 +26,16 @@ Event args for the `ClientCertificateRequested` event.
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
 [get_AllowedCertificateAuthorities](#get_allowedcertificateauthorities) | Returns the ICoreWebView2ExperimentalStringCollection.
-[get_Cancel](#get_cancel) | You??may??set??this??flag??to??cancel??the??certificate selection.
-[get_Handled](#get_handled) | You??may??set??this??flag??to??`TRUE` to respond to the server with or without a certificate.
+[get_Cancel](#get_cancel) | You may set this flag to cancel the certificate selection.
+[get_Handled](#get_handled) | You may set this flag to `TRUE` to respond to the server with or without a certificate.
 [get_Host](#get_host) | Host name of the server that requested client certificate authentication.
 [get_IsProxy](#get_isproxy) | Returns true if the server that issued this request is an http proxy.
 [get_MutuallyTrustedCertificates](#get_mutuallytrustedcertificates) | Returns the ICoreWebView2ExperimentalClientCertificateCollection when client certificate authentication is requested.
 [get_Port](#get_port) | Port of the server that requested client certificate authentication.
 [get_SelectedCertificate](#get_selectedcertificate) | Returns the selected certificate.
 [GetDeferral](#getdeferral) | Returns an ICoreWebView2Deferral object.
-[put_Cancel](#put_cancel) | ??Sets??the??`Cancel`??property.
-[put_Handled](#put_handled) | ??Sets??the??`Handled`??property.
+[put_Cancel](#put_cancel) | Sets the `Cancel` property.
+[put_Handled](#put_handled) | Sets the `Handled` property.
 [put_SelectedCertificate](#put_selectedcertificate) | Sets the certificate to respond to the server.
 
 ## Applies to
@@ -57,7 +57,7 @@ The collection contains distinguished names of certificate authorities allowed b
 
 #### get_Cancel
 
-You??may??set??this??flag??to??cancel??the??certificate selection.
+You may set this flag to cancel the certificate selection.
 
 > public HRESULT [get_Cancel](#get_cancel)(BOOL * value)
 
@@ -65,7 +65,7 @@ If canceled, the request is aborted regardless of the `Handled` property. By def
 
 #### get_Handled
 
-You??may??set??this??flag??to??`TRUE` to respond to the server with or without a certificate.
+You may set this flag to `TRUE` to respond to the server with or without a certificate.
 
 > public HRESULT [get_Handled](#get_handled)(BOOL * value)
 
@@ -123,13 +123,13 @@ Use this operation to complete the event at a later time.
 
 #### put_Cancel
 
-??Sets??the??`Cancel`??property.
+Sets the `Cancel` property.
 
 > public HRESULT [put_Cancel](#put_cancel)(BOOL value)
 
 #### put_Handled
 
-??Sets??the??`Handled`??property.
+Sets the `Handled` property.
 
 > public HRESULT [put_Handled](#put_handled)(BOOL value)
 
