@@ -63,5 +63,5 @@ Sets the `UserAgent` property.
 
 > public HRESULT [put_UserAgent](#put_useragent)(LPCWSTR userAgent)
 
-This property may be overriden if the User-Agent header is set in a request. If the parameter is empty the User Agent will not be updated and the current User Agent will remain.
+This property may be overridden if the User-Agent header is set in a request. If the parameter is empty the User Agent will not be updated and the current User Agent will remain.
 
