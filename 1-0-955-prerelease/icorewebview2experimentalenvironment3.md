@@ -31,7 +31,7 @@ This interface is an extension of the [ICoreWebView2Environment](icorewebview2en
 [COREWEBVIEW2_PDF_TOOLBAR_ITEMS](#corewebview2_pdf_toolbar_items) | Specifies the PDF toolbar item types used for the `ICoreWebView2StagingSettings::put_HiddenPdfToolbarItems` method.
 [COREWEBVIEW2_UPDATE_RUNTIME_STATUS](#corewebview2_update_runtime_status) | Status of UpdateRuntime operation result.
 
-An object implementing the [ICoreWebView2ExperimentalEnvironment3](#icorewebview2experimentalenvironment3) interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
+An object implementing the ICoreWebView2ExperimentalEnvironment3 interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
 
 ## Applies to
 

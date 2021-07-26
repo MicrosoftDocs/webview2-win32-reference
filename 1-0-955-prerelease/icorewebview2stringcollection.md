@@ -23,7 +23,7 @@ A collection of strings.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_Count](#get_count) | The number of strings contained in [ICoreWebView2StringCollection](#icorewebview2stringcollection).
+[get_Count](#get_count) | The number of strings contained in ICoreWebView2StringCollection.
 [GetValueAtIndex](#getvalueatindex) | Gets the value at a given index.
 
 ## Applies to
@@ -37,7 +37,7 @@ WebView2 Win32 Prerelease |    1.0.955
 
 #### get_Count
 
-The number of strings contained in [ICoreWebView2StringCollection](#icorewebview2stringcollection).
+The number of strings contained in ICoreWebView2StringCollection.
 
 > public HRESULT [get_Count](#get_count)(UINT * value)
 
