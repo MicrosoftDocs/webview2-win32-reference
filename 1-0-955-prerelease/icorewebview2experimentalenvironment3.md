@@ -26,6 +26,10 @@ This interface is an extension of the [ICoreWebView2Environment](icorewebview2en
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
 [UpdateRuntime](#updateruntime) | Try to update the installed Microsoft Edge WebView2 Runtime.
+[COREWEBVIEW2_BROWSER_PROCESS_EXIT_KIND](#corewebview2_browser_process_exit_kind) | Specifies the browser process exit type used in the [ICoreWebView2ExperimentalBrowserProcessExitedEventArgs](icorewebview2experimentalbrowserprocessexitedeventargs.md) interface.
+[COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4) | Matrix that represents a 3D transform.
+[COREWEBVIEW2_PDF_TOOLBAR_ITEMS](#corewebview2_pdf_toolbar_items) | Specifies the PDF toolbar item types used for the `ICoreWebView2StagingSettings::put_HiddenPdfToolbarItems` method.
+[COREWEBVIEW2_UPDATE_RUNTIME_STATUS](#corewebview2_update_runtime_status) | Status of UpdateRuntime operation result.
 
 An object implementing the [ICoreWebView2ExperimentalEnvironment3](#icorewebview2experimentalenvironment3) interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
 
@@ -73,4 +77,49 @@ This will potentially result in a new version of the Edge WebView2 Runtime being
         if (FAILED(hr))
             ShowFailure(hr, L"Call to TryUpdateRuntime failed");
 ```
+
+#### COREWEBVIEW2_BROWSER_PROCESS_EXIT_KIND
+
+Specifies the browser process exit type used in the [ICoreWebView2ExperimentalBrowserProcessExitedEventArgs](icorewebview2experimentalbrowserprocessexitedeventargs.md) interface.
+
+> enum [COREWEBVIEW2_BROWSER_PROCESS_EXIT_KIND](#corewebview2_browser_process_exit_kind)
+
+ Values                         | Descriptions
+--------------------------------|---------------------------------------------
+COREWEBVIEW2_BROWSER_PROCESS_EXIT_KIND_NORMAL            | Indicates that the browser process ended normally.
+COREWEBVIEW2_BROWSER_PROCESS_EXIT_KIND_FAILED            | Indicates that the browser process ended unexpectedly.
+
+#### COREWEBVIEW2_MATRIX_4X4
+
+Matrix that represents a 3D transform.
+
+> typedef [COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4)
+
+This transform is used to calculate correct coordinates when calling CreateCoreWebView2PointerInfoFromPointerId. This is equivalent to a D2D1_MATRIX_4X4_F
+
+#### COREWEBVIEW2_PDF_TOOLBAR_ITEMS
+
+Specifies the PDF toolbar item types used for the `ICoreWebView2StagingSettings::put_HiddenPdfToolbarItems` method.
+
+> enum [COREWEBVIEW2_PDF_TOOLBAR_ITEMS](#corewebview2_pdf_toolbar_items)
+
+ Values                         | Descriptions
+--------------------------------|---------------------------------------------
+COREWEBVIEW2_PDF_TOOLBAR_ITEMS_NONE            | No item.
+COREWEBVIEW2_PDF_TOOLBAR_ITEMS_SAVE            | The save button.
+COREWEBVIEW2_PDF_TOOLBAR_ITEMS_PRINT            | The print button.
+COREWEBVIEW2_PDF_TOOLBAR_ITEMS_SAVE_AS            | The save as button.
+
+#### COREWEBVIEW2_UPDATE_RUNTIME_STATUS
+
+Status of UpdateRuntime operation result.
+
+> enum [COREWEBVIEW2_UPDATE_RUNTIME_STATUS](#corewebview2_update_runtime_status)
+
+ Values                         | Descriptions
+--------------------------------|---------------------------------------------
+COREWEBVIEW2_UPDATE_RUNTIME_STATUS_LATEST_VERSION_INSTALLED            | Latest version of Edge WebView2 Runtime is installed.
+COREWEBVIEW2_UPDATE_RUNTIME_STATUS_UPDATE_ALREADY_RUNNING            | Edge WebView2 Runtime update is already running, which could be triggered by auto update or by other UpdateRuntime request from some app.
+COREWEBVIEW2_UPDATE_RUNTIME_STATUS_BLOCKED_BY_POLICY            | Edge WebView2 Runtime update is blocked by group policy.
+COREWEBVIEW2_UPDATE_RUNTIME_STATUS_FAILED            | Edge WebView2 Runtime update failed.
 
