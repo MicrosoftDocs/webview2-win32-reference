@@ -3,7 +3,7 @@ description: The ICoreWebView2 Experimental interface to support client certific
 title: WebView2 Win32 C++ ICoreWebView2Experimental3
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 06/03/2021
+ms.date: 07/26/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2Experimental3
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
