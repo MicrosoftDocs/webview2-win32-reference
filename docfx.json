@@ -26,206 +26,32 @@
         ],
         "src": "non-version"
       },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-955-prerelease",
-        "src": "1-0-955-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-902-49",
-        "src": "1-0-902-49"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-902-prerelease",
-        "src": "1-0-902-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-865-prerelease",
-        "src": "1-0-865-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-864-35",
-        "src": "1-0-864-35"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-824-prerelease",
-        "src": "1-0-824-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-818-41",
-        "src": "1-0-818-41"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-790-prerelease",
-        "src": "1-0-790-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-774-44",
-        "src": "1-0-774-44"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-721-prerelease",
-        "src": "1-0-721-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-705-50",
-        "src": "1-0-705-50"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-674-prerelease",
-        "src": "1-0-674-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-664-37",
-        "src": "1-0-664-37"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-628-prerelease",
-        "src": "0-9-628-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-622-22",
-        "src": "1-0-622-22"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-622-11",
-        "src": "0-9-622-11"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-579",
-        "src": "0-9-579"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-579-prerelease",
-        "src": "0-9-579-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-538",
-        "src": "0-9-538"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-538-prerelease",
-        "src": "0-9-538-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-515-prerelease",
-        "src": "0-9-515-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-488",
-        "src": "0-9-488"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-488-prerelease",
-        "src": "0-9-488-prerelease"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-430",
-        "src": "0-9-430"
-      },
-      {
-        "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "group": "webview2-355",
-        "src": "0-8-355"
-      }
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-961-33", "src": "1-0-961-33" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-902-49", "src": "1-0-902-49" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-864-35", "src": "1-0-864-35" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-818-41", "src": "1-0-818-41" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-774-44", "src": "1-0-774-44" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-705-50", "src": "1-0-705-50" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-664-37", "src": "1-0-664-37" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-622-22", "src": "1-0-622-22" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-622-11", "src": "0-9-622-11" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-579", "src": "0-9-579" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-538", "src": "0-9-538" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-488", "src": "0-9-488" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-430", "src": "0-9-430" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-355", "src": "0-8-355" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-955-prerelease", "src": "1-0-955-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-902-prerelease", "src": "1-0-902-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-865-prerelease", "src": "1-0-865-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-824-prerelease", "src": "1-0-824-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-790-prerelease", "src": "1-0-790-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-721-prerelease", "src": "1-0-721-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-674-prerelease", "src": "1-0-674-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-628-prerelease", "src": "0-9-628-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-579-prerelease", "src": "0-9-579-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-538-prerelease", "src": "0-9-538-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-515-prerelease", "src": "0-9-515-prerelease" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-488-prerelease", "src": "0-9-488-prerelease" }
     ],
     "resource": [
       {
@@ -254,106 +80,32 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
-      "webview2-955-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.955-prerelease"
-      },
-      "webview2-902-49": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.902.49"
-      },
-      "webview2-902-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.902-prerelease"
-      },
-      "webview2-865-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.865-prerelease"
-      },
-      "webview2-864-35": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.864.35"
-      },
-      "webview2-824-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.824-prerelease"
-      },
-      "webview2-818-41": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.818.41"
-      },
-      "webview2-790-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.790-prerelease"
-      },
-      "webview2-774-44": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.774.44"
-      },
-      "webview2-721-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.721-prerelease"
-      },
-      "webview2-705-50": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.705.50"
-      },
-      "webview2-674-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.674-prerelease"
-      },
-      "webview2-664-37": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.664.37"
-      },
-      "webview2-628-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.628-prerelease"
-      },
-      "webview2-622-22": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-1.0.622.22"
-      },
-      "webview2-622-11": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.622"
-      },
-      "webview2-579": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.579"
-      },
-      "webview2-579-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.579-prerelease"
-      },
-      "webview2-538": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.538"
-      },
-      "webview2-538-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.538-prerelease"
-      },
-      "webview2-515-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.515-prerelease"
-      },
-      "webview2-488": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.488"
-      },
-      "webview2-488-prerelease": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.488-prerelease"
-      },
-      "webview2-430": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.9.430"
-      },
-      "webview2-355": {
-        "dest": "webview2-win32",
-        "moniker_range": "webview2-0.8.355"
-      }
+      "webview2-961-33": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.961.33" },
+      "webview2-902-49": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.902.49" },
+      "webview2-864-35": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.864.35" },
+      "webview2-818-41": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.818.41" },
+      "webview2-774-44": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.774.44" },
+      "webview2-705-50": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.705.50" },
+      "webview2-664-37": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.664.37" },
+      "webview2-622-22": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.622.22" },
+      "webview2-622-11": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.622" },
+      "webview2-579": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.579" },
+      "webview2-538": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.538" },
+      "webview2-488": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.488" },
+      "webview2-430": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.430" },
+      "webview2-355": { "dest": "webview2-win32", "moniker_range": "webview2-0.8.355" },
+      "webview2-955-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.955-prerelease" },
+      "webview2-902-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.902-prerelease" },
+      "webview2-865-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.865-prerelease" },
+      "webview2-824-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.824-prerelease" },
+      "webview2-790-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.790-prerelease" },
+      "webview2-721-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.721-prerelease" },
+      "webview2-674-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.674-prerelease" },
+      "webview2-628-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.628-prerelease" },
+      "webview2-579-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.579-prerelease" },
+      "webview2-538-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.538-prerelease" },
+      "webview2-515-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.515-prerelease" },
+      "webview2-488-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.488-prerelease" }
     },
     "markdownEngineName": "markdig"
   }
