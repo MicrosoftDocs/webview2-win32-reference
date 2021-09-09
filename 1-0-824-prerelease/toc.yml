@@ -51,8 +51,6 @@
       href: icorewebview2httpresponseheaders.md
     - name: ICoreWebView2PointerInfo
       href: icorewebview2pointerinfo.md
-    - name: ICoreWebView2ProcessFailedEventArgs2
-      href: icorewebview2processfailedeventargs2.md
     - name: ICoreWebView2Settings
       href: icorewebview2settings.md
     - name: ICoreWebView2Settings2
@@ -89,6 +87,8 @@
           href: icorewebview2permissionrequestedeventargs.md
         - name: ICoreWebView2ProcessFailedEventArgs
           href: icorewebview2processfailedeventargs.md
+        - name: ICoreWebView2ProcessFailedEventArgs2
+          href: icorewebview2processfailedeventargs2.md
         - name: ICoreWebView2ScriptDialogOpeningEventArgs
           href: icorewebview2scriptdialogopeningeventargs.md
         - name: ICoreWebView2SourceChangedEventArgs
