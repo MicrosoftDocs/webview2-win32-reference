@@ -3,7 +3,7 @@ description: This is an extension of the ICoreWebView2Settings Experimental inte
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalSettings5
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 07/26/2021
+ms.date: 09/14/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2ExperimentalSettings5
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 

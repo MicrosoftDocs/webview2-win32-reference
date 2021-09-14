@@ -3,7 +3,7 @@ description: Receives `CallDevToolsProtocolMethod` completion results.
 title: WebView2 Win32 C++ ICoreWebView2CallDevToolsProtocolMethodCompletedHandler
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 07/26/2021
+ms.date: 09/14/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2CallDevToolsProtocolMethodCompletedHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2CallDevToolsProtocolMethodCompletedHandler
