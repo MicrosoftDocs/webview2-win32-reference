@@ -1,5 +1,5 @@
 ---
-description: This interface is an extension of the ICoreWebView2Environment.
+description: This interface is an extension of the ICoreWebView2Environment that manages user data folder.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironment5
 author: MSEdgeTeam
 ms.author: msedgedevrel
