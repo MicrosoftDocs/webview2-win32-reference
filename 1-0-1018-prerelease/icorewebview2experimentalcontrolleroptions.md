@@ -31,6 +31,24 @@ This interface is used to manage profile options that created by 'CreateCoreWebV
 [put_ProfileName](#put_profilename) | Sets the `ProfileName` property.
 
 ```cpp
+    auto webViewEnvironment8 =
+        m_webViewEnvironment.try_query<ICoreWebView2ExperimentalEnvironment8>();
+    if (!webViewEnvironment8)
+    {
+        FeatureNotAvailable();
+        return S_OK;
+    }
+
+    Microsoft::WRL::ComPtr<ICoreWebView2ExperimentalControllerOptions> options;
+    HRESULT hr = webViewEnvironment8->CreateCoreWebView2ControllerOptions(
+        m_webviewOption.profile.c_str(), m_webviewOption.isInPrivate, options.GetAddressOf());
+    if (hr == E_INVALIDARG)
+    {
+        ShowFailure(hr, L"Unable to create WebView2 due to an invalid profile name.");
+        CloseAppWindow();
+        return S_OK;
+    }
+    CHECK_FAILURE(hr);
 ```
 
 ## Applies to

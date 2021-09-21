@@ -28,6 +28,23 @@ Used to get [ICoreWebView2ExperimentalProfile](icorewebview2experimentalprofile.
 [get_Profile](#get_profile) | The associated [ICoreWebView2ExperimentalProfile](icorewebview2experimentalprofile.md) object.
 
 ```cpp
+        auto webview2Experimental8 = coreWebView2.try_query<ICoreWebView2Experimental8>();
+        if (webview2Experimental8)
+        {
+            wil::com_ptr<ICoreWebView2ExperimentalProfile> profile;
+            CHECK_FAILURE(webview2Experimental8->get_Profile(&profile));
+            wil::unique_cotaskmem_string profile_path;
+            CHECK_FAILURE(profile->get_ProfilePath(&profile_path));
+            std::wstring str(profile_path.get());
+            m_profileDirName = str.substr(str.find_last_of(L'\\') + 1);
+            BOOL inPrivate = FALSE;
+            CHECK_FAILURE(profile->get_IsInPrivateModeEnabled(&inPrivate));
+            // update window title with m_profileDirName
+            UpdateAppTitle();
+
+            // update window icon
+            SetAppIcon(inPrivate);
+        }
 ```
 
 ## Applies to

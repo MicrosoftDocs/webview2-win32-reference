@@ -30,6 +30,24 @@ This interface is used to create CreateCoreWebView2ControllerOptions object, whi
 [CreateCoreWebView2ControllerWithOptions](#createcorewebview2controllerwithoptions) | Create a new WebView with options.
 
 ```cpp
+    auto webViewEnvironment8 =
+        m_webViewEnvironment.try_query<ICoreWebView2ExperimentalEnvironment8>();
+    if (!webViewEnvironment8)
+    {
+        FeatureNotAvailable();
+        return S_OK;
+    }
+
+    Microsoft::WRL::ComPtr<ICoreWebView2ExperimentalControllerOptions> options;
+    HRESULT hr = webViewEnvironment8->CreateCoreWebView2ControllerOptions(
+        m_webviewOption.profile.c_str(), m_webviewOption.isInPrivate, options.GetAddressOf());
+    if (hr == E_INVALIDARG)
+    {
+        ShowFailure(hr, L"Unable to create WebView2 due to an invalid profile name.");
+        CloseAppWindow();
+        return S_OK;
+    }
+    CHECK_FAILURE(hr);
 ```
 
 ## Applies to
