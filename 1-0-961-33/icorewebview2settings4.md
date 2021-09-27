@@ -3,7 +3,7 @@ description: A continuation of the ICoreWebView2Settings interface to manage aut
 title: WebView2 Win32 C++ ICoreWebView2Settings4
 author: MSEdgeTeam
 ms.author: msedgedevrel
-ms.date: 09/08/2021
+ms.date: 09/27/2021
 ms.topic: reference
 ms.prod: microsoft-edge
 ms.technology: webview
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 ---
 
 # interface ICoreWebView2Settings4
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2Settings4
