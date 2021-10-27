@@ -96,7 +96,7 @@ WEBVIEW2_WAIT_FOR_SCRIPT_DEBUGGER
 When found with a non-empty value, this indicates that the WebView is being launched under a script debugger. In this case, the WebView issues a `Page.waitForDebugger` CDP command that runs the script inside the WebView to pause on launch, until a debugger issues a corresponding `Runtime.runIfWaitingForDebugger` CDP command to resume the runtime.
 
 > [!NOTE]
-> The following environment variable does not have a registry key equivalent: `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER`.
+> The following environment variable does not have a registry key equivalent: `WEBVIEW2_WAIT_FOR_SCRIPT_DEBUGGER`.
 
 When found with a non-empty value, it indicates that the WebView is being launched under a script debugger that also supports host apps that use multiple WebViews. The value is used as the identifier for a named pipe that is opened and written to when a new WebView is created by the host app. The payload should match the payload of the `remote-debugging-port` JSON target and an external debugger may use it to attach to a specific WebView instance. The format of the pipe created by the debugger should be `\\.\pipe\WebView2\Debugger\{app_name}\{pipe_name}`, where the following are true.
 
@@ -112,7 +112,7 @@ To enable debugging of the targets identified by the JSON, you must set the `WEB
 > If you set both `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER` and `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variables, the WebViews hosted in your app and associated contents may exposed to 3rd party apps such as debuggers.
 
 > [!NOTE]
-> The following environment variable does not have a registry key equivalent: `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS`.
+> The following environment variable does not have a registry key equivalent: `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER`.
 
 If none of those environment variables exist, then the registry is examined next. The following registry values are verified.
 
