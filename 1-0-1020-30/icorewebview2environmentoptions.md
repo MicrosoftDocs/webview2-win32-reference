@@ -1,7 +1,7 @@
 ---
 description: Options used to create WebView2 Environment.
 title: WebView2 Win32 C++ ICoreWebView2EnvironmentOptions
-ms.date: 10/25/2021
+ms.date: 10/28/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2EnvironmentOptions
 ---
 
@@ -64,7 +64,7 @@ Changes the behavior of the WebView.
 The arguments are passed to the browser process as part of the command. For more information about using command-line switches with Chromium browser processes, navigate to [Run Chromium with Flags][ChromiumDevelopersHowTosRunWithFlags]. The value appended to a switch is appended to the browser process, for example, in `--edge-webview-switches=xxx` the value is `xxx`. If you specify a switch that is important to WebView functionality, it is ignored, for example, `--user-data-dir`. Specific features are disabled internally and blocked from being enabled. If a switch is specified multiple times, only the last instance is used.
 
 > [!NOTE]
-> A merge of the different values of the same switch is not attempted, except for disabled and enabled features. The features specified by `--enable-features` and `--disable-features` are merged with simple logic.<br/>
+> A merge of the different values of the same switch is not attempted, except for disabled and enabled features. The features specified by `--enable-features` and `--disable-features` are merged with simple logic.
 > * The features is the union of the specified features and built-in features. If a feature is disabled, it is removed from the enabled features list.
 
 If you specify command-line switches and use the `additionalBrowserArguments` parameter, the `--edge-webview-switches` value takes precedence and is processed last. If a switch fails to parse, the switch is ignored. The default state for the operation is to run the browser process with no extra flags.
