@@ -1,12 +1,7 @@
 ---
 description: Options used to create WebView2 Environment.
 title: WebView2 Win32 C++ ICoreWebView2EnvironmentOptions
-author: MSEdgeTeam
-ms.author: msedgedevrel
-ms.date: 09/14/2021
-ms.topic: reference
-ms.prod: microsoft-edge
-ms.technology: webview
+ms.date: 10/28/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2EnvironmentOptions
 ---
 
