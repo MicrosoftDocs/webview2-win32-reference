@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Environment2 interface.
 title: WebView2 Win32 C++ ICoreWebView2Environment3
-ms.date: 10/25/2021
+ms.date: 10/28/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment3
 ---
 
@@ -28,7 +28,7 @@ A continuation of the [ICoreWebView2Environment2](icorewebview2environment2.md) 
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    1.0.774.44
-WebView2 Win32 Prerelease |    1.0.1010
+WebView2 Win32 Prerelease |    1.0.790
 
 ## Members
 
