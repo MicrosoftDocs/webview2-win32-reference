@@ -1,5 +1,5 @@
 ---
-description: This interface is an extension of ICoreWebView2 related to CoreWebView2 ContextMenu event.
+description: This interface is an extension of ICoreWebView2 that supports ContextMenuRequested event.
 title: WebView2 Win32 C++ ICoreWebView2Experimental6
 ms.date: 10/28/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Experimental6
@@ -14,7 +14,7 @@ interface ICoreWebView2Experimental6
   : public IUnknown
 ```
 
-This interface is an extension of [ICoreWebView2](icorewebview2.md) related to CoreWebView2 ContextMenu event.
+This interface is an extension of [ICoreWebView2](icorewebview2.md) that supports ContextMenuRequested event.
 
 ## Summary
 

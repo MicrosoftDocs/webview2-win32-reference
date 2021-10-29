@@ -1,5 +1,5 @@
 ---
-description: This interface is an extension of ICoreWebView2.
+description: This interface is an extension of ICoreWebView2 that supports positioning and anchoring Download UI.
 title: WebView2 Win32 C++ ICoreWebView2Experimental11
 ms.date: 10/28/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Experimental11
@@ -14,7 +14,7 @@ interface ICoreWebView2Experimental11
   : public IUnknown
 ```
 
-This interface is an extension of [ICoreWebView2](icorewebview2.md).
+This interface is an extension of [ICoreWebView2](icorewebview2.md) that supports positioning and anchoring Download UI.
 
 ## Summary
 
