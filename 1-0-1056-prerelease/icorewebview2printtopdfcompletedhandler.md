@@ -1,11 +1,13 @@
 ---
 description: Receives the result of the `PrintToPdf` method.
 title: WebView2 Win32 C++ ICoreWebView2PrintToPdfCompletedHandler
-ms.date: 10/28/2021
+ms.date: 11/29/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PrintToPdfCompletedHandler
 ---
 
 # interface ICoreWebView2PrintToPdfCompletedHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2PrintToPdfCompletedHandler

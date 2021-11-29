@@ -1,11 +1,13 @@
 ---
 description: Used to get ICoreWebView2ExperimentalProfile object.
 title: WebView2 Win32 C++ ICoreWebView2Experimental8
-ms.date: 10/28/2021
+ms.date: 11/29/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Experimental8
 ---
 
 # interface ICoreWebView2Experimental8
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 

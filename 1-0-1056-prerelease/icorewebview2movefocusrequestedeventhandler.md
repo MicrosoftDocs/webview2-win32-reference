@@ -1,11 +1,13 @@
 ---
 description: Receives `MoveFocusRequested` events.
 title: WebView2 Win32 C++ ICoreWebView2MoveFocusRequestedEventHandler
-ms.date: 10/28/2021
+ms.date: 11/29/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2MoveFocusRequestedEventHandler
 ---
 
 # interface ICoreWebView2MoveFocusRequestedEventHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2MoveFocusRequestedEventHandler
