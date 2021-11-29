@@ -1,11 +1,13 @@
 ---
 description: This interface is an extension of ICoreWebView2_6 that supports printing to PDF.
 title: WebView2 Win32 C++ ICoreWebView2_7
-ms.date: 10/25/2021
+ms.date: 11/29/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_7
 ---
 
 # interface ICoreWebView2_7
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2_7
