@@ -1,11 +1,13 @@
 ---
 description: Event args for the `NavigationStarting` event.
 title: WebView2 Win32 C++ ICoreWebView2NavigationStartingEventArgs
-ms.date: 10/25/2021
+ms.date: 11/29/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NavigationStartingEventArgs
 ---
 
 # interface ICoreWebView2NavigationStartingEventArgs
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2NavigationStartingEventArgs

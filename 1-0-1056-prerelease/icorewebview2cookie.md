@@ -1,11 +1,13 @@
 ---
 description: Provides a set of properties that are used to manage an ICoreWebView2Cookie.
 title: WebView2 Win32 C++ ICoreWebView2Cookie
-ms.date: 10/28/2021
+ms.date: 11/29/2021
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Cookie
 ---
 
 # interface ICoreWebView2Cookie
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2Cookie
