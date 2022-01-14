@@ -97,7 +97,6 @@ WebView2 enables you to host web content using the latest Microsoft Edge browser
 [COREWEBVIEW2_PRINT_ORIENTATION](#corewebview2_print_orientation) | The orientation for printing, used by the `Orientation` property on ICoreWebView2PrintSettings.
 [COREWEBVIEW2_PROCESS_FAILED_KIND](#corewebview2_process_failed_kind) | Specifies the process failure type used in the ICoreWebView2ProcessFailedEventHandler interface.
 [COREWEBVIEW2_PROCESS_FAILED_REASON](#corewebview2_process_failed_reason) | Specifies the process failure reason used in the ICoreWebView2ProcessFailedEventHandler interface.
-[COREWEBVIEW2_PROCESS_KIND](#corewebview2_process_kind) | Indicates the process type used in the ICoreWebView2ProcessInfo interface.
 [COREWEBVIEW2_SCRIPT_DIALOG_KIND](#corewebview2_script_dialog_kind) | Specifies the JavaScript dialog type used in the ICoreWebView2ScriptDialogOpeningEventHandler interface.
 [COREWEBVIEW2_WEB_ERROR_STATUS](#corewebview2_web_error_status) | Indicates the error status values for web navigations.
 [COREWEBVIEW2_WEB_RESOURCE_CONTEXT](#corewebview2_web_resource_context) | Specifies the web resource request contexts.
@@ -468,58 +467,58 @@ If a deferral is not taken on the event args, the subsequent scripts are blocked
         Callback<ICoreWebView2PermissionRequestedEventHandler>(
             [this](ICoreWebView2* sender, ICoreWebView2PermissionRequestedEventArgs* args)
                 -> HRESULT {
-                    wil::unique_cotaskmem_string uri;
-                    COREWEBVIEW2_PERMISSION_KIND kind =
-                        COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION;
-                    BOOL userInitiated = FALSE;
+                wil::unique_cotaskmem_string uri;
+                COREWEBVIEW2_PERMISSION_KIND kind =
+                    COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION;
+                BOOL userInitiated = FALSE;
 
-                    CHECK_FAILURE(args->get_Uri(&uri));
-                    CHECK_FAILURE(args->get_PermissionKind(&kind));
-                    CHECK_FAILURE(args->get_IsUserInitiated(&userInitiated));
+                CHECK_FAILURE(args->get_Uri(&uri));
+                CHECK_FAILURE(args->get_PermissionKind(&kind));
+                CHECK_FAILURE(args->get_IsUserInitiated(&userInitiated));
                 auto cached_key = std::tuple<std::wstring, COREWEBVIEW2_PERMISSION_KIND, BOOL>(
-                            std::wstring(uri.get()), kind, userInitiated);
-                    auto cached_permission = m_cached_permissions.find(cached_key);
-                    if (cached_permission != m_cached_permissions.end())
+                    std::wstring(uri.get()), kind, userInitiated);
+                auto cached_permission = m_cached_permissions.find(cached_key);
+                if (cached_permission != m_cached_permissions.end())
+                {
+                    bool allow = cached_permission->second;
+                    if (allow)
                     {
-                        bool allow = cached_permission->second;
-                        if (allow)
-                        {
-                            CHECK_FAILURE(args->put_State(COREWEBVIEW2_PERMISSION_STATE_ALLOW));
-                        }
-                        else
-                        {
-                            CHECK_FAILURE(args->put_State(COREWEBVIEW2_PERMISSION_STATE_DENY));
-                        }
-                        return S_OK;
+                        CHECK_FAILURE(args->put_State(COREWEBVIEW2_PERMISSION_STATE_ALLOW));
                     }
+                    else
+                    {
+                        CHECK_FAILURE(args->put_State(COREWEBVIEW2_PERMISSION_STATE_DENY));
+                    }
+                    return S_OK;
+                }
 
-                    std::wstring message = L"Do you want to grant permission for ";
-                    message += NameOfPermissionKind(kind);
-                    message += L" to the website at ";
-                    message += uri.get();
-                    message += L"?\n\n";
-                    message +=
-                        (userInitiated ? L"This request came from a user gesture."
-                                       : L"This request did not come from a user gesture.");
-                    
-                    int response = MessageBox(
-                        nullptr, message.c_str(), L"Permission Request",
-                        MB_YESNOCANCEL | MB_ICONWARNING);
-                    if (response == IDYES)
-                    {
-                        m_cached_permissions[cached_key] = true;
-                    }
+                std::wstring message = L"Do you want to grant permission for ";
+                message += NameOfPermissionKind(kind);
+                message += L" to the website at ";
+                message += uri.get();
+                message += L"?\n\n";
+                message +=
+                    (userInitiated ? L"This request came from a user gesture."
+                                   : L"This request did not come from a user gesture.");
 
-                    if (response == IDNO)
-                    {
-                        m_cached_permissions[cached_key] = false;
-                    }
-                    COREWEBVIEW2_PERMISSION_STATE state =
+                int response = MessageBox(
+                    nullptr, message.c_str(), L"Permission Request",
+                    MB_YESNOCANCEL | MB_ICONWARNING);
+                if (response == IDYES)
+                {
+                    m_cached_permissions[cached_key] = true;
+                }
+
+                if (response == IDNO)
+                {
+                    m_cached_permissions[cached_key] = false;
+                }
+                COREWEBVIEW2_PERMISSION_STATE state =
                     response == IDYES
                         ? COREWEBVIEW2_PERMISSION_STATE_ALLOW
                         : response == IDNO ? COREWEBVIEW2_PERMISSION_STATE_DENY
                                            : COREWEBVIEW2_PERMISSION_STATE_DEFAULT;
-                    CHECK_FAILURE(args->put_State(state));
+                CHECK_FAILURE(args->put_State(state));
 
                 return S_OK;
             })

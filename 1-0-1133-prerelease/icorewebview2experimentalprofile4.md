@@ -1,5 +1,5 @@
 ---
-description: Profile interface for Clear Browsing Data.
+description: Experimental Profile interface for Clear Browsing Data.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalProfile4
 ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalProfile4
@@ -14,7 +14,7 @@ interface ICoreWebView2ExperimentalProfile4
   : public IUnknown
 ```
 
-Profile interface for Clear Browsing Data.
+Experimental Profile interface for Clear Browsing Data.
 
 ## Summary
 
@@ -42,24 +42,17 @@ Clear browsing data based on a data type.
 This method takes two parameters, the first being a mask of one or more `COREWEBVIEW2_BROWSING_DATA_KINDS`. Or operation(s) can be applied to multiple `COREWEBVIEW2_BROWSING_DATA_KINDS` to create a mask representing those data types. The browsing data kinds that are supported are listed below. These data kinds follow a hierarchical structure in which nested bullet points are included in their parent bullet point's data kind. Ex: All DOM storage is encompassed in all site data which is encompassed in all profile data.
 
 * All Profile
+  * All Site Data
+    * All DOM Storage: File Systems, Indexed DB, Local Storage, Web SQL, Cache Storage
+    * Cookies
+  * Disk Cache
+  * Download History
+  * General Autofill
+  * Password Autosave
+  * Browsing History
+  * Settings
 
-* All Site Data
-
-* All DOM Storage: File Systems, Indexed DB, Local Storage, Web SQL, Cache Storage
-
-* Cookies
-
-* Disk Cache
-
-* Download History
-
-* General Autofill
-
-* Password Autosave
-
-* Browsing History
-
-* Settings The completed handler will be invoked when the browsing data has been cleared and will indicate if the specified data was properly cleared. In the case in which the operation is interrupted and the corresponding data is not fully cleared the handler will return `E_ABORT` and otherwise will return `S_OK`. Because this is an asynchronous operation, code that is dependent on the cleared data must be placed in the callback of this operation. If the WebView object is closed before the clear browsing data operation has completed, the handler will be released, but not invoked. In this case the clear browsing data operation may or may not be completed. ClearBrowsingData clears the `dataKinds` regardless of timestamp.
+The completed handler will be invoked when the browsing data has been cleared and will indicate if the specified data was properly cleared. In the case in which the operation is interrupted and the corresponding data is not fully cleared the handler will return `E_ABORT` and otherwise will return `S_OK`. Because this is an asynchronous operation, code that is dependent on the cleared data must be placed in the callback of this operation. If the WebView object is closed before the clear browsing data operation has completed, the handler will be released, but not invoked. In this case the clear browsing data operation may or may not be completed. ClearBrowsingData clears the `dataKinds` regardless of timestamp.
 
 #### ClearBrowsingDataAll
 
