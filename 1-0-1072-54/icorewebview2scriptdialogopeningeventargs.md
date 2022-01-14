@@ -1,7 +1,7 @@
 ---
 description: Event args for the `ScriptDialogOpening` event.
 title: WebView2 Win32 C++ ICoreWebView2ScriptDialogOpeningEventArgs
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ScriptDialogOpeningEventArgs
 ---
 
@@ -24,7 +24,7 @@ Event args for the `ScriptDialogOpening` event.
 [get_Message](#get_message) | The message of the dialog box.
 [get_ResultText](#get_resulttext) | The return value from the JavaScript prompt function if `Accept` is run.
 [get_Uri](#get_uri) | The URI of the page that requested the dialog box.
-[GetDeferral](#getdeferral) | Returns an ICoreWebView2Deferral object.
+[GetDeferral](#getdeferral) | Returns an [ICoreWebView2Deferral](icorewebview2deferral.md) object.
 [put_ResultText](#put_resulttext) | Sets the `ResultText` property.
 
 ## Applies to
@@ -84,9 +84,9 @@ The URI of the page that requested the dialog box.
 
 #### GetDeferral
 
-Returns an ICoreWebView2Deferral object.
+Returns an [ICoreWebView2Deferral](icorewebview2deferral.md) object.
 
-> public HRESULT [GetDeferral](#getdeferral)(ICoreWebView2Deferral ** deferral)
+> public HRESULT [GetDeferral](#getdeferral)([ICoreWebView2Deferral](icorewebview2deferral.md) ** deferral)
 
 Use this operation to complete the event at a later time.
 

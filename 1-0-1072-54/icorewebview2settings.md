@@ -1,7 +1,7 @@
 ---
 description: Defines properties that enable, disable, or modify WebView features.
 title: WebView2 Win32 C++ ICoreWebView2Settings
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings
 ---
 
@@ -37,7 +37,7 @@ Defines properties that enable, disable, or modify WebView features.
 [put_IsWebMessageEnabled](#put_iswebmessageenabled) | Sets the `IsWebMessageEnabled` property.
 [put_IsZoomControlEnabled](#put_iszoomcontrolenabled) | Sets the `IsZoomControlEnabled` property.
 
-Changes to `IsGeneralAutofillEnabled` and `IsPasswordAutosaveEnabled` apply immediately, while other setting changes made after `NavigationStarting` event do not apply until the next top-level navigation.
+Setting changes made after `NavigationStarting` event do not apply until the next top-level navigation.
 
 ## Applies to
 

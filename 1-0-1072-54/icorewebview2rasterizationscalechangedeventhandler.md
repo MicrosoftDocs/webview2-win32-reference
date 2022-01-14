@@ -1,7 +1,7 @@
 ---
 description: Receives `RasterizationScaleChanged` events.
 title: WebView2 Win32 C++ ICoreWebView2RasterizationScaleChangedEventHandler
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2RasterizationScaleChangedEventHandler
 ---
 
@@ -35,7 +35,7 @@ WebView2 Win32 Prerelease |    1.0.824
 
 Called to provide the implementer with the event args for the corresponding event.
 
-> public HRESULT [Invoke](#invoke)(ICoreWebView2Controller * sender, IUnknown * args)
+> public HRESULT [Invoke](#invoke)([ICoreWebView2Controller](icorewebview2controller.md) * sender, IUnknown * args)
 
 There are no event args and the args parameter will be null.
 

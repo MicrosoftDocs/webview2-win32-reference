@@ -1,7 +1,7 @@
 ---
 description: WebView2 enables you to host web content using the latest Microsoft Edge browser and web technology.
 title: WebView2 Win32 C++ ICoreWebView2
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2
 ---
 
@@ -468,12 +468,6 @@ If a deferral is not taken on the event args, the subsequent scripts are blocked
         Callback<ICoreWebView2PermissionRequestedEventHandler>(
             [this](ICoreWebView2* sender, ICoreWebView2PermissionRequestedEventArgs* args)
                 -> HRESULT {
-                // We avoid potential reentrancy from running a message loop
-                // in the permission requested event handler by showing the
-                // dialog via lambda run asynchronously outside of this event
-                // handler.
-                auto showDialog = [this, args] 
-                {
                     wil::unique_cotaskmem_string uri;
                     COREWEBVIEW2_PERMISSION_KIND kind =
                         COREWEBVIEW2_PERMISSION_KIND_UNKNOWN_PERMISSION;
@@ -482,8 +476,7 @@ If a deferral is not taken on the event args, the subsequent scripts are blocked
                     CHECK_FAILURE(args->get_Uri(&uri));
                     CHECK_FAILURE(args->get_PermissionKind(&kind));
                     CHECK_FAILURE(args->get_IsUserInitiated(&userInitiated));
-                    auto cached_key =
-                        std::tuple<std::wstring, COREWEBVIEW2_PERMISSION_KIND, BOOL>(
+                auto cached_key = std::tuple<std::wstring, COREWEBVIEW2_PERMISSION_KIND, BOOL>(
                             std::wstring(uri.get()), kind, userInitiated);
                     auto cached_permission = m_cached_permissions.find(cached_key);
                     if (cached_permission != m_cached_permissions.end())
@@ -522,24 +515,11 @@ If a deferral is not taken on the event args, the subsequent scripts are blocked
                         m_cached_permissions[cached_key] = false;
                     }
                     COREWEBVIEW2_PERMISSION_STATE state =
-                        response == IDYES  ? COREWEBVIEW2_PERMISSION_STATE_ALLOW
+                    response == IDYES
+                        ? COREWEBVIEW2_PERMISSION_STATE_ALLOW
                         : response == IDNO ? COREWEBVIEW2_PERMISSION_STATE_DENY
                                            : COREWEBVIEW2_PERMISSION_STATE_DEFAULT;
                     CHECK_FAILURE(args->put_State(state));
-
-                    return S_OK;
-                };
-
-                // Obtain a deferral for the event so that the CoreWebView2
-                // doesn't examine the properties we set on the event args until
-                // after we call the Complete method asynchronously later.
-                wil::com_ptr<ICoreWebView2Deferral> deferral;
-                CHECK_FAILURE(args->GetDeferral(&deferral));
-
-                m_appWindow->RunAsync([deferral, showDialog]() {
-                    showDialog();
-                    CHECK_FAILURE(deferral->Complete());
-                });
 
                 return S_OK;
             })
@@ -1234,12 +1214,9 @@ void ScriptComponent::CallCdpMethod()
             methodName.c_str(),
             methodParams.c_str(),
             Callback<ICoreWebView2CallDevToolsProtocolMethodCompletedHandler>(
-                [this](HRESULT error, PCWSTR resultJson) -> HRESULT
+                [](HRESULT error, PCWSTR resultJson) -> HRESULT
                 {
-                    // Use TextInputDialog to show the result for easy copy & paste.
-                    TextInputDialog resultDialog(
-                        m_appWindow->GetMainWindow(), L"CDP Method Call Result",
-                        L"CDP method Result:", resultJson, L"", true);
+                    MessageBox(nullptr, resultJson, L"CDP Method Result", MB_OK);
                     return S_OK;
                 }).Get());
     }
@@ -1431,18 +1408,14 @@ void ScriptComponent::SubscribeToCdpEvent()
 
         CHECK_FAILURE(receiver->add_DevToolsProtocolEventReceived(
             Callback<ICoreWebView2DevToolsProtocolEventReceivedEventHandler>(
-                [this, eventName](
+                [eventName](
                     ICoreWebView2* sender,
-                    ICoreWebView2DevToolsProtocolEventReceivedEventArgs* args) -> HRESULT 
-                {
+                    ICoreWebView2DevToolsProtocolEventReceivedEventArgs* args) -> HRESULT {
                     wil::unique_cotaskmem_string parameterObjectAsJson;
                     CHECK_FAILURE(args->get_ParameterObjectAsJson(&parameterObjectAsJson));
-                    std::wstring title = eventName;
-                    std::wstring details = parameterObjectAsJson.get();
-                    // Use TextInputDialog to show the result for easy copy & paste.
-                    TextInputDialog resultDialog(
-                        m_appWindow->GetMainWindow(), L"CDP Event Fired", title.c_str(),
-                        details.c_str(), L"", true);
+                    MessageBox(
+                        nullptr, parameterObjectAsJson.get(),
+                        (L"CDP Event Fired: " + eventName).c_str(), MB_OK);
                     return S_OK;
                 })
                 .Get(),
@@ -2072,22 +2045,6 @@ COREWEBVIEW2_PROCESS_FAILED_REASON_CRASHED            | The process crashed.
 COREWEBVIEW2_PROCESS_FAILED_REASON_LAUNCH_FAILED            | The process failed to launch.
 COREWEBVIEW2_PROCESS_FAILED_REASON_OUT_OF_MEMORY            | The process died due to running out of memory.
 
-#### COREWEBVIEW2_PROCESS_KIND
-
-Indicates the process type used in the ICoreWebView2ProcessInfo interface.
-
-> enum [COREWEBVIEW2_PROCESS_KIND](#corewebview2_process_kind)
-
- Values                         | Descriptions
---------------------------------|---------------------------------------------
-COREWEBVIEW2_PROCESS_KIND_BROWSER            | Indicates the browser process kind.
-COREWEBVIEW2_PROCESS_KIND_RENDERER            | Indicates the render process kind.
-COREWEBVIEW2_PROCESS_KIND_UTILITY            | Indicates the utility process kind.
-COREWEBVIEW2_PROCESS_KIND_SANDBOX_HELPER            | Indicates the sandbox helper process kind.
-COREWEBVIEW2_PROCESS_KIND_GPU            | Indicates the GPU process kind.
-COREWEBVIEW2_PROCESS_KIND_PPAPI_PLUGIN            | Indicates the PPAPI plugin process kind.
-COREWEBVIEW2_PROCESS_KIND_PPAPI_BROKER            | Indicates the PPAPI plugin broker process kind.
-
 #### COREWEBVIEW2_SCRIPT_DIALOG_KIND
 
 Specifies the JavaScript dialog type used in the ICoreWebView2ScriptDialogOpeningEventHandler interface.
@@ -2126,8 +2083,6 @@ COREWEBVIEW2_WEB_ERROR_STATUS_HOST_NAME_NOT_RESOLVED            | Indicates that
 COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED            | Indicates that the operation was canceled.
 COREWEBVIEW2_WEB_ERROR_STATUS_REDIRECT_FAILED            | Indicates that the request redirect failed.
 COREWEBVIEW2_WEB_ERROR_STATUS_UNEXPECTED_ERROR            | Indicates that an unexpected error occurred.
-COREWEBVIEW2_WEB_ERROR_STATUS_VALID_AUTHENTICATION_CREDENTIALS_REQUIRED            | Indicates that user is prompted with a login, waiting on user action.
-COREWEBVIEW2_WEB_ERROR_STATUS_VALID_PROXY_AUTHENTICATION_REQUIRED            | Indicates that user lacks proper authentication credentials for a proxy server.
 
 #### COREWEBVIEW2_WEB_RESOURCE_CONTEXT
 
