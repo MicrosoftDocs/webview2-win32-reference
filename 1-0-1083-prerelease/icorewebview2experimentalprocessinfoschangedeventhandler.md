@@ -1,11 +1,13 @@
 ---
 description: An event handler for the `ProcessInfosChanged` event.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalProcessInfosChangedEventHandler
-ms.date: 11/29/2021
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalProcessInfosChangedEventHandler
 ---
 
 # interface ICoreWebView2ExperimentalProcessInfosChangedEventHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 

@@ -1,11 +1,13 @@
 ---
 description: A continuation of the ICoreWebView2 interface.
 title: WebView2 Win32 C++ ICoreWebView2_2
-ms.date: 11/29/2021
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_2
 ---
 
 # interface ICoreWebView2_2
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2_2
