@@ -1,7 +1,7 @@
 ---
 description: A Receiver is created for a particular DevTools Protocol event and allows you to subscribe and unsubscribe from that event.
 title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceiver
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2DevToolsProtocolEventReceiver
 ---
 
@@ -69,18 +69,14 @@ void ScriptComponent::SubscribeToCdpEvent()
 
         CHECK_FAILURE(receiver->add_DevToolsProtocolEventReceived(
             Callback<ICoreWebView2DevToolsProtocolEventReceivedEventHandler>(
-                [this, eventName](
+                [eventName](
                     ICoreWebView2* sender,
-                    ICoreWebView2DevToolsProtocolEventReceivedEventArgs* args) -> HRESULT 
-                {
+                    ICoreWebView2DevToolsProtocolEventReceivedEventArgs* args) -> HRESULT {
                     wil::unique_cotaskmem_string parameterObjectAsJson;
                     CHECK_FAILURE(args->get_ParameterObjectAsJson(&parameterObjectAsJson));
-                    std::wstring title = eventName;
-                    std::wstring details = parameterObjectAsJson.get();
-                    // Use TextInputDialog to show the result for easy copy & paste.
-                    TextInputDialog resultDialog(
-                        m_appWindow->GetMainWindow(), L"CDP Event Fired", title.c_str(),
-                        details.c_str(), L"", true);
+                    MessageBox(
+                        nullptr, parameterObjectAsJson.get(),
+                        (L"CDP Event Fired: " + eventName).c_str(), MB_OK);
                     return S_OK;
                 })
                 .Get(),

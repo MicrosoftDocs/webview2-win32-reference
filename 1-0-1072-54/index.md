@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 C++ Reference
 title: WebView2 Win32 C++ Reference
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 ---
 
@@ -51,10 +51,8 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 * [ICoreWebView2Environment5](icorewebview2environment5.md)
 * [ICoreWebView2Environment6](icorewebview2environment6.md)
 * [ICoreWebView2Environment7](icorewebview2environment7.md)
-* [ICoreWebView2Environment8](icorewebview2environment8.md)
 * [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md)
 * [ICoreWebView2Frame](icorewebview2frame.md)
-* [ICoreWebView2Frame2](icorewebview2frame2.md)
 * [ICoreWebView2FrameCreatedEventArgs](icorewebview2framecreatedeventargs.md)
 * [ICoreWebView2FrameInfo](icorewebview2frameinfo.md)
 * [ICoreWebView2FrameInfoCollection](icorewebview2frameinfocollection.md)
@@ -65,7 +63,6 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 * [ICoreWebView2MoveFocusRequestedEventArgs](icorewebview2movefocusrequestedeventargs.md)
 * [ICoreWebView2NavigationCompletedEventArgs](icorewebview2navigationcompletedeventargs.md)
 * [ICoreWebView2NavigationStartingEventArgs](icorewebview2navigationstartingeventargs.md)
-* [ICoreWebView2NavigationStartingEventArgs2](icorewebview2navigationstartingeventargs2.md)
 * [ICoreWebView2NewWindowRequestedEventArgs](icorewebview2newwindowrequestedeventargs.md)
 * [ICoreWebView2NewWindowRequestedEventArgs2](icorewebview2newwindowrequestedeventargs2.md)
 * [ICoreWebView2PermissionRequestedEventArgs](icorewebview2permissionrequestedeventargs.md)
@@ -73,8 +70,6 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 * [ICoreWebView2PrintSettings](icorewebview2printsettings.md)
 * [ICoreWebView2ProcessFailedEventArgs](icorewebview2processfailedeventargs.md)
 * [ICoreWebView2ProcessFailedEventArgs2](icorewebview2processfailedeventargs2.md)
-* [ICoreWebView2ProcessInfo](icorewebview2processinfo.md)
-* [ICoreWebView2ProcessInfoCollection](icorewebview2processinfocollection.md)
 * [ICoreWebView2ScriptDialogOpeningEventArgs](icorewebview2scriptdialogopeningeventargs.md)
 * [ICoreWebView2Settings](icorewebview2settings.md)
 * [ICoreWebView2Settings2](icorewebview2settings2.md)
@@ -114,14 +109,9 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 * [ICoreWebView2EstimatedEndTimeChangedEventHandler](icorewebview2estimatedendtimechangedeventhandler.md)
 * [ICoreWebView2ExecuteScriptCompletedHandler](icorewebview2executescriptcompletedhandler.md)
 * [ICoreWebView2FocusChangedEventHandler](icorewebview2focuschangedeventhandler.md)
-* [ICoreWebView2FrameContentLoadingEventHandler](icorewebview2framecontentloadingeventhandler.md)
 * [ICoreWebView2FrameCreatedEventHandler](icorewebview2framecreatedeventhandler.md)
 * [ICoreWebView2FrameDestroyedEventHandler](icorewebview2framedestroyedeventhandler.md)
-* [ICoreWebView2FrameDOMContentLoadedEventHandler](icorewebview2framedomcontentloadedeventhandler.md)
 * [ICoreWebView2FrameNameChangedEventHandler](icorewebview2framenamechangedeventhandler.md)
-* [ICoreWebView2FrameNavigationCompletedEventHandler](icorewebview2framenavigationcompletedeventhandler.md)
-* [ICoreWebView2FrameNavigationStartingEventHandler](icorewebview2framenavigationstartingeventhandler.md)
-* [ICoreWebView2FrameWebMessageReceivedEventHandler](icorewebview2framewebmessagereceivedeventhandler.md)
 * [ICoreWebView2GetCookiesCompletedHandler](icorewebview2getcookiescompletedhandler.md)
 * [ICoreWebView2HistoryChangedEventHandler](icorewebview2historychangedeventhandler.md)
 * [ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler](icorewebview2isdefaultdownloaddialogopenchangedeventhandler.md)
@@ -135,7 +125,6 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 * [ICoreWebView2PermissionRequestedEventHandler](icorewebview2permissionrequestedeventhandler.md)
 * [ICoreWebView2PrintToPdfCompletedHandler](icorewebview2printtopdfcompletedhandler.md)
 * [ICoreWebView2ProcessFailedEventHandler](icorewebview2processfailedeventhandler.md)
-* [ICoreWebView2ProcessInfosChangedEventHandler](icorewebview2processinfoschangedeventhandler.md)
 * [ICoreWebView2RasterizationScaleChangedEventHandler](icorewebview2rasterizationscalechangedeventhandler.md)
 * [ICoreWebView2ScriptDialogOpeningEventHandler](icorewebview2scriptdialogopeningeventhandler.md)
 * [ICoreWebView2SourceChangedEventHandler](icorewebview2sourcechangedeventhandler.md)

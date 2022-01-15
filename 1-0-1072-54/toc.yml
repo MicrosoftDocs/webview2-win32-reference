@@ -73,14 +73,10 @@
       href: icorewebview2environment6.md
     - name: ICoreWebView2Environment7
       href: icorewebview2environment7.md
-    - name: ICoreWebView2Environment8
-      href: icorewebview2environment8.md
     - name: ICoreWebView2EnvironmentOptions
       href: icorewebview2environmentoptions.md
     - name: ICoreWebView2Frame
       href: icorewebview2frame.md
-    - name: ICoreWebView2Frame2
-      href: icorewebview2frame2.md
     - name: ICoreWebView2FrameCreatedEventArgs
       href: icorewebview2framecreatedeventargs.md
     - name: ICoreWebView2FrameInfo
@@ -101,8 +97,6 @@
       href: icorewebview2navigationcompletedeventargs.md
     - name: ICoreWebView2NavigationStartingEventArgs
       href: icorewebview2navigationstartingeventargs.md
-    - name: ICoreWebView2NavigationStartingEventArgs2
-      href: icorewebview2navigationstartingeventargs2.md
     - name: ICoreWebView2NewWindowRequestedEventArgs
       href: icorewebview2newwindowrequestedeventargs.md
     - name: ICoreWebView2NewWindowRequestedEventArgs2
@@ -117,10 +111,6 @@
       href: icorewebview2processfailedeventargs.md
     - name: ICoreWebView2ProcessFailedEventArgs2
       href: icorewebview2processfailedeventargs2.md
-    - name: ICoreWebView2ProcessInfo
-      href: icorewebview2processinfo.md
-    - name: ICoreWebView2ProcessInfoCollection
-      href: icorewebview2processinfocollection.md
     - name: ICoreWebView2ScriptDialogOpeningEventArgs
       href: icorewebview2scriptdialogopeningeventargs.md
     - name: ICoreWebView2Settings
@@ -197,22 +187,12 @@
           href: icorewebview2executescriptcompletedhandler.md
         - name: ICoreWebView2FocusChangedEventHandler
           href: icorewebview2focuschangedeventhandler.md
-        - name: ICoreWebView2FrameContentLoadingEventHandler
-          href: icorewebview2framecontentloadingeventhandler.md
         - name: ICoreWebView2FrameCreatedEventHandler
           href: icorewebview2framecreatedeventhandler.md
         - name: ICoreWebView2FrameDestroyedEventHandler
           href: icorewebview2framedestroyedeventhandler.md
-        - name: ICoreWebView2FrameDOMContentLoadedEventHandler
-          href: icorewebview2framedomcontentloadedeventhandler.md
         - name: ICoreWebView2FrameNameChangedEventHandler
           href: icorewebview2framenamechangedeventhandler.md
-        - name: ICoreWebView2FrameNavigationCompletedEventHandler
-          href: icorewebview2framenavigationcompletedeventhandler.md
-        - name: ICoreWebView2FrameNavigationStartingEventHandler
-          href: icorewebview2framenavigationstartingeventhandler.md
-        - name: ICoreWebView2FrameWebMessageReceivedEventHandler
-          href: icorewebview2framewebmessagereceivedeventhandler.md
         - name: ICoreWebView2GetCookiesCompletedHandler
           href: icorewebview2getcookiescompletedhandler.md
         - name: ICoreWebView2HistoryChangedEventHandler
@@ -239,8 +219,6 @@
           href: icorewebview2printtopdfcompletedhandler.md
         - name: ICoreWebView2ProcessFailedEventHandler
           href: icorewebview2processfailedeventhandler.md
-        - name: ICoreWebView2ProcessInfosChangedEventHandler
-          href: icorewebview2processinfoschangedeventhandler.md
         - name: ICoreWebView2RasterizationScaleChangedEventHandler
           href: icorewebview2rasterizationscalechangedeventhandler.md
         - name: ICoreWebView2ScriptDialogOpeningEventHandler

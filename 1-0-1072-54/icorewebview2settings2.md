@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Settings interface that manages the user agent.
 title: WebView2 Win32 C++ ICoreWebView2Settings2
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings2
 ---
 
@@ -58,5 +58,5 @@ Sets the `UserAgent` property.
 
 > public HRESULT [put_UserAgent](#put_useragent)(LPCWSTR userAgent)
 
-This property may be overridden if the User-Agent header is set in a request. If the parameter is empty the User Agent will not be updated and the current User Agent will remain. Returns `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)` if the owning WebView is closed.
+This property may be overridden if the User-Agent header is set in a request. If the parameter is empty the User Agent will not be updated and the current User Agent will remain.
 

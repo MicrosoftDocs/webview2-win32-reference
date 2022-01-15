@@ -1,7 +1,7 @@
 ---
 description: Iterator for a collection of `FrameInfo`s.
 title: WebView2 Win32 C++ ICoreWebView2FrameInfoCollectionIterator
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2FrameInfoCollectionIterator
 ---
 
@@ -46,8 +46,6 @@ If the collection over which the iterator is iterating is empty or if the iterat
 Get the current [ICoreWebView2FrameInfo](icorewebview2frameinfo.md) of the iterator.
 
 > public HRESULT [GetCurrent](#getcurrent)([ICoreWebView2FrameInfo](icorewebview2frameinfo.md) ** frameInfo)
-
-Returns `HRESULT_FROM_WIN32(ERROR_INVALID_INDEX)` if HasCurrent is `FALSE`.
 
 #### MoveNext
 
