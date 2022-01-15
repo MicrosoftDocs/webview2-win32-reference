@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Settings interface to manage autofill.
 title: WebView2 Win32 C++ ICoreWebView2Settings4
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings4
 ---
 
@@ -38,7 +38,7 @@ IsGeneralAutofillEnabled controls whether autofill for information like names, s
 
 > public HRESULT [get_IsGeneralAutofillEnabled](#get_isgeneralautofillenabled)(BOOL * value)
 
-This excludes password and credit card information. When IsGeneralAutofillEnabled is false, no suggestions appear, and no new information is saved. When IsGeneralAutofillEnabled is true, information is saved, suggestions appear and clicking on one will populate the form fields. It will apply immediately after setting. The default value is `TRUE`. This property is linked with `CoreWebView2Profile.IsGeneralAutofillEnabled`, so changing one will change the other. And all WebView2s that created with the same `CoreWebView2Profile` will share this property, so for the WebView2s with the same profile, their `CoreWebView2Settings.IsGeneralAutofillEnabled` and `CoreWebView2Profile.IsGeneralAutofillEnabled` are always in sync.
+This excludes password and credit card information. When IsGeneralAutofillEnabled is false, no suggestions appear, and no new information is saved. When IsGeneralAutofillEnabled is true, information is saved, suggestions appear and clicking on one will populate the form fields. The default value is `TRUE`.
 
 ```cpp
             CHECK_FEATURE_RETURN(m_settings4);
@@ -67,7 +67,7 @@ IsPasswordAutosaveEnabled controls whether autosave for password information is 
 
 > public HRESULT [get_IsPasswordAutosaveEnabled](#get_ispasswordautosaveenabled)(BOOL * value)
 
-The IsPasswordAutosaveEnabled property behaves independently of the IsGeneralAutofillEnabled property. When IsPasswordAutosaveEnabled is false, no new password data is saved and no Save/Update Password prompts are displayed. However, if there was password data already saved before disabling this setting, then that password information is auto-populated, suggestions are shown and clicking on one will populate the fields. When IsPasswordAutosaveEnabled is true, password information is auto-populated, suggestions are shown and clicking on one will populate the fields, new data is saved, and a Save/Update Password prompt is displayed. It will apply immediately after setting. The default value is `FALSE`. This property is linked with `CoreWebView2Profile.IsPasswordAutosaveEnabled`, so changing one will change the other. And all WebView2s that created with the same `CoreWebView2Profile` will share this property, so for the WebView2s with the same profile, their `CoreWebView2Settings.IsPasswordAutosaveEnabled` and `CoreWebView2Profile.IsPasswordAutosaveEnabled` are always in sync.
+The IsPasswordAutosaveEnabled property behaves independently of the IsGeneralAutofillEnabled property. When IsPasswordAutosaveEnabled is false, no new password data is saved and no Save/Update Password prompts are displayed. However, if there was password data already saved before disabling this setting, then that password information is auto-populated, suggestions are shown and clicking on one will populate the fields. When IsPasswordAutosaveEnabled is true, password information is auto-populated, suggestions are shown and clicking on one will populate the fields, new data is saved, and a Save/Update Password prompt is displayed. The default value is `FALSE`.
 
 ```cpp
             CHECK_FEATURE_RETURN(m_settings4);

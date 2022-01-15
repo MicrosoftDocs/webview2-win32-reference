@@ -1,7 +1,7 @@
 ---
 description: Event args for the `NewWindowRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2NewWindowRequestedEventArgs
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NewWindowRequestedEventArgs
 ---
 
@@ -23,7 +23,7 @@ Event args for the `NewWindowRequested` event.
 [get_NewWindow](#get_newwindow) | Gets the new window.
 [get_Uri](#get_uri) | The target uri of the new window requested.
 [get_WindowFeatures](#get_windowfeatures) | Window features specified by the `window.open`.
-[GetDeferral](#getdeferral) | Obtain an ICoreWebView2Deferral object and put the event into a deferred state.
+[GetDeferral](#getdeferral) | Obtain an [ICoreWebView2Deferral](icorewebview2deferral.md) object and put the event into a deferred state.
 [put_Handled](#put_handled) | Sets whether the `NewWindowRequested` event is handled by host.
 [put_NewWindow](#put_newwindow) | Sets a CoreWebView2 as a result of the NewWindowRequested event.
 
@@ -62,7 +62,7 @@ Non-user initiated requests are programmatic window opens from a script that are
 
 Gets the new window.
 
-> public HRESULT [get_NewWindow](#get_newwindow)(ICoreWebView2 ** newWindow)
+> public HRESULT [get_NewWindow](#get_newwindow)([ICoreWebView2](icorewebview2.md) ** newWindow)
 
 #### get_Uri
 
@@ -74,17 +74,17 @@ The target uri of the new window requested.
 
 Window features specified by the `window.open`.
 
-> public HRESULT [get_WindowFeatures](#get_windowfeatures)(ICoreWebView2WindowFeatures ** value)
+> public HRESULT [get_WindowFeatures](#get_windowfeatures)([ICoreWebView2WindowFeatures](icorewebview2windowfeatures.md) ** value)
 
 The features should be considered for positioning and sizing of new webview windows.
 
 #### GetDeferral
 
-Obtain an ICoreWebView2Deferral object and put the event into a deferred state.
+Obtain an [ICoreWebView2Deferral](icorewebview2deferral.md) object and put the event into a deferred state.
 
-> public HRESULT [GetDeferral](#getdeferral)(ICoreWebView2Deferral ** deferral)
+> public HRESULT [GetDeferral](#getdeferral)([ICoreWebView2Deferral](icorewebview2deferral.md) ** deferral)
 
-Use the ICoreWebView2Deferral object to complete the window open request at a later time. While this event is deferred the opener window returns a `WindowProxy` to an un-navigated window, which navigates when the deferral is complete.
+Use the [ICoreWebView2Deferral](icorewebview2deferral.md) object to complete the window open request at a later time. While this event is deferred the opener window returns a `WindowProxy` to an un-navigated window, which navigates when the deferral is complete.
 
 #### put_Handled
 
@@ -98,7 +98,7 @@ If this is `FALSE` and no `NewWindow` is set, the WebView opens a popup window a
 
 Sets a CoreWebView2 as a result of the NewWindowRequested event.
 
-> public HRESULT [put_NewWindow](#put_newwindow)(ICoreWebView2 * newWindow)
+> public HRESULT [put_NewWindow](#put_newwindow)([ICoreWebView2](icorewebview2.md) * newWindow)
 
 If the `NewWindow` is set, the top-level window returns as the opened `WindowProxy`. The NewWindow property should be set to a CoreWebView2 that has not been navigated previously. Don't use methods that cause navigation or interact with the DOM on this CoreWebView2. Setting event handlers, changing Settings properties, or other methods are fine to call. Changes to settings should be made before `put_NewWindow` is called to ensure that those settings take effect for the newly setup WebView. Once the NewWindow is set the underlying web contents of this CoreWebView2 will be replaced and navigated as appropriate for the new window. After setting new window it cannot be changed and error will be return otherwise.
 

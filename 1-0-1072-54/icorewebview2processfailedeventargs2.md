@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2ProcessFailedEventArgs interface.
 title: WebView2 Win32 C++ ICoreWebView2ProcessFailedEventArgs2
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ProcessFailedEventArgs2
 ---
 
@@ -12,14 +12,14 @@ interface ICoreWebView2ProcessFailedEventArgs2
   : public ICoreWebView2ProcessFailedEventArgs
 ```
 
-A continuation of the ICoreWebView2ProcessFailedEventArgs interface.
+A continuation of the [ICoreWebView2ProcessFailedEventArgs](icorewebview2processfailedeventargs.md) interface.
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
 [get_ExitCode](#get_exitcode) | The exit code of the failing process, for telemetry purposes.
-[get_FrameInfosForFailedProcess](#get_frameinfosforfailedprocess) | The collection of `FrameInfo`s for frames in the ICoreWebView2 that were being rendered by the failed process.
+[get_FrameInfosForFailedProcess](#get_frameinfosforfailedprocess) | The collection of `FrameInfo`s for frames in the [ICoreWebView2](icorewebview2.md) that were being rendered by the failed process.
 [get_ProcessDescription](#get_processdescription) | Description of the process assigned by the WebView2 Runtime.
 [get_Reason](#get_reason) | The reason for the process failure.
 
@@ -42,9 +42,9 @@ The exit code is always `STILL_ACTIVE` (`259`) when `ProcessFailedKind` is `CORE
 
 #### get_FrameInfosForFailedProcess
 
-The collection of `FrameInfo`s for frames in the ICoreWebView2 that were being rendered by the failed process.
+The collection of `FrameInfo`s for frames in the [ICoreWebView2](icorewebview2.md) that were being rendered by the failed process.
 
-> public HRESULT [get_FrameInfosForFailedProcess](#get_frameinfosforfailedprocess)(ICoreWebView2FrameInfoCollection ** frames)
+> public HRESULT [get_FrameInfosForFailedProcess](#get_frameinfosforfailedprocess)([ICoreWebView2FrameInfoCollection](icorewebview2frameinfocollection.md) ** frames)
 
 The content in these frames is replaced with an error page. This is only available when `ProcessFailedKind` is `COREWEBVIEW2_PROCESS_FAILED_KIND_FRAME_RENDER_PROCESS_EXITED`; `frames` is `null` for all other process failure kinds, including the case in which the failed process was the renderer for the main frame and subframes within it, for which the failure kind is `COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_EXITED`.
 

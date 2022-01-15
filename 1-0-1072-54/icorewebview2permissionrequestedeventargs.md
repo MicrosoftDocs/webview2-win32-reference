@@ -1,7 +1,7 @@
 ---
 description: Event args for the `PermissionRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2PermissionRequestedEventArgs
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PermissionRequestedEventArgs
 ---
 
@@ -22,7 +22,7 @@ Event args for the `PermissionRequested` event.
 [get_PermissionKind](#get_permissionkind) | The type of the permission that is requested.
 [get_State](#get_state) | The status of a permission request, (for example is the request is granted).
 [get_Uri](#get_uri) | The origin of the web content that requests the permission.
-[GetDeferral](#getdeferral) | Gets an ICoreWebView2Deferral object.
+[GetDeferral](#getdeferral) | Gets an [ICoreWebView2Deferral](icorewebview2deferral.md) object.
 [put_State](#put_state) | Sets the `State` property.
 
 ## Applies to
@@ -65,9 +65,9 @@ The origin of the web content that requests the permission.
 
 #### GetDeferral
 
-Gets an ICoreWebView2Deferral object.
+Gets an [ICoreWebView2Deferral](icorewebview2deferral.md) object.
 
-> public HRESULT [GetDeferral](#getdeferral)(ICoreWebView2Deferral ** deferral)
+> public HRESULT [GetDeferral](#getdeferral)([ICoreWebView2Deferral](icorewebview2deferral.md) ** deferral)
 
 Use the deferral object to make the permission decision at a later time.
 
