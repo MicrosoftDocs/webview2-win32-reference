@@ -1,0 +1,341 @@
+- name: Win32 C++
+  href: index.md
+  items:
+    - name: ICoreWebView2
+      href: ICoreWebView2.md
+    - name: ICoreWebView2_10
+      href: ICoreWebView2_10.md
+    - name: ICoreWebView2_2
+      href: ICoreWebView2_2.md
+    - name: ICoreWebView2_3
+      href: ICoreWebView2_3.md
+    - name: ICoreWebView2_4
+      href: ICoreWebView2_4.md
+    - name: ICoreWebView2_5
+      href: ICoreWebView2_5.md
+    - name: ICoreWebView2_6
+      href: ICoreWebView2_6.md
+    - name: ICoreWebView2_7
+      href: ICoreWebView2_7.md
+    - name: ICoreWebView2_8
+      href: ICoreWebView2_8.md
+    - name: ICoreWebView2_9
+      href: ICoreWebView2_9.md
+    - name: ICoreWebView2AcceleratorKeyPressedEventArgs
+      href: ICoreWebView2AcceleratorKeyPressedEventArgs.md
+    - name: ICoreWebView2BasicAuthenticationRequestedEventArgs
+      href: ICoreWebView2BasicAuthenticationRequestedEventArgs.md
+    - name: ICoreWebView2BasicAuthenticationResponse
+      href: ICoreWebView2BasicAuthenticationResponse.md
+    - name: ICoreWebView2BrowserProcessExitedEventArgs
+      href: ICoreWebView2BrowserProcessExitedEventArgs.md
+    - name: ICoreWebView2Certificate
+      href: ICoreWebView2Certificate.md
+    - name: ICoreWebView2CertificateCollection
+      href: ICoreWebView2CertificateCollection.md
+    - name: ICoreWebView2ClientCertificateRequestedEventArgs
+      href: ICoreWebView2ClientCertificateRequestedEventArgs.md
+    - name: ICoreWebView2CompositionController
+      href: ICoreWebView2CompositionController.md
+    - name: ICoreWebView2CompositionController2
+      href: ICoreWebView2CompositionController2.md
+    - name: ICoreWebView2ContentLoadingEventArgs
+      href: ICoreWebView2ContentLoadingEventArgs.md
+    - name: ICoreWebView2Controller
+      href: ICoreWebView2Controller.md
+    - name: ICoreWebView2Controller2
+      href: ICoreWebView2Controller2.md
+    - name: ICoreWebView2Controller3
+      href: ICoreWebView2Controller3.md
+    - name: ICoreWebView2Cookie
+      href: ICoreWebView2Cookie.md
+    - name: ICoreWebView2CookieList
+      href: ICoreWebView2CookieList.md
+    - name: ICoreWebView2CookieManager
+      href: ICoreWebView2CookieManager.md
+    - name: ICoreWebView2Deferral
+      href: ICoreWebView2Deferral.md
+    - name: ICoreWebView2DevToolsProtocolEventReceivedEventArgs
+      href: ICoreWebView2DevToolsProtocolEventReceivedEventArgs.md
+    - name: ICoreWebView2DevToolsProtocolEventReceiver
+      href: ICoreWebView2DevToolsProtocolEventReceiver.md
+    - name: ICoreWebView2DOMContentLoadedEventArgs
+      href: ICoreWebView2DOMContentLoadedEventArgs.md
+    - name: ICoreWebView2DownloadOperation
+      href: ICoreWebView2DownloadOperation.md
+    - name: ICoreWebView2DownloadStartingEventArgs
+      href: ICoreWebView2DownloadStartingEventArgs.md
+    - name: ICoreWebView2Environment
+      href: ICoreWebView2Environment.md
+    - name: ICoreWebView2Environment2
+      href: ICoreWebView2Environment2.md
+    - name: ICoreWebView2Environment3
+      href: ICoreWebView2Environment3.md
+    - name: ICoreWebView2Environment4
+      href: ICoreWebView2Environment4.md
+    - name: ICoreWebView2Environment5
+      href: ICoreWebView2Environment5.md
+    - name: ICoreWebView2Environment6
+      href: ICoreWebView2Environment6.md
+    - name: ICoreWebView2Environment7
+      href: ICoreWebView2Environment7.md
+    - name: ICoreWebView2Environment8
+      href: ICoreWebView2Environment8.md
+    - name: ICoreWebView2EnvironmentOptions
+      href: ICoreWebView2EnvironmentOptions.md
+    - name: ICoreWebView2Frame
+      href: ICoreWebView2Frame.md
+    - name: ICoreWebView2Frame2
+      href: ICoreWebView2Frame2.md
+    - name: ICoreWebView2Frame3
+      href: ICoreWebView2Frame3.md
+    - name: ICoreWebView2FrameCreatedEventArgs
+      href: ICoreWebView2FrameCreatedEventArgs.md
+    - name: ICoreWebView2FrameInfo
+      href: ICoreWebView2FrameInfo.md
+    - name: ICoreWebView2FrameInfoCollection
+      href: ICoreWebView2FrameInfoCollection.md
+    - name: ICoreWebView2FrameInfoCollectionIterator
+      href: ICoreWebView2FrameInfoCollectionIterator.md
+    - name: ICoreWebView2HttpHeadersCollectionIterator
+      href: ICoreWebView2HttpHeadersCollectionIterator.md
+    - name: ICoreWebView2HttpRequestHeaders
+      href: ICoreWebView2HttpRequestHeaders.md
+    - name: ICoreWebView2HttpResponseHeaders
+      href: ICoreWebView2HttpResponseHeaders.md
+    - name: ICoreWebView2MoveFocusRequestedEventArgs
+      href: ICoreWebView2MoveFocusRequestedEventArgs.md
+    - name: ICoreWebView2NavigationCompletedEventArgs
+      href: ICoreWebView2NavigationCompletedEventArgs.md
+    - name: ICoreWebView2NavigationStartingEventArgs
+      href: ICoreWebView2NavigationStartingEventArgs.md
+    - name: ICoreWebView2NavigationStartingEventArgs2
+      href: ICoreWebView2NavigationStartingEventArgs2.md
+    - name: ICoreWebView2NewWindowRequestedEventArgs
+      href: ICoreWebView2NewWindowRequestedEventArgs.md
+    - name: ICoreWebView2NewWindowRequestedEventArgs2
+      href: ICoreWebView2NewWindowRequestedEventArgs2.md
+    - name: ICoreWebView2PermissionRequestedEventArgs
+      href: ICoreWebView2PermissionRequestedEventArgs.md
+    - name: ICoreWebView2PermissionRequestedEventArgs2
+      href: ICoreWebView2PermissionRequestedEventArgs2.md
+    - name: ICoreWebView2PointerInfo
+      href: ICoreWebView2PointerInfo.md
+    - name: ICoreWebView2PrintSettings
+      href: ICoreWebView2PrintSettings.md
+    - name: ICoreWebView2ProcessFailedEventArgs
+      href: ICoreWebView2ProcessFailedEventArgs.md
+    - name: ICoreWebView2ProcessFailedEventArgs2
+      href: ICoreWebView2ProcessFailedEventArgs2.md
+    - name: ICoreWebView2ProcessInfo
+      href: ICoreWebView2ProcessInfo.md
+    - name: ICoreWebView2ProcessInfoCollection
+      href: ICoreWebView2ProcessInfoCollection.md
+    - name: ICoreWebView2ScriptDialogOpeningEventArgs
+      href: ICoreWebView2ScriptDialogOpeningEventArgs.md
+    - name: ICoreWebView2Settings
+      href: ICoreWebView2Settings.md
+    - name: ICoreWebView2Settings2
+      href: ICoreWebView2Settings2.md
+    - name: ICoreWebView2Settings3
+      href: ICoreWebView2Settings3.md
+    - name: ICoreWebView2Settings4
+      href: ICoreWebView2Settings4.md
+    - name: ICoreWebView2Settings5
+      href: ICoreWebView2Settings5.md
+    - name: ICoreWebView2Settings6
+      href: ICoreWebView2Settings6.md
+    - name: ICoreWebView2SourceChangedEventArgs
+      href: ICoreWebView2SourceChangedEventArgs.md
+    - name: ICoreWebView2StringCollection
+      href: ICoreWebView2StringCollection.md
+    - name: ICoreWebView2WebMessageReceivedEventArgs
+      href: ICoreWebView2WebMessageReceivedEventArgs.md
+    - name: ICoreWebView2WebResourceRequest
+      href: ICoreWebView2WebResourceRequest.md
+    - name: ICoreWebView2WebResourceRequestedEventArgs
+      href: ICoreWebView2WebResourceRequestedEventArgs.md
+    - name: ICoreWebView2WebResourceResponse
+      href: ICoreWebView2WebResourceResponse.md
+    - name: ICoreWebView2WebResourceResponseReceivedEventArgs
+      href: ICoreWebView2WebResourceResponseReceivedEventArgs.md
+    - name: ICoreWebView2WebResourceResponseView
+      href: ICoreWebView2WebResourceResponseView.md
+    - name: ICoreWebView2WindowFeatures
+      href: ICoreWebView2WindowFeatures.md
+    - name: Globals
+      href: webview2.idl.md
+    - name: Delegates
+      items:
+        - name: ICoreWebView2AcceleratorKeyPressedEventHandler
+          href: ICoreWebView2AcceleratorKeyPressedEventHandler.md
+        - name: ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler
+          href: ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler.md
+        - name: ICoreWebView2BasicAuthenticationRequestedEventHandler
+          href: ICoreWebView2BasicAuthenticationRequestedEventHandler.md
+        - name: ICoreWebView2BrowserProcessExitedEventHandler
+          href: ICoreWebView2BrowserProcessExitedEventHandler.md
+        - name: ICoreWebView2BytesReceivedChangedEventHandler
+          href: ICoreWebView2BytesReceivedChangedEventHandler.md
+        - name: ICoreWebView2CallDevToolsProtocolMethodCompletedHandler
+          href: ICoreWebView2CallDevToolsProtocolMethodCompletedHandler.md
+        - name: ICoreWebView2CapturePreviewCompletedHandler
+          href: ICoreWebView2CapturePreviewCompletedHandler.md
+        - name: ICoreWebView2ClientCertificateRequestedEventHandler
+          href: ICoreWebView2ClientCertificateRequestedEventHandler.md
+        - name: ICoreWebView2ContainsFullScreenElementChangedEventHandler
+          href: ICoreWebView2ContainsFullScreenElementChangedEventHandler.md
+        - name: ICoreWebView2ContentLoadingEventHandler
+          href: ICoreWebView2ContentLoadingEventHandler.md
+        - name: ICoreWebView2CreateCoreWebView2CompositionControllerCompletedHandler
+          href: ICoreWebView2CreateCoreWebView2CompositionControllerCompletedHandler.md
+        - name: ICoreWebView2CreateCoreWebView2ControllerCompletedHandler
+          href: ICoreWebView2CreateCoreWebView2ControllerCompletedHandler.md
+        - name: ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler
+          href: ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler.md
+        - name: ICoreWebView2CursorChangedEventHandler
+          href: ICoreWebView2CursorChangedEventHandler.md
+        - name: ICoreWebView2DevToolsProtocolEventReceivedEventHandler
+          href: ICoreWebView2DevToolsProtocolEventReceivedEventHandler.md
+        - name: ICoreWebView2DocumentTitleChangedEventHandler
+          href: ICoreWebView2DocumentTitleChangedEventHandler.md
+        - name: ICoreWebView2DOMContentLoadedEventHandler
+          href: ICoreWebView2DOMContentLoadedEventHandler.md
+        - name: ICoreWebView2DownloadStartingEventHandler
+          href: ICoreWebView2DownloadStartingEventHandler.md
+        - name: ICoreWebView2EstimatedEndTimeChangedEventHandler
+          href: ICoreWebView2EstimatedEndTimeChangedEventHandler.md
+        - name: ICoreWebView2ExecuteScriptCompletedHandler
+          href: ICoreWebView2ExecuteScriptCompletedHandler.md
+        - name: ICoreWebView2FocusChangedEventHandler
+          href: ICoreWebView2FocusChangedEventHandler.md
+        - name: ICoreWebView2FrameContentLoadingEventHandler
+          href: ICoreWebView2FrameContentLoadingEventHandler.md
+        - name: ICoreWebView2FrameCreatedEventHandler
+          href: ICoreWebView2FrameCreatedEventHandler.md
+        - name: ICoreWebView2FrameDestroyedEventHandler
+          href: ICoreWebView2FrameDestroyedEventHandler.md
+        - name: ICoreWebView2FrameDOMContentLoadedEventHandler
+          href: ICoreWebView2FrameDOMContentLoadedEventHandler.md
+        - name: ICoreWebView2FrameNameChangedEventHandler
+          href: ICoreWebView2FrameNameChangedEventHandler.md
+        - name: ICoreWebView2FrameNavigationCompletedEventHandler
+          href: ICoreWebView2FrameNavigationCompletedEventHandler.md
+        - name: ICoreWebView2FrameNavigationStartingEventHandler
+          href: ICoreWebView2FrameNavigationStartingEventHandler.md
+        - name: ICoreWebView2FramePermissionRequestedEventHandler
+          href: ICoreWebView2FramePermissionRequestedEventHandler.md
+        - name: ICoreWebView2FrameWebMessageReceivedEventHandler
+          href: ICoreWebView2FrameWebMessageReceivedEventHandler.md
+        - name: ICoreWebView2GetCookiesCompletedHandler
+          href: ICoreWebView2GetCookiesCompletedHandler.md
+        - name: ICoreWebView2HistoryChangedEventHandler
+          href: ICoreWebView2HistoryChangedEventHandler.md
+        - name: ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler
+          href: ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler.md
+        - name: ICoreWebView2IsDocumentPlayingAudioChangedEventHandler
+          href: ICoreWebView2IsDocumentPlayingAudioChangedEventHandler.md
+        - name: ICoreWebView2IsMutedChangedEventHandler
+          href: ICoreWebView2IsMutedChangedEventHandler.md
+        - name: ICoreWebView2MoveFocusRequestedEventHandler
+          href: ICoreWebView2MoveFocusRequestedEventHandler.md
+        - name: ICoreWebView2NavigationCompletedEventHandler
+          href: ICoreWebView2NavigationCompletedEventHandler.md
+        - name: ICoreWebView2NavigationStartingEventHandler
+          href: ICoreWebView2NavigationStartingEventHandler.md
+        - name: ICoreWebView2NewBrowserVersionAvailableEventHandler
+          href: ICoreWebView2NewBrowserVersionAvailableEventHandler.md
+        - name: ICoreWebView2NewWindowRequestedEventHandler
+          href: ICoreWebView2NewWindowRequestedEventHandler.md
+        - name: ICoreWebView2PermissionRequestedEventHandler
+          href: ICoreWebView2PermissionRequestedEventHandler.md
+        - name: ICoreWebView2PrintToPdfCompletedHandler
+          href: ICoreWebView2PrintToPdfCompletedHandler.md
+        - name: ICoreWebView2ProcessFailedEventHandler
+          href: ICoreWebView2ProcessFailedEventHandler.md
+        - name: ICoreWebView2ProcessInfosChangedEventHandler
+          href: ICoreWebView2ProcessInfosChangedEventHandler.md
+        - name: ICoreWebView2RasterizationScaleChangedEventHandler
+          href: ICoreWebView2RasterizationScaleChangedEventHandler.md
+        - name: ICoreWebView2ScriptDialogOpeningEventHandler
+          href: ICoreWebView2ScriptDialogOpeningEventHandler.md
+        - name: ICoreWebView2SourceChangedEventHandler
+          href: ICoreWebView2SourceChangedEventHandler.md
+        - name: ICoreWebView2StateChangedEventHandler
+          href: ICoreWebView2StateChangedEventHandler.md
+        - name: ICoreWebView2TrySuspendCompletedHandler
+          href: ICoreWebView2TrySuspendCompletedHandler.md
+        - name: ICoreWebView2WebMessageReceivedEventHandler
+          href: ICoreWebView2WebMessageReceivedEventHandler.md
+        - name: ICoreWebView2WebResourceRequestedEventHandler
+          href: ICoreWebView2WebResourceRequestedEventHandler.md
+        - name: ICoreWebView2WebResourceResponseReceivedEventHandler
+          href: ICoreWebView2WebResourceResponseReceivedEventHandler.md
+        - name: ICoreWebView2WebResourceResponseViewGetContentCompletedHandler
+          href: ICoreWebView2WebResourceResponseViewGetContentCompletedHandler.md
+        - name: ICoreWebView2WindowCloseRequestedEventHandler
+          href: ICoreWebView2WindowCloseRequestedEventHandler.md
+        - name: ICoreWebView2ZoomFactorChangedEventHandler
+          href: ICoreWebView2ZoomFactorChangedEventHandler.md
+    - name: Experimental
+      items:
+        - name: ICoreWebView2Experimental13
+          href: ICoreWebView2Experimental13.md
+        - name: ICoreWebView2Experimental14
+          href: ICoreWebView2Experimental14.md
+        - name: ICoreWebView2Experimental5
+          href: ICoreWebView2Experimental5.md
+        - name: ICoreWebView2Experimental6
+          href: ICoreWebView2Experimental6.md
+        - name: ICoreWebView2Experimental8
+          href: ICoreWebView2Experimental8.md
+        - name: ICoreWebView2ExperimentalClearBrowsingDataCompletedHandler
+          href: ICoreWebView2ExperimentalClearBrowsingDataCompletedHandler.md
+        - name: ICoreWebView2ExperimentalCompositionController3
+          href: ICoreWebView2ExperimentalCompositionController3.md
+        - name: ICoreWebView2ExperimentalCompositionController4
+          href: ICoreWebView2ExperimentalCompositionController4.md
+        - name: ICoreWebView2ExperimentalContextMenuItem
+          href: ICoreWebView2ExperimentalContextMenuItem.md
+        - name: ICoreWebView2ExperimentalContextMenuItemCollection
+          href: ICoreWebView2ExperimentalContextMenuItemCollection.md
+        - name: ICoreWebView2ExperimentalContextMenuRequestedEventArgs
+          href: ICoreWebView2ExperimentalContextMenuRequestedEventArgs.md
+        - name: ICoreWebView2ExperimentalContextMenuRequestedEventHandler
+          href: ICoreWebView2ExperimentalContextMenuRequestedEventHandler.md
+        - name: ICoreWebView2ExperimentalContextMenuTarget
+          href: ICoreWebView2ExperimentalContextMenuTarget.md
+        - name: ICoreWebView2ExperimentalController2
+          href: ICoreWebView2ExperimentalController2.md
+        - name: ICoreWebView2ExperimentalControllerOptions
+          href: ICoreWebView2ExperimentalControllerOptions.md
+        - name: ICoreWebView2ExperimentalCustomItemSelectedEventHandler
+          href: ICoreWebView2ExperimentalCustomItemSelectedEventHandler.md
+        - name: ICoreWebView2ExperimentalDevToolsProtocolEventReceivedEventArgs
+          href: ICoreWebView2ExperimentalDevToolsProtocolEventReceivedEventArgs.md
+        - name: ICoreWebView2ExperimentalEnvironment3
+          href: ICoreWebView2ExperimentalEnvironment3.md
+        - name: ICoreWebView2ExperimentalEnvironment6
+          href: ICoreWebView2ExperimentalEnvironment6.md
+        - name: ICoreWebView2ExperimentalEnvironment8
+          href: ICoreWebView2ExperimentalEnvironment8.md
+        - name: ICoreWebView2ExperimentalEnvironmentOptions
+          href: ICoreWebView2ExperimentalEnvironmentOptions.md
+        - name: ICoreWebView2ExperimentalProfile
+          href: ICoreWebView2ExperimentalProfile.md
+        - name: ICoreWebView2ExperimentalProfile2
+          href: ICoreWebView2ExperimentalProfile2.md
+        - name: ICoreWebView2ExperimentalProfile3
+          href: ICoreWebView2ExperimentalProfile3.md
+        - name: ICoreWebView2ExperimentalProfile4
+          href: ICoreWebView2ExperimentalProfile4.md
+        - name: ICoreWebView2ExperimentalSettings6
+          href: ICoreWebView2ExperimentalSettings6.md
+        - name: ICoreWebView2ExperimentalStatusBarTextChangedEventHandler
+          href: ICoreWebView2ExperimentalStatusBarTextChangedEventHandler.md
+        - name: ICoreWebView2ExperimentalUpdateRuntimeCompletedHandler
+          href: ICoreWebView2ExperimentalUpdateRuntimeCompletedHandler.md
+        - name: ICoreWebView2ExperimentalUpdateRuntimeResult
+          href: ICoreWebView2ExperimentalUpdateRuntimeResult.md
+        - name: Globals
+          href: webview2experimental.idl.md
