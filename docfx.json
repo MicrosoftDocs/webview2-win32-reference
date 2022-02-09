@@ -96,6 +96,7 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
+      "webview2-1108-44": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1108.44" },
       "webview2-1072-54": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1072.54" },
       "webview2-1054-31": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1054.31" },
       "webview2-1020-30": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1020.30" },
