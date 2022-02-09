@@ -1,11 +1,13 @@
 ---
 description: This interface is used to create CreateCoreWebView2ControllerOptions object, which can be passed as a parameter in 'CreateCoreWebView2ControllerWithOptions' and 'CreateCoreWebView2CompositionControllerWithOptions' function for multiple profile support.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironment8
-ms.date: 01/14/2022
+ms.date: 02/09/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalEnvironment8
 ---
 
 # interface ICoreWebView2ExperimentalEnvironment8
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
