@@ -27,6 +27,7 @@
         "src": "non-version"
       },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1108-44", "src": "1-0-1108-44" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1072-54", "src": "1-0-1072-54" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1054-31", "src": "1-0-1054-31" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1020-30", "src": "1-0-1020-30" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-992-28", "src": "1-0-992-28" },
