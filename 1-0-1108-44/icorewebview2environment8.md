@@ -1,5 +1,5 @@
 ---
-description: 
+description: A continuation of the ICoreWebView2Environment7 interface that supports the `ProcessInfosChanged` event.
 title: WebView2 Win32 C++ ICoreWebView2Environment8
 ms.date: 02/09/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment8
@@ -11,6 +11,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 interface ICoreWebView2Environment8
   : public ICoreWebView2Environment7
 ```
+
+A continuation of the [ICoreWebView2Environment7](icorewebview2environment7.md) interface that supports the `ProcessInfosChanged` event.
 
 ## Summary
 
