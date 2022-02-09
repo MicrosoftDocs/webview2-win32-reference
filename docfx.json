@@ -114,6 +114,7 @@
       "webview2-488": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.488" },
       "webview2-430": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.430" },
       "webview2-355": { "dest": "webview2-win32", "moniker_range": "webview2-0.8.355" },
+      "webview2-1158-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1158-prerelease" },
       "webview2-1133-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1133-prerelease" },
       "webview2-1083-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1083-prerelease" },
       "webview2-1056-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1056-prerelease" },
