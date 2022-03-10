@@ -1,11 +1,13 @@
 ---
 description: The caller implements this interface to handle the BasicAuthenticationRequested event.
 title: WebView2 Win32 C++ ICoreWebView2BasicAuthenticationRequestedEventHandler
-ms.date: 02/09/2022
+ms.date: 03/10/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2BasicAuthenticationRequestedEventHandler
 ---
 
 # interface ICoreWebView2BasicAuthenticationRequestedEventHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2BasicAuthenticationRequestedEventHandler
