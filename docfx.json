@@ -26,6 +26,7 @@
         ],
         "src": "non-version"
       },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1150-38", "src": "1-0-1150-38" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1108-44", "src": "1-0-1108-44" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1072-54", "src": "1-0-1072-54" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1054-31", "src": "1-0-1054-31" },
@@ -45,6 +46,7 @@
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-488", "src": "0-9-488" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-430", "src": "0-9-430" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-355", "src": "0-8-355" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1189-prerelease", "src": "1-0-1189-prerelease" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1158-prerelease", "src": "1-0-1158-prerelease" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1133-prerelease", "src": "1-0-1133-prerelease" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-1083-prerelease", "src": "1-0-1083-prerelease" },
@@ -96,6 +98,7 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
+      "webview2-1150-38": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1150.38" },
       "webview2-1108-44": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1108.44" },
       "webview2-1072-54": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1072.54" },
       "webview2-1054-31": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1054.31" },
@@ -115,6 +118,7 @@
       "webview2-488": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.488" },
       "webview2-430": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.430" },
       "webview2-355": { "dest": "webview2-win32", "moniker_range": "webview2-0.8.355" },
+      "webview2-1189-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1189-prerelease" },
       "webview2-1158-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1158-prerelease" },
       "webview2-1133-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1133-prerelease" },
       "webview2-1083-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1083-prerelease" },

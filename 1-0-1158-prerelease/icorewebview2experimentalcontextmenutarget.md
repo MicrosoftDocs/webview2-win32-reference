@@ -1,11 +1,13 @@
 ---
 description: Represents the information regarding the context menu target.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalContextMenuTarget
-ms.date: 02/09/2022
+ms.date: 03/10/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalContextMenuTarget
 ---
 
 # interface ICoreWebView2ExperimentalContextMenuTarget
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
