@@ -92,6 +92,7 @@
       "ms.topic": "reference",
       "ms.prod": "microsoft-edge",
       "ms.technology": "webview",
+      "searchScope": ["Microsoft Edge", "WebView2"],
       "feedback_system": "None"
     },
     "fileMetadata": {},
