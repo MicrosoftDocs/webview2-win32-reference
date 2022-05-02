@@ -1,11 +1,13 @@
 ---
 description: This interface is an extension of ICoreWebView2Experimental12 that support Favicons.
 title: WebView2 Win32 C++ ICoreWebView2Experimental12
-ms.date: 04/12/2022
+ms.date: 05/02/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Experimental12
 ---
 
 # interface ICoreWebView2Experimental12
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
