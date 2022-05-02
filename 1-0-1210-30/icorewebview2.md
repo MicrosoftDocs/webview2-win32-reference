@@ -1125,7 +1125,7 @@ This method injects a script that runs on all top-level document and child frame
 If the method is run in add_NewWindowRequested handler it should be called after the new window is set. For more details see `[ICoreWebView2NewWindowRequestedEventArgs::put_NewWindow](icorewebview2newwindowrequestedeventargs.md)`.
 
 > [!NOTE]
-> If an HTML document is running in a sandbox of some kind using [sandbox][MdnDocsWebHtmlElementIframeAttrSandbox] properties or the [Content-Security-Policy][MdnDocsWebHttpHeadersContentSecurityPolicy] HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
+> If an HTML document is running in a sandbox of some kind using [sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) properties or the [Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
 
 ```cpp
 // Prompt the user for some script and register it to execute whenever a new page loads.
@@ -1159,9 +1159,6 @@ void ScriptComponent::AddInitializeScript()
     }
 }
 ```
- [MdnDocsWebHtmlElementIframeAttrSandbox]: [https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) "sandbox - \<iframe\>: The Inline Frame element | MDN"
-
-[MdnDocsWebHttpHeadersContentSecurityPolicy]: [https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) "Content-Security-Policy | MDN"
 
 #### AddWebResourceRequestedFilter
 
@@ -1199,7 +1196,7 @@ Runs an asynchronous `DevToolsProtocol` method.
 
 > public HRESULT [CallDevToolsProtocolMethod](#calldevtoolsprotocolmethod)(LPCWSTR methodName, LPCWSTR parametersAsJson, ICoreWebView2CallDevToolsProtocolMethodCompletedHandler * handler)
 
-For more information about available methods, navigate to [DevTools Protocol Viewer][GithubChromedevtoolsDevtoolsProtocolTot] . The `methodName` parameter is the full name of the method in the `{domain}.{method}` format. The `parametersAsJson` parameter is a JSON formatted string containing the parameters for the corresponding method. The `Invoke` method of the `handler` is run when the method asynchronously completes. `Invoke` is run with the return object of the method as a JSON string.
+For more information about available methods, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot) . The `methodName` parameter is the full name of the method in the `{domain}.{method}` format. The `parametersAsJson` parameter is a JSON formatted string containing the parameters for the corresponding method. The `Invoke` method of the `handler` is run when the method asynchronously completes. `Invoke` is run with the return object of the method as a JSON string.
 
 ```cpp
 // Prompt the user for the name and parameters of a CDP method, then call it.
@@ -1233,7 +1230,7 @@ void ScriptComponent::CallCdpMethod()
     }
 }
 ```
- [GithubChromedevtoolsDevtoolsProtocolTot]: [https://chromedevtools.github.io/devtools-protocol/tot](https://chromedevtools.github.io/devtools-protocol/tot) "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
+ (https://chromedevtools.github.io/devtools-protocol/tot): [https://chromedevtools.github.io/devtools-protocol/tot](https://chromedevtools.github.io/devtools-protocol/tot) "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
 
 #### CapturePreview
 
@@ -1385,7 +1382,7 @@ Get a DevTools Protocol event receiver that allows you to subscribe to a DevTool
 
 > public HRESULT [GetDevToolsProtocolEventReceiver](#getdevtoolsprotocoleventreceiver)(LPCWSTR eventName, ICoreWebView2DevToolsProtocolEventReceiver ** receiver)
 
-The `eventName` parameter is the full name of the event in the format `{domain}.{event}`. For more information about DevTools Protocol events description and event args, navigate to [DevTools Protocol Viewer][GithubChromedevtoolsDevtoolsProtocolTot].
+The `eventName` parameter is the full name of the event in the format `{domain}.{event}`. For more information about DevTools Protocol events description and event args, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot).
 
 ```cpp
 // Prompt the user to name a CDP event, and then subscribe to that event.
@@ -1446,7 +1443,6 @@ void ScriptComponent::SubscribeToCdpEvent()
     }
 }
 ```
- [GithubChromedevtoolsDevtoolsProtocolTot]: [https://chromedevtools.github.io/devtools-protocol/tot](https://chromedevtools.github.io/devtools-protocol/tot) "latest (tip-of-tree) protocol - Chrome DevTools Protocol | GitHub"
 
 #### GoBack
 

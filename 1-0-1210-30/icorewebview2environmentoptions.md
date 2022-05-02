@@ -61,15 +61,13 @@ Changes the behavior of the WebView.
 
 > public HRESULT [get_AdditionalBrowserArguments](#get_additionalbrowserarguments)(LPWSTR * value)
 
-The arguments are passed to the browser process as part of the command. For more information about using command-line switches with Chromium browser processes, navigate to [Run Chromium with Flags][ChromiumDevelopersHowTosRunWithFlags]. The value appended to a switch is appended to the browser process, for example, in `--edge-webview-switches=xxx` the value is `xxx`. If you specify a switch that is important to WebView functionality, it is ignored, for example, `--user-data-dir`. Specific features are disabled internally and blocked from being enabled. If a switch is specified multiple times, only the last instance is used.
+The arguments are passed to the browser process as part of the command. For more information about using command-line switches with Chromium browser processes, navigate to [Run Chromium with Flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags). The value appended to a switch is appended to the browser process, for example, in `--edge-webview-switches=xxx` the value is `xxx`. If you specify a switch that is important to WebView functionality, it is ignored, for example, `--user-data-dir`. Specific features are disabled internally and blocked from being enabled. If a switch is specified multiple times, only the last instance is used.
 
 > [!NOTE]
 > A merge of the different values of the same switch is not attempted, except for disabled and enabled features. The features specified by `--enable-features` and `--disable-features` are merged with simple logic.
 > * The features is the union of the specified features and built-in features. If a feature is disabled, it is removed from the enabled features list.
 
 If you specify command-line switches and use the `additionalBrowserArguments` parameter, the `--edge-webview-switches` value takes precedence and is processed last. If a switch fails to parse, the switch is ignored. The default state for the operation is to run the browser process with no extra flags.
-
-[ChromiumDevelopersHowTosRunWithFlags]: [https://www.chromium.org/developers/how-tos/run-chromium-with-flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) "Run Chromium with flags | The Chromium Projects"
 
 #### get_AllowSingleSignOnUsingOSPrimaryAccount
 
@@ -87,11 +85,7 @@ The default display language for WebView.
 
 > public HRESULT [get_Language](#get_language)(LPWSTR * value)
 
-It applies to browser UI such as context menu and dialogs. It also applies to the `accept-languages` HTTP header that WebView sends to websites. It is in the format of `language[-country]` where `language` is the 2-letter code from [ISO 639][ISO639LanguageCodesHtml] and `country` is the 2-letter code from [ISO 3166][ISOStandard72482Html].
-
-[ISO639LanguageCodesHtml]: [https://www.iso.org/iso-639-language-codes.html](https://www.iso.org/iso-639-language-codes.html) "ISO 639 | ISO"
-
-[ISOStandard72482Html]: [https://www.iso.org/standard/72482.html](https://www.iso.org/standard/72482.html) "ISO 3166-1:2020 | ISO"
+It applies to browser UI such as context menu and dialogs. It also applies to the `accept-languages` HTTP header that WebView sends to websites. It is in the format of `language[-country]` where `language` is the 2-letter code from [ISO 639](https://www.iso.org/iso-639-language-codes.html) and `country` is the 2-letter code from [ISO 3166][https://www.iso.org/standard/72482.html](https://www.iso.org/standard/72482.html).
 
 #### get_TargetCompatibleBrowserVersion
 
