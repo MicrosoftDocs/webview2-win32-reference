@@ -74,8 +74,6 @@ It has a maximum length of 64 characters excluding the null-terminator. It is AS
 
 Note: the text must not end with a period '.' or ' ' (space). And, although upper-case letters are allowed, they're treated just as lower-case counterparts because the profile name will be mapped to the real profile directory path on disk and Windows file system handles path names in a case-insensitive way.
 
-The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
-
 #### put_IsInPrivateModeEnabled
 
 Sets the `IsInPrivateModeEnabled` property.

@@ -46,8 +46,6 @@ Gets the `DefaultDownloadFolderPath` property.
 
 The default value is the system default download folder path for the user.
 
-The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
-
 #### get_IsInPrivateModeEnabled
 
 InPrivate mode is enabled or not.
@@ -86,15 +84,11 @@ Name of the profile.
 
 > public HRESULT [get_ProfileName](#get_profilename)(LPWSTR * value)
 
-The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
-
 #### get_ProfilePath
 
 Full path of the profile directory.
 
 > public HRESULT [get_ProfilePath](#get_profilepath)(LPWSTR * value)
-
-The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
 
 #### put_DefaultDownloadFolderPath
 
