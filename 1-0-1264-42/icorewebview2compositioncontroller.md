@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of the ICoreWebView2Controller interface to support visual hosting.
 title: WebView2 Win32 C++ ICoreWebView2CompositionController
-ms.date: 06/29/2022
+ms.date: 07/05/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CompositionController
 ---
 
