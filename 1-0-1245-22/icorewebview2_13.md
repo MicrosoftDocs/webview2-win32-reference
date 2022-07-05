@@ -1,11 +1,13 @@
 ---
 description: This interface is an extension of ICoreWebView2_12 that supports Profile API.
 title: WebView2 Win32 C++ ICoreWebView2_13
-ms.date: 06/14/2022
+ms.date: 07/05/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_13
 ---
 
 # interface ICoreWebView2_13
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2_13
