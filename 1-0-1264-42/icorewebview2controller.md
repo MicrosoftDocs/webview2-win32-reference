@@ -1,11 +1,13 @@
 ---
 description: The owner of the `CoreWebView2` object that provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
 title: WebView2 Win32 C++ ICoreWebView2Controller
-ms.date: 07/05/2022
+ms.date: 08/08/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Controller
 ---
 
 # interface ICoreWebView2Controller
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2Controller
