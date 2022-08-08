@@ -1,11 +1,13 @@
 ---
 description: This interface is an extension of ICoreWebView2_14 that supports status Favicons.
 title: WebView2 Win32 C++ ICoreWebView2_15
-ms.date: 07/05/2022
+ms.date: 08/08/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_15
 ---
 
 # interface ICoreWebView2_15
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2_15
@@ -28,7 +30,7 @@ This interface is an extension of [ICoreWebView2_14](icorewebview2_14.md) that s
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1305
 
 ## Members
 
