@@ -27,7 +27,7 @@ Event args for the `WebResourceRequested` event.
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1340
 
 ## Members
 

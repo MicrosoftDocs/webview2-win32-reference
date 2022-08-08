@@ -29,7 +29,7 @@ This interface is a handler for the completion of the population of `imageStream
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1305
 
 ## Members
 

@@ -30,7 +30,7 @@ This interface is an extension of [ICoreWebView2_14](icorewebview2_14.md) that s
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1305
 
 ## Members
 
