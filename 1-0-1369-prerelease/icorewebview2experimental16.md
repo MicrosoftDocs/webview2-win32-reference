@@ -54,8 +54,17 @@ Because service workers and shared workers run separately from any one HTML docu
 
 URI Filter String   |Request URI   |Match   |Notes
 --------- | --------- | --------- | ---------
-`*`|`https://contoso.com/a/b/c`|Yes   |A single * will match all URIs
-| | `*://contoso.com/*` | `https://contoso.com/a/b/c` | Yes | Matches everything in contoso.com across all schemes | | `*://contoso.com/*` | `https://example.com/?https://contoso.com/` | Yes | But also matches a URI with just the same text anywhere in the URI | | `example` | `https://contoso.com/example` | No | The filter does not perform partial matches | | `*example` | `https://contoso.com/example` | Yes | The filter matches across URI parts | | `*example` | `https://contoso.com/path/?example` | Yes | The filter matches across URI parts | | `*example` | `https://contoso.com/path/?query#example` | No | The filter is matched against the URI with no fragment | | `*example` | `https://example` | No | The URI is normalized before filter matching so the actual URI used for comparison is `https://example/` | | `*example/` | `https://example` | Yes | Just like above, but this time the filter ends with a / just like the normalized URI | | `https://xn--qei.example/` | `https://&#x2764;.example/` | Yes | Non-ASCII hostnames are normalized to punycode before wildcard comparison | | `https://&#x2764;.example/` | `https://xn--qei.example/` | No | Non-ASCII hostnames are normalized to punycode before wildcard comparison |
+| `*`|`https://contoso.com/a/b/c`|Yes   |A single * will match all URIs |
+| `*://contoso.com/*` | `https://contoso.com/a/b/c` | Yes | Matches everything in contoso.com across all schemes |
+| `*://contoso.com/*` | `https://example.com/?https://contoso.com/` | Yes | But also matches a URI with just the same text anywhere in the URI |
+| `example` | `https://contoso.com/example` | No | The filter does not perform partial matches |
+| `*example` | `https://contoso.com/example` | Yes | The filter matches across URI parts |
+| `*example` | `https://contoso.com/path/?example` | Yes | The filter matches across URI parts |
+| `*example` | `https://contoso.com/path/?query#example` | No | The filter is matched against the URI with no fragment |
+| `*example` | `https://example` | No | The URI is normalized before filter matching so the actual URI used for comparison is `https://example/` |
+| `*example/` | `https://example` | Yes | Just like above, but this time the filter ends with a / just like the normalized URI |
+| `https://xn--qei.example/` | `https://&#x2764;.example/` | Yes | Non-ASCII hostnames are normalized to punycode before wildcard comparison |
+| `https://&#x2764;.example/` | `https://xn--qei.example/` | No | Non-ASCII hostnames are normalized to punycode before wildcard comparison |
 
 ```cpp
     wil::com_ptr<ICoreWebView2Experimental16> webView =
