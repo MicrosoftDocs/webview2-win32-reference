@@ -1,11 +1,13 @@
 ---
 description: Experimental Interop interface for the CoreWebView2CompositionController WinRT object to allow WinRT end developers to be able to use the COM interfaces as parameters for some methods.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionControllerInterop2
-ms.date: 08/04/2022
+ms.date: 09/06/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalCompositionControllerInterop2
 ---
 
 # interface ICoreWebView2ExperimentalCompositionControllerInterop2
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
