@@ -42,7 +42,7 @@ Settings used by the `Print` method.
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1414
 
 ## Members
 
@@ -120,56 +120,20 @@ Repeating a page does not print it multiple times. To print multiple times, use 
 
 The pages are always printed in ascending order, even if specified in non-ascending order."
 
-If page range is not valid or if a page is greater than document total page count,
-<tt>ICoreWebView2PrintCompletedHandler</tt> or ICoreWebView2PrintToPdfStreamCompletedHandler<tt>
-handler will return</tt>E_INVALIDARG`.
+If page range is not valid or if a page is greater than document total page count, `ICoreWebView2PrintCompletedHandler` or `ICoreWebView2PrintToPdfStreamCompletedHandler` handler will return `E_INVALIDARG`.
 
 The following examples assume a document with 20 total pages.
 
-<table class="markdownTable">
-  <tr class="markdownTableHead">    <th class="markdownTableHeadNone"> Example   
-
-Result   
-
-Notes    
-
-"2"   
-
-Page 2   
-
-"1-4, 9, 3-6, 10, 11"   
-
-Pages 1-6, 9-11   
-
-"1-4, -6"   
-
-Pages 1-6   
-
-The "-6" is interpreted as "1-6".    
-
-"2-"   
-
-Pages 2-20   
-
-The "2-" is interpreted as "pages 2 to the end of the document".    
-
-"4-2, 11, -6"   
-
-Invalid   
-
-"4-2" is an invalid range.    
-
-"-"   
-
-Pages 1-20   
-
-The "-" is interpreted as "page 1 to the end of the document".    
-
-"1-4dsf, 11"   
-
-Invalid   
-
-| "2-2" | Page 2 |
+Example |Result |Notes
+--------- | --------- | ---------
+"2" |Page 2 |
+"1-4, 9, 3-6, 10, 11" |Pages 1-6, 9-11 |
+"1-4, -6" |Pages 1-6 |The "-6" is interpreted as "1-6".
+"2-" |Pages 2-20 |The "2-" is interpreted as "pages 2 to the end of the document".
+"4-2, 11, -6" |Invalid |"4-2" is an invalid range.
+"-" |Pages 1-20 |The "-" is interpreted as "page 1 to the end of the document".
+"1-4dsf, 11" |Invalid |
+"2-2" |Page 2 |
 
 The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings)
 
@@ -241,7 +205,14 @@ Returns `E_INVALIDARG` if an invalid value is provided, and the current value is
 
 Below examples shows print output for PagesPerSide and Duplex.
 
-| PagesPerSide | Total pages | Two-sided printing | Result | | &mdash; | &mdash; | &mdash; | | 1 | 1 | - | 1 page on the front side. | | 2 | 1 | Yes | 1 page on the front side. | | 2 | 4 | - | 2 pages on the first paper and 2 pages on the next paper. | | 2 | 4 | Yes | 2 pages on the front side and 2 pages on back side. | | 4 | 4 | Yes | 4 pages on the front side. | | 4 | 8 | Yes | 4 pages on the front side and 4 pages on the back side. |
+PagesPerSide |Total pages |Two-sided printing |Result
+--------- | --------- | --------- | ---------
+1 |1 |- |1 page on the front side.
+2 |1 |Yes |1 page on the front side.
+2 |4 |- |2 pages on the first paper and 2 pages on the next paper.
+2 |4 |Yes |2 pages on the front side and 2 pages on back side.
+4 |4 |Yes |4 pages on the front side.
+4 |8 |Yes |4 pages on the front side and 4 pages on the back side.
 
 #### put_PrinterName
 
