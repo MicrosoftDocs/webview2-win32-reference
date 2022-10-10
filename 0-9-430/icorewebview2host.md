@@ -492,7 +492,7 @@ void AppWindow::CloseWebView(bool cleanupUserDataFolder)
         // developers specify userDataFolder during WebView environment
         // creation, they would need to pass in that explicit value here.
         // For more information about userDataFolder:
-        // https://docs.microsoft.com/microsoft-edge/webview2/reference/win32/webview2-idl#createwebview2environmentwithdetails?view=webview2-0.9.430
+        // https://learn.microsoft.com/microsoft-edge/webview2/reference/win32/webview2-idl#createwebview2environmentwithdetails?view=webview2-0.9.430
         WCHAR userDataFolder[MAX_PATH] = L"";
         // Obtain the absolute path for relative paths that include "./" or "../"
         _wfullpath(
@@ -551,4 +551,3 @@ A structure representing the information packed into the LPARAM given to a Win32
 > typedef [CORE_WEBVIEW2_PHYSICAL_KEY_STATUS](#core_webview2_physical_key_status)
 
 See the documentation for [WM_KEYDOWN](/windows/win32/inputdev/wm-keydown) for details.
-
