@@ -113,6 +113,7 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
+      "webview2-1418-22": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1418.22" },
       "webview2-1370-28": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1370.28" },
       "webview2-1343-22": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1343.22" },
       "webview2-1293-44": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1293.44" },
@@ -140,6 +141,7 @@
       "webview2-488": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.488" },
       "webview2-430": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.430" },
       "webview2-355": { "dest": "webview2-win32", "moniker_range": "webview2-0.8.355" },
+      "webview2-1466-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1466-prerelease" },
       "webview2-1414-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1414-prerelease" },
       "webview2-1369-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1369-prerelease" },
       "webview2-1340-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1340-prerelease" },
