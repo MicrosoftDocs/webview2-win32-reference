@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Globals
 title: Globals
-ms.date: 12/01/2022
+ms.date: 12/05/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 ---
 
