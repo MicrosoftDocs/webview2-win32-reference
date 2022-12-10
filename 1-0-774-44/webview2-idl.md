@@ -145,7 +145,7 @@ ERROR_DISK_FULL
 The default maximum number of WebView2 Runtime versions allowed is `20`. To override the maximum number of the previous WebView2 Runtime versions allowed, set the value of the following environment variable.
 
 ```text
-WEBVIEW2_MAX_INSTANCES
+COREWEBVIEW2_MAX_INSTANCES
 ```
 
 If the Webview depends upon an installed WebView2 Runtime version and it is uninstalled, any subsequent creation fails with the following error.

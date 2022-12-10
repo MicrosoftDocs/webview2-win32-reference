@@ -101,7 +101,7 @@ The default maximum number of Edge versions allowed is 20.
 The maximum number of old Edge versions allowed can be overwritten with the value of the following environment variable.
 
 ```cpp
-WEBVIEW2_MAX_INSTANCES
+COREWEBVIEW2_MAX_INSTANCES
 ```
 
 If the Webview depends on an installed Edge and it is uninstalled any subsequent creation will fail with the next error
