@@ -1,11 +1,13 @@
 ---
 description: This is the ICoreWebView Experimental interface for shared buffer based on file mapping.
 title: WebView2 Win32 C++ ICoreWebView2Experimental18
-ms.date: 10/31/2022
+ms.date: 12/13/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Experimental18
 ---
 
 # interface ICoreWebView2Experimental18
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
