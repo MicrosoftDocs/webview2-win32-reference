@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Experimental Globals
 title: Experimental Globals
-ms.date: 12/09/2022
+ms.date: 12/13/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 ---
 
@@ -13,6 +13,7 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
+[COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4) | Matrix that represents a 3D transform.
 [COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL](#corewebview2_memory_usage_target_level) | Specifies memory usage target level of WebView.
 [COREWEBVIEW2_SHARED_BUFFER_ACCESS](#corewebview2_shared_buffer_access) | Specifies the desired access from script to `CoreWebView2SharedBuffer`.
 [COREWEBVIEW2_TRACKING_PREVENTION_LEVEL](#corewebview2_tracking_prevention_level) | Tracking prevention levels.
@@ -20,6 +21,14 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 [COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS](#corewebview2_web_resource_request_source_kinds) | Specifies the source of `WebResourceRequested` event.
 
 ## Members
+
+#### COREWEBVIEW2_MATRIX_4X4 
+
+Matrix that represents a 3D transform.
+
+> typedef [COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4)
+
+This transform is used to calculate correct coordinates when calling CreateCoreWebView2PointerInfoFromPointerId. This is equivalent to a D2D1_MATRIX_4X4_F.
 
 #### COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL
 
