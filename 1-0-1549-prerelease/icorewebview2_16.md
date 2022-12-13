@@ -27,7 +27,7 @@ A continuation of the [ICoreWebView2](icorewebview2.md) interface to support pri
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1549
 
 ## Members
 

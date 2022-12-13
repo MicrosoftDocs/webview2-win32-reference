@@ -1,5 +1,5 @@
 ---
-description: Additional options used to create WebView2 Environment.
+description: Additional options used to create WebView2 Environment to manage tracking prevention feature.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironmentOptions2
 ms.date: 12/13/2022
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalEnvironmentOptions2
@@ -14,7 +14,7 @@ interface ICoreWebView2ExperimentalEnvironmentOptions2
   : public IUnknown
 ```
 
-Additional options used to create WebView2 Environment.
+Additional options used to create WebView2 Environment to manage tracking prevention feature.
 
 ## Summary
 
@@ -48,7 +48,7 @@ There is `ICoreWebView2ExperimentalProfile5::PreferredTrackingPreventionLevel` p
 
 See `ICoreWebView2ExperimentalProfile5::PreferredTrackingPreventionLevel` for more details.
 
-Tracking prevention protects users from online tracking by restricting the ability of trackers to access browser-based storage as well as the network. See [Tracking prevention](microsoft-edge/web-platform/tracking-prevention).
+Tracking prevention protects users from online tracking by restricting the ability of trackers to access browser-based storage as well as the network. See [Tracking prevention](/microsoft-edge/web-platform/tracking-prevention).
 
 #### put_EnableTrackingPrevention
 
