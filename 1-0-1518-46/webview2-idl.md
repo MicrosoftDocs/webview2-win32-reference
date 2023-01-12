@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Globals
 title: Globals
-ms.date: 01/09/2023
+ms.date: 01/17/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 ---
 
@@ -61,7 +61,7 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
 COREWEBVIEW2_BOUNDS_MODE_USE_RAW_PIXELS            | Bounds property represents raw pixels. Physical size of Webview is not impacted by RasterizationScale.
-COREWEBVIEW2_BOUNDS_MODE_USE_RASTERIZATION_SCALE            | Bounds property represents logicl pixels and the RasterizationScale property is used to get the physical size of the WebView.
+COREWEBVIEW2_BOUNDS_MODE_USE_RASTERIZATION_SCALE            | Bounds property represents logical pixels and the RasterizationScale property is used to get the physical size of the WebView.
 
 Mode for how the Bounds property is interpreted in relation to the RasterizationScale property.
 
@@ -492,7 +492,7 @@ Currently only printing to PDF is supported.
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_PRINT_STATUS_SUCCEEDED            | Indicates that the print operation is succedded.
+COREWEBVIEW2_PRINT_STATUS_SUCCEEDED            | Indicates that the print operation is succeeded.
 COREWEBVIEW2_PRINT_STATUS_PRINTER_UNAVAILABLE            | Indicates that the printer is not available.
 COREWEBVIEW2_PRINT_STATUS_OTHER_ERROR            | Indicates that the print operation is failed.
 

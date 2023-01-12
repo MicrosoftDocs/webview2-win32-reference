@@ -1,11 +1,13 @@
 ---
 description: This interface is a handler for when the `Favicon` is changed.
 title: WebView2 Win32 C++ ICoreWebView2FaviconChangedEventHandler
-ms.date: 12/05/2022
+ms.date: 01/17/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2FaviconChangedEventHandler
 ---
 
 # interface ICoreWebView2FaviconChangedEventHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2FaviconChangedEventHandler
