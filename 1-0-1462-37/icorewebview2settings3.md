@@ -1,11 +1,13 @@
 ---
 description: A continuation of the ICoreWebView2Settings interface that manages whether browser accelerator keys are enabled.
 title: WebView2 Win32 C++ ICoreWebView2Settings3
-ms.date: 12/05/2022
+ms.date: 01/17/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings3
 ---
 
 # interface ICoreWebView2Settings3
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2Settings3
