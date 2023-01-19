@@ -28,7 +28,7 @@ This is a continuation of the [ICoreWebView2PermissionRequestedEventArgs](icorew
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1619
 
 ## Members
 

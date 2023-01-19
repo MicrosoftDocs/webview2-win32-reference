@@ -30,7 +30,7 @@ Used to list the nondefault permission settings on the profile that are persiste
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1619
 
 ## Members
 

@@ -59,7 +59,7 @@ Example: `custom-scheme-with-host://hostname/path/to/resource` has origin of `cu
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1619
 
 ## Members
 

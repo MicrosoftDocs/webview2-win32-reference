@@ -29,7 +29,7 @@ Provides a set of properties for a permission setting.
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1619
 
 ## Members
 

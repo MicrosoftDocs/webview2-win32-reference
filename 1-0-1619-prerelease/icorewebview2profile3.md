@@ -26,7 +26,7 @@ This is an extension of the [ICoreWebView2Profile](icorewebview2profile.md) inte
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1619
 
 ## Members
 
