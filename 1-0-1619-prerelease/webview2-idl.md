@@ -7,6 +7,8 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 
 # Globals
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ## Summary
 
  Members                        | Descriptions
