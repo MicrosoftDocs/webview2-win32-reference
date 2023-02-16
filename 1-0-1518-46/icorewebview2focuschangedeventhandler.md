@@ -1,11 +1,13 @@
 ---
 description: Receives `GotFocus` and `LostFocus` events.
 title: WebView2 Win32 C++ ICoreWebView2FocusChangedEventHandler
-ms.date: 01/17/2023
+ms.date: 02/13/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2FocusChangedEventHandler
 ---
 
 # interface ICoreWebView2FocusChangedEventHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2FocusChangedEventHandler
