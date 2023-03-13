@@ -29,7 +29,7 @@ Received texture that the renderer writes to so that the host will read on it.
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1724
 
 ## Members
 
