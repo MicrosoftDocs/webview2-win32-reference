@@ -1,5 +1,5 @@
 ---
-description: This is a continuation of the ICoreWebView2PermissionRequestedEventArgs interface.
+description: This is a continuation of the ICoreWebView2PermissionRequestedEventArgs2 interface.
 title: WebView2 Win32 C++ ICoreWebView2PermissionRequestedEventArgs3
 ms.date: 03/13/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PermissionRequestedEventArgs3
@@ -12,7 +12,7 @@ interface ICoreWebView2PermissionRequestedEventArgs3
   : public ICoreWebView2PermissionRequestedEventArgs2
 ```
 
-This is a continuation of the ICoreWebView2PermissionRequestedEventArgs interface.
+This is a continuation of the ICoreWebView2PermissionRequestedEventArgs2 interface.
 
 ## Summary
 
