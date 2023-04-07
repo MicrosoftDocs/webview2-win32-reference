@@ -1,7 +1,7 @@
 ---
 description: This is the ICoreWebView2Profile interface for cookie manager.
 title: WebView2 Win32 C++ ICoreWebView2Profile5
-ms.date: 04/05/2023
+ms.date: 04/10/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile5
 ---
 
@@ -25,7 +25,7 @@ This is the [ICoreWebView2Profile](icorewebview2profile.md) interface for cookie
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.1777
 
 ## Members
 

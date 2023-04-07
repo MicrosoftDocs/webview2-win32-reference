@@ -1,11 +1,13 @@
 ---
 description: This is the ICoreWebView2 experimental interface for cookie manager.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalProfile8
-ms.date: 03/13/2023
+ms.date: 04/10/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalProfile8
 ---
 
 # interface ICoreWebView2ExperimentalProfile8
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 

@@ -1,11 +1,13 @@
 ---
 description: This interface is an extension of ICoreWebView2 that manages navigation requests to URI schemes registered with the OS.
 title: WebView2 Win32 C++ ICoreWebView2Experimental21
-ms.date: 03/13/2023
+ms.date: 04/10/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Experimental21
 ---
 
 # interface ICoreWebView2Experimental21
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
