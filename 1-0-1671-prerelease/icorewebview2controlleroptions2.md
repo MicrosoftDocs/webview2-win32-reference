@@ -46,11 +46,12 @@ Changes to the ScriptLocale property apply to renderer processes created after t
 
 The default value for ScriptLocale will depend on the WebView2 language and OS region. If the language portions of the WebView2 language and OS region match, then it will use the OS region. Otherwise, it will use the WebView2 language.
 
-**OS Region**|**WebView2 Language**|**Default WebView2 ScriptLocale**
+**OS Region** | **WebView2 Language** | **Default WebView2 ScriptLocale**
 --------- | --------- | ---------
 en-GB   |en-US   |en-GB
 es-MX   |en-US   |en-US
 en-US   |en-GB   |en-US
+
 You can set the ScriptLocale to the empty string to get the default ScriptLocale value.
 
 Use OS specific APIs to determine the OS region to use with this property if you want to match the OS. For example:
