@@ -118,7 +118,7 @@
       "ms.technology": "webview",
       "searchScope": ["Microsoft Edge", "WebView2"],
       "uhfHeaderId": "MSDocsHeader-MSEdge",
-      "feedback_system": "None"
+      "feedback_system": "Standard"
     },
     "fileMetadata": {},
     "template": [],
