@@ -13,6 +13,7 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
+[COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4) | Matrix that represents a 3D transform.
 [COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL](#corewebview2_memory_usage_target_level) | Specifies memory usage target level of WebView.
 [COREWEBVIEW2_NAVIGATION_KIND](#corewebview2_navigation_kind) | Specifies the navigation kind of each navigation.
 [COREWEBVIEW2_TEXTURE_STREAM_ERROR_KIND](#corewebview2_texture_stream_error_kind) | Kinds of errors that can be reported by the ICoreWebView2ExperimentalTextureStream ErrorReceived event.
@@ -20,6 +21,13 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 [COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS](#corewebview2_web_resource_request_source_kinds) | Specifies the source of `WebResourceRequested` event.
 
 ## Members
+
+#### COREWEBVIEW2_MATRIX_4X4
+
+Matrix that represents a 3D transform.
+
+> typedef [COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4)
+This transform is used to calculate correct coordinates when calling CreateCoreWebView2PointerInfoFromPointerId. This is equivalent to a D2D1_MATRIX_4X4_F
 
 #### COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL
 
