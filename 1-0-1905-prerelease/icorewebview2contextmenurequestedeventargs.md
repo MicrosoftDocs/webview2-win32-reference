@@ -1,8 +1,14 @@
 ---
 description: Event args for the `ContextMenuRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2ContextMenuRequestedEventArgs
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ContextMenuRequestedEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ContextMenuRequestedEventArgs
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2ContextMenuRequestedEventArgs

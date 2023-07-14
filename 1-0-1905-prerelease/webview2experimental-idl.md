@@ -1,31 +1,43 @@
 ---
 description: WebView2 Win32 Experimental Globals
 title: Experimental Globals
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
+topic_type: 
+- APIRef
+api_name:
+api_type:
+[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
+api_type:
+- DllExport
+api_location:
+- WebView2Loader.dll
 ---
 
 # Experimental Globals
-
-[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4) | Matrix that represents a 3D transform.
+[COREWEBVIEW2_TEXT_DIRECTION_KIND](#corewebview2_text_direction_kind) | Indicates the text direction of the notification.
 [COREWEBVIEW2_TEXTURE_STREAM_ERROR_KIND](#corewebview2_texture_stream_error_kind) | Kinds of errors that can be reported by the ICoreWebView2ExperimentalTextureStream ErrorReceived event.
 [COREWEBVIEW2_UPDATE_RUNTIME_STATUS](#corewebview2_update_runtime_status) | Status of UpdateRuntime operation result.
 [COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS](#corewebview2_web_resource_request_source_kinds) | Specifies the source of `WebResourceRequested` event.
 
 ## Members
 
-#### COREWEBVIEW2_MATRIX_4X4
+#### COREWEBVIEW2_TEXT_DIRECTION_KIND
 
-Matrix that represents a 3D transform.
+> enum [COREWEBVIEW2_TEXT_DIRECTION_KIND](#corewebview2_text_direction_kind)
 
-> typedef [COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4)
-This transform is used to calculate correct coordinates when calling CreateCoreWebView2PointerInfoFromPointerId. This is equivalent to a D2D1_MATRIX_4X4_F
+ Values                         | Descriptions
+--------------------------------|---------------------------------------------
+COREWEBVIEW2_TEXT_DIRECTION_KIND_DEFAULT            | Indicates that the notification text direction adopts the browser's language setting behavior.
+COREWEBVIEW2_TEXT_DIRECTION_KIND_LEFT_TO_RIGHT            | Indicates that the notification text is left-to-right.
+COREWEBVIEW2_TEXT_DIRECTION_KIND_RIGHT_TO_LEFT            | Indicates that the notification text is right-to-left.
+
+Indicates the text direction of the notification.
 
 #### COREWEBVIEW2_TEXTURE_STREAM_ERROR_KIND
 

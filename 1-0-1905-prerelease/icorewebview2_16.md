@@ -1,8 +1,14 @@
 ---
 description: A continuation of the ICoreWebView2 interface to support printing.
 title: WebView2 Win32 C++ ICoreWebView2_16
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_16
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2_16
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2_16
@@ -107,7 +113,7 @@ bool AppWindow::PrintToPrinter()
                 if (errorCode == S_OK && printStatus == COREWEBVIEW2_PRINT_STATUS_SUCCEEDED)
                 {
                     message = L"Printing " + std::wstring(title.get()) +
-                              L" document to printer is succedded";
+                              L" document to printer is succeeded";
                 }
                 else if (
                     errorCode == S_OK &&

@@ -409,6 +409,16 @@
           href: icorewebview2experimental19.md
         - name: ICoreWebView2Experimental20
           href: icorewebview2experimental20.md
+        - name: ICoreWebView2Experimental22
+          href: icorewebview2experimental22.md
+        - name: ICoreWebView2ExperimentalBrowserExtension
+          href: icorewebview2experimentalbrowserextension.md
+        - name: ICoreWebView2ExperimentalBrowserExtensionEnableCompletedHandler
+          href: icorewebview2experimentalbrowserextensionenablecompletedhandler.md
+        - name: ICoreWebView2ExperimentalBrowserExtensionList
+          href: icorewebview2experimentalbrowserextensionlist.md
+        - name: ICoreWebView2ExperimentalBrowserExtensionRemoveCompletedHandler
+          href: icorewebview2experimentalbrowserextensionremovecompletedhandler.md
         - name: ICoreWebView2ExperimentalClearCustomDataPartitionCompletedHandler
           href: icorewebview2experimentalclearcustomdatapartitioncompletedhandler.md
         - name: ICoreWebView2ExperimentalCompositionController4
@@ -417,16 +427,32 @@
           href: icorewebview2experimentalenvironment12.md
         - name: ICoreWebView2ExperimentalEnvironment3
           href: icorewebview2experimentalenvironment3.md
+        - name: ICoreWebView2ExperimentalEnvironmentOptions
+          href: icorewebview2experimentalenvironmentoptions.md
         - name: ICoreWebView2ExperimentalExecuteScriptResult
           href: icorewebview2experimentalexecutescriptresult.md
         - name: ICoreWebView2ExperimentalExecuteScriptWithResultCompletedHandler
           href: icorewebview2experimentalexecutescriptwithresultcompletedhandler.md
+        - name: ICoreWebView2ExperimentalNotification
+          href: icorewebview2experimentalnotification.md
+        - name: ICoreWebView2ExperimentalNotificationCloseRequestedEventHandler
+          href: icorewebview2experimentalnotificationcloserequestedeventhandler.md
+        - name: ICoreWebView2ExperimentalNotificationReceivedEventArgs
+          href: icorewebview2experimentalnotificationreceivedeventargs.md
+        - name: ICoreWebView2ExperimentalNotificationReceivedEventHandler
+          href: icorewebview2experimentalnotificationreceivedeventhandler.md
         - name: ICoreWebView2ExperimentalProfile10
           href: icorewebview2experimentalprofile10.md
+        - name: ICoreWebView2ExperimentalProfile12
+          href: icorewebview2experimentalprofile12.md
         - name: ICoreWebView2ExperimentalProfile7
           href: icorewebview2experimentalprofile7.md
+        - name: ICoreWebView2ExperimentalProfileAddBrowserExtensionCompletedHandler
+          href: icorewebview2experimentalprofileaddbrowserextensioncompletedhandler.md
         - name: ICoreWebView2ExperimentalProfileDeletedEventHandler
           href: icorewebview2experimentalprofiledeletedeventhandler.md
+        - name: ICoreWebView2ExperimentalProfileGetBrowserExtensionsCompletedHandler
+          href: icorewebview2experimentalprofilegetbrowserextensionscompletedhandler.md
         - name: ICoreWebView2ExperimentalRenderAdapterLUIDChangedEventHandler
           href: icorewebview2experimentalrenderadapterluidchangedeventhandler.md
         - name: ICoreWebView2ExperimentalScriptException

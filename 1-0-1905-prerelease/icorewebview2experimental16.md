@@ -1,13 +1,19 @@
 ---
 description: This interface is an extension of ICoreWebView2 that allows to set filters in order to receive WebResourceRequested events for service workers, shared workers and different origin iframes.
 title: WebView2 Win32 C++ ICoreWebView2Experimental16
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Experimental16
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2Experimental16
+[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
+- ICoreWebView2Experimental16
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2Experimental16
-
-[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
 interface ICoreWebView2Experimental16

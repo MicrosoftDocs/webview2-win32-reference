@@ -1,20 +1,26 @@
 ---
 description: This interface is an extension of the ICoreWebView2Environment that manages updating Edge WebView2 Runtime.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironment3
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalEnvironment3
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ExperimentalEnvironment3
+[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
+- ICoreWebView2ExperimentalEnvironment3
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2ExperimentalEnvironment3
-
-[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
 interface ICoreWebView2ExperimentalEnvironment3
   : public IUnknown
 ```
 
-This interface is an extension of the [ICoreWebView2Environment](icorewebview2environment.md) that manages updating Edge WebView2 Runtime.
+This interface is an extension of the ICoreWebView2Environment that manages updating Edge WebView2 Runtime.
 
 ## Summary
 
@@ -22,7 +28,7 @@ This interface is an extension of the [ICoreWebView2Environment](icorewebview2en
 --------------------------------|---------------------------------------------
 [UpdateRuntime](#updateruntime) | Try to update the installed Microsoft Edge WebView2 Runtime.
 
-An object implementing the ICoreWebView2ExperimentalEnvironment3 interface will also implement [ICoreWebView2Environment](icorewebview2environment.md).
+An object implementing the ICoreWebView2ExperimentalEnvironment3 interface will also implement ICoreWebView2Environment.
 
 ## Applies to
 

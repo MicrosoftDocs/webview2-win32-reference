@@ -1,8 +1,14 @@
 ---
 description: A continuation of the ICoreWebView2ProcessFailedEventArgs interface.
 title: WebView2 Win32 C++ ICoreWebView2ProcessFailedEventArgs2
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ProcessFailedEventArgs2
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ProcessFailedEventArgs2
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2ProcessFailedEventArgs2
@@ -64,5 +70,12 @@ The reason for the process failure.
 
 > public HRESULT [get_Reason](#get_reason)(COREWEBVIEW2_PROCESS_FAILED_REASON * reason)
 
-The reason is always `COREWEBVIEW2_PROCESS_FAILED_REASON_UNEXPECTED` when `ProcessFailedKind` is `COREWEBVIEW2_PROCESS_FAILED_KIND_BROWSER_PROCESS_EXITED`, and `COREWEBVIEW2_PROCESS_FAILED_REASON_UNRESPONSIVE` when `ProcessFailedKind` is `COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_UNRESPONSIVE`. For other process failure kinds, the reason may be any of the reason values.
+Some of the reasons are only applicable to specific values of `ICoreWebView2ProcessFailedEventArgs::ProcessFailedKind`, and the following `ProcessFailedKind` values always return the indicated reason value:
+
+ProcessFailedKind   |Reason
+--------- | ---------
+COREWEBVIEW2_PROCESS_FAILED_KIND_BROWSER_PROCESS_EXITED   |COREWEBVIEW2_PROCESS_FAILED_REASON_UNEXPECTED
+COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_UNRESPONSIVE   |COREWEBVIEW2_PROCESS_FAILED_REASON_UNRESPONSIVE
+
+For other `ProcessFailedKind` values, the reason may be any of the reason values. To learn about what these values mean, see `COREWEBVIEW2_PROCESS_FAILED_REASON`.
 

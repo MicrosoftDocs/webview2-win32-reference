@@ -1,8 +1,14 @@
 ---
 description: Represents the WebView2 Environment.
 title: WebView2 Win32 C++ ICoreWebView2Environment
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2Environment
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2Environment
@@ -188,6 +194,12 @@ void AppWindow::InitializeWebView()
             options5->put_EnableTrackingPrevention(m_TrackingPreventionEnabled ? TRUE : FALSE));
     }
 
+    Microsoft::WRL::ComPtr<ICoreWebView2ExperimentalEnvironmentOptions> optionsExperimental;
+    if (options.As(&optionsExperimental) == S_OK)
+    {
+        CHECK_FAILURE(optionsExperimental->put_AreBrowserExtensionsEnabled(TRUE));
+    }
+
     HRESULT hr = CreateCoreWebView2EnvironmentWithOptions(
         subFolder, m_userDataFolder.c_str(), options.Get(),
         Callback<ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler>(
@@ -242,11 +254,11 @@ HRESULT AppWindow::OnCreateEnvironmentCompleted(
     CHECK_FAILURE(result);
     m_webViewEnvironment = environment;
 
-    if (m_webviewOption.entry == WebViewCreateEntry::EVER_FROM_CREATE_WITH_OPTION_MENU)
+    if (m_webviewOption.entry == WebViewCreateEntry::EVER_FROM_CREATE_WITH_OPTION_MENU
+    )
     {
         return CreateControllerWithOptions();
     }
-
     auto webViewEnvironment3 = m_webViewEnvironment.try_query<ICoreWebView2Environment3>();
 
     if (webViewEnvironment3 && (m_dcompDevice || m_wincompCompositor))

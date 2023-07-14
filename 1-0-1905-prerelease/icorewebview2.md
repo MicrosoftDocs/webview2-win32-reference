@@ -1,8 +1,14 @@
 ---
 description: WebView2 enables you to host web content using the latest Microsoft Edge browser and web technology.
 title: WebView2 Win32 C++ ICoreWebView2
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2
@@ -66,7 +72,7 @@ WebView2 enables you to host web content using the latest Microsoft Edge browser
 [remove_NavigationStarting](#remove_navigationstarting) | Remove an event handler previously added with `add_NavigationStarting`.
 [remove_NewWindowRequested](#remove_newwindowrequested) | Remove an event handler previously added with `add_NewWindowRequested`.
 [remove_PermissionRequested](#remove_permissionrequested) | Remove an event handler previously added with `add_PermissionRequested`.
-[remove_ProcessFailed](#remove_processfailed) | Remove an event handler previously added with add_ProcessFailed.
+[remove_ProcessFailed](#remove_processfailed) | Remove an event handler previously added with `add_ProcessFailed`.
 [remove_ScriptDialogOpening](#remove_scriptdialogopening) | Remove an event handler previously added with `add_ScriptDialogOpening`.
 [remove_SourceChanged](#remove_sourcechanged) | Remove an event handler previously added with `add_SourceChanged`.
 [remove_WebMessageReceived](#remove_webmessagereceived) | Remove an event handler previously added with `add_WebMessageReceived`.
@@ -541,7 +547,17 @@ Add an event handler for the `ProcessFailed` event.
 
 > public HRESULT [add_ProcessFailed](#add_processfailed)([ICoreWebView2ProcessFailedEventHandler](icorewebview2processfailedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-`ProcessFailed` runs when a WebView process ends unexpectedly or becomes unresponsive.
+`ProcessFailed` runs when any of the processes in the [WebView2 Process Group](https://learn.microsoft.com/microsoft-edge/webview2/concepts/process-model?tabs=csharp#processes-in-the-webview2-runtime) encounters one of the following conditions:
+
+Condition   |Details
+--------- | ---------
+Unexpected exit   |The process indicated by the event args has exited unexpectedly (usually due to a crash). The failure might or might not be recoverable and some failures are auto-recoverable.
+Unresponsiveness   |The process indicated by the event args has become unresponsive to user input. This is only reported for renderer processes, and will run every few seconds until the process becomes responsive again.
+
+> [!NOTE]
+> When the failing process is the browser process, a `ICoreWebView2Environment5::BrowserProcessExited` event will run too.
+
+Your application can use ICoreWebView2ProcessFailedEventArgs and ICoreWebView2ProcessFailedEventArgs2 to identify which condition and process the event is for, and to collect diagnostics and handle recovery if necessary. For more details about which cases need to be handled by your application, see `COREWEBVIEW2_PROCESS_FAILED_KIND`.
 
 ```cpp
     // Register a handler for the ProcessFailed event.
@@ -831,7 +847,7 @@ The web resource requested may be blocked until the event handler returns if a d
 
 If this event is subscribed in the add_NewWindowRequested handler it should be called after the new window is set. For more details see [ICoreWebView2NewWindowRequestedEventArgs::put_NewWindow](icorewebview2newwindowrequestedeventargs.md).
 
-Currently this only supports file, http, and https URI schemes.
+This event is by default raised for file, http, and https URI schemes. This is also raised for registered custom URI schemes. For more details see [ICoreWebView2CustomSchemeRegistration](icorewebview2customschemeregistration.md).
 
 ```cpp
         if (m_blockImages)
@@ -950,7 +966,7 @@ Add the provided host object to script running in the WebView with the specified
 Host objects are exposed as host object proxies using `window.chrome.webview.hostObjects.{name}`. Host object proxies are promises and resolves to an object representing the host object. The promise is rejected if the app has not added an object with the name. When JavaScript code access a property or method of the object, a promise is return, which resolves to the value returned from the host for the property or method, or rejected in case of error, for example, no property or method on the object or parameters are not valid.
 
 > [!NOTE]
-> While simple types, `IDispatch` and array are supported, and `IUnknown` objects that also implement `IDispatch` are treated as `IDispatch`, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`.
+> While simple types, `IDispatch` and array are supported, and `IUnknown` objects that also implement `IDispatch` are treated as `IDispatch`, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Such callback method invocations will return immediately and will not wait for the JavaScript function to run and so will not provide the return value of the JavaScript function. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`.
 
 Additionally, all host objects are exposed as `window.chrome.webview.hostObjects.sync.{name}`. Here the host objects are exposed as synchronous host object proxies. These are not promises and function runtimes or property access synchronously block running script waiting to communicate cross process for the host code to run. Accordingly the result may have reliability issues and it is recommended that you use the promise-based asynchronous `window.chrome.webview.hostObjects.{name}` API.
 
@@ -1032,7 +1048,7 @@ Add an instance of this interface into your JavaScript with `AddHostObjectToScri
             remoteObjectAsVariant.pdispVal->Release();
 ```
 
-In the HTML document, use the COM object using `chrome.webview.hostObjects.sample`.
+In the HTML document, use the COM object using `chrome.webview.hostObjects.sample`. Note that `CoreWebView2.AddHostObjectToScript` only applies to the top-level document and not to frames. To add host objects to frames use `CoreWebView2Frame.AddHostObjectToScript`.
 
 ```html
         document.getElementById("getPropertyAsyncButton").addEventListener("click", async () => {
@@ -1685,7 +1701,7 @@ Remove an event handler previously added with `add_PermissionRequested`.
 
 #### remove_ProcessFailed
 
-Remove an event handler previously added with add_ProcessFailed.
+Remove an event handler previously added with `add_ProcessFailed`.
 
 > public HRESULT [remove_ProcessFailed](#remove_processfailed)(EventRegistrationToken token)
 

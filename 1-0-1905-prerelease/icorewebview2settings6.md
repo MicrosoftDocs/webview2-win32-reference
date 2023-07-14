@@ -1,8 +1,14 @@
 ---
 description: A continuation of the ICoreWebView2Settings interface to manage swipe navigation.
 title: WebView2 Win32 C++ ICoreWebView2Settings6
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings6
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2Settings6
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2Settings6

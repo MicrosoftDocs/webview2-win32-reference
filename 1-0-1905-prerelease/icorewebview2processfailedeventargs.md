@@ -1,8 +1,14 @@
 ---
 description: Event args for the `ProcessFailed` event.
 title: WebView2 Win32 C++ ICoreWebView2ProcessFailedEventArgs
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ProcessFailedEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ProcessFailedEventArgs
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2ProcessFailedEventArgs
@@ -35,5 +41,5 @@ The kind of process failure that has occurred.
 
 > public HRESULT [get_ProcessFailedKind](#get_processfailedkind)(COREWEBVIEW2_PROCESS_FAILED_KIND * processFailedKind)
 
-`processFailedKind` is `COREWEBVIEW2_PROCESS_FAILED_KIND_RENDER_PROCESS_EXITED` if the failed process is the main frame's renderer, even if there were subframes rendered by such process; all frames are gone when this happens.
+This is a combination of process kind (for example, browser, renderer, gpu) and failure (exit, unresponsiveness). Renderer processes are further divided in *main frame* renderer (`RenderProcessExited`, `RenderProcessUnresponsive`) and *subframe* renderer (`FrameRenderProcessExited`). To learn about the conditions under which each failure kind occurs, see `COREWEBVIEW2_PROCESS_FAILED_KIND`.
 

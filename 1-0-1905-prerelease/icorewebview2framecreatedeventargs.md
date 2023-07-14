@@ -1,8 +1,14 @@
 ---
 description: Event args for the `FrameCreated` events.
 title: WebView2 Win32 C++ ICoreWebView2FrameCreatedEventArgs
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2FrameCreatedEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2FrameCreatedEventArgs
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2FrameCreatedEventArgs

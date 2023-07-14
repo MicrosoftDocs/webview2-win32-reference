@@ -1,8 +1,14 @@
 ---
 description: Options used to create WebView2 Environment.
 title: WebView2 Win32 C++ ICoreWebView2EnvironmentOptions
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2EnvironmentOptions
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2EnvironmentOptions
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2EnvironmentOptions
@@ -72,6 +78,12 @@ A default implementation is provided in `WebView2EnvironmentOptions.h`.
     {
         CHECK_FAILURE(
             options5->put_EnableTrackingPrevention(m_TrackingPreventionEnabled ? TRUE : FALSE));
+    }
+
+    Microsoft::WRL::ComPtr<ICoreWebView2ExperimentalEnvironmentOptions> optionsExperimental;
+    if (options.As(&optionsExperimental) == S_OK)
+    {
+        CHECK_FAILURE(optionsExperimental->put_AreBrowserExtensionsEnabled(TRUE));
     }
 
     HRESULT hr = CreateCoreWebView2EnvironmentWithOptions(

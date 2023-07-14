@@ -1,13 +1,19 @@
 ---
 description: This is the ICoreWebView2 experimental interface for custom data partition.
 title: WebView2 Win32 C++ ICoreWebView2Experimental20
-ms.date: 06/12/2023
+ms.date: 07/14/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Experimental20
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2Experimental20
+[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
+- ICoreWebView2Experimental20
+api_type:
+- COM
 ---
 
 # interface ICoreWebView2Experimental20
-
-[!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
 interface ICoreWebView2Experimental20
@@ -91,6 +97,12 @@ As setting custom data partition id does not change DOM security model, develope
     {
         CHECK_FAILURE(
             options5->put_EnableTrackingPrevention(m_TrackingPreventionEnabled ? TRUE : FALSE));
+    }
+
+    Microsoft::WRL::ComPtr<ICoreWebView2ExperimentalEnvironmentOptions> optionsExperimental;
+    if (options.As(&optionsExperimental) == S_OK)
+    {
+        CHECK_FAILURE(optionsExperimental->put_AreBrowserExtensionsEnabled(TRUE));
     }
 
     HRESULT hr = CreateCoreWebView2EnvironmentWithOptions(
