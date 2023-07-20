@@ -55,6 +55,7 @@ keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edg
 [CompareBrowserVersions](#comparebrowserversions) | This method is for anyone want to compare version correctly to determine which version is newer, older or same.
 [CreateCoreWebView2Environment](#createcorewebview2environment) | Creates an evergreen WebView2 Environment using the installed WebView2 Runtime version.
 [CreateCoreWebView2EnvironmentWithOptions](#createcorewebview2environmentwithoptions) | DLL export to create a WebView2 environment with a custom version of WebView2 Runtime, user data folder, and with or without additional options.
+[CreateWebViewEnvironmentWithOptionsInternal](#createwebviewenvironmentwithoptionsinternal) | This is a DLL export out of `EmbeddedBrowserWebView.dll` which can be found in the installation folder of the WebView2 Runtime you wish to use.
 [GetAvailableCoreWebView2BrowserVersionString](#getavailablecorewebview2browserversionstring) | Get the browser version info including channel name if it is not the WebView2 Runtime.
 
 ## Members
@@ -829,6 +830,25 @@ Error value   |Description
 `HRESULT_FROM_WIN32(ERROR_FILE_EXISTS)`|User data folder cannot be created because a file with the same name already exists.
 `E_ACCESSDENIED`|Unable to create user data folder, Access Denied.
 `E_FAIL`|Edge runtime unable to start.
+
+#### CreateWebViewEnvironmentWithOptionsInternal
+
+> public STDAPI [CreateWebViewEnvironmentWithOptionsInternal](#createwebviewenvironmentwithoptionsinternal)(bool checkRunningInstance, int runtimeType, PCWSTR userDataFolder, IUnknown * environmentOptions, ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler * webViewEnvironmentCreatedHandler)
+
+This is a DLL export out of `EmbeddedBrowserWebView.dll` which can be found in the installation folder of the WebView2 Runtime you wish to use.
+
+> [!NOTE]
+> This function may be modified or removed in future versions. It is recommended you use `CreateCoreWebView2EnvironmentWithOptions` instead of this function.
+
+This function creates a WebView2 environment with a specified version of WebView2 Runtime, user data folder, and with or without additional options.
+
+This is an internal method used by `CreateCoreWebView2EnvironmentWithOptions` that acts similar to `CreateCoreWebView2EnvironmentWithOptions`, but it will only create an ICoreWebView2Environment from the WebView2 Runtime of the module on which you call `CreateWebViewEnvironmentWithOptionsInternal`. This is unlike `CreateCoreWebView2EnvironmentWithOptions` which handles many other cases including: falling back to other non-stable WebView2 Runtime channels when the stable WebView2 Runtime is not available, handling developer environment variables to change the runtime, handling policy registry keys to change the runtime, and others. You should use `CreateCoreWebView2EnvironmentWithOptions` rather than this method.
+
+If `checkRunningInstance` is set then `CreateWebViewEnvironmentWithOptionsInternal` will forward the creation call to a different WebView2 Runtime if there is already a different WebView2 Runtime running for the specified user data folder. This matches `CreateCoreWebView2EnvironmentWithOptions` behavior. If not set, then this forwarding will not occur and creation will fail if there is already a different WebView2 Runtime running for the specified user data folder.
+
+The `runtimeType` parameter is used to indicate if the WebView2 Runtime is fixed version with value `1`, evergreen with value `0`, or unknown with value `-1`.
+
+See the `CreateCoreWebView2EnvironmentWithOptions` documentation for information on the `userDataFolder`, `environmentOptions`, and `webViewEnvironmentCreatedHandler` parameters which match the parameters from `CreateCoreWebView2EnvironmentWithOptions`.
 
 #### GetAvailableCoreWebView2BrowserVersionString
 
