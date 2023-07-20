@@ -1,14 +1,72 @@
 ---
 description: This mostly represents a combined win32 POINTER_INFO/POINTER_TOUCH_INFO/POINTER_PEN_INFO object.
 title: WebView2 Win32 C++ ICoreWebView2PointerInfo
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PointerInfo
 topic_type: 
 - APIRef
 api_name:
 - ICoreWebView2PointerInfo
+- ICoreWebView2PointerInfo.get_ButtonChangeKind
+- ICoreWebView2PointerInfo.get_DisplayRect
+- ICoreWebView2PointerInfo.get_FrameId
+- ICoreWebView2PointerInfo.get_HimetricLocation
+- ICoreWebView2PointerInfo.get_HimetricLocationRaw
+- ICoreWebView2PointerInfo.get_HistoryCount
+- ICoreWebView2PointerInfo.get_InputData
+- ICoreWebView2PointerInfo.get_KeyStates
+- ICoreWebView2PointerInfo.get_PenFlags
+- ICoreWebView2PointerInfo.get_PenMask
+- ICoreWebView2PointerInfo.get_PenPressure
+- ICoreWebView2PointerInfo.get_PenRotation
+- ICoreWebView2PointerInfo.get_PenTiltX
+- ICoreWebView2PointerInfo.get_PenTiltY
+- ICoreWebView2PointerInfo.get_PerformanceCount
+- ICoreWebView2PointerInfo.get_PixelLocation
+- ICoreWebView2PointerInfo.get_PixelLocationRaw
+- ICoreWebView2PointerInfo.get_PointerDeviceRect
+- ICoreWebView2PointerInfo.get_PointerFlags
+- ICoreWebView2PointerInfo.get_PointerId
+- ICoreWebView2PointerInfo.get_PointerKind
+- ICoreWebView2PointerInfo.get_Time
+- ICoreWebView2PointerInfo.get_TouchContact
+- ICoreWebView2PointerInfo.get_TouchContactRaw
+- ICoreWebView2PointerInfo.get_TouchFlags
+- ICoreWebView2PointerInfo.get_TouchMask
+- ICoreWebView2PointerInfo.get_TouchOrientation
+- ICoreWebView2PointerInfo.get_TouchPressure
+- ICoreWebView2PointerInfo.put_ButtonChangeKind
+- ICoreWebView2PointerInfo.put_DisplayRect
+- ICoreWebView2PointerInfo.put_FrameId
+- ICoreWebView2PointerInfo.put_HimetricLocation
+- ICoreWebView2PointerInfo.put_HimetricLocationRaw
+- ICoreWebView2PointerInfo.put_HistoryCount
+- ICoreWebView2PointerInfo.put_InputData
+- ICoreWebView2PointerInfo.put_KeyStates
+- ICoreWebView2PointerInfo.put_PenFlags
+- ICoreWebView2PointerInfo.put_PenMask
+- ICoreWebView2PointerInfo.put_PenPressure
+- ICoreWebView2PointerInfo.put_PenRotation
+- ICoreWebView2PointerInfo.put_PenTiltX
+- ICoreWebView2PointerInfo.put_PenTiltY
+- ICoreWebView2PointerInfo.put_PerformanceCount
+- ICoreWebView2PointerInfo.put_PixelLocation
+- ICoreWebView2PointerInfo.put_PixelLocationRaw
+- ICoreWebView2PointerInfo.put_PointerDeviceRect
+- ICoreWebView2PointerInfo.put_PointerFlags
+- ICoreWebView2PointerInfo.put_PointerId
+- ICoreWebView2PointerInfo.put_PointerKind
+- ICoreWebView2PointerInfo.put_Time
+- ICoreWebView2PointerInfo.put_TouchContact
+- ICoreWebView2PointerInfo.put_TouchContactRaw
+- ICoreWebView2PointerInfo.put_TouchFlags
+- ICoreWebView2PointerInfo.put_TouchMask
+- ICoreWebView2PointerInfo.put_TouchOrientation
+- ICoreWebView2PointerInfo.put_TouchPressure
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2PointerInfo

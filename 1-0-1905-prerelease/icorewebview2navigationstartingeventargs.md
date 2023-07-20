@@ -1,14 +1,23 @@
 ---
 description: Event args for the `NavigationStarting` event.
 title: WebView2 Win32 C++ ICoreWebView2NavigationStartingEventArgs
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NavigationStartingEventArgs
 topic_type: 
 - APIRef
 api_name:
 - ICoreWebView2NavigationStartingEventArgs
+- ICoreWebView2NavigationStartingEventArgs.get_Cancel
+- ICoreWebView2NavigationStartingEventArgs.get_IsRedirected
+- ICoreWebView2NavigationStartingEventArgs.get_IsUserInitiated
+- ICoreWebView2NavigationStartingEventArgs.get_NavigationId
+- ICoreWebView2NavigationStartingEventArgs.get_RequestHeaders
+- ICoreWebView2NavigationStartingEventArgs.get_Uri
+- ICoreWebView2NavigationStartingEventArgs.put_Cancel
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2NavigationStartingEventArgs

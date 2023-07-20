@@ -1,14 +1,23 @@
 ---
 description: Represents the registration of a custom scheme with the CoreWebView2Environment.
 title: WebView2 Win32 C++ ICoreWebView2CustomSchemeRegistration
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CustomSchemeRegistration
 topic_type: 
 - APIRef
 api_name:
 - ICoreWebView2CustomSchemeRegistration
+- ICoreWebView2CustomSchemeRegistration.get_HasAuthorityComponent
+- ICoreWebView2CustomSchemeRegistration.get_SchemeName
+- ICoreWebView2CustomSchemeRegistration.get_TreatAsSecure
+- ICoreWebView2CustomSchemeRegistration.GetAllowedOrigins
+- ICoreWebView2CustomSchemeRegistration.put_HasAuthorityComponent
+- ICoreWebView2CustomSchemeRegistration.put_TreatAsSecure
+- ICoreWebView2CustomSchemeRegistration.SetAllowedOrigins
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2CustomSchemeRegistration

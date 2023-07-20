@@ -1,7 +1,7 @@
 ---
 description: This is the ICoreWebView2 experimental profile interface that manages profile deletion.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalProfile10
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalProfile10
 topic_type: 
 - APIRef
@@ -9,8 +9,13 @@ api_name:
 - ICoreWebView2ExperimentalProfile10
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 - ICoreWebView2ExperimentalProfile10
+- ICoreWebView2ExperimentalProfile10.add_Deleted
+- ICoreWebView2ExperimentalProfile10.Delete
+- ICoreWebView2ExperimentalProfile10.remove_Deleted
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ExperimentalProfile10
@@ -20,7 +25,7 @@ interface ICoreWebView2ExperimentalProfile10
   : public IUnknown
 ```
 
-This is the ICoreWebView2 experimental profile interface that manages profile deletion.
+This is the [ICoreWebView2](icorewebview2.md) experimental profile interface that manages profile deletion.
 
 ## Summary
 

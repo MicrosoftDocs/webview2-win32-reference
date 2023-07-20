@@ -1,14 +1,20 @@
 ---
 description: A continuation of the ICoreWebView2ProcessFailedEventArgs interface.
 title: WebView2 Win32 C++ ICoreWebView2ProcessFailedEventArgs2
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ProcessFailedEventArgs2
 topic_type: 
 - APIRef
 api_name:
 - ICoreWebView2ProcessFailedEventArgs2
+- ICoreWebView2ProcessFailedEventArgs2.get_ExitCode
+- ICoreWebView2ProcessFailedEventArgs2.get_FrameInfosForFailedProcess
+- ICoreWebView2ProcessFailedEventArgs2.get_ProcessDescription
+- ICoreWebView2ProcessFailedEventArgs2.get_Reason
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ProcessFailedEventArgs2

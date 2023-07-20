@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Experimental Globals
 title: Experimental Globals
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 topic_type: 
 - APIRef
@@ -20,12 +20,25 @@ api_location:
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
+[COREWEBVIEW2_FRAME_KIND](#corewebview2_frame_kind) | Indicates the frame type used in the ICoreWebView2ExperimentalFrameInfo interface.
 [COREWEBVIEW2_TEXT_DIRECTION_KIND](#corewebview2_text_direction_kind) | Indicates the text direction of the notification.
 [COREWEBVIEW2_TEXTURE_STREAM_ERROR_KIND](#corewebview2_texture_stream_error_kind) | Kinds of errors that can be reported by the ICoreWebView2ExperimentalTextureStream ErrorReceived event.
 [COREWEBVIEW2_UPDATE_RUNTIME_STATUS](#corewebview2_update_runtime_status) | Status of UpdateRuntime operation result.
 [COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS](#corewebview2_web_resource_request_source_kinds) | Specifies the source of `WebResourceRequested` event.
 
 ## Members
+
+#### COREWEBVIEW2_FRAME_KIND
+
+> enum [COREWEBVIEW2_FRAME_KIND](#corewebview2_frame_kind)
+
+ Values                         | Descriptions
+--------------------------------|---------------------------------------------
+COREWEBVIEW2_FRAME_KIND_OTHER            | Indicates that the frame is type of frame we don't differentiate.
+COREWEBVIEW2_FRAME_KIND_MAIN_FRAME            | Indicates that the frame is a primary main frame(webview).
+COREWEBVIEW2_FRAME_KIND_IFRAME            | Indicates that the frame is an iframe.
+
+Indicates the frame type used in the ICoreWebView2ExperimentalFrameInfo interface.
 
 #### COREWEBVIEW2_TEXT_DIRECTION_KIND
 

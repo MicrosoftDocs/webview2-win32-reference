@@ -1,7 +1,7 @@
 ---
 description: This is the interface that handles texture streaming.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalTextureStream
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalTextureStream
 topic_type: 
 - APIRef
@@ -9,8 +9,29 @@ api_name:
 - ICoreWebView2ExperimentalTextureStream
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 - ICoreWebView2ExperimentalTextureStream
+- ICoreWebView2ExperimentalTextureStream.add_ErrorReceived
+- ICoreWebView2ExperimentalTextureStream.add_StartRequested
+- ICoreWebView2ExperimentalTextureStream.add_Stopped
+- ICoreWebView2ExperimentalTextureStream.add_WebTextureReceived
+- ICoreWebView2ExperimentalTextureStream.add_WebTextureStreamStopped
+- ICoreWebView2ExperimentalTextureStream.AddAllowedOrigin
+- ICoreWebView2ExperimentalTextureStream.CloseTexture
+- ICoreWebView2ExperimentalTextureStream.CreateTexture
+- ICoreWebView2ExperimentalTextureStream.get_Id
+- ICoreWebView2ExperimentalTextureStream.GetAvailableTexture
+- ICoreWebView2ExperimentalTextureStream.PresentTexture
+- ICoreWebView2ExperimentalTextureStream.remove_ErrorReceived
+- ICoreWebView2ExperimentalTextureStream.remove_StartRequested
+- ICoreWebView2ExperimentalTextureStream.remove_Stopped
+- ICoreWebView2ExperimentalTextureStream.remove_WebTextureReceived
+- ICoreWebView2ExperimentalTextureStream.remove_WebTextureStreamStopped
+- ICoreWebView2ExperimentalTextureStream.RemoveAllowedOrigin
+- ICoreWebView2ExperimentalTextureStream.SetD3DDevice
+- ICoreWebView2ExperimentalTextureStream.Stop
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ExperimentalTextureStream

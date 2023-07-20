@@ -1,14 +1,23 @@
 ---
 description: Provides a set of properties to configure a Profile object.
 title: WebView2 Win32 C++ ICoreWebView2Profile
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile
 topic_type: 
 - APIRef
 api_name:
 - ICoreWebView2Profile
+- ICoreWebView2Profile.get_DefaultDownloadFolderPath
+- ICoreWebView2Profile.get_IsInPrivateModeEnabled
+- ICoreWebView2Profile.get_PreferredColorScheme
+- ICoreWebView2Profile.get_ProfileName
+- ICoreWebView2Profile.get_ProfilePath
+- ICoreWebView2Profile.put_DefaultDownloadFolderPath
+- ICoreWebView2Profile.put_PreferredColorScheme
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2Profile

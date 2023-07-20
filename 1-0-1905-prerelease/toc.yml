@@ -411,6 +411,8 @@
           href: icorewebview2experimental20.md
         - name: ICoreWebView2Experimental22
           href: icorewebview2experimental22.md
+        - name: ICoreWebView2Experimental23
+          href: icorewebview2experimental23.md
         - name: ICoreWebView2ExperimentalBrowserExtension
           href: icorewebview2experimentalbrowserextension.md
         - name: ICoreWebView2ExperimentalBrowserExtensionEnableCompletedHandler
@@ -423,6 +425,8 @@
           href: icorewebview2experimentalclearcustomdatapartitioncompletedhandler.md
         - name: ICoreWebView2ExperimentalCompositionController4
           href: icorewebview2experimentalcompositioncontroller4.md
+        - name: ICoreWebView2ExperimentalEnvironment11
+          href: icorewebview2experimentalenvironment11.md
         - name: ICoreWebView2ExperimentalEnvironment12
           href: icorewebview2experimentalenvironment12.md
         - name: ICoreWebView2ExperimentalEnvironment3
@@ -433,6 +437,12 @@
           href: icorewebview2experimentalexecutescriptresult.md
         - name: ICoreWebView2ExperimentalExecuteScriptWithResultCompletedHandler
           href: icorewebview2experimentalexecutescriptwithresultcompletedhandler.md
+        - name: ICoreWebView2ExperimentalFrame5
+          href: icorewebview2experimentalframe5.md
+        - name: ICoreWebView2ExperimentalFrameInfo
+          href: icorewebview2experimentalframeinfo.md
+        - name: ICoreWebView2ExperimentalGetProcessInfosWithDetailsCompletedHandler
+          href: icorewebview2experimentalgetprocessinfoswithdetailscompletedhandler.md
         - name: ICoreWebView2ExperimentalNotification
           href: icorewebview2experimentalnotification.md
         - name: ICoreWebView2ExperimentalNotificationCloseRequestedEventHandler
@@ -441,6 +451,8 @@
           href: icorewebview2experimentalnotificationreceivedeventargs.md
         - name: ICoreWebView2ExperimentalNotificationReceivedEventHandler
           href: icorewebview2experimentalnotificationreceivedeventhandler.md
+        - name: ICoreWebView2ExperimentalProcessInfo
+          href: icorewebview2experimentalprocessinfo.md
         - name: ICoreWebView2ExperimentalProfile10
           href: icorewebview2experimentalprofile10.md
         - name: ICoreWebView2ExperimentalProfile12

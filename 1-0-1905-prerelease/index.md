@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 C++ Reference
 title: WebView2 Win32 C++ Reference
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 ---
 
@@ -223,21 +223,27 @@ The Microsoft Edge WebView2 control enables you to host web content in your appl
 * [ICoreWebView2Experimental19](icorewebview2experimental19.md)
 * [ICoreWebView2Experimental20](icorewebview2experimental20.md)
 * [ICoreWebView2Experimental22](icorewebview2experimental22.md)
+* [ICoreWebView2Experimental23](icorewebview2experimental23.md)
 * [ICoreWebView2ExperimentalBrowserExtension](icorewebview2experimentalbrowserextension.md)
 * [ICoreWebView2ExperimentalBrowserExtensionEnableCompletedHandler](icorewebview2experimentalbrowserextensionenablecompletedhandler.md)
 * [ICoreWebView2ExperimentalBrowserExtensionList](icorewebview2experimentalbrowserextensionlist.md)
 * [ICoreWebView2ExperimentalBrowserExtensionRemoveCompletedHandler](icorewebview2experimentalbrowserextensionremovecompletedhandler.md)
 * [ICoreWebView2ExperimentalClearCustomDataPartitionCompletedHandler](icorewebview2experimentalclearcustomdatapartitioncompletedhandler.md)
 * [ICoreWebView2ExperimentalCompositionController4](icorewebview2experimentalcompositioncontroller4.md)
+* [ICoreWebView2ExperimentalEnvironment11](icorewebview2experimentalenvironment11.md)
 * [ICoreWebView2ExperimentalEnvironment12](icorewebview2experimentalenvironment12.md)
 * [ICoreWebView2ExperimentalEnvironment3](icorewebview2experimentalenvironment3.md)
 * [ICoreWebView2ExperimentalEnvironmentOptions](icorewebview2experimentalenvironmentoptions.md)
 * [ICoreWebView2ExperimentalExecuteScriptResult](icorewebview2experimentalexecutescriptresult.md)
 * [ICoreWebView2ExperimentalExecuteScriptWithResultCompletedHandler](icorewebview2experimentalexecutescriptwithresultcompletedhandler.md)
+* [ICoreWebView2ExperimentalFrame5](icorewebview2experimentalframe5.md)
+* [ICoreWebView2ExperimentalFrameInfo](icorewebview2experimentalframeinfo.md)
+* [ICoreWebView2ExperimentalGetProcessInfosWithDetailsCompletedHandler](icorewebview2experimentalgetprocessinfoswithdetailscompletedhandler.md)
 * [ICoreWebView2ExperimentalNotification](icorewebview2experimentalnotification.md)
 * [ICoreWebView2ExperimentalNotificationCloseRequestedEventHandler](icorewebview2experimentalnotificationcloserequestedeventhandler.md)
 * [ICoreWebView2ExperimentalNotificationReceivedEventArgs](icorewebview2experimentalnotificationreceivedeventargs.md)
 * [ICoreWebView2ExperimentalNotificationReceivedEventHandler](icorewebview2experimentalnotificationreceivedeventhandler.md)
+* [ICoreWebView2ExperimentalProcessInfo](icorewebview2experimentalprocessinfo.md)
 * [ICoreWebView2ExperimentalProfile10](icorewebview2experimentalprofile10.md)
 * [ICoreWebView2ExperimentalProfile12](icorewebview2experimentalprofile12.md)
 * [ICoreWebView2ExperimentalProfile7](icorewebview2experimentalprofile7.md)

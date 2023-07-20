@@ -1,14 +1,34 @@
 ---
 description: Defines properties that enable, disable, or modify WebView features.
 title: WebView2 Win32 C++ ICoreWebView2Settings
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings
 topic_type: 
 - APIRef
 api_name:
 - ICoreWebView2Settings
+- ICoreWebView2Settings.get_AreDefaultContextMenusEnabled
+- ICoreWebView2Settings.get_AreDefaultScriptDialogsEnabled
+- ICoreWebView2Settings.get_AreDevToolsEnabled
+- ICoreWebView2Settings.get_AreHostObjectsAllowed
+- ICoreWebView2Settings.get_IsBuiltInErrorPageEnabled
+- ICoreWebView2Settings.get_IsScriptEnabled
+- ICoreWebView2Settings.get_IsStatusBarEnabled
+- ICoreWebView2Settings.get_IsWebMessageEnabled
+- ICoreWebView2Settings.get_IsZoomControlEnabled
+- ICoreWebView2Settings.put_AreDefaultContextMenusEnabled
+- ICoreWebView2Settings.put_AreDefaultScriptDialogsEnabled
+- ICoreWebView2Settings.put_AreDevToolsEnabled
+- ICoreWebView2Settings.put_AreHostObjectsAllowed
+- ICoreWebView2Settings.put_IsBuiltInErrorPageEnabled
+- ICoreWebView2Settings.put_IsScriptEnabled
+- ICoreWebView2Settings.put_IsStatusBarEnabled
+- ICoreWebView2Settings.put_IsWebMessageEnabled
+- ICoreWebView2Settings.put_IsZoomControlEnabled
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2Settings

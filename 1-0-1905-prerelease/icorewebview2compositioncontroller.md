@@ -1,14 +1,24 @@
 ---
 description: This interface is an extension of the ICoreWebView2Controller interface to support visual hosting.
 title: WebView2 Win32 C++ ICoreWebView2CompositionController
-ms.date: 07/14/2023
+ms.date: 07/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CompositionController
 topic_type: 
 - APIRef
 api_name:
 - ICoreWebView2CompositionController
+- ICoreWebView2CompositionController.add_CursorChanged
+- ICoreWebView2CompositionController.get_Cursor
+- ICoreWebView2CompositionController.get_RootVisualTarget
+- ICoreWebView2CompositionController.get_SystemCursorId
+- ICoreWebView2CompositionController.put_RootVisualTarget
+- ICoreWebView2CompositionController.remove_CursorChanged
+- ICoreWebView2CompositionController.SendMouseInput
+- ICoreWebView2CompositionController.SendPointerInput
 api_type:
 - COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2CompositionController
