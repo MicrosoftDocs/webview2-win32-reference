@@ -541,7 +541,7 @@ Add an event handler for the `ProcessFailed` event.
 
 > public HRESULT [add_ProcessFailed](#add_processfailed)([ICoreWebView2ProcessFailedEventHandler](icorewebview2processfailedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-`ProcessFailed` runs when any of the processes in the [WebView2 Process Group](https://learn.microsoft.com/microsoft-edge/webview2/concepts/process-model?tabs=csharp#processes-in-the-webview2-runtime) encounters one of the following conditions:
+`ProcessFailed` runs when any of the processes in the [WebView2 Process Group](/microsoft-edge/webview2/concepts/process-model?tabs=csharp#processes-in-the-webview2-runtime) encounters one of the following conditions:
 
 Condition   |Details
 --------- | ---------
