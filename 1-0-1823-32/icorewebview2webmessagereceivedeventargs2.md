@@ -1,11 +1,13 @@
 ---
 description: Extension of WebMessageReceivedEventArgs to provide access to additional WebMessage objects.
 title: WebView2 Win32 C++ ICoreWebView2WebMessageReceivedEventArgs2
-ms.date: 06/05/2023
+ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2WebMessageReceivedEventArgs2
 ---
 
 # interface ICoreWebView2WebMessageReceivedEventArgs2
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2WebMessageReceivedEventArgs2
