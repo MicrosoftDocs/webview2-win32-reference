@@ -3,6 +3,15 @@ description: This is an interface for the StatusCode property of ICoreWebView2Na
 title: WebView2 Win32 C++ ICoreWebView2NavigationCompletedEventArgs2
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NavigationCompletedEventArgs2
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2NavigationCompletedEventArgs2
+- ICoreWebView2NavigationCompletedEventArgs2.get_HttpStatusCode
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2NavigationCompletedEventArgs2

@@ -3,6 +3,27 @@ description: Represents a context menu item of a context menu displayed by WebVi
 title: WebView2 Win32 C++ ICoreWebView2ContextMenuItem
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ContextMenuItem
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ContextMenuItem
+- ICoreWebView2ContextMenuItem.add_CustomItemSelected
+- ICoreWebView2ContextMenuItem.get_Children
+- ICoreWebView2ContextMenuItem.get_CommandId
+- ICoreWebView2ContextMenuItem.get_Icon
+- ICoreWebView2ContextMenuItem.get_IsChecked
+- ICoreWebView2ContextMenuItem.get_IsEnabled
+- ICoreWebView2ContextMenuItem.get_Kind
+- ICoreWebView2ContextMenuItem.get_Label
+- ICoreWebView2ContextMenuItem.get_Name
+- ICoreWebView2ContextMenuItem.get_ShortcutKeyDescription
+- ICoreWebView2ContextMenuItem.put_IsChecked
+- ICoreWebView2ContextMenuItem.put_IsEnabled
+- ICoreWebView2ContextMenuItem.remove_CustomItemSelected
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ContextMenuItem

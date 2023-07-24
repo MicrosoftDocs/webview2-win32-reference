@@ -3,6 +3,21 @@ description: An HTTP request used with the `WebResourceRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceRequest
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2WebResourceRequest
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2WebResourceRequest
+- ICoreWebView2WebResourceRequest.get_Content
+- ICoreWebView2WebResourceRequest.get_Headers
+- ICoreWebView2WebResourceRequest.get_Method
+- ICoreWebView2WebResourceRequest.get_Uri
+- ICoreWebView2WebResourceRequest.put_Content
+- ICoreWebView2WebResourceRequest.put_Method
+- ICoreWebView2WebResourceRequest.put_Uri
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2WebResourceRequest
