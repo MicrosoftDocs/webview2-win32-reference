@@ -3,6 +3,33 @@ description: Represents a download operation.
 title: WebView2 Win32 C++ ICoreWebView2DownloadOperation
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2DownloadOperation
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2DownloadOperation
+- ICoreWebView2DownloadOperation.add_BytesReceivedChanged
+- ICoreWebView2DownloadOperation.add_EstimatedEndTimeChanged
+- ICoreWebView2DownloadOperation.add_StateChanged
+- ICoreWebView2DownloadOperation.Cancel
+- ICoreWebView2DownloadOperation.get_BytesReceived
+- ICoreWebView2DownloadOperation.get_CanResume
+- ICoreWebView2DownloadOperation.get_ContentDisposition
+- ICoreWebView2DownloadOperation.get_EstimatedEndTime
+- ICoreWebView2DownloadOperation.get_InterruptReason
+- ICoreWebView2DownloadOperation.get_MimeType
+- ICoreWebView2DownloadOperation.get_ResultFilePath
+- ICoreWebView2DownloadOperation.get_State
+- ICoreWebView2DownloadOperation.get_TotalBytesToReceive
+- ICoreWebView2DownloadOperation.get_Uri
+- ICoreWebView2DownloadOperation.Pause
+- ICoreWebView2DownloadOperation.remove_BytesReceivedChanged
+- ICoreWebView2DownloadOperation.remove_EstimatedEndTimeChanged
+- ICoreWebView2DownloadOperation.remove_StateChanged
+- ICoreWebView2DownloadOperation.Resume
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2DownloadOperation

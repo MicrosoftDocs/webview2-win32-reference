@@ -1,8 +1,28 @@
 ---
 description: Event args for the `ClientCertificateRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2ClientCertificateRequestedEventArgs
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ClientCertificateRequestedEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ClientCertificateRequestedEventArgs
+- ICoreWebView2ClientCertificateRequestedEventArgs.get_AllowedCertificateAuthorities
+- ICoreWebView2ClientCertificateRequestedEventArgs.get_Cancel
+- ICoreWebView2ClientCertificateRequestedEventArgs.get_Handled
+- ICoreWebView2ClientCertificateRequestedEventArgs.get_Host
+- ICoreWebView2ClientCertificateRequestedEventArgs.get_IsProxy
+- ICoreWebView2ClientCertificateRequestedEventArgs.get_MutuallyTrustedCertificates
+- ICoreWebView2ClientCertificateRequestedEventArgs.get_Port
+- ICoreWebView2ClientCertificateRequestedEventArgs.get_SelectedCertificate
+- ICoreWebView2ClientCertificateRequestedEventArgs.GetDeferral
+- ICoreWebView2ClientCertificateRequestedEventArgs.put_Cancel
+- ICoreWebView2ClientCertificateRequestedEventArgs.put_Handled
+- ICoreWebView2ClientCertificateRequestedEventArgs.put_SelectedCertificate
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ClientCertificateRequestedEventArgs

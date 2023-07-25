@@ -1,8 +1,24 @@
 ---
 description: Event args for the `ScriptDialogOpening` event.
 title: WebView2 Win32 C++ ICoreWebView2ScriptDialogOpeningEventArgs
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ScriptDialogOpeningEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ScriptDialogOpeningEventArgs
+- ICoreWebView2ScriptDialogOpeningEventArgs.Accept
+- ICoreWebView2ScriptDialogOpeningEventArgs.get_DefaultText
+- ICoreWebView2ScriptDialogOpeningEventArgs.get_Kind
+- ICoreWebView2ScriptDialogOpeningEventArgs.get_Message
+- ICoreWebView2ScriptDialogOpeningEventArgs.get_ResultText
+- ICoreWebView2ScriptDialogOpeningEventArgs.get_Uri
+- ICoreWebView2ScriptDialogOpeningEventArgs.GetDeferral
+- ICoreWebView2ScriptDialogOpeningEventArgs.put_ResultText
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ScriptDialogOpeningEventArgs

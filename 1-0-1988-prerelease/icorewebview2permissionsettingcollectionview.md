@@ -1,8 +1,18 @@
 ---
 description: Read-only collection of `PermissionSetting`s (origin, kind, and state).
 title: WebView2 Win32 C++ ICoreWebView2PermissionSettingCollectionView
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PermissionSettingCollectionView
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2PermissionSettingCollectionView
+- ICoreWebView2PermissionSettingCollectionView.get_Count
+- ICoreWebView2PermissionSettingCollectionView.GetValueAtIndex
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2PermissionSettingCollectionView

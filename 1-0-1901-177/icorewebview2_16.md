@@ -3,6 +3,17 @@ description: A continuation of the ICoreWebView2 interface to support printing.
 title: WebView2 Win32 C++ ICoreWebView2_16
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_16
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2_16
+- ICoreWebView2_16.Print
+- ICoreWebView2_16.PrintToPdfStream
+- ICoreWebView2_16.ShowPrintUI
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2_16

@@ -1,8 +1,21 @@
 ---
 description: A continuation of the ICoreWebView2_2 interface.
 title: WebView2 Win32 C++ ICoreWebView2_3
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_3
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2_3
+- ICoreWebView2_3.ClearVirtualHostNameToFolderMapping
+- ICoreWebView2_3.get_IsSuspended
+- ICoreWebView2_3.Resume
+- ICoreWebView2_3.SetVirtualHostNameToFolderMapping
+- ICoreWebView2_3.TrySuspend
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2_3

@@ -1,8 +1,19 @@
 ---
 description: Received texture that the renderer writes to so that the host will read on it.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalWebTexture
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalWebTexture
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ExperimentalWebTexture
+- ICoreWebView2ExperimentalWebTexture.get_Handle
+- ICoreWebView2ExperimentalWebTexture.get_Resource
+- ICoreWebView2ExperimentalWebTexture.get_Timestamp
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ExperimentalWebTexture

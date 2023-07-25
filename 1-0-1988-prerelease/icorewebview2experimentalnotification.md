@@ -1,8 +1,34 @@
 ---
 description: This is the ICoreWebView2ExperimentalNotification that represents a HTML Notification object.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalNotification
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalNotification
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ExperimentalNotification
+- ICoreWebView2ExperimentalNotification.add_CloseRequested
+- ICoreWebView2ExperimentalNotification.get_BadgeUri
+- ICoreWebView2ExperimentalNotification.get_Body
+- ICoreWebView2ExperimentalNotification.get_BodyImageUri
+- ICoreWebView2ExperimentalNotification.get_Direction
+- ICoreWebView2ExperimentalNotification.get_IconUri
+- ICoreWebView2ExperimentalNotification.get_IsSilent
+- ICoreWebView2ExperimentalNotification.get_Language
+- ICoreWebView2ExperimentalNotification.get_RequiresInteraction
+- ICoreWebView2ExperimentalNotification.get_ShouldRenotify
+- ICoreWebView2ExperimentalNotification.get_Tag
+- ICoreWebView2ExperimentalNotification.get_Timestamp
+- ICoreWebView2ExperimentalNotification.get_Title
+- ICoreWebView2ExperimentalNotification.GetVibrationPattern
+- ICoreWebView2ExperimentalNotification.remove_CloseRequested
+- ICoreWebView2ExperimentalNotification.ReportClicked
+- ICoreWebView2ExperimentalNotification.ReportClosed
+- ICoreWebView2ExperimentalNotification.ReportShown
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ExperimentalNotification

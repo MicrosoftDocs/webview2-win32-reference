@@ -3,6 +3,16 @@ description: This interface is an extension of ICoreWebView2_9 that supports Bas
 title: WebView2 Win32 C++ ICoreWebView2_10
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_10
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2_10
+- ICoreWebView2_10.add_BasicAuthenticationRequested
+- ICoreWebView2_10.remove_BasicAuthenticationRequested
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2_10

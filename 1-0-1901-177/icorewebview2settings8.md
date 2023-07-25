@@ -3,6 +3,16 @@ description: A continuation of the ICoreWebView2Settings interface to manage sma
 title: WebView2 Win32 C++ ICoreWebView2Settings8
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings8
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2Settings8
+- ICoreWebView2Settings8.get_IsReputationCheckingRequired
+- ICoreWebView2Settings8.put_IsReputationCheckingRequired
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2Settings8
