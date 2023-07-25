@@ -1,8 +1,23 @@
 ---
 description: A continuation of the ICoreWebView2 interface.
 title: WebView2 Win32 C++ ICoreWebView2_2
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_2
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2_2
+- ICoreWebView2_2.add_DOMContentLoaded
+- ICoreWebView2_2.add_WebResourceResponseReceived
+- ICoreWebView2_2.get_CookieManager
+- ICoreWebView2_2.get_Environment
+- ICoreWebView2_2.NavigateWithWebResourceRequest
+- ICoreWebView2_2.remove_DOMContentLoaded
+- ICoreWebView2_2.remove_WebResourceResponseReceived
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2_2

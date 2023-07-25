@@ -1,8 +1,74 @@
 ---
 description: WebView2 enables you to host web content using the latest Microsoft Edge browser and web technology.
 title: WebView2 Win32 C++ ICoreWebView2
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2
+- ICoreWebView2.add_ContainsFullScreenElementChanged
+- ICoreWebView2.add_ContentLoading
+- ICoreWebView2.add_DocumentTitleChanged
+- ICoreWebView2.add_FrameNavigationCompleted
+- ICoreWebView2.add_FrameNavigationStarting
+- ICoreWebView2.add_HistoryChanged
+- ICoreWebView2.add_NavigationCompleted
+- ICoreWebView2.add_NavigationStarting
+- ICoreWebView2.add_NewWindowRequested
+- ICoreWebView2.add_PermissionRequested
+- ICoreWebView2.add_ProcessFailed
+- ICoreWebView2.add_ScriptDialogOpening
+- ICoreWebView2.add_SourceChanged
+- ICoreWebView2.add_WebMessageReceived
+- ICoreWebView2.add_WebResourceRequested
+- ICoreWebView2.add_WindowCloseRequested
+- ICoreWebView2.AddHostObjectToScript
+- ICoreWebView2.AddScriptToExecuteOnDocumentCreated
+- ICoreWebView2.AddWebResourceRequestedFilter
+- ICoreWebView2.CallDevToolsProtocolMethod
+- ICoreWebView2.CapturePreview
+- ICoreWebView2.ExecuteScript
+- ICoreWebView2.get_BrowserProcessId
+- ICoreWebView2.get_CanGoBack
+- ICoreWebView2.get_CanGoForward
+- ICoreWebView2.get_ContainsFullScreenElement
+- ICoreWebView2.get_DocumentTitle
+- ICoreWebView2.get_Settings
+- ICoreWebView2.get_Source
+- ICoreWebView2.GetDevToolsProtocolEventReceiver
+- ICoreWebView2.GoBack
+- ICoreWebView2.GoForward
+- ICoreWebView2.Navigate
+- ICoreWebView2.NavigateToString
+- ICoreWebView2.OpenDevToolsWindow
+- ICoreWebView2.PostWebMessageAsJson
+- ICoreWebView2.PostWebMessageAsString
+- ICoreWebView2.Reload
+- ICoreWebView2.remove_ContainsFullScreenElementChanged
+- ICoreWebView2.remove_ContentLoading
+- ICoreWebView2.remove_DocumentTitleChanged
+- ICoreWebView2.remove_FrameNavigationCompleted
+- ICoreWebView2.remove_FrameNavigationStarting
+- ICoreWebView2.remove_HistoryChanged
+- ICoreWebView2.remove_NavigationCompleted
+- ICoreWebView2.remove_NavigationStarting
+- ICoreWebView2.remove_NewWindowRequested
+- ICoreWebView2.remove_PermissionRequested
+- ICoreWebView2.remove_ProcessFailed
+- ICoreWebView2.remove_ScriptDialogOpening
+- ICoreWebView2.remove_SourceChanged
+- ICoreWebView2.remove_WebMessageReceived
+- ICoreWebView2.remove_WebResourceRequested
+- ICoreWebView2.remove_WindowCloseRequested
+- ICoreWebView2.RemoveHostObjectFromScript
+- ICoreWebView2.RemoveScriptToExecuteOnDocumentCreated
+- ICoreWebView2.RemoveWebResourceRequestedFilter
+- ICoreWebView2.Stop
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2
@@ -541,7 +607,7 @@ Add an event handler for the `ProcessFailed` event.
 
 > public HRESULT [add_ProcessFailed](#add_processfailed)([ICoreWebView2ProcessFailedEventHandler](icorewebview2processfailedeventhandler.md) * eventHandler, EventRegistrationToken * token)
 
-`ProcessFailed` runs when any of the processes in the [WebView2 Process Group](/microsoft-edge/webview2/concepts/process-model?tabs=csharp#processes-in-the-webview2-runtime) encounters one of the following conditions:
+`ProcessFailed` runs when any of the processes in the [WebView2 Process Group](https://learn.microsoft.com/microsoft-edge/webview2/concepts/process-model?tabs=csharp#processes-in-the-webview2-runtime) encounters one of the following conditions:
 
 Condition   |Details
 --------- | ---------

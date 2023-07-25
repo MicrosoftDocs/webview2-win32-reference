@@ -1,8 +1,42 @@
 ---
 description: Settings used by the `PrintToPdf` method.
 title: WebView2 Win32 C++ ICoreWebView2PrintSettings
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PrintSettings
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2PrintSettings
+- ICoreWebView2PrintSettings.get_FooterUri
+- ICoreWebView2PrintSettings.get_HeaderTitle
+- ICoreWebView2PrintSettings.get_MarginBottom
+- ICoreWebView2PrintSettings.get_MarginLeft
+- ICoreWebView2PrintSettings.get_MarginRight
+- ICoreWebView2PrintSettings.get_MarginTop
+- ICoreWebView2PrintSettings.get_Orientation
+- ICoreWebView2PrintSettings.get_PageHeight
+- ICoreWebView2PrintSettings.get_PageWidth
+- ICoreWebView2PrintSettings.get_ScaleFactor
+- ICoreWebView2PrintSettings.get_ShouldPrintBackgrounds
+- ICoreWebView2PrintSettings.get_ShouldPrintHeaderAndFooter
+- ICoreWebView2PrintSettings.get_ShouldPrintSelectionOnly
+- ICoreWebView2PrintSettings.put_FooterUri
+- ICoreWebView2PrintSettings.put_HeaderTitle
+- ICoreWebView2PrintSettings.put_MarginBottom
+- ICoreWebView2PrintSettings.put_MarginLeft
+- ICoreWebView2PrintSettings.put_MarginRight
+- ICoreWebView2PrintSettings.put_MarginTop
+- ICoreWebView2PrintSettings.put_Orientation
+- ICoreWebView2PrintSettings.put_PageHeight
+- ICoreWebView2PrintSettings.put_PageWidth
+- ICoreWebView2PrintSettings.put_ScaleFactor
+- ICoreWebView2PrintSettings.put_ShouldPrintBackgrounds
+- ICoreWebView2PrintSettings.put_ShouldPrintHeaderAndFooter
+- ICoreWebView2PrintSettings.put_ShouldPrintSelectionOnly
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2PrintSettings

@@ -1,8 +1,17 @@
 ---
 description: Receives the result of the `GetProcessInfosWithDetails` method.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalGetProcessInfosWithDetailsCompletedHandler
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalGetProcessInfosWithDetailsCompletedHandler
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ExperimentalGetProcessInfosWithDetailsCompletedHandler
+- ICoreWebView2ExperimentalGetProcessInfosWithDetailsCompletedHandler.Invoke
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ExperimentalGetProcessInfosWithDetailsCompletedHandler

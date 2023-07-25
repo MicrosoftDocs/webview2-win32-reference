@@ -1,8 +1,17 @@
 ---
 description: This is a continuation of the ICoreWebView2DevToolsProtocolEventReceivedEventArgs interface that provides the session ID of the target where the event originates from.
 title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceivedEventArgs2
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2DevToolsProtocolEventReceivedEventArgs2
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2DevToolsProtocolEventReceivedEventArgs2
+- ICoreWebView2DevToolsProtocolEventReceivedEventArgs2.get_SessionId
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2DevToolsProtocolEventReceivedEventArgs2

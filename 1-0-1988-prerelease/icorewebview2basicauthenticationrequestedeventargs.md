@@ -1,8 +1,22 @@
 ---
 description: Event args for the BasicAuthenticationRequested event.
 title: WebView2 Win32 C++ ICoreWebView2BasicAuthenticationRequestedEventArgs
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2BasicAuthenticationRequestedEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2BasicAuthenticationRequestedEventArgs
+- ICoreWebView2BasicAuthenticationRequestedEventArgs.get_Cancel
+- ICoreWebView2BasicAuthenticationRequestedEventArgs.get_Challenge
+- ICoreWebView2BasicAuthenticationRequestedEventArgs.get_Response
+- ICoreWebView2BasicAuthenticationRequestedEventArgs.get_Uri
+- ICoreWebView2BasicAuthenticationRequestedEventArgs.GetDeferral
+- ICoreWebView2BasicAuthenticationRequestedEventArgs.put_Cancel
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2BasicAuthenticationRequestedEventArgs

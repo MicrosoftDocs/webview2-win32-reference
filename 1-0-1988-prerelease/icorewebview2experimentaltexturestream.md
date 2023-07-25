@@ -1,8 +1,35 @@
 ---
 description: This is the interface that handles texture streaming.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalTextureStream
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalTextureStream
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ExperimentalTextureStream
+- ICoreWebView2ExperimentalTextureStream.add_ErrorReceived
+- ICoreWebView2ExperimentalTextureStream.add_StartRequested
+- ICoreWebView2ExperimentalTextureStream.add_Stopped
+- ICoreWebView2ExperimentalTextureStream.add_WebTextureReceived
+- ICoreWebView2ExperimentalTextureStream.add_WebTextureStreamStopped
+- ICoreWebView2ExperimentalTextureStream.AddAllowedOrigin
+- ICoreWebView2ExperimentalTextureStream.CloseTexture
+- ICoreWebView2ExperimentalTextureStream.CreateTexture
+- ICoreWebView2ExperimentalTextureStream.get_Id
+- ICoreWebView2ExperimentalTextureStream.GetAvailableTexture
+- ICoreWebView2ExperimentalTextureStream.PresentTexture
+- ICoreWebView2ExperimentalTextureStream.remove_ErrorReceived
+- ICoreWebView2ExperimentalTextureStream.remove_StartRequested
+- ICoreWebView2ExperimentalTextureStream.remove_Stopped
+- ICoreWebView2ExperimentalTextureStream.remove_WebTextureReceived
+- ICoreWebView2ExperimentalTextureStream.remove_WebTextureStreamStopped
+- ICoreWebView2ExperimentalTextureStream.RemoveAllowedOrigin
+- ICoreWebView2ExperimentalTextureStream.SetD3DDevice
+- ICoreWebView2ExperimentalTextureStream.Stop
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ExperimentalTextureStream
@@ -93,7 +120,7 @@ Adds an allowed URI origin.
 
 > public HRESULT [AddAllowedOrigin](#addallowedorigin)(LPCWSTR origin, BOOL value)
 
-The stream requests could be made from any frame, including iframes, but the origin of the page in the frames must be registered first in order for the request to succeed. The added origin will be persistent until ICoreWebView2ExperimentalTextureStream is destroyed or RemoveAllowedOrigin is called. The renderer does not support wildcard so it will compare literal string input to the requesting frame's page's origin after normalization. The page origin will be normalized so ASCII characters in the scheme and hostname will be lowercased, and non-ASCII characters in the hostname will be normalized to their punycode form. For example `HTTPS://WWW.???.COM` will be normalized to `https://www.xn--kfk.com` for comparison. So, the input string should have a scheme like https://. For example, `https://www.valid-host.com`, `http://www.valid-host.com` are valid origins but `www.valid-host.com`, or `https://*.valid-host.com`. are not valid origins. If invalid origin is provided, the API will return an error of E_INVALIDARG. getTextureStream() will fail unless the requesting frame's origin URI is added to the allowed origins. If `value` is TRUE, then the origin will also be added to WebTexture's allowed origin.
+The stream requests could be made from any frame, including iframes, but the origin of the page in the frames must be registered first in order for the request to succeed. The added origin will be persistent until ICoreWebView2ExperimentalTextureStream is destroyed or RemoveAllowedOrigin is called. The renderer does not support wildcard so it will compare literal string input to the requesting frame's page's origin after normalization. The page origin will be normalized so ASCII characters in the scheme and hostname will be lowercased, and non-ASCII characters in the hostname will be normalized to their punycode form. For example `HTTPS://WWW.???.COM` will be normalized to `https://www.xn--kfk.com` for comparison. So, the input string should have a scheme like https://. For example, https://www.valid-host.com, http://www.valid-host.com are valid origins but www.valid-host.com, or https://*.valid-host.com. are not valid origins. If invalid origin is provided, the API will return an error of E_INVALIDARG. getTextureStream() will fail unless the requesting frame's origin URI is added to the allowed origins. If `value` is TRUE, then the origin will also be added to WebTexture's allowed origin.
 
 #### CloseTexture
 

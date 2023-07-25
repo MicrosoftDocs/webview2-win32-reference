@@ -1,8 +1,20 @@
 ---
 description: This interface is the continuation of the ICoreWebView2CompositionController2 interface to manage drag and drop.
 title: WebView2 Win32 C++ ICoreWebView2CompositionController3
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CompositionController3
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2CompositionController3
+- ICoreWebView2CompositionController3.DragEnter
+- ICoreWebView2CompositionController3.DragLeave
+- ICoreWebView2CompositionController3.DragOver
+- ICoreWebView2CompositionController3.Drop
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2CompositionController3

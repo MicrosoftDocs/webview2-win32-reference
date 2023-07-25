@@ -1,8 +1,30 @@
 ---
 description: Provides a set of properties that are used to manage an ICoreWebView2Cookie.
 title: WebView2 Win32 C++ ICoreWebView2Cookie
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Cookie
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2Cookie
+- ICoreWebView2Cookie.get_Domain
+- ICoreWebView2Cookie.get_Expires
+- ICoreWebView2Cookie.get_IsHttpOnly
+- ICoreWebView2Cookie.get_IsSecure
+- ICoreWebView2Cookie.get_IsSession
+- ICoreWebView2Cookie.get_Name
+- ICoreWebView2Cookie.get_Path
+- ICoreWebView2Cookie.get_SameSite
+- ICoreWebView2Cookie.get_Value
+- ICoreWebView2Cookie.put_Expires
+- ICoreWebView2Cookie.put_IsHttpOnly
+- ICoreWebView2Cookie.put_IsSecure
+- ICoreWebView2Cookie.put_SameSite
+- ICoreWebView2Cookie.put_Value
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2Cookie
