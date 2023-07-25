@@ -1,8 +1,19 @@
 ---
 description: This is the ICoreWebView2ExperimentalFrameInfo that provides `ParentFrameInfo`, `FrameId` and `FrameKind` properties.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalFrameInfo
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalFrameInfo
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ExperimentalFrameInfo
+- ICoreWebView2ExperimentalFrameInfo.get_FrameId
+- ICoreWebView2ExperimentalFrameInfo.get_FrameKind
+- ICoreWebView2ExperimentalFrameInfo.get_ParentFrameInfo
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ExperimentalFrameInfo

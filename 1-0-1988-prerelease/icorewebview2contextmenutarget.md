@@ -1,8 +1,29 @@
 ---
 description: Represents the information regarding the context menu target.
 title: WebView2 Win32 C++ ICoreWebView2ContextMenuTarget
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ContextMenuTarget
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2ContextMenuTarget
+- ICoreWebView2ContextMenuTarget.get_FrameUri
+- ICoreWebView2ContextMenuTarget.get_HasLinkText
+- ICoreWebView2ContextMenuTarget.get_HasLinkUri
+- ICoreWebView2ContextMenuTarget.get_HasSelection
+- ICoreWebView2ContextMenuTarget.get_HasSourceUri
+- ICoreWebView2ContextMenuTarget.get_IsEditable
+- ICoreWebView2ContextMenuTarget.get_IsRequestedForMainFrame
+- ICoreWebView2ContextMenuTarget.get_Kind
+- ICoreWebView2ContextMenuTarget.get_LinkText
+- ICoreWebView2ContextMenuTarget.get_LinkUri
+- ICoreWebView2ContextMenuTarget.get_PageUri
+- ICoreWebView2ContextMenuTarget.get_SelectionText
+- ICoreWebView2ContextMenuTarget.get_SourceUri
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2ContextMenuTarget

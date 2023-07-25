@@ -1,8 +1,24 @@
 ---
 description: Event args for the `DownloadStarting` event.
 title: WebView2 Win32 C++ ICoreWebView2DownloadStartingEventArgs
-ms.date: 07/24/2023
+ms.date: 07/25/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2DownloadStartingEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2DownloadStartingEventArgs
+- ICoreWebView2DownloadStartingEventArgs.get_Cancel
+- ICoreWebView2DownloadStartingEventArgs.get_DownloadOperation
+- ICoreWebView2DownloadStartingEventArgs.get_Handled
+- ICoreWebView2DownloadStartingEventArgs.get_ResultFilePath
+- ICoreWebView2DownloadStartingEventArgs.GetDeferral
+- ICoreWebView2DownloadStartingEventArgs.put_Cancel
+- ICoreWebView2DownloadStartingEventArgs.put_Handled
+- ICoreWebView2DownloadStartingEventArgs.put_ResultFilePath
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2DownloadStartingEventArgs

@@ -3,6 +3,23 @@ description: This interface is an extension of ICoreWebView2_8 that default down
 title: WebView2 Win32 C++ ICoreWebView2_9
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_9
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2_9
+- ICoreWebView2_9.add_IsDefaultDownloadDialogOpenChanged
+- ICoreWebView2_9.CloseDefaultDownloadDialog
+- ICoreWebView2_9.get_DefaultDownloadDialogCornerAlignment
+- ICoreWebView2_9.get_DefaultDownloadDialogMargin
+- ICoreWebView2_9.get_IsDefaultDownloadDialogOpen
+- ICoreWebView2_9.OpenDefaultDownloadDialog
+- ICoreWebView2_9.put_DefaultDownloadDialogCornerAlignment
+- ICoreWebView2_9.put_DefaultDownloadDialogMargin
+- ICoreWebView2_9.remove_IsDefaultDownloadDialogOpenChanged
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2_9

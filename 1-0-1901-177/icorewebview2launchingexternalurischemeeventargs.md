@@ -3,6 +3,20 @@ description: Event args for `LaunchingExternalUriScheme` event.
 title: WebView2 Win32 C++ ICoreWebView2LaunchingExternalUriSchemeEventArgs
 ms.date: 07/24/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2LaunchingExternalUriSchemeEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2LaunchingExternalUriSchemeEventArgs
+- ICoreWebView2LaunchingExternalUriSchemeEventArgs.get_Cancel
+- ICoreWebView2LaunchingExternalUriSchemeEventArgs.get_InitiatingOrigin
+- ICoreWebView2LaunchingExternalUriSchemeEventArgs.get_IsUserInitiated
+- ICoreWebView2LaunchingExternalUriSchemeEventArgs.get_Uri
+- ICoreWebView2LaunchingExternalUriSchemeEventArgs.GetDeferral
+- ICoreWebView2LaunchingExternalUriSchemeEventArgs.put_Cancel
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
 ---
 
 # interface ICoreWebView2LaunchingExternalUriSchemeEventArgs
