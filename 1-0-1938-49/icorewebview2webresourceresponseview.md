@@ -1,7 +1,7 @@
 ---
 description: View of the HTTP representation for a web resource response.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceResponseView
-ms.date: 08/17/2023
+ms.date: 08/21/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2WebResourceResponseView
 topic_type: 
 - APIRef
