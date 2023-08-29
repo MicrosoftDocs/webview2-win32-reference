@@ -1,7 +1,7 @@
 ---
 description: The event args for the `ICoreWebViewTextureStream ErrorReceived` event.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalTextureStreamErrorReceivedEventArgs
-ms.date: 08/28/2023
+ms.date: 08/30/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalTextureStreamErrorReceivedEventArgs
 topic_type: 
 - APIRef
