@@ -1,7 +1,7 @@
 ---
 description: Event args for the `WebMessageReceived` event.
 title: WebView2 Win32 C++ ICoreWebView2WebMessageReceivedEventArgs
-ms.date: 08/21/2023
+ms.date: 09/18/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2WebMessageReceivedEventArgs
 topic_type: 
 - APIRef
@@ -17,6 +17,8 @@ api_location:
 ---
 
 # interface ICoreWebView2WebMessageReceivedEventArgs
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2WebMessageReceivedEventArgs
