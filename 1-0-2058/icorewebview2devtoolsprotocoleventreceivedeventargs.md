@@ -1,0 +1,44 @@
+---
+description: 
+title: WebView2 Win32 C++ ICoreWebView2DevToolsProtocolEventReceivedEventArgs
+ms.date: 09/08/2023
+keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2DevToolsProtocolEventReceivedEventArgs
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2DevToolsProtocolEventReceivedEventArgs
+- ICoreWebView2DevToolsProtocolEventReceivedEventArgs.get_ParameterObjectAsJson
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
+---
+
+# interface ICoreWebView2DevToolsProtocolEventReceivedEventArgs
+
+```
+interface ICoreWebView2DevToolsProtocolEventReceivedEventArgs
+  : public IUnknown
+```
+
+## Summary
+
+ Members                        | Descriptions
+--------------------------------|---------------------------------------------
+[get_ParameterObjectAsJson](#get_parameterobjectasjson) | Gets the `ParameterObjectAsJson` property.
+
+## Applies to
+
+Product                         | Introduced
+--------------------------------|---------------------------------------------
+WebView2 Win32            |    0.9.430
+WebView2 Win32 Prerelease |    0.9.488
+
+## Members
+
+#### get_ParameterObjectAsJson
+
+Gets the `ParameterObjectAsJson` property.
+
+> public HRESULT [get_ParameterObjectAsJson](#get_parameterobjectasjson)(LPWSTR * value)
+
