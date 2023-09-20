@@ -1,7 +1,7 @@
 ---
 description: Defines properties that enable, disable, or modify WebView features.
 title: WebView2 Win32 C++ ICoreWebView2Settings
-ms.date: 09/17/2023
+ms.date: 09/20/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings
 topic_type: 
 - APIRef
