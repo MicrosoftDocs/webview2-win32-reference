@@ -1,7 +1,7 @@
 ---
 description: This is an extension of the ICoreWebView2Profile interface to control levels of tracking prevention.
 title: WebView2 Win32 C++ ICoreWebView2Profile3
-ms.date: 10/16/2023
+ms.date: 09/18/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile3
 topic_type: 
 - APIRef
@@ -16,8 +16,6 @@ api_location:
 ---
 
 # interface ICoreWebView2Profile3
-
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2Profile3
