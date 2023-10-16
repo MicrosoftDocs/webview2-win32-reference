@@ -1,7 +1,7 @@
 ---
 description: Provides a set of properties for managing an Extension, which includes an ID, name, and whether it is enabled or not, and the ability to Remove the Extension, and enable or disable it.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalBrowserExtension
-ms.date: 10/16/2023
+ms.date: 10/17/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalBrowserExtension
 topic_type: 
 - APIRef

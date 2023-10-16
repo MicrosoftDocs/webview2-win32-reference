@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2ProcessFailedEventArgs2 interface fot getting blocked file for code integrity process failures.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalProcessFailedEventArgs
-ms.date: 10/16/2023
+ms.date: 10/17/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalProcessFailedEventArgs
 topic_type: 
 - APIRef
@@ -36,7 +36,7 @@ A continuation of the [ICoreWebView2ProcessFailedEventArgs2](icorewebview2proces
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.2164
 
 ## Members
 
