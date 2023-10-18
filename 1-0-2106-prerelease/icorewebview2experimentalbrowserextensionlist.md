@@ -1,7 +1,7 @@
 ---
 description: Provides a set of properties for managing browser Extension Lists from user profile.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalBrowserExtensionList
-ms.date: 09/20/2023
+ms.date: 10/17/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalBrowserExtensionList
 topic_type: 
 - APIRef
@@ -16,6 +16,8 @@ api_location:
 ---
 
 # interface ICoreWebView2ExperimentalBrowserExtensionList
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
