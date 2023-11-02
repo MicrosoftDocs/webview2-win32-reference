@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Environment4 interface that supports the `BrowserProcessExited` event.
 title: WebView2 Win32 C++ ICoreWebView2Environment5
-ms.date: 10/31/2023
+ms.date: 11/06/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment5
 topic_type: 
 - APIRef

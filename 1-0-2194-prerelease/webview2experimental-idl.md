@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Experimental Globals
 title: Experimental Globals
-ms.date: 10/31/2023
+ms.date: 11/06/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 topic_type: 
 - APIRef
@@ -21,6 +21,7 @@ api_location:
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
 [COREWEBVIEW2_FRAME_KIND](#corewebview2_frame_kind) | Indicates the frame type used in the ICoreWebView2ExperimentalFrameInfo interface.
+[COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4) | Matrix that represents a 3D transform.
 [COREWEBVIEW2_TEXT_DIRECTION_KIND](#corewebview2_text_direction_kind) | Indicates the text direction of the notification.
 [COREWEBVIEW2_TEXTURE_STREAM_ERROR_KIND](#corewebview2_texture_stream_error_kind) | Kinds of errors that can be reported by the ICoreWebView2ExperimentalTextureStream ErrorReceived event.
 [COREWEBVIEW2_UPDATE_RUNTIME_STATUS](#corewebview2_update_runtime_status) | Status of UpdateRuntime operation result.
@@ -41,6 +42,13 @@ COREWEBVIEW2_FRAME_KIND_EMBED            | Indicates that the frame is an embed 
 COREWEBVIEW2_FRAME_KIND_OBJECT            | Indicates that the frame is an object element.
 
 Indicates the frame type used in the ICoreWebView2ExperimentalFrameInfo interface.
+
+#### COREWEBVIEW2_MATRIX_4X4
+
+Matrix that represents a 3D transform.
+
+> typedef [COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4)
+This transform is used to calculate correct coordinates when calling CreateCoreWebView2PointerInfoFromPointerId. This is equivalent to a D2D1_MATRIX_4X4_F
 
 #### COREWEBVIEW2_TEXT_DIRECTION_KIND
 
