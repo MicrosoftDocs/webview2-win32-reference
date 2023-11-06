@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_8 that default download dialog positioning and anchoring.
 title: WebView2 Win32 C++ ICoreWebView2_9
-ms.date: 10/17/2023
+ms.date: 11/06/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_9
 topic_type: 
 - APIRef
@@ -23,6 +23,8 @@ api_location:
 ---
 
 # interface ICoreWebView2_9
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2_9
