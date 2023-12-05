@@ -1,7 +1,7 @@
 ---
 description: Receives the result of the `CapturePreview` method.
 title: WebView2 Win32 C++ ICoreWebView2CapturePreviewCompletedHandler
-ms.date: 11/06/2023
+ms.date: 12/11/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CapturePreviewCompletedHandler
 topic_type: 
 - APIRef
@@ -15,6 +15,8 @@ api_location:
 ---
 
 # interface ICoreWebView2CapturePreviewCompletedHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2CapturePreviewCompletedHandler
