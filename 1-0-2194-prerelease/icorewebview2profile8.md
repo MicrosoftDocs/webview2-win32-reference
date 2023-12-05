@@ -1,7 +1,7 @@
 ---
 description: This is the profile interface that manages profile deletion.
 title: WebView2 Win32 C++ ICoreWebView2Profile8
-ms.date: 11/06/2023
+ms.date: 12/11/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile8
 topic_type: 
 - APIRef
@@ -17,6 +17,8 @@ api_location:
 ---
 
 # interface ICoreWebView2Profile8
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2Profile8
