@@ -138,7 +138,7 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
-      "webview2-2210-55": { "dest": "webview2-win32", "moniker_range": "webview2-win32-preview" },
+      "webview2-2210-55": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2210.55" },
       "webview2-2151-40": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2151.40" },
       "webview2-2045-28": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2045.28 || webview2-1.0.2088.41" },
       "webview2-1938-49": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.1938.49" },
