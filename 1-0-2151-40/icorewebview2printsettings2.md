@@ -1,7 +1,7 @@
 ---
 description: Settings used by the `Print` method.
 title: WebView2 Win32 C++ ICoreWebView2PrintSettings2
-ms.date: 11/06/2023
+ms.date: 12/11/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PrintSettings2
 topic_type: 
 - APIRef
@@ -30,6 +30,8 @@ api_location:
 ---
 
 # interface ICoreWebView2PrintSettings2
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2PrintSettings2
