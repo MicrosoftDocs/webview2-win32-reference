@@ -1,7 +1,7 @@
 ---
 description: This is an extension of the ICoreWebView2Frame interface that provides the `FrameId` property.
 title: WebView2 Win32 C++ ICoreWebView2Frame5
-ms.date: 01/23/2024
+ms.date: 01/29/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Frame5
 topic_type: 
 - APIRef

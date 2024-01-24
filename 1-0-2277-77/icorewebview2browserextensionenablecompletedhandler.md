@@ -1,7 +1,7 @@
 ---
 description: The caller implements this interface to receive the result of setting the browser Extension as enabled or disabled.
 title: WebView2 Win32 C++ ICoreWebView2BrowserExtensionEnableCompletedHandler
-ms.date: 01/23/2024
+ms.date: 01/29/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2BrowserExtensionEnableCompletedHandler
 topic_type: 
 - APIRef
