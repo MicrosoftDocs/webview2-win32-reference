@@ -124,12 +124,12 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "ms.subservice": "webview",
+      "ms.service": "microsoft-edge",
       "breadcrumb_path": "/microsoft-edge/webview2/reference/win32/breadcrumb/toc.json",
       "author": "MSEdgeTeam",
       "ms.author": "msedgedevrel",
       "ms.topic": "reference",
-      "ms.prod": "microsoft-edge",
-      "ms.technology": "webview",
       "searchScope": ["Microsoft Edge", "WebView2"],
       "uhfHeaderId": "MSDocsHeader-MSEdge",
       "feedback_system": "Standard"
