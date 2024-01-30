@@ -26,7 +26,7 @@
         ],
         "src": "non-version"
       },
-      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-2277-77", "src": "1-0-2277-77" },
+      { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-2277-86", "src": "1-0-2277-86" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-2210-55", "src": "1-0-2210-55" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-2151-40", "src": "1-0-2151-40" },
       { "files": [ "**/*.md", "**/*.yml" ], "group": "webview2-2045-28", "src": "1-0-2045-28" },
@@ -140,7 +140,7 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
-      "webview2-2277-77": { "dest": "webview2-win32", "moniker_range": "webview2-win32-preview" },
+      "webview2-2277-86": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2277.86" },
       "webview2-2210-55": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2210.55" },
       "webview2-2151-40": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2151.40" },
       "webview2-2045-28": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2045.28 || webview2-1.0.2088.41" },
