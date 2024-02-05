@@ -1,7 +1,7 @@
 ---
 description: Collection of `FrameInfo`s (name and source).
 title: WebView2 Win32 C++ ICoreWebView2FrameInfoCollection
-ms.date: 12/11/2023
+ms.date: 01/29/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2FrameInfoCollection
 topic_type: 
 - APIRef
@@ -15,6 +15,8 @@ api_location:
 ---
 
 # interface ICoreWebView2FrameInfoCollection
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2FrameInfoCollection
