@@ -1,7 +1,7 @@
 ---
 description: An HTTP response used with the `WebResourceRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceResponse
-ms.date: 02/05/2024
+ms.date: 02/26/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2WebResourceResponse
 topic_type: 
 - APIRef
@@ -21,6 +21,8 @@ api_location:
 ---
 
 # interface ICoreWebView2WebResourceResponse
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2WebResourceResponse
