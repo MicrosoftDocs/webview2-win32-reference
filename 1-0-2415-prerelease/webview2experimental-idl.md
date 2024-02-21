@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Experimental Globals
 title: Experimental Globals
-ms.date: 02/20/2024
+ms.date: 02/26/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 topic_type: 
 - APIRef
@@ -64,6 +64,13 @@ Stable (WebView2 Runtime)   |Broad Deployment   |Monthly
 Beta   |Flighting with inner rings, automated testing   |Monthly
 Dev   |Automated testing, selfhosting to test new APIs and features   |Weekly
 Canary   |Automated testing, selfhosting to test new APIs and features   |Daily
+
+#### COREWEBVIEW2_MATRIX_4X4
+
+Matrix that represents a 3D transform.
+
+> typedef [COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4)
+This transform is used to calculate correct coordinates when calling CreateCoreWebView2PointerInfoFromPointerId. This is equivalent to a D2D1_MATRIX_4X4_F
 
 #### COREWEBVIEW2_TEXT_DIRECTION_KIND
 
