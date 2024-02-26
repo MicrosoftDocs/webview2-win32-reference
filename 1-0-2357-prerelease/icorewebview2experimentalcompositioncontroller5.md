@@ -1,7 +1,7 @@
 ---
 description: This Interface includes an API which enables non-client hit-testing support for WebView2.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalCompositionController5
-ms.date: 01/29/2024
+ms.date: 02/26/2023
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalCompositionController5
 topic_type: 
 - APIRef
@@ -18,6 +18,8 @@ api_location:
 ---
 
 # interface ICoreWebView2ExperimentalCompositionController5
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
