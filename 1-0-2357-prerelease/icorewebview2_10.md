@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_9 that supports BasicAuthenticationRequested event.
 title: WebView2 Win32 C++ ICoreWebView2_10
-ms.date: 02/26/2023
+ms.date: 02/26/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_10
 topic_type: 
 - APIRef
