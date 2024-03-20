@@ -1,7 +1,7 @@
 ---
 description: Additional options used to create the WebView2 Environment that support specifying the `ReleaseChannels` and `ChannelSearchKind`.
 title: WebView2 Win32 C++ ICoreWebView2ExperimentalEnvironmentOptions
-ms.date: 02/26/2024
+ms.date: 03/25/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ExperimentalEnvironmentOptions
 topic_type: 
 - APIRef
@@ -18,6 +18,8 @@ api_location:
 ---
 
 # interface ICoreWebView2ExperimentalEnvironmentOptions
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
