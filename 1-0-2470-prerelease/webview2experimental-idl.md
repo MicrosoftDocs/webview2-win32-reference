@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Experimental Globals
 title: Experimental Globals
-ms.date: 03/18/2024
+ms.date: 03/25/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 topic_type: 
 - APIRef
@@ -61,6 +61,13 @@ COREWEBVIEW2_SCROLLBAR_STYLE_DEFAULT            | Browser default ScrollBar styl
 COREWEBVIEW2_SCROLLBAR_STYLE_FLUENT_OVERLAY            | Window style fluent overlay scroll bar Please see [Fluent UI](https://developer.microsoft.com/en-us/fluentui#/) for more details on fluent UI.
 
 Set ScrollBar style on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) during environment creation.
+
+#### COREWEBVIEW2_MATRIX_4X4
+
+Matrix that represents a 3D transform.
+
+> typedef [COREWEBVIEW2_MATRIX_4X4](#corewebview2_matrix_4x4)
+This transform is used to calculate correct coordinates when calling CreateCoreWebView2PointerInfoFromPointerId. This is equivalent to a D2D1_MATRIX_4X4_F
 
 #### COREWEBVIEW2_TEXT_DIRECTION_KIND
 

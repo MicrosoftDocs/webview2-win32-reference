@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_16 that supports shared buffer based on file mapping.
 title: WebView2 Win32 C++ ICoreWebView2_17
-ms.date: 03/18/2024
+ms.date: 03/25/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_17
 topic_type: 
 - APIRef
