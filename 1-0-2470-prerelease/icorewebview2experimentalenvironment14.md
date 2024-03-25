@@ -40,7 +40,7 @@ This is ICoreWebView2ExperimentalEnvironment14 that exposes new methods to creat
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.2470
 
 ## Members
 

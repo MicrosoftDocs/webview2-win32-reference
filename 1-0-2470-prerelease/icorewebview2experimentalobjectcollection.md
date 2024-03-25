@@ -40,7 +40,7 @@ Used to get, remove and add objects at the specified index.
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.2470
 
 ## Members
 

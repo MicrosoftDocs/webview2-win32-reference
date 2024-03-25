@@ -34,7 +34,7 @@ A continuation of the [ICoreWebView2ProcessFailedEventArgs2](icorewebview2proces
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.2470
 
 ## Members
 

@@ -36,7 +36,7 @@ This is the ICoreWebView_24 Experimental interface.
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.2470
 
 ## Members
 
