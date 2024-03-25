@@ -33,7 +33,7 @@ This is the Interface for non-client region change event args.
 
 Product                         | Introduced
 --------------------------------|---------------------------------------------
-WebView2 Win32            |    N/A
+WebView2 Win32            |    1.0.2420.47
 WebView2 Win32 Prerelease |    1.0.2415
 
 ## Members
