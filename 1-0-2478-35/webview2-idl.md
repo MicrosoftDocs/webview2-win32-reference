@@ -661,7 +661,8 @@ COREWEBVIEW2_RELEASE_CHANNELS_CANARY            | The Canary release channel tha
 
 The WebView2 release channels.
 
-Use `ReleaseChannels` and `ChannelSearchKind` on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) to control which channel is searched for during environment creation. 
+Use `ReleaseChannels` and `ChannelSearchKind` on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) to control which channel is searched for during environment creation.
+
 Channel   |Primary purpose   |How often updated with new features
 --------- | --------- | ---------
 Stable (WebView2 Runtime)   |Broad Deployment   |Monthly
