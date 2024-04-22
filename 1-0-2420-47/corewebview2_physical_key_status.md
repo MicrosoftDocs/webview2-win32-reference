@@ -1,7 +1,7 @@
 ---
 description: Contains the information packed into the `LPARAM` sent to a Win32 key event.
 title: WebView2 Win32 C++ COREWEBVIEW2_PHYSICAL_KEY_STATUS
-ms.date: 03/25/2024
+ms.date: 04/22/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, COREWEBVIEW2_PHYSICAL_KEY_STATUS
 topic_type: 
 - APIRef
@@ -20,6 +20,8 @@ api_location:
 ---
 
 # struct COREWEBVIEW2_PHYSICAL_KEY_STATUS
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 Contains the information packed into the `LPARAM` sent to a Win32 key event.
 
