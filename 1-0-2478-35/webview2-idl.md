@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Globals
 title: Globals
-ms.date: 04/22/2024
+ms.date: 05/09/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 topic_type: 
 - APIRef
@@ -834,7 +834,7 @@ RPC_E_CHANGED_MODE  -  if CoInitializeEx was previously called with
 
 Use `browserExecutableFolder` to specify whether WebView2 controls use a fixed or installed version of the WebView2 Runtime that exists on a user machine. To use a fixed version of the WebView2 Runtime, pass the folder path that contains the fixed version of the WebView2 Runtime to `browserExecutableFolder`. BrowserExecutableFolder supports both relative (to the application's executable) and absolute files paths. To create WebView2 controls that use the installed version of the WebView2 Runtime that exists on user machines, pass a `null` or empty string to `browserExecutableFolder`. In this scenario, the API tries to find a compatible version of the WebView2 Runtime that is installed on the user machine (first at the machine level, and then per user) using the selected channel preference. The path of fixed version of the WebView2 Runtime should not contain `\Edge\Application\`. When such a path is used, the API fails with `HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)`.
 
-The default channel search order is the WebView2 Runtime, Beta, Dev, and Canary. When an override `WEBVIEW2_RELEASE_CHANNEL_PREFERENCE` environment variable or applicable `releaseChannelPreference` registry value is set to `1`, the channel search order is reversed.
+By default, the channel search order is `COREWEBVIEW2_CHANNEL_SEARCH_KIND_MOST_STABLE`, which means that environment creation searches for an installation in the following order: the WebView2 Runtime, Beta, Dev, and Canary. The channel search order is reversed when the `ChannelSearchKind` property on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) is set to `COREWEBVIEW2_CHANNEL_SEARCH_KIND_LEAST_STABLE`, or when the corresponding environment variable or registry override is set to `1`. See below for descriptions of overrides. If `ReleaseChannels` on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) is provided, environment creation will only consider channels in this set, following the `ChannelSearchKind` order.
 
 You may specify the `userDataFolder` to change the default user data folder location for WebView2. The path is either an absolute file path or a relative file path that is interpreted as relative to the compiled code for the current process. For UWP apps, the default user data folder is the app data folder for the package. For non-UWP apps, the default user data (`{Executable File Name}.WebView2`) folder is created in the same directory next to the compiled code for the app. WebView2 creation fails if the compiled code is running in a directory in which the process does not have permission to create a new directory. The app is responsible to clean up the associated user data folder when it is done.
 
@@ -843,7 +843,7 @@ You may specify the `userDataFolder` to change the default user data folder loca
 
 `environmentCreatedHandler` is the handler result to the async operation that contains the `WebView2Environment` that was created.
 
-The `browserExecutableFolder`, `userDataFolder` and `additionalBrowserArguments` of the `environmentOptions` may be overridden by values either specified in environment variables or in the registry.
+The `browserExecutableFolder`, `channelSearchKind`, `releaseChannels`, `userDataFolder` and `additionalBrowserArguments` of the `environmentOptions` may be overridden by values either specified in environment variables or in the registry.
 
 When creating a `WebView2Environment` the following environment variables are verified.
 
@@ -851,10 +851,11 @@ When creating a `WebView2Environment` the following environment variables are ve
 WEBVIEW2_BROWSER_EXECUTABLE_FOLDER
 WEBVIEW2_USER_DATA_FOLDER
 WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS
-WEBVIEW2_RELEASE_CHANNEL_PREFERENCE
+WEBVIEW2_CHANNEL_SEARCH_KIND
+WEBVIEW2_RELEASE_CHANNELS
 ```
 
-If you find an override environment variable, use the `browserExecutableFolder` and `userDataFolder` values as replacements for the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters. If `additionalBrowserArguments` is specified in environment variable or in the registry, it is appended to the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters.
+If you find an override environment variable, use the `browserExecutableFolder` and `userDataFolder` values as replacements for the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters. If `additionalBrowserArguments` is specified in environment variable or in the registry, it is appended to the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters. See `ReleaseChannels` on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) for more details on how to construct the registry key and environment variable values.
 
 While not strictly overrides, additional environment variables may be set.
 
@@ -889,7 +890,10 @@ If none of those environment variables exist, then the registry is examined next
 [{Root}]\Software\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder
 "{AppId}"=""
 
-[{Root}]\Software\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference
+[{Root}]\Software\Policies\Microsoft\Edge\WebView2\ChannelSearchKind
+"{AppId}"=""
+
+[{Root}]\Software\Policies\Microsoft\Edge\WebView2\ReleaseChannels
 "{AppId}"=""
 
 [{Root}]\Software\Policies\Microsoft\Edge\WebView2\AdditionalBrowserArguments
@@ -899,7 +903,7 @@ If none of those environment variables exist, then the registry is examined next
 "{AppId}"=""
 ```
 
-Use a group policy under **Administrative Templates** > **Microsoft Edge WebView2** to configure `browserExecutableFolder` and `releaseChannelPreference`.
+You can use a group policy under **Administrative Templates** > **Microsoft Edge WebView2** to configure `browserExecutableFolder`, `channelSearchKind`, and `releaseChannels`.
 
 In the unlikely scenario where some instances of WebView are open during a browser update, the deletion of the previous WebView2 Runtime may be blocked. To avoid running out of disk space, a new WebView creation fails with `HRESULT_FROM_WIN32(ERROR_DISK_FULL)` if it detects that too many previous WebView2 Runtime versions exist.
 
