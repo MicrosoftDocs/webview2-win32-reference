@@ -80,10 +80,10 @@ Examples:
 
 ReleaseChannels   |Channel Search Kind: Most Stable (default)   |Channel Search Kind: Least Stable
 --------- | --------- | ---------
-COREWEBVIEW2_RELEASE_CHANNELS_BETA | COREWEBVIEW2_RELEASE_CHANNELS_STABLE   |WebView2 Runtime -> Beta   |Beta -> WebView2 Runtime
-COREWEBVIEW2_RELEASE_CHANNELS_CANARY | COREWEBVIEW2_RELEASE_CHANNELS_DEV | COREWEBVIEW2_RELEASE_CHANNELS_BETA | COREWEBVIEW2_RELEASE_CHANNELS_STABLE   |WebView2 Runtime -> Beta -> Dev -> Canary   |Canary -> Dev -> Beta -> WebView2 Runtime
+COREWEBVIEW2_RELEASE_CHANNELS_BETA \| COREWEBVIEW2_RELEASE_CHANNELS_STABLE   |WebView2 Runtime -> Beta   |Beta -> WebView2 Runtime
+COREWEBVIEW2_RELEASE_CHANNELS_CANARY \| COREWEBVIEW2_RELEASE_CHANNELS_DEV \| COREWEBVIEW2_RELEASE_CHANNELS_BETA \| COREWEBVIEW2_RELEASE_CHANNELS_STABLE   |WebView2 Runtime -> Beta -> Dev -> Canary   |Canary -> Dev -> Beta -> WebView2 Runtime
 COREWEBVIEW2_RELEASE_CHANNELS_CANARY   |Canary   |Canary
-COREWEBVIEW2_RELEASE_CHANNELS_BETA | COREWEBVIEW2_RELEASE_CHANNELS_CANARY | COREWEBVIEW2_RELEASE_CHANNELS_STABLE   |WebView2 Runtime -> Beta -> Canary   |Canary -> Beta -> WebView2 Runtime
+COREWEBVIEW2_RELEASE_CHANNELS_BETA \| COREWEBVIEW2_RELEASE_CHANNELS_CANARY \| COREWEBVIEW2_RELEASE_CHANNELS_STABLE   |WebView2 Runtime -> Beta -> Canary   |Canary -> Beta -> WebView2 Runtime
 
 If both `BrowserExecutableFolder` and `ReleaseChannels` are provided, the `BrowserExecutableFolder` takes precedence, regardless of whether or not the channel of `BrowserExecutableFolder` is included in the `ReleaseChannels`. `ReleaseChannels` can be overridden by the corresponding registry override `ReleaseChannels` or the environment variable `WEBVIEW2_RELEASE_CHANNELS`. Set the value to a comma-separated string of integers, which map to the following release channel values: Stable (0), Beta (1), Dev (2), and Canary (3). For example, the values "0,2" and "2,0" indicate that environment creation should only search for Dev channel and the WebView2 Runtime, using the order indicated by `ChannelSearchKind`. Environment creation attempts to interpret each integer and treats any invalid entry as Stable channel. See `CreateCoreWebView2EnvironmentWithOptions` for more details on overrides.
 
