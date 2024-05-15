@@ -1,7 +1,7 @@
 ---
 description: Provides a set of properties for a process in the ICoreWebView2Environment.
 title: WebView2 Win32 C++ ICoreWebView2ProcessInfo
-ms.date: 05/13/2024
+ms.date: 05/20/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ProcessInfo
 topic_type: 
 - APIRef

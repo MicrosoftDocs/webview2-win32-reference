@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Globals
 title: Globals
-ms.date: 05/13/2024
+ms.date: 05/20/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 topic_type: 
 - APIRef
@@ -70,6 +70,7 @@ api_location:
 [COREWEBVIEW2_WEB_ERROR_STATUS](#corewebview2_web_error_status) | Indicates the error status values for web navigations.
 [COREWEBVIEW2_WEB_RESOURCE_CONTEXT](#corewebview2_web_resource_context) | Specifies the web resource request contexts.
 [COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS](#corewebview2_web_resource_request_source_kinds) | Specifies the source of `WebResourceRequested` event.
+[COREWEBVIEW2_COLOR](#corewebview2_color) | A value representing RGBA color (Red, Green, Blue, Alpha) for WebView2.
 [CompareBrowserVersions](#comparebrowserversions) | This method is for anyone want to compare version correctly to determine which version is newer, older or same.
 [CreateCoreWebView2Environment](#createcorewebview2environment) | Creates an evergreen WebView2 Environment using the installed WebView2 Runtime version.
 [CreateCoreWebView2EnvironmentWithOptions](#createcorewebview2environmentwithoptions) | DLL export to create a WebView2 environment with a custom version of WebView2 Runtime, user data folder, and with or without additional options.
@@ -797,6 +798,13 @@ COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_SERVICE_WORKER            | Indic
 COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_ALL            | Indicates that web resource is requested from any supported source.
 
 Specifies the source of `WebResourceRequested` event.
+
+#### COREWEBVIEW2_COLOR
+
+A value representing RGBA color (Red, Green, Blue, Alpha) for WebView2.
+
+> typedef [COREWEBVIEW2_COLOR](#corewebview2_color)
+Each component takes a value from 0 to 255, with 0 being no intensity and 255 being the highest intensity.
 
 #### CompareBrowserVersions
 
