@@ -691,7 +691,7 @@ Specifies the JavaScript dialog type used in the [ICoreWebView2ScriptDialogOpeni
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
 COREWEBVIEW2_SCROLLBAR_STYLE_DEFAULT            | Browser default ScrollBar style.
-COREWEBVIEW2_SCROLLBAR_STYLE_FLUENT_OVERLAY            | Window style fluent overlay scroll bar Please see [Fluent UI](https:/-/developer.microsoft.com/en-us/fluentui#/) for more details on fluent UI.
+COREWEBVIEW2_SCROLLBAR_STYLE_FLUENT_OVERLAY            | Window style fluent overlay scroll bar. See [Fluent UI](https://developer.microsoft.com/fluentui#/) for more details on fluent UI.
 
 Set ScrollBar style on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) during environment creation.
 
