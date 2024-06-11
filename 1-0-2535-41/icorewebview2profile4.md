@@ -1,7 +1,7 @@
 ---
 description: This is the ICoreWebView2Profile interface for the permission management APIs.
 title: WebView2 Win32 C++ ICoreWebView2Profile4
-ms.date: 05/28/2024
+ms.date: 06/11/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile4
 topic_type: 
 - APIRef
@@ -107,7 +107,7 @@ Sets permission state for the given permission kind and origin asynchronously.
 
 > public HRESULT [SetPermissionState](#setpermissionstate)(COREWEBVIEW2_PERMISSION_KIND permissionKind, LPCWSTR origin, COREWEBVIEW2_PERMISSION_STATE state, [ICoreWebView2SetPermissionStateCompletedHandler](icorewebview2setpermissionstatecompletedhandler.md#icorewebview2setpermissionstatecompletedhandler) * completedHandler)
 
-The change persists across sessions until it is changed by another call to `SetPermissionState`, or by setting the `State` property in `PermissionRequestedEventArgs`. Setting the state to `COREWEBVIEW2_PERMISSION_STATE_DEFAULT` will erase any state saved in the profile and restore the default behavior. The origin should have a valid scheme and host (e.g. "https://www.example.com"), otherwise the method fails with `E_INVALIDARG`. Additional URI parts like path and fragment are ignored. For example, "https://wwww.example.com/app1/index.html/" is treated the same as "https://wwww.example.com". See the [MDN origin definition](https://developer.mozilla.org/en-US/docs/Glossary/Origin) for more details.
+The change persists across sessions until it is changed by another call to `SetPermissionState`, or by setting the `State` property in `PermissionRequestedEventArgs`. Setting the state to `COREWEBVIEW2_PERMISSION_STATE_DEFAULT` will erase any state saved in the profile and restore the default behavior. The origin should have a valid scheme and host (e.g. "https://www.example.com"), otherwise the method fails with `E_INVALIDARG`. Additional URI parts like path and fragment are ignored. For example, "https://wwww.example.com/app1/index.html/" is treated the same as "https://wwww.example.com". See the [MDN origin definition](https://developer.mozilla.org/docs/Glossary/Origin) for more details.
 
 ```cpp
 // The app's permission management page can provide a way for the end user to
