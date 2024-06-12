@@ -1,7 +1,7 @@
 ---
 description: Represents a Basic HTTP authentication response that contains a user name and a password as according to RFC7617 (https://tools.ietf.org/html/rfc7617)
 title: WebView2 Win32 C++ ICoreWebView2BasicAuthenticationResponse
-ms.date: 06/12/2024
+ms.date: 06/19/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2BasicAuthenticationResponse
 topic_type: 
 - APIRef
