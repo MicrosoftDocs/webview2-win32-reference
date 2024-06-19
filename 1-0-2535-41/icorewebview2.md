@@ -1,7 +1,7 @@
 ---
 description: WebView2 enables you to host web content using the latest Microsoft Edge browser and web technology.
 title: WebView2 Win32 C++ ICoreWebView2
-ms.date: 05/28/2024
+ms.date: 06/11/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2
 topic_type: 
 - APIRef
@@ -1046,7 +1046,7 @@ Add an event handler for the `WindowCloseRequested` event.
 
 > public HRESULT [add_WindowCloseRequested](#add_windowcloserequested)([ICoreWebView2WindowCloseRequestedEventHandler](icorewebview2windowcloserequestedeventhandler.md#icorewebview2windowcloserequestedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-`WindowCloseRequested` triggers when content inside the WebView requested to close the window, such as after `window.close` is run. The app should close the WebView and related app window if that makes sense to the app.
+`WindowCloseRequested` triggers when content inside the WebView requested to close the window, such as after `window.close` is run. The app should close the WebView and related app window if that makes sense to the app. After the first window.close() call, this event may not fire for any immediate back to back window.close() calls.
 
 ```cpp
     // Register a handler for the WindowCloseRequested event.
@@ -1096,6 +1096,7 @@ Options property   |Details
 `defaultSyncProxy`|When calling a method on a synchronous proxy, the result should also be a synchronous proxy. But in some cases, the sync/async context is lost (for example, when providing to native code a reference to a function, and then calling that function in native code). In these cases, the proxy will be asynchronous, unless this property is set.
 `forceAsyncMethodMatches`|This is an array of regular expressions. When calling a method on a synchronous proxy, the method call will be performed asynchronously if the method name matches a string or regular expression in this array. Setting this value to `Async` will make any method that ends with Async be an asynchronous method call. If an async method doesn't match here and isn't forced to be asynchronous, the method will be invoked synchronously, blocking execution of the calling JavaScript and then returning the resolution of the promise, rather than returning a promise.
 `ignoreMemberNotFoundError`|By default, an exception is thrown when attempting to get the value of a proxy property that doesn't exist on the corresponding native class. Setting this property to `true` switches the behavior to match Chakra WinRT projection (and general JavaScript) behavior of returning `undefined` with no error.
+`shouldPassTypedArraysAsArrays`|By default, typed arrays will be passed to host as IDispatch. Otherwise, set to true to pass typed arrays to host as array.
 
 Host object proxies additionally have the following methods which run locally.
 
