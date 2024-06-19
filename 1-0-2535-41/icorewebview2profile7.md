@@ -1,7 +1,7 @@
 ---
 description: Interfaces in profile for managing browser extensions.
 title: WebView2 Win32 C++ ICoreWebView2Profile7
-ms.date: 05/28/2024
+ms.date: 06/11/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile7
 topic_type: 
 - APIRef
@@ -28,7 +28,7 @@ Interfaces in profile for managing browser extensions.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[AddBrowserExtension](#addbrowserextension) | Adds the [browser extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions) using the extension path for unpacked extensions from the local device.
+[AddBrowserExtension](#addbrowserextension) | Adds the [browser extension](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions) using the extension path for unpacked extensions from the local device.
 [GetBrowserExtensions](#getbrowserextensions) | Gets a snapshot of the set of extensions installed at the time `GetBrowserExtensions` is called.
 
 ## Applies to
@@ -42,7 +42,7 @@ WebView2 Win32 Prerelease |    1.0.2194
 
 #### AddBrowserExtension
 
-Adds the [browser extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions) using the extension path for unpacked extensions from the local device.
+Adds the [browser extension](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions) using the extension path for unpacked extensions from the local device.
 
 > public HRESULT [AddBrowserExtension](#addbrowserextension)(LPCWSTR extensionFolderPath, [ICoreWebView2ProfileAddBrowserExtensionCompletedHandler](icorewebview2profileaddbrowserextensioncompletedhandler.md#icorewebview2profileaddbrowserextensioncompletedhandler) * handler)
 
