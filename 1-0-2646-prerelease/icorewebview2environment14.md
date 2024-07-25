@@ -1,7 +1,7 @@
 ---
 description: This is ICoreWebView2Environment14 that exposes new methods to create Filesystem access related DOM objects.
 title: WebView2 Win32 C++ ICoreWebView2Environment14
-ms.date: 06/19/2024
+ms.date: 07/31/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment14
 topic_type: 
 - APIRef
@@ -17,6 +17,8 @@ api_location:
 ---
 
 # interface ICoreWebView2Environment14
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2Environment14
