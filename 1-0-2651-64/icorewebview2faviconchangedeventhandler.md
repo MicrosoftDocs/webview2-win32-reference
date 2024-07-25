@@ -1,7 +1,7 @@
 ---
 description: Receives `FaviconChanged` events.
 title: WebView2 Win32 C++ ICoreWebView2FaviconChangedEventHandler
-ms.date: 07/23/2024
+ms.date: 07/31/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2FaviconChangedEventHandler
 topic_type: 
 - APIRef
