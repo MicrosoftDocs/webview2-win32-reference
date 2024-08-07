@@ -68,7 +68,7 @@ This is the ICoreWebView2Notification that represents a [HTML Notification objec
 Product                         | Introduced
 --------------------------------|---------------------------------------------
 WebView2 Win32            |    N/A
-WebView2 Win32 Prerelease |    
+WebView2 Win32 Prerelease |    1.0.2730
 
 ## Members
 
