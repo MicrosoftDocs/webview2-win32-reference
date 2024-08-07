@@ -1,7 +1,7 @@
 ---
 description: Receives the result of the `GetProcessExtendedInfos` method.
 title: WebView2 Win32 C++ ICoreWebView2GetProcessExtendedInfosCompletedHandler
-ms.date: 06/19/2024
+ms.date: 07/31/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2GetProcessExtendedInfosCompletedHandler
 topic_type: 
 - APIRef
@@ -15,6 +15,8 @@ api_location:
 ---
 
 # interface ICoreWebView2GetProcessExtendedInfosCompletedHandler
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 ```
 interface ICoreWebView2GetProcessExtendedInfosCompletedHandler
