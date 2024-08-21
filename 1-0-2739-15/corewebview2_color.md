@@ -36,7 +36,7 @@ Each component takes a value from 0 to 255, with 0 being no intensity and 255 be
 
 Product                         | Introduced
 --------------------------------|---------------------------------------------
-WebView2 Win32            |    N/A
+WebView2 Win32            |    1.0.2739.15
 WebView2 Win32 Prerelease |    
 
 ## Members

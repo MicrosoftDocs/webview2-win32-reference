@@ -37,8 +37,8 @@ api_location:
 [COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON](#corewebview2_download_interrupt_reason) | Reason why a download was interrupted.
 [COREWEBVIEW2_DOWNLOAD_STATE](#corewebview2_download_state) | State of the download operation.
 [COREWEBVIEW2_FAVICON_IMAGE_FORMAT](#corewebview2_favicon_image_format) | Specifies the image format to use for favicon.
-[COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND](#corewebview2_file_system_handle_kind) | Kind of CoreWebView2FileSystemHandle as described in [FileSystemHandle.kind](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind)
-[COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION](#corewebview2_file_system_handle_permission) | Allowed permissions of a CoreWebView2FileSystemHandle as described in [FileSystemHandle.requestPermission()](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/requestPermission)
+[COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND](#corewebview2_file_system_handle_kind) | Kind of CoreWebView2FileSystemHandle as described in [FileSystemHandle.kind](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind).
+[COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION](#corewebview2_file_system_handle_permission) | Allowed permissions of a CoreWebView2FileSystemHandle as described in [FileSystemHandle.requestPermission()](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/requestPermission).
 [COREWEBVIEW2_FRAME_KIND](#corewebview2_frame_kind) | Indicates the frame type used in the [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo) interface.
 [COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND](#corewebview2_host_resource_access_kind) | Kind of cross origin resource access allowed for host resources during download.
 [COREWEBVIEW2_KEY_EVENT_KIND](#corewebview2_key_event_kind) | Specifies the key event type that triggered an `AcceleratorKeyPressed` event.
@@ -295,10 +295,10 @@ Specifies the image format to use for favicon.
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND_FILE            | FileSystemHandle is for a file (i.e.
-COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND_DIRECTORY            | FileSystemHandle is for a directory (i.e.
+COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND_FILE            | FileSystemHandle is for a file [FileSystemFileHandle](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle).
+COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND_DIRECTORY            | FileSystemHandle is for a directory [FileSystemDirectoryHandle](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle).
 
-Kind of CoreWebView2FileSystemHandle as described in [FileSystemHandle.kind](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind)
+Kind of CoreWebView2FileSystemHandle as described in [FileSystemHandle.kind](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind).
 
 #### COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION
 
@@ -309,7 +309,7 @@ Kind of CoreWebView2FileSystemHandle as described in [FileSystemHandle.kind](htt
 COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION_READ_ONLY            | Read-only permission for FileSystemHandle.
 COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION_READ_WRITE            | Read and write permissions for FileSystemHandle.
 
-Allowed permissions of a CoreWebView2FileSystemHandle as described in [FileSystemHandle.requestPermission()](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/requestPermission)
+Allowed permissions of a CoreWebView2FileSystemHandle as described in [FileSystemHandle.requestPermission()](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/requestPermission).
 
 #### COREWEBVIEW2_FRAME_KIND
 

@@ -40,7 +40,7 @@ For more information about `WM_KEYDOWN`, navigate to [WM_KEYDOWN message](/windo
 
 Product                         | Introduced
 --------------------------------|---------------------------------------------
-WebView2 Win32            |    N/A
+WebView2 Win32            |    1.0.2739.15
 WebView2 Win32 Prerelease |    
 
 ## Members

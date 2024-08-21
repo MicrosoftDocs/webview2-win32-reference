@@ -33,7 +33,7 @@ Receives `CloseRequested` events.
 
 Product                         | Introduced
 --------------------------------|---------------------------------------------
-WebView2 Win32            |    N/A
+WebView2 Win32            |    1.0.2739.15
 WebView2 Win32 Prerelease |    1.0.2730
 
 ## Members
