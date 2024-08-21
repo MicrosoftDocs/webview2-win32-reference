@@ -1,7 +1,7 @@
 ---
 description: This Interface includes an API which enables non-client hit-testing support for WebView2.
 title: WebView2 Win32 C++ ICoreWebView2CompositionController4
-ms.date: 08/20/2024
+ms.date: 08/26/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CompositionController4
 topic_type: 
 - APIRef
