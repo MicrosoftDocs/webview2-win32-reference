@@ -1,7 +1,7 @@
 ---
 description: Matrix that represents a 3D transform.
 title: WebView2 Win32 C++ COREWEBVIEW2_MATRIX_4X4
-ms.date: 07/31/2024
+ms.date: 08/26/2024
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, COREWEBVIEW2_MATRIX_4X4
 topic_type: 
 - APIRef
@@ -30,6 +30,8 @@ api_location:
 ---
 
 # struct COREWEBVIEW2_MATRIX_4X4
+
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
 
 Matrix that represents a 3D transform.
 
