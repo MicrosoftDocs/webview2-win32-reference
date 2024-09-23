@@ -7,7 +7,7 @@
       "locale": "en-us",
       "monikers": [],
       "moniker_ranges": [
-        ">= webview2-0.8.355 <= webview2-1.0.2739.15 || >= webview2-0.9.488-prerelease <= webview2-1.0.2783-prerelease"
+        ">= webview2-0.8.355 <= webview2-1.0.2792.45 || >= webview2-0.9.488-prerelease <= webview2-1.0.2839-prerelease"
       ],
       "open_to_public_contributors": false,
       "type_mapping": {
