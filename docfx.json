@@ -151,7 +151,7 @@
     "template": [],
     "dest": "webview2-win32",
     "groups": {
-      "webview2-2739-15": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2739.15" },
+      "webview2-2739-15": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2739.15 || webview2-1.0.2792.45" },
       "webview2-2651-64": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2651.64" },
       "webview2-2535-41": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2535.41 || webview2-1.0.2592.51" },
       "webview2-2478-35": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2478.35" },
@@ -198,7 +198,7 @@
       "webview2-488": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.488" },
       "webview2-430": { "dest": "webview2-win32", "moniker_range": "webview2-0.9.430" },
       "webview2-355": { "dest": "webview2-win32", "moniker_range": "webview2-0.8.355" },
-      "webview2-2730-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2730-prerelease || webview2-1.0.2783-prerelease" },
+      "webview2-2730-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2730-prerelease || webview2-1.0.2783-prerelease || webview2-1.0.2839-prerelease" },
       "webview2-2646-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2646-prerelease" },
       "webview2-2526-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2526-prerelease || webview2-1.0.2584-prerelease" },
       "webview2-2470-prerelease": { "dest": "webview2-win32", "moniker_range": "webview2-1.0.2470-prerelease" },
