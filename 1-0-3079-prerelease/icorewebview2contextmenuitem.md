@@ -28,8 +28,6 @@ api_location:
 
 # interface ICoreWebView2ContextMenuItem
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ContextMenuItem
   : public IUnknown

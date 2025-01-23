@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2WebResourceRequestedEventArgs2
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2WebResourceRequestedEventArgs2
   : public ICoreWebView2WebResourceRequestedEventArgs

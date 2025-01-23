@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2AddScriptToExecuteOnDocumentCreatedCompletedHandler
   : public IUnknown

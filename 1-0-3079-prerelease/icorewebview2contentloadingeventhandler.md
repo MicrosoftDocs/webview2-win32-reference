@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2ContentLoadingEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ContentLoadingEventHandler
   : public IUnknown

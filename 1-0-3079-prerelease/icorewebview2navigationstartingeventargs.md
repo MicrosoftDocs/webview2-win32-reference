@@ -22,8 +22,6 @@ api_location:
 
 # interface ICoreWebView2NavigationStartingEventArgs
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2NavigationStartingEventArgs
   : public IUnknown

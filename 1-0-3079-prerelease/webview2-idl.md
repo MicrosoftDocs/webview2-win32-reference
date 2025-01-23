@@ -20,8 +20,6 @@ api_location:
 
 # Globals
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ## Summary
 
  Members                        | Descriptions

@@ -33,8 +33,6 @@ api_location:
 
 # interface ICoreWebView2Notification
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2Notification
   : public IUnknown

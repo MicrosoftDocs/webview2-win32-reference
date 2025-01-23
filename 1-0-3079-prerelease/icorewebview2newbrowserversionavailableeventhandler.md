@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2NewBrowserVersionAvailableEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2NewBrowserVersionAvailableEventHandler
   : public IUnknown

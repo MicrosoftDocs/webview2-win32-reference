@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2CapturePreviewCompletedHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2CapturePreviewCompletedHandler
   : public IUnknown

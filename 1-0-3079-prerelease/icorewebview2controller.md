@@ -38,8 +38,6 @@ api_location:
 
 # interface ICoreWebView2Controller
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2Controller
   : public IUnknown

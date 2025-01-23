@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2ZoomFactorChangedEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ZoomFactorChangedEventHandler
   : public IUnknown

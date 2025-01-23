@@ -22,8 +22,6 @@ api_location:
 
 # interface ICoreWebView2CustomSchemeRegistration
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2CustomSchemeRegistration
   : public IUnknown

@@ -21,8 +21,6 @@ api_location:
 
 # interface ICoreWebView2HttpRequestHeaders
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2HttpRequestHeaders
   : public IUnknown

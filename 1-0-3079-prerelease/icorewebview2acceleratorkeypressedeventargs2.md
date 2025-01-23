@@ -17,8 +17,6 @@ api_location:
 
 # interface ICoreWebView2AcceleratorKeyPressedEventArgs2
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2AcceleratorKeyPressedEventArgs2
   : public ICoreWebView2AcceleratorKeyPressedEventArgs

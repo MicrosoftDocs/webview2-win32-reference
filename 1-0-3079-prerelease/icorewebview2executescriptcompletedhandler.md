@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2ExecuteScriptCompletedHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ExecuteScriptCompletedHandler
   : public IUnknown

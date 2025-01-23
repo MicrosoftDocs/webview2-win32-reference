@@ -18,8 +18,6 @@ api_location:
 
 # interface ICoreWebView2HttpHeadersCollectionIterator
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2HttpHeadersCollectionIterator
   : public IUnknown

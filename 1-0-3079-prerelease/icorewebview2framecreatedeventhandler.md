@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2FrameCreatedEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2FrameCreatedEventHandler
   : public IUnknown

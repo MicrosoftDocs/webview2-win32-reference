@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2CreateCoreWebView2ControllerCompletedHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2CreateCoreWebView2ControllerCompletedHandler
   : public IUnknown

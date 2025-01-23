@@ -20,8 +20,6 @@ api_location:
 
 # interface ICoreWebView2Environment
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2Environment
   : public IUnknown

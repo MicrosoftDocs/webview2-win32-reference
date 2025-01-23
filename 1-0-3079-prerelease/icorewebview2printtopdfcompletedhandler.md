@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2PrintToPdfCompletedHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2PrintToPdfCompletedHandler
   : public IUnknown

@@ -19,8 +19,6 @@ api_location:
 
 # interface ICoreWebView2BasicAuthenticationResponse
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2BasicAuthenticationResponse
   : public IUnknown

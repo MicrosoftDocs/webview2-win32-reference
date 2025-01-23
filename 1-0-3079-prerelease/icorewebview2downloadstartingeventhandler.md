@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2DownloadStartingEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2DownloadStartingEventHandler
   : public IUnknown

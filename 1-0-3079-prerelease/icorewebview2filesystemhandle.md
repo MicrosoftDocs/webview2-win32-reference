@@ -18,8 +18,6 @@ api_location:
 
 # interface ICoreWebView2FileSystemHandle
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2FileSystemHandle
   : public IUnknown

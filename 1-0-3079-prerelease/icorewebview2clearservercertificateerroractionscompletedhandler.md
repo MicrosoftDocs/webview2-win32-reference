@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ClearServerCertificateErrorActionsCompletedHandler
   : public IUnknown

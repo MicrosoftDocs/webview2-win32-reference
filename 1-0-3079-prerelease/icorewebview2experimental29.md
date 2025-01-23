@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2Experimental29
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```

@@ -25,8 +25,6 @@ api_location:
 
 # interface ICoreWebView2WindowFeatures
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2WindowFeatures
   : public IUnknown

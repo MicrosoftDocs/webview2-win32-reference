@@ -20,8 +20,6 @@ api_location:
 
 # interface ICoreWebView2HttpResponseHeaders
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2HttpResponseHeaders
   : public IUnknown

@@ -20,8 +20,6 @@ api_location:
 
 # interface ICoreWebView2BrowserExtension
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2BrowserExtension
   : public IUnknown

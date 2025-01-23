@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2ProfileDeletedEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ProfileDeletedEventHandler
   : public IUnknown
