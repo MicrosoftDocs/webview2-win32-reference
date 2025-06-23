@@ -33,6 +33,8 @@ api_location:
 
 # interface ICoreWebView2Settings
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2Settings
   : public IUnknown
