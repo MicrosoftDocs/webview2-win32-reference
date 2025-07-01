@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2ScriptDialogOpeningEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ScriptDialogOpeningEventHandler
   : public IUnknown

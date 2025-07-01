@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler
   : public IUnknown

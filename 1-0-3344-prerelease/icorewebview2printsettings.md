@@ -41,8 +41,6 @@ api_location:
 
 # interface ICoreWebView2PrintSettings
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2PrintSettings
   : public IUnknown

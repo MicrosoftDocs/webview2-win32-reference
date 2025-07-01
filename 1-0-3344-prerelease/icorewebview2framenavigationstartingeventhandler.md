@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2FrameNavigationStartingEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2FrameNavigationStartingEventHandler
   : public IUnknown

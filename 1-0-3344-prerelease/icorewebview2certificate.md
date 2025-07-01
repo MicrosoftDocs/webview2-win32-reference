@@ -23,8 +23,6 @@ api_location:
 
 # interface ICoreWebView2Certificate
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2Certificate
   : public IUnknown

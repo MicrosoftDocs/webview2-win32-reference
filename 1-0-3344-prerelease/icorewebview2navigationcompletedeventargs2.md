@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2NavigationCompletedEventArgs2
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2NavigationCompletedEventArgs2
   : public ICoreWebView2NavigationCompletedEventArgs

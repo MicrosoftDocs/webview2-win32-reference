@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2ProfileAddBrowserExtensionCompletedHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ProfileAddBrowserExtensionCompletedHandler
   : public IUnknown
