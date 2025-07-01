@@ -18,8 +18,6 @@ api_location:
 
 # interface ICoreWebView2WebMessageReceivedEventArgs
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2WebMessageReceivedEventArgs
   : public IUnknown

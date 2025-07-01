@@ -18,8 +18,6 @@ api_location:
 
 # interface ICoreWebView2PermissionSetting
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2PermissionSetting
   : public IUnknown

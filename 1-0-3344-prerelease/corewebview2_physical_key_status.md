@@ -21,8 +21,6 @@ api_location:
 
 # struct COREWEBVIEW2_PHYSICAL_KEY_STATUS
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 Contains the information packed into the `LPARAM` sent to a Win32 key event.
 
 ## Summary

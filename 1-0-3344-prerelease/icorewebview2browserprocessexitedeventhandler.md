@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2BrowserProcessExitedEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2BrowserProcessExitedEventHandler
   : public IUnknown

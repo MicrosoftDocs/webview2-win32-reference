@@ -18,8 +18,6 @@ api_location:
 
 # interface ICoreWebView2FrameInfo2
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2FrameInfo2
   : public ICoreWebView2FrameInfo

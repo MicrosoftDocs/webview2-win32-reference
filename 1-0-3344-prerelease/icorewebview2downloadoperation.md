@@ -34,8 +34,6 @@ api_location:
 
 # interface ICoreWebView2DownloadOperation
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2DownloadOperation
   : public IUnknown

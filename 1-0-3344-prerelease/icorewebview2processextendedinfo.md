@@ -17,8 +17,6 @@ api_location:
 
 # interface ICoreWebView2ProcessExtendedInfo
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2ProcessExtendedInfo
   : public IUnknown

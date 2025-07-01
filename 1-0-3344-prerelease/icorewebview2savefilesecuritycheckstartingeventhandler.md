@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2SaveFileSecurityCheckStartingEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2SaveFileSecurityCheckStartingEventHandler
   : public IUnknown

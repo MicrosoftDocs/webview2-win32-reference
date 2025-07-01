@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2SaveAsUIShowingEventHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2SaveAsUIShowingEventHandler
   : public IUnknown

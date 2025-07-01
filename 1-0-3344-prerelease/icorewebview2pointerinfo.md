@@ -71,8 +71,6 @@ api_location:
 
 # interface ICoreWebView2PointerInfo
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2PointerInfo
   : public IUnknown

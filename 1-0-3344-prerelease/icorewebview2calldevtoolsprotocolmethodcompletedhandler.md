@@ -16,8 +16,6 @@ api_location:
 
 # interface ICoreWebView2CallDevToolsProtocolMethodCompletedHandler
 
-[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
-
 ```
 interface ICoreWebView2CallDevToolsProtocolMethodCompletedHandler
   : public IUnknown
