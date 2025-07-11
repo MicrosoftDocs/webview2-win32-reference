@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2FocusChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2FocusChangedEventHandler
   : public IUnknown
