@@ -20,6 +20,8 @@ api_location:
 
 # interface ICoreWebView2ScriptException
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ScriptException
   : public IUnknown
