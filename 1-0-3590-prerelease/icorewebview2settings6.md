@@ -1,0 +1,86 @@
+---
+description: A continuation of the ICoreWebView2Settings interface to manage swipe navigation.
+title: WebView2 Win32 C++ ICoreWebView2Settings6
+ms.date: 10/01/2025
+keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings6
+topic_type: 
+- APIRef
+api_name:
+- ICoreWebView2Settings6
+- ICoreWebView2Settings6.get_IsSwipeNavigationEnabled
+- ICoreWebView2Settings6.put_IsSwipeNavigationEnabled
+api_type:
+- COM
+api_location:
+- embeddedbrowserwebview.dll
+---
+
+# interface ICoreWebView2Settings6
+
+```
+interface ICoreWebView2Settings6
+  : public ICoreWebView2Settings5
+```
+
+A continuation of the [ICoreWebView2Settings](icorewebview2settings.md#icorewebview2settings) interface to manage swipe navigation.
+
+## Summary
+
+ Members                        | Descriptions
+--------------------------------|---------------------------------------------
+[get_IsSwipeNavigationEnabled](#get_isswipenavigationenabled) | Gets the `IsSwipeNavigationEnabled` property.
+[put_IsSwipeNavigationEnabled](#put_isswipenavigationenabled) | The `IsSwipeNavigationEnabled` property enables or disables the ability of the end user to use swiping gesture on touch input enabled devices to navigate in WebView2.
+
+## Applies to
+
+Product                         | Introduced
+--------------------------------|---------------------------------------------
+WebView2 Win32            |    1.0.992.28
+WebView2 Win32 Prerelease |    1.0.1010
+
+## Members
+
+#### get_IsSwipeNavigationEnabled
+
+Gets the `IsSwipeNavigationEnabled` property.
+
+> public HRESULT [get_IsSwipeNavigationEnabled](#get_isswipenavigationenabled)(BOOL * value)
+
+#### put_IsSwipeNavigationEnabled
+
+The `IsSwipeNavigationEnabled` property enables or disables the ability of the end user to use swiping gesture on touch input enabled devices to navigate in WebView2.
+
+> public HRESULT [put_IsSwipeNavigationEnabled](#put_isswipenavigationenabled)(BOOL value)
+
+It defaults to `TRUE`.
+
+When this property is `TRUE`, then all configured navigation gestures are enabled:
+
+1. Swiping left and right to navigate forward and backward is always configured.
+
+1. Swiping down to refresh is off by default and not exposed via our API currently, it requires the "--pull-to-refresh" option to be included in the additional browser arguments to be configured. (See put_AdditionalBrowserArguments.)
+
+When set to `FALSE`, the end user cannot swipe to navigate or pull to refresh. This API only affects the overscrolling navigation functionality and has no effect on the scrolling interaction used to explore the web content shown in WebView2.
+
+Disabling/Enabling IsSwipeNavigationEnabled takes effect after the next navigation.
+
+```cpp
+            CHECK_FEATURE_RETURN(m_settings6);
+            BOOL swipeNavigationEnabled;
+            CHECK_FAILURE(m_settings6->get_IsSwipeNavigationEnabled(&swipeNavigationEnabled));
+            if (swipeNavigationEnabled)
+            {
+                CHECK_FAILURE(m_settings6->put_IsSwipeNavigationEnabled(FALSE));
+                MessageBox(
+                    nullptr, L"Swipe to navigate is disabled after the next navigation.",
+                    L"Settings change", MB_OK);
+            }
+            else
+            {
+                CHECK_FAILURE(m_settings6->put_IsSwipeNavigationEnabled(TRUE));
+                MessageBox(
+                    nullptr, L"Swipe to navigate is enabled after the next navigation.",
+                    L"Settings change", MB_OK);
+            }
+```
+
