@@ -46,7 +46,6 @@ WebView2 Win32 Prerelease |
 
 Gets the type of the sensitivity label applied to the web content.
 
-> public HRESULT [get_LabelKind](#get_labelkind)(COREWEBVIEW2_SENSITIVITY_LABEL_KIND * value)
+> public HRESULT [get_LabelKind](#get_labelkind)([COREWEBVIEW2_SENSITIVITY_LABEL_KIND](https://review.learn.microsoft.com/en-us/microsoft-edge/webview2/reference/win32/webview2experimental-idl?view=webview2-1.0.3590-prerelease&branch=pr-en-us-128#corewebview2_sensitivity_label_kind) * value)
 
 This property identifies which sensitivity label system is being used (such as Microsoft Information Protection or other label providers). Applications can use this information to determine how to interpret and handle the label data, as different label types may have different metadata formats, protection requirements, and policy enforcement mechanisms.
-
