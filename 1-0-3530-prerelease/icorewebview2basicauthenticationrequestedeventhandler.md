@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2BasicAuthenticationRequestedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2BasicAuthenticationRequestedEventHandler
   : public IUnknown
