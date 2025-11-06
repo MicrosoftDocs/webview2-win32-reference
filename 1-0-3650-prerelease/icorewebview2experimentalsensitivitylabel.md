@@ -31,7 +31,7 @@ Interface for different sensitivity label kinds used in WebView2.
 --------------------------------|---------------------------------------------
 [get_LabelKind](#get_labelkind) | Gets the type of the sensitivity label applied to the web content.
 
-This interface provides functionality for accessing sensitivity label information applied to web content. Different label types (such as `ICoreWebView2MipSensitivityLabel`) provide specific label information and metadata.
+This interface provides functionality for accessing sensitivity label information applied to web content. Different label types (such as [ICoreWebView2MipSensitivityLabel](https://review.learn.microsoft.com/en-us/microsoft-edge/webview2/reference/win32/icorewebview2experimentalmipsensitivitylabel?view=webview2-1.0.3590-prerelease)) provide specific label information and metadata.
 
 ## Applies to
 
