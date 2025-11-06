@@ -20,6 +20,8 @@ api_location:
 
 # interface ICoreWebView2ExperimentalSharedWorker
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
