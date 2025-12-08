@@ -46,7 +46,7 @@ WebView2 Win32 Prerelease |    0.9.579
 
 Retrieves the effective allowed port range for the specified component scope and transport protocol.
 
-> public HRESULT [GetEffectiveAllowedPortRange](#geteffectiveallowedportrange)(COREWEBVIEW2_ALLOWED_PORT_RANGE_SCOPE scope, COREWEBVIEW2_TRANSPORT_PROTOCOL_KIND protocol, INT32 * minPort, INT32 * maxPort)
+> public HRESULT [GetEffectiveAllowedPortRange](#geteffectiveallowedportrange)([COREWEBVIEW2_ALLOWED_PORT_RANGE_SCOPE](https://review.learn.microsoft.com/en-us/microsoft-edge/webview2/reference/win32/webview2experimental-idl?view=webview2-1.0.3712-prerelease&branch=pr-en-us-132#corewebview2_allowed_port_range_scope) scope, [COREWEBVIEW2_TRANSPORT_PROTOCOL_KIND](https://review.learn.microsoft.com/en-us/microsoft-edge/webview2/reference/win32/webview2experimental-idl?view=webview2-1.0.3712-prerelease&branch=pr-en-us-132#corewebview2_transport_protocol_kind) protocol, INT32 * minPort, INT32 * maxPort)
 
 `GetEffectiveAllowedPortRange` returns the effective port range in the effect previously set via `SetAllowedPortRange`.
 
@@ -68,7 +68,7 @@ Pass `_DEFAULT` when only `_WEB_RTC` set   |Returns `(0,0)`
 
 Sets the allowed port range restriction for the specified scope and transport protocol.
 
-> public HRESULT [SetAllowedPortRange](#setallowedportrange)(COREWEBVIEW2_ALLOWED_PORT_RANGE_SCOPE scope, COREWEBVIEW2_TRANSPORT_PROTOCOL_KIND protocol, INT32 minPort, INT32 maxPort)
+> public HRESULT [SetAllowedPortRange](#setallowedportrange)([COREWEBVIEW2_ALLOWED_PORT_RANGE_SCOPE](https://review.learn.microsoft.com/en-us/microsoft-edge/webview2/reference/win32/webview2experimental-idl?view=webview2-1.0.3712-prerelease&branch=pr-en-us-132#corewebview2_allowed_port_range_scope) scope, [COREWEBVIEW2_TRANSPORT_PROTOCOL_KIND](https://review.learn.microsoft.com/en-us/microsoft-edge/webview2/reference/win32/webview2experimental-idl?view=webview2-1.0.3712-prerelease&branch=pr-en-us-132#corewebview2_transport_protocol_kind) protocol, INT32 minPort, INT32 maxPort)
 
 This API enables WebView2 to operate within enterprise network or firewall restrictions by limiting network communication to a defined port range. It provides fine-grained control by allowing port restrictions to be applied per network component scope, such as WebRTC.
 
