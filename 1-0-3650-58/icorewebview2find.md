@@ -192,7 +192,7 @@ Displays the Find bar and starts the find session, replacing any existing sessio
 
 The async action completes when the Find bar UI displays the search term and the match counter populates (may have slight latency). The `MatchCountChanged` and `ActiveMatchIndexChanged` events fire only after completion with default values of -1 for active match index and 0 for match count before completion.
 
-To start a new session from the first match, call `Stop()` before `StartAsync()`. Consecutive calls with the same options continue from the current position. Without parameters, it behaves as `FindNext` or `FindPrevious` based on the last action (defaults to forward). Different search terms always start a new session from the document beginning.
+To start a new session from the first match, call `Stop()` before `Start()`. Consecutive calls with the same options continue from the current position. Without parameters, it behaves as `FindNext` or `FindPrevious` based on the last action (defaults to forward). Different search terms always start a new session from the document beginning.
 
 ```cpp
 bool AppWindow::Start(const std::wstring& searchTerm)
