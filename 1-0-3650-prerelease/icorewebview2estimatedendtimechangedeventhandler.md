@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2EstimatedEndTimeChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2EstimatedEndTimeChangedEventHandler
   : public IUnknown
