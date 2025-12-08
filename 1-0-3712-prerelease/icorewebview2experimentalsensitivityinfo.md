@@ -99,7 +99,7 @@ std::vector<std::pair<std::wstring, std::wstring>> ScenarioSensitivityLabel::
 
 Gets the current state of sensitivity label detection.
 
-> public HRESULT [get_SensitivityLabelsState](#get_sensitivitylabelsstate)(COREWEBVIEW2_SENSITIVITY_LABELS_STATE * value)
+> public HRESULT [get_SensitivityLabelsState](#get_sensitivitylabelsstate)([COREWEBVIEW2_SENSITIVITY_LABELS_STATE](https://review.learn.microsoft.com/en-us/microsoft-edge/webview2/reference/win32/webview2experimental-idl?view=webview2-1.0.3712-prerelease&branch=pr-en-us-128#corewebview2_sensitivity_labels_state) * value)
 
 Refer `COREWEBVIEW2_SENSITIVITY_LABELS_STATE` for different states.
 
