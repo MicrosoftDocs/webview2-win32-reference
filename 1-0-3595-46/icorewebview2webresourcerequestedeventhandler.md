@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2WebResourceRequestedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2WebResourceRequestedEventHandler
   : public IUnknown

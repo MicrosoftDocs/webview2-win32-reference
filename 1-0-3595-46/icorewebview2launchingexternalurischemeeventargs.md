@@ -21,6 +21,8 @@ api_location:
 
 # interface ICoreWebView2LaunchingExternalUriSchemeEventArgs
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2LaunchingExternalUriSchemeEventArgs
   : public IUnknown
