@@ -17,6 +17,8 @@ api_location:
 
 # interface ICoreWebView2ExperimentalSensitivityInfo
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
