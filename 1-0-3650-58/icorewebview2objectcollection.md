@@ -17,6 +17,8 @@ api_location:
 
 # interface ICoreWebView2ObjectCollection
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ObjectCollection
   : public ICoreWebView2ObjectCollectionView
