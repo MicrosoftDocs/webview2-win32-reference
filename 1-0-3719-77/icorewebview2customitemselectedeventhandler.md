@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2CustomItemSelectedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2CustomItemSelectedEventHandler
   : public IUnknown
