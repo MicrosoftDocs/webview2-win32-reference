@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2DragStartingEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2DragStartingEventHandler
   : public IUnknown
