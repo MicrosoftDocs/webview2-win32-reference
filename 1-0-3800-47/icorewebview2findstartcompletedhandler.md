@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2FindStartCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2FindStartCompletedHandler
   : public IUnknown
