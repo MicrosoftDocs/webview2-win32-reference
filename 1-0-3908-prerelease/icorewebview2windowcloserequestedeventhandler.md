@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2WindowCloseRequestedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2WindowCloseRequestedEventHandler
   : public IUnknown

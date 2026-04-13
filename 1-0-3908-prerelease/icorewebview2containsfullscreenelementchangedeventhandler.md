@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2ContainsFullScreenElementChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ContainsFullScreenElementChangedEventHandler
   : public IUnknown
