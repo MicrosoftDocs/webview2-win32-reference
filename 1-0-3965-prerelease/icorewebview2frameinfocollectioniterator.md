@@ -18,6 +18,8 @@ api_location:
 
 # interface ICoreWebView2FrameInfoCollectionIterator
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2FrameInfoCollectionIterator
   : public IUnknown
