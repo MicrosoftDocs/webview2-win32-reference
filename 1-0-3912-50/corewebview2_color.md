@@ -19,6 +19,8 @@ api_location:
 
 # struct COREWEBVIEW2_COLOR
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 A value representing RGBA color (Red, Green, Blue, Alpha) for WebView2.
 
 ## Summary

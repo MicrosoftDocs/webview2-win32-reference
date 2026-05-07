@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2BytesReceivedChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2BytesReceivedChangedEventHandler
   : public IUnknown
