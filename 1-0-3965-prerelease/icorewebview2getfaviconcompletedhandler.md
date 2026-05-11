@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2GetFaviconCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2GetFaviconCompletedHandler
   : public IUnknown

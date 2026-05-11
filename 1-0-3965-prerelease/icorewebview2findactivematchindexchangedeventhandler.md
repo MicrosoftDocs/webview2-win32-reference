@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2FindActiveMatchIndexChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2FindActiveMatchIndexChangedEventHandler
   : public IUnknown
