@@ -20,6 +20,8 @@ api_location:
 
 # interface ICoreWebView2SharedWorker
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2SharedWorker
   : public IUnknown
