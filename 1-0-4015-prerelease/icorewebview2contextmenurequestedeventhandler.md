@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2ContextMenuRequestedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ContextMenuRequestedEventHandler
   : public IUnknown
