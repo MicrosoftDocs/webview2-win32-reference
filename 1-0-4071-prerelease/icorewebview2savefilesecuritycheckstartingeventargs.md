@@ -23,6 +23,8 @@ api_location:
 
 # interface ICoreWebView2SaveFileSecurityCheckStartingEventArgs
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2SaveFileSecurityCheckStartingEventArgs
   : public IUnknown
