@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2GetProcessExtendedInfosCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2GetProcessExtendedInfosCompletedHandler
   : public IUnknown
