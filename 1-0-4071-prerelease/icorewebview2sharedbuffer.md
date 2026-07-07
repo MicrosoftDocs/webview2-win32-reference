@@ -20,6 +20,8 @@ api_location:
 
 # interface ICoreWebView2SharedBuffer
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2SharedBuffer
   : public IUnknown
