@@ -23,6 +23,8 @@ api_location:
 
 # interface ICoreWebView2CompositionController
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2CompositionController
   : public IUnknown
