@@ -186,7 +186,13 @@ Initiates a find using the specified find options asynchronously.
 
 > public HRESULT [Start](#start)([ICoreWebView2FindOptions](icorewebview2findoptions.md#icorewebview2findoptions) * options, [ICoreWebView2FindStartCompletedHandler](icorewebview2findstartcompletedhandler.md#icorewebview2findstartcompletedhandler) * handler)
 
-Displays the Find bar and starts the find session. If a find session was already ongoing, it will be stopped and replaced with this new instance. If called with an empty string, the Find bar is displayed but no finding occurs. Changing the FindOptions object after initiation won't affect the ongoing find session. To change the ongoing find session, Start must be called again with a new or modified FindOptions object. Start supports HTML and TXT document queries. In general, this API is designed for text-based find sessions. If you start a find session programmatically on another file format that doesn't have text fields, the find session will try to execute but will fail to find any matches. (It will silently fail) Note: The asynchronous action completes when the UI has been displayed with the find term in the UI bar, and the matches have populated on the counter on the find bar. There may be a slight latency between the UI display and the matches populating in the counter. The MatchCountChanged and ActiveMatchIndexChanged events are only raised after Start has completed; otherwise, they will have their default values (-1 for active match index and 0 for match count). To start a new find session (beginning the search from the first match), call `Stop` before invoking `Start`. If `Start` is called consecutively with the same options and without calling `Stop`, the find session will continue from the current position in the existing session. Calling `Start` without altering its parameters will behave either as `FindNext` or `FindPrevious`, depending on the most recent search action performed. Start will default to forward if neither have been called. However, calling Start again during an ongoing find session does not resume from the point of the current active match. For example, given the text "1 1 A 1 1" and initiating a find session for "A", then starting another find session for "1", it will start searching from the beginning of the document, regardless of the previous active match. This behavior indicates that changing the find query initiates a completely new find session, rather than continuing from the previous match index.
+Initiates a find operation using the specified options asynchronously. Starting find is an asynchronous operation and can be configured with notification handlers to know when the starting find operation has completed. The Find dialog will appear after the StartAsync operation completes. Note that the async behavior only applies to starting the find, not to the entire find dialog session.
+
+Displays the Find bar and starts the find session, replacing any existing session. Shows the Find bar even with empty search strings (no actual finding occurs). Supports HTML and TXT document queries; silently fails on unsupported formats. FindOptions changes after initiation don't affect the active session.
+
+The async action completes when the Find bar UI displays the search term and the match counter populates (may have slight latency). The MatchCountChanged and ActiveMatchIndexChanged events fire only after completion with default values of -1 for active match index and 0 for match count before completion.
+
+To start a new session from the first match, call Stop() before Start(). Consecutive calls with the same options continue from the current position. Without parameters, it behaves as FindNext or FindPrevious based on the last action (defaults to forward). Different search terms always start a new session from the document beginning.
 
 ```cpp
 bool AppWindow::Start(const std::wstring& searchTerm)
@@ -222,7 +228,7 @@ bool AppWindow::Start(const std::wstring& searchTerm)
 
 #### Stop
 
-Stops the current 'Find' session and hides the Find bar.
+Stops the current 'Find' session and hides the Find bar. Stopping Find is an asynchronous operation and can be configured with notification handlers to know when stopping find operation has completed. The Find dialog will disappear before the Stop operation completes.
 
 > public HRESULT [Stop](#stop)()
 
