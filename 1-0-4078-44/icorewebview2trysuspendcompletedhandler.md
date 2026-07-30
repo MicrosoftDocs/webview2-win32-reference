@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2TrySuspendCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2TrySuspendCompletedHandler
   : public IUnknown

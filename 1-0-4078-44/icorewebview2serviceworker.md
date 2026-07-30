@@ -22,6 +22,8 @@ api_location:
 
 # interface ICoreWebView2ServiceWorker
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ServiceWorker
   : public IUnknown
