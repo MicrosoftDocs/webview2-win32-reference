@@ -22,6 +22,8 @@ api_location:
 
 # interface ICoreWebView2WebResourceResponse
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2WebResourceResponse
   : public IUnknown
