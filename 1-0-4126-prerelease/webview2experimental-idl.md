@@ -14,6 +14,8 @@ api_location:
 
 # Experimental Globals
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ## Summary
