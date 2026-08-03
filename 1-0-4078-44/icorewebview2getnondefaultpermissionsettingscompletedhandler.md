@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2GetNonDefaultPermissionSettingsCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2GetNonDefaultPermissionSettingsCompletedHandler
   : public IUnknown

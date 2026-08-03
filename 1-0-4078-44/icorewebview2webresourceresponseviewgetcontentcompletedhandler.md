@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2WebResourceResponseViewGetContentCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2WebResourceResponseViewGetContentCompletedHandler
   : public IUnknown

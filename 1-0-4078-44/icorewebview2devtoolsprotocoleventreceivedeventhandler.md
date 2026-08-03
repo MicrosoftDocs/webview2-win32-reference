@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2DevToolsProtocolEventReceivedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2DevToolsProtocolEventReceivedEventHandler
   : public IUnknown
