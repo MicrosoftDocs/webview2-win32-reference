@@ -17,6 +17,8 @@ api_location:
 
 # interface ICoreWebView2Environment5
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2Environment5
   : public ICoreWebView2Environment4
