@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2CursorChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2CursorChangedEventHandler
   : public IUnknown
