@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2NewWindowRequestedEventArgs3
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2NewWindowRequestedEventArgs3
   : public ICoreWebView2NewWindowRequestedEventArgs2
