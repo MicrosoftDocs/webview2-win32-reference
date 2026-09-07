@@ -17,6 +17,8 @@ api_location:
 
 # interface ICoreWebView2PermissionSettingCollectionView
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2PermissionSettingCollectionView
   : public IUnknown

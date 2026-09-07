@@ -25,6 +25,8 @@ api_location:
 
 # interface ICoreWebView2Find
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2Find
   : public IUnknown
