@@ -231,7 +231,7 @@ bool AppWindow::Start(const std::wstring& searchTerm)
 Stops the current 'Find' session and hides the Find bar. Stopping Find is an asynchronous operation and can be configured with notification handlers to know when stopping find operation has completed. The Find dialog will disappear before the Stop operation completes.
 
 > public HRESULT [Stop](#stop)()
-p
+
 If called with no Find session active, it will silently do nothing.
 
 ```cpp
