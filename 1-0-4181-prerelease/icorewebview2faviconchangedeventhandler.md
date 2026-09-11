@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2FaviconChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2FaviconChangedEventHandler
   : public IUnknown

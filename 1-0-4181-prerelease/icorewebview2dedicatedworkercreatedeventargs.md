@@ -17,6 +17,8 @@ api_location:
 
 # interface ICoreWebView2DedicatedWorkerCreatedEventArgs
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2DedicatedWorkerCreatedEventArgs
   : public IUnknown
