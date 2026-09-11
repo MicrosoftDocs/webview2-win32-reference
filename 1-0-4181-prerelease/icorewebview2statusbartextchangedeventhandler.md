@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2StatusBarTextChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2StatusBarTextChangedEventHandler
   : public IUnknown

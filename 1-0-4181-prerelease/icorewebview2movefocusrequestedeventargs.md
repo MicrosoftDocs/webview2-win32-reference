@@ -18,6 +18,8 @@ api_location:
 
 # interface ICoreWebView2MoveFocusRequestedEventArgs
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2MoveFocusRequestedEventArgs
   : public IUnknown
