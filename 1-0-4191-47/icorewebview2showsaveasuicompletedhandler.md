@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2ShowSaveAsUICompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ShowSaveAsUICompletedHandler
   : public IUnknown
