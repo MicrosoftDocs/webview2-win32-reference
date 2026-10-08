@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2ClearBrowsingDataCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ClearBrowsingDataCompletedHandler
   : public IUnknown
