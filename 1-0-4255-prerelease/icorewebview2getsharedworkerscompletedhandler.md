@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2GetSharedWorkersCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2GetSharedWorkersCompletedHandler
   : public IUnknown

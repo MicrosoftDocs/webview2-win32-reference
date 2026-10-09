@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2GetCookiesCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2GetCookiesCompletedHandler
   : public IUnknown

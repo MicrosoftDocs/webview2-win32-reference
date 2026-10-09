@@ -21,6 +21,8 @@ api_location:
 
 # interface ICoreWebView2ServerCertificateErrorDetectedEventArgs
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ServerCertificateErrorDetectedEventArgs
   : public IUnknown

@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2SharedWorkerDestroyingEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2SharedWorkerDestroyingEventHandler
   : public IUnknown
