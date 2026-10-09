@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2FrameScreenCaptureStartingEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2FrameScreenCaptureStartingEventHandler
   : public IUnknown
