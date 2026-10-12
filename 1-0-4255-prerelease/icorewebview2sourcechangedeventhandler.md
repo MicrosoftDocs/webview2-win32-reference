@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2SourceChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2SourceChangedEventHandler
   : public IUnknown
