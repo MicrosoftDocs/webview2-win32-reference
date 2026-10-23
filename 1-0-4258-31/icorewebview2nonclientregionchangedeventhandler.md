@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2NonClientRegionChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2NonClientRegionChangedEventHandler
   : public IUnknown
