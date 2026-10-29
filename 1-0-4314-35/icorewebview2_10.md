@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_9 that supports BasicAuthenticationRequested event.
 title: WebView2 Win32 C++ ICoreWebView2_10
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_10
 topic_type: 
 - APIRef
@@ -46,7 +46,7 @@ Adds an event handler for the `BasicAuthenticationRequested` event.
 
 > public HRESULT [add_BasicAuthenticationRequested](#add_basicauthenticationrequested)([ICoreWebView2BasicAuthenticationRequestedEventHandler](icorewebview2basicauthenticationrequestedeventhandler.md#icorewebview2basicauthenticationrequestedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the BasicAuthenticationRequested event. BasicAuthenticationRequested event is raised when WebView encounters a Basic HTTP Authentication request as described in https://developer.mozilla.org/docs/Web/HTTP/Authentication, a Digest HTTP Authentication request as described in https://developer.mozilla.org/docs/Web/HTTP/Headers/Authorization#digest, an NTLM authentication or a Proxy Authentication request.
+BasicAuthenticationRequested event is raised when WebView encounters a Basic HTTP Authentication request as described in https://developer.mozilla.org/docs/Web/HTTP/Authentication, a Digest HTTP Authentication request as described in https://developer.mozilla.org/docs/Web/HTTP/Headers/Authorization#digest, an NTLM authentication or a Proxy Authentication request.
 
 The host can provide a response with credentials for the authentication or cancel the request. If the host sets the Cancel property to false but does not provide either UserName or Password properties on the Response property, then WebView2 will show the default authentication challenge dialog prompt to the user.
 

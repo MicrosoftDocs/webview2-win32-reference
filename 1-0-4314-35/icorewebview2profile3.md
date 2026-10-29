@@ -1,7 +1,7 @@
 ---
 description: This is an extension of the ICoreWebView2Profile interface to control levels of tracking prevention.
 title: WebView2 Win32 C++ ICoreWebView2Profile3
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile3
 topic_type: 
 - APIRef
@@ -56,9 +56,9 @@ This level would apply to the context of the profile. That is, all WebView2s sha
 
 See `COREWEBVIEW2_TRACKING_PREVENTION_LEVEL` for descriptions of levels.
 
-If tracking prevention feature is enabled when creating the WebView2 environment, you can also disable tracking prevention later using this property and `COREWEBVIEW2_TRACKING_PREVENTION_LEVEL_NONE` value but that doesn't improves runtime performance.
+If tracking prevention feature is enabled when creating the WebView2 environment, you can also disable tracking prevention later using this property and `COREWEBVIEW2_TRACKING_PREVENTION_LEVEL_NONE` value but that doesn't improve runtime performance.
 
-There is `ICoreWebView2EnvironmentOptions5::EnableTrackingPrevention` property to enable/disable tracking prevention feature for all the WebView2's created in the same environment. If enabled, `PreferredTrackingPreventionLevel` is set to `COREWEBVIEW2_TRACKING_PREVENTION_LEVEL_BALANCED` by default for all the WebView2's and profiles created in the same environment or is set to the level whatever value was last changed/persisted to the profile. If disabled `PreferredTrackingPreventionLevel` is not respected by WebView2. If `PreferredTrackingPreventionLevel` is set when the feature is disabled, the property value get changed and persisted but it will takes effect only if `ICoreWebView2EnvironmentOptions5::EnableTrackingPrevention` is true.
+There is `ICoreWebView2EnvironmentOptions5::EnableTrackingPrevention` property to enable/disable tracking prevention feature for all the WebView2's created in the same environment. If enabled, `PreferredTrackingPreventionLevel` is set to `COREWEBVIEW2_TRACKING_PREVENTION_LEVEL_BALANCED` by default for all the WebView2's and profiles created in the same environment or is set to the level whatever value was last changed/persisted to the profile. If disabled `PreferredTrackingPreventionLevel` is not respected by WebView2. If `PreferredTrackingPreventionLevel` is set when the feature is disabled, the property value gets changed and persisted but it will take effect only if `ICoreWebView2EnvironmentOptions5::EnableTrackingPrevention` is true.
 
 See `ICoreWebView2EnvironmentOptions5::EnableTrackingPrevention` for more details. 
 ```cpp

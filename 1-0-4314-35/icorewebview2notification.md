@@ -1,7 +1,7 @@
 ---
-description: This is the ICoreWebView2Notification that represents a HTML Notification object.
+description: This is the ICoreWebView2Notification that represents an HTML Notification object.
 title: WebView2 Win32 C++ ICoreWebView2Notification
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Notification
 topic_type: 
 - APIRef
@@ -38,7 +38,7 @@ interface ICoreWebView2Notification
   : public IUnknown
 ```
 
-This is the ICoreWebView2Notification that represents a [HTML Notification object](https://developer.mozilla.org/docs/Web/API/Notification).
+This is the ICoreWebView2Notification that represents an [HTML Notification object](https://developer.mozilla.org/docs/Web/API/Notification).
 
 ## Summary
 
@@ -206,7 +206,7 @@ The host may run this to report the notification has been clicked, and it will c
 
 > public HRESULT [ReportClicked](#reportclicked)()
 
-Use `ReportClickedWithActionIndex` to specify an action to activate a persistent notification. You must not run this unless you are handling the `NotificationReceived` event. Returns `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)` if `Handled` is `FALSE` or `ReportShown` has not been run when this is called.
+You must not run this unless you are handling the `NotificationReceived` event. Returns `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)` if `Handled` is `FALSE` or `ReportShown` has not been run when this is called.
 
 #### ReportClosed
 

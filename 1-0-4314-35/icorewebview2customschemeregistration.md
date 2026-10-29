@@ -1,7 +1,7 @@
 ---
-description: Represents the registration of a custom scheme with the CoreWebView2Environment.
+description: Represents the registration of a custom scheme with the ICoreWebView2Environment.
 title: WebView2 Win32 C++ ICoreWebView2CustomSchemeRegistration
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CustomSchemeRegistration
 topic_type: 
 - APIRef
@@ -27,7 +27,7 @@ interface ICoreWebView2CustomSchemeRegistration
   : public IUnknown
 ```
 
-Represents the registration of a custom scheme with the CoreWebView2Environment.
+Represents the registration of a custom scheme with the [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment).
 
 ## Summary
 
@@ -115,7 +115,7 @@ List of origins that are allowed to issue requests with the custom scheme, such 
 
 > public HRESULT [GetAllowedOrigins](#getallowedorigins)(UINT32 * allowedOriginsCount, LPWSTR ** allowedOrigins)
 
-The origin of any request (requests that have the [Origin header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin)) to the custom scheme URI needs to be in this list. No-origin requests are requests that do not have an Origin header, such as link navigations, embedded images and are always allowed. Note: POST requests always contain an Origin header, therefore AllowedOrigins must be set for even for same origin POST requests. Note that cross-origin restrictions still apply. From any opaque origin (Origin header is null), no cross-origin requests are allowed. If the list is empty, no cross-origin request to this scheme is allowed. Origins are specified as a string in the format of scheme://host:port. The origins are string pattern matched with `*` (matches 0 or more characters) and `?` (matches 0 or 1 character) wildcards just like the URI matching in the [AddWebResourceRequestedFilter API](/dotnet/api/microsoft.web.webview2.core.corewebview2.addwebresourcerequestedfilter). For example, "http://*.example.com:80". Here's a set of examples of what is allowed and not:
+The origin of any request (requests that have the [Origin header](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin)) to the custom scheme URI needs to be in this list. No-origin requests are requests that do not have an Origin header, such as link navigations, embedded images and are always allowed. Note: POST requests always contain an Origin header, therefore AllowedOrigins must be set for even for same origin POST requests. Note that cross-origin restrictions still apply. From any opaque origin (Origin header is null), no cross-origin requests are allowed. If the list is empty, no cross-origin request to this scheme is allowed. Origins are specified as a string in the format of scheme://host:port. The origins are string pattern matched with `*` (matches 0 or more characters) and `?` (matches 0 or 1 character) wildcards just like the URI matching in the [AddWebResourceRequestedFilter API](/microsoft-edge/webview2/reference/win32/icorewebview2#addwebresourcerequestedfilter). For example, "http://*.example.com:80". Here's a set of examples of what is allowed and not:
 
 Request URI   |Originating URL   |AllowedOrigins   |Allowed
 --------- | --------- | --------- | ---------

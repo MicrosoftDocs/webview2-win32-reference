@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_7 that supports media features.
 title: WebView2 Win32 C++ ICoreWebView2_8
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_8
 topic_type: 
 - APIRef
@@ -35,8 +35,8 @@ This interface is an extension of [ICoreWebView2_7](icorewebview2_7.md#icorewebv
 --------------------------------|---------------------------------------------
 [add_IsDocumentPlayingAudioChanged](#add_isdocumentplayingaudiochanged) | Adds an event handler for the `IsDocumentPlayingAudioChanged` event.
 [add_IsMutedChanged](#add_ismutedchanged) | Adds an event handler for the `IsMutedChanged` event.
-[get_IsDocumentPlayingAudio](#get_isdocumentplayingaudio) | Indicates whether any audio output from this CoreWebView2 is playing.
-[get_IsMuted](#get_ismuted) | Indicates whether all audio output from this CoreWebView2 is muted or not.
+[get_IsDocumentPlayingAudio](#get_isdocumentplayingaudio) | Indicates whether any audio output from this [ICoreWebView2](icorewebview2.md#icorewebview2) is playing.
+[get_IsMuted](#get_ismuted) | Indicates whether all audio output from this [ICoreWebView2](icorewebview2.md#icorewebview2) is muted or not.
 [put_IsMuted](#put_ismuted) | Sets the `IsMuted` property.
 [remove_IsDocumentPlayingAudioChanged](#remove_isdocumentplayingaudiochanged) | Remove an event handler previously added with `add_IsDocumentPlayingAudioChanged`.
 [remove_IsMutedChanged](#remove_ismutedchanged) | Remove an event handler previously added with `add_IsMutedChanged`.
@@ -134,11 +134,11 @@ void AudioComponent::ToggleMuteState()
      {
          if (isMuted)
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔇 " + std::wstring(title.get());
          }
          else
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔊 " + std::wstring(title.get());
          }
      }
      else
@@ -234,11 +234,11 @@ void AudioComponent::ToggleMuteState()
      {
          if (isMuted)
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔇 " + std::wstring(title.get());
          }
          else
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔊 " + std::wstring(title.get());
          }
      }
      else
@@ -252,11 +252,11 @@ void AudioComponent::ToggleMuteState()
 
 #### get_IsDocumentPlayingAudio
 
-Indicates whether any audio output from this CoreWebView2 is playing.
+Indicates whether any audio output from this [ICoreWebView2](icorewebview2.md#icorewebview2) is playing.
 
 > public HRESULT [get_IsDocumentPlayingAudio](#get_isdocumentplayingaudio)(BOOL * value)
 
-This property will be true if audio is playing even if IsMuted is true.
+This property will be `TRUE` if audio is playing even if `IsMuted` is `TRUE`.
 
 ```cpp
 AudioComponent::AudioComponent(AppWindow* appWindow)
@@ -334,11 +334,11 @@ void AudioComponent::ToggleMuteState()
      {
          if (isMuted)
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔇 " + std::wstring(title.get());
          }
          else
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔊 " + std::wstring(title.get());
          }
      }
      else
@@ -352,7 +352,7 @@ void AudioComponent::ToggleMuteState()
 
 #### get_IsMuted
 
-Indicates whether all audio output from this CoreWebView2 is muted or not.
+Indicates whether all audio output from this [ICoreWebView2](icorewebview2.md#icorewebview2) is muted or not.
 
 > public HRESULT [get_IsMuted](#get_ismuted)(BOOL * value)
 
@@ -432,11 +432,11 @@ void AudioComponent::ToggleMuteState()
      {
          if (isMuted)
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔇 " + std::wstring(title.get());
          }
          else
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔊 " + std::wstring(title.get());
          }
      }
      else
@@ -530,11 +530,11 @@ void AudioComponent::ToggleMuteState()
      {
          if (isMuted)
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔇 " + std::wstring(title.get());
          }
          else
          {
-             result = L"???? " + std::wstring(title.get());
+             result = L"🔊 " + std::wstring(title.get());
          }
      }
      else

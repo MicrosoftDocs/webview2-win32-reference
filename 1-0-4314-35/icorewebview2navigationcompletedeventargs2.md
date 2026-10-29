@@ -1,7 +1,7 @@
 ---
-description: This is an interface for the StatusCode property of ICoreWebView2NavigationCompletedEventArgs.
+description: This is an interface for the `HttpStatusCode` property of ICoreWebView2NavigationCompletedEventArgs.
 title: WebView2 Win32 C++ ICoreWebView2NavigationCompletedEventArgs2
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NavigationCompletedEventArgs2
 topic_type: 
 - APIRef
@@ -21,7 +21,7 @@ interface ICoreWebView2NavigationCompletedEventArgs2
   : public ICoreWebView2NavigationCompletedEventArgs
 ```
 
-This is an interface for the StatusCode property of [ICoreWebView2NavigationCompletedEventArgs](icorewebview2navigationcompletedeventargs.md#icorewebview2navigationcompletedeventargs).
+This is an interface for the `HttpStatusCode` property of [ICoreWebView2NavigationCompletedEventArgs](icorewebview2navigationcompletedeventargs.md#icorewebview2navigationcompletedeventargs).
 
 ## Summary
 

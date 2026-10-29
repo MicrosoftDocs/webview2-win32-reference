@@ -1,7 +1,7 @@
 ---
 description: Defines properties that enable, disable, or modify WebView features.
 title: WebView2 Win32 C++ ICoreWebView2Settings
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings
 topic_type: 
 - APIRef
@@ -107,7 +107,7 @@ The default value is `TRUE`.
 
 > public HRESULT [get_AreDefaultScriptDialogsEnabled](#get_aredefaultscriptdialogsenabled)(BOOL * areDefaultScriptDialogsEnabled)
 
-If set to `FALSE`, WebView2 does not render the default JavaScript dialog box (Specifically those displayed by the JavaScript alert, confirm, prompt functions and `beforeunload` event). Instead, if an event handler is set using `add_ScriptDialogOpening`, WebView sends an event that contains all of the information for the dialog and allow the host app to show a custom UI. The default value is `TRUE`.
+If set to `FALSE`, WebView2 does not render the default JavaScript dialog box (Specifically those displayed by the JavaScript alert, confirm, prompt functions and `beforeunload` event). Instead, if an event handler is set using `add_ScriptDialogOpening`, WebView sends an event that contains all of the information for the dialog and allows the host app to show a custom UI. The default value is `TRUE`.
 
 #### get_AreDevToolsEnabled
 
@@ -179,7 +179,7 @@ Controls if running JavaScript is enabled in all future navigations in the WebVi
 
 > public HRESULT [get_IsScriptEnabled](#get_isscriptenabled)(BOOL * isScriptEnabled)
 
-This only affects scripts in the document. Scripts injected with `ExecuteScript` runs even if script is disabled. The default value is `TRUE`.
+This only affects scripts in the document. Scripts injected with `ExecuteScript` run even if script is disabled. The default value is `TRUE`.
 
 ```cpp
                 // Changes to settings will apply at the next navigation, which includes the

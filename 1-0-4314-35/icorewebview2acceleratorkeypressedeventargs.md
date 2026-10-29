@@ -1,7 +1,7 @@
 ---
 description: Event args for the `AcceleratorKeyPressed` event.
 title: WebView2 Win32 C++ ICoreWebView2AcceleratorKeyPressedEventArgs
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2AcceleratorKeyPressedEventArgs
 topic_type: 
 - APIRef
@@ -32,7 +32,7 @@ Event args for the `AcceleratorKeyPressed` event.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_Handled](#get_handled) | During `AcceleratorKeyPressedEvent` handler invocation the WebView is blocked waiting for the decision of if the accelerator is handled by the host (or not).
+[get_Handled](#get_handled) | During `AcceleratorKeyPressed` handler invocation the WebView is blocked waiting for the decision of if the accelerator is handled by the host (or not).
 [get_KeyEventKind](#get_keyeventkind) | The key event type that caused the event to run.
 [get_KeyEventLParam](#get_keyeventlparam) | The `LPARAM` value that accompanied the window message.
 [get_PhysicalKeyStatus](#get_physicalkeystatus) | A structure representing the information passed in the `LPARAM` of the window message.
@@ -50,7 +50,7 @@ WebView2 Win32 Prerelease |    0.9.488
 
 #### get_Handled
 
-During `AcceleratorKeyPressedEvent` handler invocation the WebView is blocked waiting for the decision of if the accelerator is handled by the host (or not).
+During `AcceleratorKeyPressed` handler invocation the WebView is blocked waiting for the decision of if the accelerator is handled by the host (or not).
 
 > public HRESULT [get_Handled](#get_handled)(BOOL * handled)
 

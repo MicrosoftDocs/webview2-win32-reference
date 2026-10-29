@@ -1,7 +1,7 @@
 ---
 description: This is the ICoreWebView2Profile interface for cookie manager.
 title: WebView2 Win32 C++ ICoreWebView2Profile5
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile5
 topic_type: 
 - APIRef
@@ -44,7 +44,7 @@ Get the cookie manager for the profile.
 
 > public HRESULT [get_CookieManager](#get_cookiemanager)([ICoreWebView2CookieManager](icorewebview2cookiemanager.md#icorewebview2cookiemanager) ** value)
 
-All CoreWebView2s associated with this profile share the same cookie values. Changes to cookies in this cookie manager apply to all CoreWebView2s associated with this profile. See [ICoreWebView2CookieManager](icorewebview2cookiemanager.md#icorewebview2cookiemanager).
+All ICoreWebView2s associated with this profile share the same cookie values. Changes to cookies in this cookie manager apply to all ICoreWebView2s associated with this profile. See [ICoreWebView2CookieManager](icorewebview2cookiemanager.md#icorewebview2cookiemanager).
 
 ```cpp
         auto webView2_13 = m_webView.try_query<ICoreWebView2_13>();

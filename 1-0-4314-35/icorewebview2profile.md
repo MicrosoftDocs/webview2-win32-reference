@@ -1,7 +1,7 @@
 ---
 description: Provides a set of properties to configure a Profile object.
 title: WebView2 Win32 C++ ICoreWebView2Profile
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile
 topic_type: 
 - APIRef
@@ -90,7 +90,7 @@ The PreferredColorScheme property sets the overall color scheme of the WebView2s
 
 This sets the color scheme for WebView2 UI like dialogs, prompts, and context menus by setting the media feature `prefers-color-scheme` for websites to respond to.
 
-The default value for this is COREWEBVIEW2_PREFERRED_COLOR_AUTO, which will follow whatever theme the OS is currently set to.
+The default value for this is COREWEBVIEW2_PREFERRED_COLOR_SCHEME_AUTO, which will follow whatever theme the OS is currently set to.
 
 ```cpp
 void ViewComponent::SetPreferredColorScheme(COREWEBVIEW2_PREFERRED_COLOR_SCHEME value)

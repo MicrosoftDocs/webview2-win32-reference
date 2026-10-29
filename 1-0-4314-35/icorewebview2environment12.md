@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Environment interface for creating shared buffer object.
 title: WebView2 Win32 C++ ICoreWebView2Environment12
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment12
 topic_type: 
 - APIRef
@@ -44,5 +44,5 @@ Create a shared memory based buffer with the specified size in bytes.
 
 > public HRESULT [CreateSharedBuffer](#createsharedbuffer)(UINT64 Size, [ICoreWebView2SharedBuffer](icorewebview2sharedbuffer.md#icorewebview2sharedbuffer) ** value)
 
-The buffer can be shared with web contents in WebView by calling `PostSharedBufferToScript` on `CoreWebView2` or `CoreWebView2Frame` object. Once shared, the same content of the buffer will be accessible from both the app process and script in WebView. Modification to the content will be visible to all parties that have access to the buffer. The shared buffer is presented to the script as ArrayBuffer. All JavaScript APIs that work for ArrayBuffer including Atomics APIs can be used on it. There is currently a limitation that only size less than 2GB is supported.
+The buffer can be shared with web contents in WebView by calling `PostSharedBufferToScript` on [ICoreWebView2_17](icorewebview2_17.md#icorewebview2_17) or [ICoreWebView2Frame4](icorewebview2frame4.md#icorewebview2frame4) object. Once shared, the same content of the buffer will be accessible from both the app process and script in WebView. Modification to the content will be visible to all parties that have access to the buffer. The shared buffer is presented to the script as ArrayBuffer. All JavaScript APIs that work for ArrayBuffer including Atomics APIs can be used on it. There is currently a limitation that only size less than 2GB is supported.
 

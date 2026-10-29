@@ -1,7 +1,7 @@
 ---
 description: This interface is used to create ICoreWebView2ControllerOptions object, which can be passed as a parameter in `CreateCoreWebView2ControllerWithOptions` and `CreateCoreWebView2CompositionControllerWithOptions` function for multiple profiles support.
 title: WebView2 Win32 C++ ICoreWebView2Environment10
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment10
 topic_type: 
 - APIRef
@@ -33,7 +33,7 @@ This interface is used to create [ICoreWebView2ControllerOptions](icorewebview2c
 [CreateCoreWebView2ControllerOptions](#createcorewebview2controlleroptions) | Create a new [ICoreWebView2ControllerOptions](icorewebview2controlleroptions.md#icorewebview2controlleroptions) to be passed as a parameter of CreateCoreWebView2ControllerWithOptions and CreateCoreWebView2CompositionControllerWithOptions.
 [CreateCoreWebView2ControllerWithOptions](#createcorewebview2controllerwithoptions) | Create a new WebView with options.
 
-The profile will be created on disk or opened when calling `CreateCoreWebView2ControllerWithOptions` or `CreateCoreWebView2CompositionControllerWithOptions` no matter InPrivate mode is enabled or not, and it will be released in memory when the corresponding controller is closed but still remain on disk. If you create a WebView2Controller with {ProfileName="name", InPrivate=false} and then later create another one with {ProfileName="name", InPrivate=true}, these two controllers using the same profile would be allowed to run at the same time. As WebView2 is built on top of Edge browser, it follows Edge's behavior pattern. To create an InPrivate WebView, we gets an off-the-record profile (an InPrivate profile) from a regular profile, then create the WebView with the off-the-record profile.
+The profile will be created on disk or opened when calling `CreateCoreWebView2ControllerWithOptions` or `CreateCoreWebView2CompositionControllerWithOptions` no matter InPrivate mode is enabled or not, and it will be released in memory when the corresponding controller is closed but still remain on disk. If you create a WebView2Controller with {ProfileName="name", InPrivate=false} and then later create another one with {ProfileName="name", InPrivate=true}, these two controllers using the same profile would be allowed to run at the same time. As WebView2 is built on top of Edge browser, it follows Edge's behavior pattern. To create an InPrivate WebView, we get an off-the-record profile (an InPrivate profile) from a regular profile, then create the WebView with the off-the-record profile.
 
 ```cpp
     auto webViewEnvironment10 = m_webViewEnvironment.try_query<ICoreWebView2Environment10>();

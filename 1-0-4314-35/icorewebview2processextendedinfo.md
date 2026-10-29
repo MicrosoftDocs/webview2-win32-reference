@@ -1,7 +1,7 @@
 ---
 description: Provides process with associated extended information in the ICoreWebView2Environment.
 title: WebView2 Win32 C++ ICoreWebView2ProcessExtendedInfo
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ProcessExtendedInfo
 topic_type: 
 - APIRef
@@ -28,7 +28,7 @@ Provides process with associated extended information in the [ICoreWebView2Envir
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_AssociatedFrameInfos](#get_associatedframeinfos) | The collection of associated `FrameInfo`s which are actively running (showing or hiding UI elements) in this renderer process.
+[get_AssociatedFrameInfos](#get_associatedframeinfos) | The collection of associated [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo)s which are actively running (showing or hiding UI elements) in this renderer process.
 [get_ProcessInfo](#get_processinfo) | The process info of the current process.
 
 ## Applies to
@@ -42,11 +42,11 @@ WebView2 Win32 Prerelease |    1.0.2357
 
 #### get_AssociatedFrameInfos
 
-The collection of associated `FrameInfo`s which are actively running (showing or hiding UI elements) in this renderer process.
+The collection of associated [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo)s which are actively running (showing or hiding UI elements) in this renderer process.
 
 > public HRESULT [get_AssociatedFrameInfos](#get_associatedframeinfos)([ICoreWebView2FrameInfoCollection](icorewebview2frameinfocollection.md#icorewebview2frameinfocollection) ** frames)
 
-`AssociatedFrameInfos` will only be populated when this `CoreWebView2ProcessExtendedInfo` corresponds to a renderer process. Non-renderer processes will always have an empty `AssociatedFrameInfos`. The `AssociatedFrameInfos` may also be empty for renderer processes that have no active frames.
+`AssociatedFrameInfos` will only be populated when this ICoreWebView2ProcessExtendedInfo corresponds to a renderer process. Non-renderer processes will always have an empty `AssociatedFrameInfos`. The `AssociatedFrameInfos` may also be empty for renderer processes that have no active frames.
 
 ```cpp
                             std::wstringstream rendererProcess;

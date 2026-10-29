@@ -1,7 +1,7 @@
 ---
 description: Event args for the `ScreenCaptureStarting` event.
 title: WebView2 Win32 C++ ICoreWebView2ScreenCaptureStartingEventArgs
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ScreenCaptureStartingEventArgs
 topic_type: 
 - APIRef
@@ -37,7 +37,7 @@ Event args for the `ScreenCaptureStarting` event.
 [get_OriginalSourceFrameInfo](#get_originalsourceframeinfo) | The associated frame information that requests the screen capture permission.
 [GetDeferral](#getdeferral) | Returns an [ICoreWebView2Deferral](icorewebview2deferral.md#icorewebview2deferral) object.
 [put_Cancel](#put_cancel) | The host may set this flag to cancel the screen capture.
-[put_Handled](#put_handled) | By default, both the `ScreenCaptureStarting` event handlers on the `CoreWebView2Frame` and the `CoreWebView2` will be invoked, with the `CoreWebView2Frame` event handlers invoked first.
+[put_Handled](#put_handled) | By default, both the `ScreenCaptureStarting` event handlers on the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) and the [ICoreWebView2](icorewebview2.md#icorewebview2) will be invoked, with the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) event handlers invoked first.
 
 ## Applies to
 
@@ -86,11 +86,11 @@ If canceled, the screen capture UI is not displayed regardless of the `Handled` 
 
 #### put_Handled
 
-By default, both the `ScreenCaptureStarting` event handlers on the `CoreWebView2Frame` and the `CoreWebView2` will be invoked, with the `CoreWebView2Frame` event handlers invoked first.
+By default, both the `ScreenCaptureStarting` event handlers on the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) and the [ICoreWebView2](icorewebview2.md#icorewebview2) will be invoked, with the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) event handlers invoked first.
 
 > public HRESULT [put_Handled](#put_handled)(BOOL value)
 
-The host may set this flag to `TRUE` within the `CoreWebView2Frame` event handlers to prevent the remaining `CoreWebView2` event handlers from being invoked. If the flag is set to `FALSE` within the `CoreWebView2Frame` event handlers, downstream handlers can update the `Cancel` property.
+The host may set this flag to `TRUE` within the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) event handlers to prevent the remaining [ICoreWebView2](icorewebview2.md#icorewebview2) event handlers from being invoked. If the flag is set to `FALSE` within the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) event handlers, downstream handlers can update the `Cancel` property.
 
-If a deferral is taken on the event args, then you must synchronously set `Handled` to TRUE prior to taking your deferral to prevent the `CoreWebView2`s event handlers from being invoked.
+If a deferral is taken on the event args, then you must synchronously set `Handled` to TRUE prior to taking your deferral to prevent the [ICoreWebView2](icorewebview2.md#icorewebview2) event handlers from being invoked.
 

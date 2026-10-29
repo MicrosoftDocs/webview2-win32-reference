@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Environment interface for getting process with associated information.
 title: WebView2 Win32 C++ ICoreWebView2Environment13
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment13
 topic_type: 
 - APIRef
@@ -27,7 +27,7 @@ A continuation of the [ICoreWebView2Environment](icorewebview2environment.md#ico
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[GetProcessExtendedInfos](#getprocessextendedinfos) | Gets a snapshot collection of `ProcessExtendedInfo`s corresponding to all currently running processes associated with this `CoreWebView2Environment` excludes crashpad process.
+[GetProcessExtendedInfos](#getprocessextendedinfos) | Gets a snapshot collection of `ProcessExtendedInfo`s corresponding to all currently running processes associated with this [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) except for crashpad process.
 
 ## Applies to
 
@@ -40,7 +40,7 @@ WebView2 Win32 Prerelease |    1.0.2357
 
 #### GetProcessExtendedInfos
 
-Gets a snapshot collection of `ProcessExtendedInfo`s corresponding to all currently running processes associated with this `CoreWebView2Environment` excludes crashpad process.
+Gets a snapshot collection of `ProcessExtendedInfo`s corresponding to all currently running processes associated with this [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) except for crashpad process.
 
 > public HRESULT [GetProcessExtendedInfos](#getprocessextendedinfos)([ICoreWebView2GetProcessExtendedInfosCompletedHandler](icorewebview2getprocessextendedinfoscompletedhandler.md#icorewebview2getprocessextendedinfoscompletedhandler) * handler)
 

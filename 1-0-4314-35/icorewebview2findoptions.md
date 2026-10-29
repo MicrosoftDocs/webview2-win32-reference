@@ -1,7 +1,7 @@
 ---
 description: Interface defining the find options.
 title: WebView2 Win32 C++ ICoreWebView2FindOptions
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2FindOptions
 topic_type: 
 - APIRef
@@ -44,7 +44,7 @@ Interface defining the find options.
 [put_FindTerm](#put_findterm) | Gets or sets the word or phrase to be searched in the current page.
 [put_IsCaseSensitive](#put_iscasesensitive) | Determines if the find session is case sensitive.
 [put_ShouldHighlightAllMatches](#put_shouldhighlightallmatches) | Gets or sets the state of whether all matches are highlighted.
-[put_ShouldMatchWord](#put_shouldmatchword) | Similar to case sensitivity, word matching also can vary by locale, which may be influenced by both the browser's UI locale and the document's language settings.
+[put_ShouldMatchWord](#put_shouldmatchword) | Determines if only whole words should be matched during the find session.
 [put_SuppressDefaultFindDialog](#put_suppressdefaultfinddialog) | Sets this property to hide the default Find UI.
 
 This interface provides the necessary methods and properties to configure a find session.
@@ -96,8 +96,9 @@ Gets or sets the word or phrase to be searched in the current page.
 
 > public HRESULT [put_FindTerm](#put_findterm)(LPCWSTR value)
 
-You can set `FindTerm` to any text you want to find on the page. This will take effect the next time you call the `Start()` method.
+You can set `FindTerm` to any text you want to find on the page.
 
+This will take effect the next time you call the `Start()` method. 
 ```cpp
 bool AppWindow::FindTerm()
 {
@@ -168,8 +169,9 @@ Gets or sets the state of whether all matches are highlighted.
 
 > public HRESULT [put_ShouldHighlightAllMatches](#put_shouldhighlightallmatches)(BOOL value)
 
-Returns TRUE if all matches are highlighted, FALSE otherwise. Note: Changes to this property take effect only when Start, FindNext, or FindPrevious is called. Preferences for the session cannot be updated unless another call to the Start function on the server-side is made. Therefore, changes will not take effect until one of these functions is called.
+Returns TRUE if all matches are highlighted, FALSE otherwise.
 
+Note: Changes to this property take effect only when `Start` is called. Preferences for the session cannot be updated unless another call to `Start` is made. 
 ```cpp
 bool AppWindow::ShouldHighlightAllMatches()
 {
@@ -199,11 +201,11 @@ bool AppWindow::ShouldHighlightAllMatches()
 
 #### put_ShouldMatchWord
 
-Similar to case sensitivity, word matching also can vary by locale, which may be influenced by both the browser's UI locale and the document's language settings.
+Determines if only whole words should be matched during the find session.
 
 > public HRESULT [put_ShouldMatchWord](#put_shouldmatchword)(BOOL value)
 
-The browser's UI locale typically provides a default handling approach, while the document's language settings (e.g., specified using the HTML lang attribute) can override these defaults to apply locale-specific rules. This dual consideration ensures that text is processed in a manner consistent with user expectations and the linguistic context of the content. ShouldMatchWord determines if only whole words should be matched during the find session. Returns TRUE if only whole words should be matched, FALSE otherwise.
+Returns TRUE if only whole words should be matched, FALSE otherwise. Similar to case sensitivity, word matching also can vary by locale, which may be influenced by both the browser's UI locale and the document's language settings. The browser's UI locale typically provides a default handling approach, while the document's language settings (e.g., specified using the HTML lang attribute) can override these defaults to apply locale-specific rules. This dual consideration ensures that text is processed in a manner consistent with user expectations and the linguistic context of the content.
 
 ```cpp
 bool AppWindow::ShouldMatchWord()
@@ -238,8 +240,7 @@ Sets this property to hide the default Find UI.
 
 > public HRESULT [put_SuppressDefaultFindDialog](#put_suppressdefaultfinddialog)(BOOL value)
 
-You can use this to hide the default UI so that you can show your own custom UI or programmatically interact with the Find API while showing no Find UI. Returns TRUE if hiding the default Find UI and FALSE if using showing the default Find UI. Note: Changes to this property take effect only when Start, FindNext, or FindPrevious is called. Preferences for the session cannot be updated unless another call to the Start function on the server-side is made. Therefore, changes will not take effect until one of these functions is called.
-
+You can use this to hide the default UI so that you can show your own custom UI or programmatically interact with the Find API while showing no Find UI. Returns TRUE if hiding the default Find UI and FALSE if showing the default Find UI. Note: Changes to this property take effect only when `Start` is called. Preferences for the session cannot be updated unless another call to `Start` is made. 
 ```cpp
 bool AppWindow::SuppressDefaultFindDialog()
 {

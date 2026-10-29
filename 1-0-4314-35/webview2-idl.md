@@ -1,7 +1,7 @@
 ---
 description: WebView2 Win32 Globals
 title: Globals
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html
 topic_type: 
 - APIRef
@@ -37,8 +37,8 @@ api_location:
 [COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON](#corewebview2_download_interrupt_reason) | Reason why a download was interrupted.
 [COREWEBVIEW2_DOWNLOAD_STATE](#corewebview2_download_state) | State of the download operation.
 [COREWEBVIEW2_FAVICON_IMAGE_FORMAT](#corewebview2_favicon_image_format) | Specifies the image format to use for favicon.
-[COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND](#corewebview2_file_system_handle_kind) | Kind of CoreWebView2FileSystemHandle as described in [FileSystemHandle.kind](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind).
-[COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION](#corewebview2_file_system_handle_permission) | Allowed permissions of a CoreWebView2FileSystemHandle as described in [FileSystemHandle.requestPermission()](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/requestPermission).
+[COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND](#corewebview2_file_system_handle_kind) | Kind of [ICoreWebView2FileSystemHandle](icorewebview2filesystemhandle.md#icorewebview2filesystemhandle) as described in [FileSystemHandle.kind](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind).
+[COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION](#corewebview2_file_system_handle_permission) | Allowed permissions of an [ICoreWebView2FileSystemHandle](icorewebview2filesystemhandle.md#icorewebview2filesystemhandle) as described in [FileSystemHandle.requestPermission()](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/requestPermission).
 [COREWEBVIEW2_FRAME_KIND](#corewebview2_frame_kind) | Indicates the frame type used in the [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo) interface.
 [COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND](#corewebview2_host_resource_access_kind) | Kind of cross origin resource access allowed for host resources during download.
 [COREWEBVIEW2_KEY_EVENT_KIND](#corewebview2_key_event_kind) | Specifies the key event type that triggered an `AcceleratorKeyPressed` event.
@@ -67,9 +67,9 @@ api_location:
 [COREWEBVIEW2_SAVE_AS_KIND](#corewebview2_save_as_kind) | Specifies Save As kind selection options for [ICoreWebView2SaveAsUIShowingEventArgs](icorewebview2saveasuishowingeventargs.md#icorewebview2saveasuishowingeventargs).
 [COREWEBVIEW2_SAVE_AS_UI_RESULT](#corewebview2_save_as_ui_result) | Status of a programmatic Save As call.
 [COREWEBVIEW2_SCRIPT_DIALOG_KIND](#corewebview2_script_dialog_kind) | Specifies the JavaScript dialog type used in the [ICoreWebView2ScriptDialogOpeningEventHandler](icorewebview2scriptdialogopeningeventhandler.md#icorewebview2scriptdialogopeningeventhandler) interface.
-[COREWEBVIEW2_SCROLLBAR_STYLE](#corewebview2_scrollbar_style) | Set ScrollBar style on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) during environment creation.
+[COREWEBVIEW2_SCROLLBAR_STYLE](#corewebview2_scrollbar_style) | Set ScrollBar style on [ICoreWebView2EnvironmentOptions8](icorewebview2environmentoptions8.md#icorewebview2environmentoptions8) during environment creation.
 [COREWEBVIEW2_SERVER_CERTIFICATE_ERROR_ACTION](#corewebview2_server_certificate_error_action) | Specifies the action type when server certificate error is detected to be used in the [ICoreWebView2ServerCertificateErrorDetectedEventArgs](icorewebview2servercertificateerrordetectedeventargs.md#icorewebview2servercertificateerrordetectedeventargs) interface.
-[COREWEBVIEW2_SHARED_BUFFER_ACCESS](#corewebview2_shared_buffer_access) | Specifies the desired access from script to `CoreWebView2SharedBuffer`.
+[COREWEBVIEW2_SHARED_BUFFER_ACCESS](#corewebview2_shared_buffer_access) | Specifies the desired access from script to [ICoreWebView2SharedBuffer](icorewebview2sharedbuffer.md#icorewebview2sharedbuffer).
 [COREWEBVIEW2_TEXT_DIRECTION_KIND](#corewebview2_text_direction_kind) | Indicates the text direction of the notification.
 [COREWEBVIEW2_TRACKING_PREVENTION_LEVEL](#corewebview2_tracking_prevention_level) | Tracking prevention levels.
 [COREWEBVIEW2_WEB_ERROR_STATUS](#corewebview2_web_error_status) | Indicates the error status values for web navigations.
@@ -232,13 +232,13 @@ The default position is top-right corner.
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_NONE            | 
+COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_NONE            | No interrupt reason.
 COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_FAILED            | Generic file error.
 COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_ACCESS_DENIED            | Access denied due to security restrictions.
 COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_NO_SPACE            | Disk full.
 COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_NAME_TOO_LONG            | Result file path with file name is too long.
 COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_TOO_LARGE            | File is too large for file system.
-COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_MALICIOUS            | Microsoft Defender Smartscreen detected a virus in the file.
+COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_MALICIOUS            | Microsoft Defender SmartScreen detected a virus in the file.
 COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_TRANSIENT_ERROR            | File was in use, too many files opened, or out of memory.
 COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_BLOCKED_BY_POLICY            | File blocked by local policy.
 COREWEBVIEW2_DOWNLOAD_INTERRUPT_REASON_FILE_SECURITY_CHECK_FAILED            | Security check failed unexpectedly.
@@ -297,7 +297,7 @@ Specifies the image format to use for favicon.
 COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND_FILE            | FileSystemHandle is for a file [FileSystemFileHandle](https://developer.mozilla.org/docs/Web/API/FileSystemFileHandle).
 COREWEBVIEW2_FILE_SYSTEM_HANDLE_KIND_DIRECTORY            | FileSystemHandle is for a directory [FileSystemDirectoryHandle](https://developer.mozilla.org/docs/Web/API/FileSystemDirectoryHandle).
 
-Kind of CoreWebView2FileSystemHandle as described in [FileSystemHandle.kind](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind).
+Kind of [ICoreWebView2FileSystemHandle](icorewebview2filesystemhandle.md#icorewebview2filesystemhandle) as described in [FileSystemHandle.kind](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/kind).
 
 #### COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION
 
@@ -308,7 +308,7 @@ Kind of CoreWebView2FileSystemHandle as described in [FileSystemHandle.kind](htt
 COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION_READ_ONLY            | Read-only permission for FileSystemHandle.
 COREWEBVIEW2_FILE_SYSTEM_HANDLE_PERMISSION_READ_WRITE            | Read and write permissions for FileSystemHandle.
 
-Allowed permissions of a CoreWebView2FileSystemHandle as described in [FileSystemHandle.requestPermission()](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/requestPermission).
+Allowed permissions of an [ICoreWebView2FileSystemHandle](icorewebview2filesystemhandle.md#icorewebview2filesystemhandle) as described in [FileSystemHandle.requestPermission()](https://developer.mozilla.org/docs/Web/API/FileSystemHandle/requestPermission).
 
 #### COREWEBVIEW2_FRAME_KIND
 
@@ -316,8 +316,8 @@ Allowed permissions of a CoreWebView2FileSystemHandle as described in [FileSyste
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_FRAME_KIND_UNKNOWN            | Indicates that the frame is an unknown type frame.
-COREWEBVIEW2_FRAME_KIND_MAIN_FRAME            | Indicates that the frame is a primary main frame(webview).
+COREWEBVIEW2_FRAME_KIND_UNKNOWN            | Indicates that the frame is an unknown type frame. We may extend this enum type to identify more frame kinds in the future.
+COREWEBVIEW2_FRAME_KIND_MAIN_FRAME            | Indicates that the frame is a primary main frame (webview).
 COREWEBVIEW2_FRAME_KIND_IFRAME            | Indicates that the frame is an iframe.
 COREWEBVIEW2_FRAME_KIND_EMBED            | Indicates that the frame is an embed element.
 COREWEBVIEW2_FRAME_KIND_OBJECT            | Indicates that the frame is an object element.
@@ -365,7 +365,7 @@ Specifies the key event type that triggered an `AcceleratorKeyPressed` event.
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
 COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL_NORMAL            | Specifies normal memory usage target level.
-COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL_LOW            | Specifies low memory usage target level.
+COREWEBVIEW2_MEMORY_USAGE_TARGET_LEVEL_LOW            | Specifies low memory usage target level. Used for inactive WebView for reduced memory consumption.
 
 Specifies memory usage target level of WebView.
 
@@ -435,9 +435,9 @@ Specifies the reason for moving focus.
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_NAVIGATION_KIND_RELOAD            | A navigation caused by `CoreWebView2.Reload()`, `location.reload()`, the end user using F5 or other UX, or other reload mechanisms to reload the current document without modifying the navigation history.
-COREWEBVIEW2_NAVIGATION_KIND_BACK_OR_FORWARD            | A navigation back or forward to a different entry in the session navigation history, like via `CoreWebView2.Back()`, `location.back()`, the end user pressing Alt+Left or other UX, or other mechanisms to navigate back or forward in the current session navigation history.
-COREWEBVIEW2_NAVIGATION_KIND_NEW_DOCUMENT            | A navigation to another document, which can be caused by `CoreWebView2.Navigate()`, `window.location.href = ...`, or other WebView2 or DOM APIs that navigate to a new URI.
+COREWEBVIEW2_NAVIGATION_KIND_RELOAD            | A navigation caused by [ICoreWebView2::Reload](icorewebview2.md#reload), `location.reload()`, the end user using F5 or other UX, or other reload mechanisms to reload the current document without modifying the navigation history.
+COREWEBVIEW2_NAVIGATION_KIND_BACK_OR_FORWARD            | A navigation back or forward to a different entry in the session navigation history, like via [ICoreWebView2::GoBack](icorewebview2.md#goback), `history.back()`, the end user pressing Alt+Left or other UX, or other mechanisms to navigate back or forward in the current session navigation history.
+COREWEBVIEW2_NAVIGATION_KIND_NEW_DOCUMENT            | A navigation to another document, which can be caused by [ICoreWebView2::Navigate](icorewebview2.md#navigate), `window.location.href = ...`, or other WebView2 or DOM APIs that navigate to a new URI.
 
 Specifies the navigation kind of each navigation.
 
@@ -510,7 +510,7 @@ Indicates the type of a permission request.
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_PERMISSION_STATE_DEFAULT            | Specifies that the default browser behavior is used, which normally prompt users for decision.
+COREWEBVIEW2_PERMISSION_STATE_DEFAULT            | Specifies that the default browser behavior is used, which normally prompts users for a decision.
 COREWEBVIEW2_PERMISSION_STATE_ALLOW            | Specifies that the permission request is granted.
 COREWEBVIEW2_PERMISSION_STATE_DENY            | Specifies that the permission request is denied.
 
@@ -621,9 +621,9 @@ The orientation for printing, used by the `Orientation` property on [ICoreWebVie
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_PRINT_STATUS_SUCCEEDED            | Indicates that the print operation is succeeded.
+COREWEBVIEW2_PRINT_STATUS_SUCCEEDED            | Indicates that the print operation succeeded.
 COREWEBVIEW2_PRINT_STATUS_PRINTER_UNAVAILABLE            | Indicates that the printer is not available.
-COREWEBVIEW2_PRINT_STATUS_OTHER_ERROR            | Indicates that the print operation is failed.
+COREWEBVIEW2_PRINT_STATUS_OTHER_ERROR            | Indicates that the print operation failed.
 
 Indicates the status for printing.
 
@@ -691,7 +691,7 @@ Indicates the process type used in the [ICoreWebView2ProcessInfo](icorewebview2p
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_RELEASE_CHANNELS_NONE            | No release channel.
+COREWEBVIEW2_RELEASE_CHANNELS_NONE            | No release channel. Passing only this value to `ReleaseChannels` is treated as if `ReleaseChannels` were not set, so all channels are searched.
 COREWEBVIEW2_RELEASE_CHANNELS_STABLE            | The stable WebView2 Runtime that is released every 4 weeks.
 COREWEBVIEW2_RELEASE_CHANNELS_BETA            | The Beta release channel that is released every 4 weeks, a week before the stable release.
 COREWEBVIEW2_RELEASE_CHANNELS_DEV            | The Dev release channel that is released weekly.
@@ -699,7 +699,7 @@ COREWEBVIEW2_RELEASE_CHANNELS_CANARY            | The Canary release channel tha
 
 The WebView2 release channels.
 
-Use `ReleaseChannels` and `ChannelSearchKind` on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) to control which channel is searched for during environment creation.
+Use `ReleaseChannels` and `ChannelSearchKind` on [ICoreWebView2EnvironmentOptions7](icorewebview2environmentoptions7.md#icorewebview2environmentoptions7) to control which channel is searched for during environment creation.
 
 Channel   |Primary purpose   |How often updated with new features
 --------- | --------- | ---------
@@ -759,9 +759,9 @@ Specifies the JavaScript dialog type used in the [ICoreWebView2ScriptDialogOpeni
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
 COREWEBVIEW2_SCROLLBAR_STYLE_DEFAULT            | Browser default ScrollBar style.
-COREWEBVIEW2_SCROLLBAR_STYLE_FLUENT_OVERLAY            | Window style fluent overlay scroll bar Please see [Fluent UI](https://developer.microsoft.com/fluentui#/) for more details on fluent UI.
+COREWEBVIEW2_SCROLLBAR_STYLE_FLUENT_OVERLAY            | Window style fluent overlay scroll bar.
 
-Set ScrollBar style on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) during environment creation.
+Set ScrollBar style on [ICoreWebView2EnvironmentOptions8](icorewebview2environmentoptions8.md#icorewebview2environmentoptions8) during environment creation.
 
 #### COREWEBVIEW2_SERVER_CERTIFICATE_ERROR_ACTION
 
@@ -784,7 +784,7 @@ Specifies the action type when server certificate error is detected to be used i
 COREWEBVIEW2_SHARED_BUFFER_ACCESS_READ_ONLY            | Script from web page only has read access to the shared buffer.
 COREWEBVIEW2_SHARED_BUFFER_ACCESS_READ_WRITE            | Script from web page has read and write access to the shared buffer.
 
-Specifies the desired access from script to `CoreWebView2SharedBuffer`.
+Specifies the desired access from script to [ICoreWebView2SharedBuffer](icorewebview2sharedbuffer.md#icorewebview2sharedbuffer).
 
 #### COREWEBVIEW2_TEXT_DIRECTION_KIND
 
@@ -835,7 +835,7 @@ COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED            | Indicates that the
 COREWEBVIEW2_WEB_ERROR_STATUS_REDIRECT_FAILED            | Indicates that the request redirect failed.
 COREWEBVIEW2_WEB_ERROR_STATUS_UNEXPECTED_ERROR            | Indicates that an unexpected error occurred.
 COREWEBVIEW2_WEB_ERROR_STATUS_VALID_AUTHENTICATION_CREDENTIALS_REQUIRED            | Indicates that user is prompted with a login, waiting on user action.
-COREWEBVIEW2_WEB_ERROR_STATUS_VALID_PROXY_AUTHENTICATION_REQUIRED            | Indicates that user lacks proper authentication credentials for a proxy server.
+COREWEBVIEW2_WEB_ERROR_STATUS_VALID_PROXY_AUTHENTICATION_REQUIRED            | Indicates that user lacks proper authentication credentials for a proxy server. HTTP response status code in this case is 407. See [status code reference](https://developer.mozilla.org/docs/Web/HTTP/Status).
 
 Indicates the error status values for web navigations.
 
@@ -861,7 +861,7 @@ COREWEBVIEW2_WEB_RESOURCE_CONTEXT_MANIFEST            | Specifies a Web App Mani
 COREWEBVIEW2_WEB_RESOURCE_CONTEXT_SIGNED_EXCHANGE            | Specifies a Signed HTTP Exchange.
 COREWEBVIEW2_WEB_RESOURCE_CONTEXT_PING            | Specifies a Ping request.
 COREWEBVIEW2_WEB_RESOURCE_CONTEXT_CSP_VIOLATION_REPORT            | Specifies a CSP Violation Report.
-COREWEBVIEW2_WEB_RESOURCE_CONTEXT_OTHER            | Specifies an other resource.
+COREWEBVIEW2_WEB_RESOURCE_CONTEXT_OTHER            | Specifies another resource.
 
 Specifies the web resource request contexts.
 
@@ -871,7 +871,7 @@ Specifies the web resource request contexts.
 
  Values                         | Descriptions
 --------------------------------|---------------------------------------------
-COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_NONE            | 
+COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_NONE            | No request source kinds.
 COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_DOCUMENT            | Indicates that web resource is requested from main page including dedicated workers, iframes and main script for shared workers.
 COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_SHARED_WORKER            | Indicates that web resource is requested from shared worker.
 COREWEBVIEW2_WEB_RESOURCE_REQUEST_SOURCE_KINDS_SERVICE_WORKER            | Indicates that web resource is requested from service worker.
@@ -893,7 +893,7 @@ Use it to determine whether to use webview2 or certain feature based upon versio
 
 Creates an evergreen WebView2 Environment using the installed WebView2 Runtime version.
 
-This is equivalent to running `CreateCoreWebView2EnvironmentWithOptions` with `nullptr` for `browserExecutableFolder`, `userDataFolder`, `additionalBrowserArguments`. For more information, navigate to `CreateCoreWebView2EnvironmentWithOptions`.
+This is equivalent to running `CreateCoreWebView2EnvironmentWithOptions` with `nullptr` for `browserExecutableFolder`, `userDataFolder`, `environmentOptions`. For more information, navigate to `CreateCoreWebView2EnvironmentWithOptions`.
 
 #### CreateCoreWebView2EnvironmentWithOptions
 
@@ -917,14 +917,14 @@ RPC_E_CHANGED_MODE  -  if CoInitializeEx was previously called with
                        COINIT_MULTITHREADED
 ```
 
-Use `browserExecutableFolder` to specify whether WebView2 controls use a fixed or installed version of the WebView2 Runtime that exists on a user machine. To use a fixed version of the WebView2 Runtime, pass the folder path that contains the fixed version of the WebView2 Runtime to `browserExecutableFolder`. BrowserExecutableFolder supports both relative (to the application's executable) and absolute files paths. To create WebView2 controls that use the installed version of the WebView2 Runtime that exists on user machines, pass a `null` or empty string to `browserExecutableFolder`. In this scenario, the API tries to find a compatible version of the WebView2 Runtime that is installed on the user machine (first at the machine level, and then per user) using the selected channel preference. The path of fixed version of the WebView2 Runtime should not contain `\Edge\Application\`. When such a path is used, the API fails with `HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)`.
+Use `browserExecutableFolder` to specify whether WebView2 controls use a fixed or installed version of the WebView2 Runtime that exists on a user machine. To use a fixed version of the WebView2 Runtime, pass the folder path that contains the fixed version of the WebView2 Runtime to `browserExecutableFolder`. BrowserExecutableFolder supports both relative (to the application's executable) and absolute file paths. To create WebView2 controls that use the installed version of the WebView2 Runtime that exists on user machines, pass a `null` or empty string to `browserExecutableFolder`. In this scenario, the API tries to find a compatible version of the WebView2 Runtime that is installed on the user machine (first at the machine level, and then per user) using the selected channel preference. The path of fixed version of the WebView2 Runtime should not contain `\Edge\Application\`. When such a path is used, the API fails with `HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)`.
 
-By default, the channel search order is `COREWEBVIEW2_CHANNEL_SEARCH_KIND_MOST_STABLE`, which means that environment creation searches for an installation in the following order: the WebView2 Runtime, Beta, Dev, and Canary. The channel search order is reversed when the `ChannelSearchKind` property on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) is set to `COREWEBVIEW2_CHANNEL_SEARCH_KIND_LEAST_STABLE`, or when the corresponding environment variable or registry override is set to `1`. See below for descriptions of overrides. If `ReleaseChannels` on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) is provided, environment creation will only consider channels in this set, following the `ChannelSearchKind` order.
+By default, the channel search order is `COREWEBVIEW2_CHANNEL_SEARCH_KIND_MOST_STABLE`, which means that environment creation searches for an installation in the following order: the WebView2 Runtime, Beta, Dev, and Canary. The channel search order is reversed when the `ChannelSearchKind` property on [ICoreWebView2EnvironmentOptions7](icorewebview2environmentoptions7.md#icorewebview2environmentoptions7) is set to `COREWEBVIEW2_CHANNEL_SEARCH_KIND_LEAST_STABLE`, or when the corresponding environment variable or registry override is set to `1`. See below for descriptions of overrides. If `ReleaseChannels` on [ICoreWebView2EnvironmentOptions7](icorewebview2environmentoptions7.md#icorewebview2environmentoptions7) is provided, environment creation will only consider channels in this set, following the `ChannelSearchKind` order.
 
 You may specify the `userDataFolder` to change the default user data folder location for WebView2. The path is either an absolute file path or a relative file path that is interpreted as relative to the compiled code for the current process. For UWP apps, the default user data folder is the app data folder for the package. For non-UWP apps, the default user data (`{Executable File Name}.WebView2`) folder is created in the same directory next to the compiled code for the app. WebView2 creation fails if the compiled code is running in a directory in which the process does not have permission to create a new directory. The app is responsible to clean up the associated user data folder when it is done.
 
-&gt; [!NOTE]
-&gt; As a browser process may be shared among WebViews, WebView creation fails with `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)` if the specified options does not match the options of the WebViews that are currently running in the shared browser process.
+> [!NOTE]
+> As a browser process may be shared among WebViews, WebView creation fails with `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)` if the specified options does not match the options of the WebViews that are currently running in the shared browser process.
 
 `environmentCreatedHandler` is the handler result to the async operation that contains the `WebView2Environment` that was created.
 
@@ -940,7 +940,7 @@ WEBVIEW2_CHANNEL_SEARCH_KIND
 WEBVIEW2_RELEASE_CHANNELS
 ```
 
-If you find an override environment variable, use the `browserExecutableFolder` and `userDataFolder` values as replacements for the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters. If `additionalBrowserArguments` is specified in environment variable or in the registry, it is appended to the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters. See `ReleaseChannels` on [ICoreWebView2EnvironmentOptions](icorewebview2environmentoptions.md#icorewebview2environmentoptions) for more details on how to construct the registry key and environment variable values.
+If you find an override environment variable, use the `browserExecutableFolder` and `userDataFolder` values as replacements for the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters. If `additionalBrowserArguments` is specified in environment variable or in the registry, it is appended to the corresponding values in `CreateCoreWebView2EnvironmentWithOptions` parameters. See `ReleaseChannels` on [ICoreWebView2EnvironmentOptions7](icorewebview2environmentoptions7.md#icorewebview2environmentoptions7) for more details on how to construct the registry key and environment variable values.
 
 While not strictly overrides, additional environment variables may be set.
 
@@ -950,8 +950,8 @@ WEBVIEW2_WAIT_FOR_SCRIPT_DEBUGGER
 
 When found with a non-empty value, this indicates that the WebView is being launched under a script debugger. In this case, the WebView issues a `Page.waitForDebugger` CDP command that runs the script inside the WebView to pause on launch, until a debugger issues a corresponding `Runtime.runIfWaitingForDebugger` CDP command to resume the runtime.
 
-&gt; [!NOTE]
-&gt; The following environment variable does not have a registry key equivalent: `WEBVIEW2_WAIT_FOR_SCRIPT_DEBUGGER`.
+> [!NOTE]
+> The following environment variable does not have a registry key equivalent: `WEBVIEW2_WAIT_FOR_SCRIPT_DEBUGGER`.
 
 When found with a non-empty value, it indicates that the WebView is being launched under a script debugger that also supports host apps that use multiple WebViews. The value is used as the identifier for a named pipe that is opened and written to when a new WebView is created by the host app. The payload should match the payload of the `remote-debugging-port` JSON target and an external debugger may use it to attach to a specific WebView instance. The format of the pipe created by the debugger should be `\\.\pipe\WebView2\Debugger\{app_name}\{pipe_name}`, where the following are true.
 
@@ -963,11 +963,11 @@ To enable debugging of the targets identified by the JSON, you must set the `WEB
 
 * `{port_num}` is the port on which the CDP server binds.
 
-&gt; [!WARNING]
-&gt; If you set both `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER` and `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variables, the WebViews hosted in your app and associated contents may exposed to 3rd party apps such as debuggers.
+> [!WARNING]
+> If you set both `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER` and `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variables, the WebViews hosted in your app and associated contents may be exposed to 3rd party apps such as debuggers.
 
-&gt; [!NOTE]
-&gt; The following environment variable does not have a registry key equivalent: `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER`.
+> [!NOTE]
+> The following environment variable does not have a registry key equivalent: `WEBVIEW2_PIPE_FOR_SCRIPT_DEBUGGER`.
 
 If none of those environment variables exist, then the registry is examined next. The following registry values are verified.
 

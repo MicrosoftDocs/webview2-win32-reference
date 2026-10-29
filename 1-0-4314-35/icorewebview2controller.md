@@ -1,7 +1,7 @@
 ---
-description: The owner of the `CoreWebView2` object that provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
+description: The owner of the ICoreWebView2 object that provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
 title: WebView2 Win32 C++ ICoreWebView2Controller
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Controller
 topic_type: 
 - APIRef
@@ -43,7 +43,7 @@ interface ICoreWebView2Controller
   : public IUnknown
 ```
 
-The owner of the `CoreWebView2` object that provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
+The owner of the [ICoreWebView2](icorewebview2.md#icorewebview2) object that provides support for resizing, showing and hiding, focusing, and other functionality related to windowing and composition.
 
 ## Summary
 
@@ -56,7 +56,7 @@ The owner of the `CoreWebView2` object that provides support for resizing, showi
 [add_ZoomFactorChanged](#add_zoomfactorchanged) | Adds an event handler for the `ZoomFactorChanged` event.
 [Close](#close) | Closes the WebView and cleans up the underlying browser instance.
 [get_Bounds](#get_bounds) | The WebView bounds.
-[get_CoreWebView2](#get_corewebview2) | Gets the `CoreWebView2` associated with this `CoreWebView2Controller`.
+[get_CoreWebView2](#get_corewebview2) | Gets the [ICoreWebView2](icorewebview2.md#icorewebview2) associated with this ICoreWebView2Controller.
 [get_IsVisible](#get_isvisible) | The `IsVisible` property determines whether to show or hide the WebView2.
 [get_ParentWindow](#get_parentwindow) | The parent window provided by the app that this WebView is using to render content.
 [get_ZoomFactor](#get_zoomfactor) | The zoom factor for the WebView.
@@ -73,7 +73,7 @@ The owner of the `CoreWebView2` object that provides support for resizing, showi
 [remove_ZoomFactorChanged](#remove_zoomfactorchanged) | Remove an event handler previously added with `add_ZoomFactorChanged`.
 [SetBoundsAndZoomFactor](#setboundsandzoomfactor) | Updates `Bounds` and `ZoomFactor` properties at the same time.
 
-The `CoreWebView2Controller` owns the `CoreWebView2`, and if all references to the `CoreWebView2Controller` go away, the WebView is closed.
+The ICoreWebView2Controller owns the [ICoreWebView2](icorewebview2.md#icorewebview2), and if all references to the ICoreWebView2Controller go away, the WebView is closed.
 
 ## Applies to
 
@@ -100,11 +100,11 @@ A few specific keys are never considered accelerators, such as Shift. The `Escap
 
 Auto-repeated key events caused by holding the key down also triggers this event. Filter out the auto-repeated key events by verifying the `KeyEventLParam` or `PhysicalKeyStatus` event args.
 
-In windowed mode, the event handler is run synchronously. Until you run `Handled()` on the event args or the event handler returns, the browser process is blocked and outgoing cross-process COM requests fail with `RPC_E_CANTCALLOUT_ININPUTSYNCCALL`. All `CoreWebView2` API methods work, however.
+In windowed mode, the event handler is run synchronously. Until you run `put_Handled` on the event args or the event handler returns, the browser process is blocked and outgoing cross-process COM requests fail with `RPC_E_CANTCALLOUT_ININPUTSYNCCALL`. All [ICoreWebView2](icorewebview2.md#icorewebview2) API methods work, however.
 
-In windowless mode, the event handler is run asynchronously. Further input do not reach the browser until the event handler returns or `Handled()` is run, but the browser process is not blocked, and outgoing COM requests work normally.
+In windowless mode, the event handler is run asynchronously. Further input do not reach the browser until the event handler returns or `put_Handled` is run, but the browser process is not blocked, and outgoing COM requests work normally.
 
-It is recommended to run `Handled(TRUE)` as early as are able to know that you want to handle the accelerator key.
+It is recommended to run `put_Handled(TRUE)` as early as you are able to know that you want to handle the accelerator key.
 
 ```cpp
     // Register a handler for the AcceleratorKeyPressed event.
@@ -207,7 +207,7 @@ Adds an event handler for the `ZoomFactorChanged` event.
 
 > public HRESULT [add_ZoomFactorChanged](#add_zoomfactorchanged)([ICoreWebView2ZoomFactorChangedEventHandler](icorewebview2zoomfactorchangedeventhandler.md#icorewebview2zoomfactorchangedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-`ZoomFactorChanged` runs when the `ZoomFactor` property of the WebView changes. The event may run because the `ZoomFactor` property was modified, or due to the user manually modifying the zoom. When it is modified using the `ZoomFactor` property, the internal zoom factor is updated immediately and no `ZoomFactorChanged` event is triggered. WebView associates the last used zoom factor for each site. It is possible for the zoom factor to change when navigating to a different page. When the zoom factor changes due to a navigation change, the `ZoomFactorChanged` event runs right after the `ContentLoading` event.
+`ZoomFactorChanged` runs when the `ZoomFactor` property of the WebView changes. The event may run because the user manually modified the zoom, or because the `ZoomFactor` property was set to a value outside the supported zoom factor range and normalized by WebView. When it is modified using the `ZoomFactor` property to an in-range value, the internal zoom factor is updated immediately and no `ZoomFactorChanged` event is triggered. WebView associates the last used zoom factor for each site. It is possible for the zoom factor to change when navigating to a different page. When the zoom factor changes due to a navigation change, the `ZoomFactorChanged` event runs right after the `ContentLoading` event.
 
 ```cpp
     // Register a handler for the ZoomFactorChanged event.
@@ -235,7 +235,7 @@ Cleaning up the browser instance releases the resources powering the WebView. Th
 
 After running `Close`, most methods will fail and event handlers stop running. Specifically, the WebView releases the associated references to any associated event handlers when `Close` is run.
 
-`Close` is implicitly run when the `CoreWebView2Controller` loses the final reference and is destructed. But it is best practice to explicitly run `Close` to avoid any accidental cycle of references between the WebView and the app code. Specifically, if you capture a reference to the WebView in an event handler you create a reference cycle between the WebView and the event handler. Run `Close` to break the cycle by releasing all event handlers. But to avoid the situation, it is best to both explicitly run `Close` on the WebView and to not capture a reference to the WebView to ensure the WebView is cleaned up correctly. `Close` is synchronous and won't trigger the `beforeunload` event.
+`Close` is implicitly run when the ICoreWebView2Controller loses the final reference and is destructed. But it is best practice to explicitly run `Close` to avoid any accidental cycle of references between the WebView and the app code. Specifically, if you capture a reference to the WebView in an event handler you create a reference cycle between the WebView and the event handler. Run `Close` to break the cycle by releasing all event handlers. But to avoid the situation, it is best to both explicitly run `Close` on the WebView and to not capture a reference to the WebView to ensure the WebView is cleaned up correctly. `Close` is synchronous and won't trigger the `beforeunload` event.
 
 ```cpp
 // Close the WebView and deinitialize related state. This doesn't close the app window.
@@ -362,13 +362,13 @@ Bounds are relative to the parent `HWND`. The app has two ways to position a Web
 
 * Create a child `HWND` that is the WebView parent `HWND`. Position the window where the WebView should be. Use `(0, 0)` for the top-left corner (the offset) of the `Bounds` of the WebView.
 
-* Use the top-most window of the app as the WebView parent HWND. For example, to position WebView correctly in the app, set the top-left corner of the Bound of the WebView.
+* Use the top-most window of the app as the WebView parent HWND. For example, to position WebView correctly in the app, set the top-left corner of the `Bounds` of the WebView to the desired offset in the parent window.
 
 The values of `Bounds` are limited by the coordinate space of the host.
 
 #### get_CoreWebView2
 
-Gets the `CoreWebView2` associated with this `CoreWebView2Controller`.
+Gets the [ICoreWebView2](icorewebview2.md#icorewebview2) associated with this ICoreWebView2Controller.
 
 > public HRESULT [get_CoreWebView2](#get_corewebview2)([ICoreWebView2](icorewebview2.md#icorewebview2) ** coreWebView2)
 
@@ -415,7 +415,7 @@ Moves focus into WebView.
 
 > public HRESULT [MoveFocus](#movefocus)(COREWEBVIEW2_MOVE_FOCUS_REASON reason)
 
-WebView gets focus and focus is set to correspondent element in the page hosted in the WebView. For Programmatic reason, focus is set to previously focused element or the default element if no previously focused element exists. For `Next` reason, focus is set to the first element. For `Previous` reason, focus is set to the last element. WebView changes focus through user interaction including selecting into a WebView or Tab into it. For tabbing, the app runs MoveFocus with Next or Previous to align with Tab and Shift+Tab respectively when it decides the WebView is the next element that may exist in a tab. Or, the app runs `IsDialogMessage` as part of the associated message loop to allow the platform to auto handle tabbing. The platform rotates through all windows with `WS_TABSTOP`. When the WebView gets focus from `IsDialogMessage`, it is internally put the focus on the first or last element for tab and Shift+Tab respectively.
+WebView gets focus and focus is set to correspondent element in the page hosted in the WebView. For `COREWEBVIEW2_MOVE_FOCUS_REASON_PROGRAMMATIC` reason, focus is set to previously focused element or the default element if no previously focused element exists. For `COREWEBVIEW2_MOVE_FOCUS_REASON_NEXT` reason, focus is set to the first element. For `COREWEBVIEW2_MOVE_FOCUS_REASON_PREVIOUS` reason, focus is set to the last element. WebView changes focus through user interaction including selecting into a WebView or Tab into it. For tabbing, the app runs MoveFocus with `COREWEBVIEW2_MOVE_FOCUS_REASON_NEXT` or `COREWEBVIEW2_MOVE_FOCUS_REASON_PREVIOUS` to align with Tab and Shift+Tab respectively when it decides the WebView is the next element that may exist in a tab. Or, the app runs `IsDialogMessage` as part of the associated message loop to allow the platform to auto handle tabbing. The platform rotates through all windows with `WS_TABSTOP`. When the WebView gets focus from `IsDialogMessage`, it internally puts the focus on the first or last element for tab and Shift+Tab respectively.
 
 ```cpp
     while (GetMessage(&msg, nullptr, 0, 0))

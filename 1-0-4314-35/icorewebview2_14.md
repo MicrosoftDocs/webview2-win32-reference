@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_13 that adds ServerCertificate support.
 title: WebView2 Win32 C++ ICoreWebView2_14
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_14
 topic_type: 
 - APIRef
@@ -48,7 +48,7 @@ Adds an event handler for the `ServerCertificateErrorDetected` event.
 
 > public HRESULT [add_ServerCertificateErrorDetected](#add_servercertificateerrordetected)([ICoreWebView2ServerCertificateErrorDetectedEventHandler](icorewebview2servercertificateerrordetectedeventhandler.md#icorewebview2servercertificateerrordetectedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the ServerCertificateErrorDetected event. The ServerCertificateErrorDetected event is raised when the WebView2 cannot verify server's digital certificate while loading a web page.
+The ServerCertificateErrorDetected event is raised when the WebView2 cannot verify server's digital certificate while loading a web page.
 
 This event will raise for all web resources and follows the `WebResourceRequested` event.
 

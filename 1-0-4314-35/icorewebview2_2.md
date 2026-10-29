@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2 interface.
 title: WebView2 Win32 C++ ICoreWebView2_2
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_2
 topic_type: 
 - APIRef
@@ -36,8 +36,8 @@ A continuation of the [ICoreWebView2](icorewebview2.md#icorewebview2) interface.
 [add_DOMContentLoaded](#add_domcontentloaded) | Add an event handler for the DOMContentLoaded event.
 [add_WebResourceResponseReceived](#add_webresourceresponsereceived) | Add an event handler for the WebResourceResponseReceived event.
 [get_CookieManager](#get_cookiemanager) | Gets the cookie manager object associated with this [ICoreWebView2](icorewebview2.md#icorewebview2).
-[get_Environment](#get_environment) | Exposes the CoreWebView2Environment used to create this CoreWebView2.
-[NavigateWithWebResourceRequest](#navigatewithwebresourcerequest) | Navigates using a constructed WebResourceRequest object.
+[get_Environment](#get_environment) | Exposes the [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) used to create this [ICoreWebView2](icorewebview2.md#icorewebview2).
+[NavigateWithWebResourceRequest](#navigatewithwebresourcerequest) | Navigates using a constructed [ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md#icorewebview2webresourcerequest) object.
 [remove_DOMContentLoaded](#remove_domcontentloaded) | Remove an event handler previously added with add_DOMContentLoaded.
 [remove_WebResourceResponseReceived](#remove_webresourceresponsereceived) | Remove an event handler previously added with add_WebResourceResponseReceived.
 
@@ -136,17 +136,19 @@ See [ICoreWebView2CookieManager](icorewebview2cookiemanager.md#icorewebview2cook
 
 #### get_Environment
 
-Exposes the CoreWebView2Environment used to create this CoreWebView2.
+Exposes the [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) used to create this [ICoreWebView2](icorewebview2.md#icorewebview2).
 
 > public HRESULT [get_Environment](#get_environment)([ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) ** environment)
 
 #### NavigateWithWebResourceRequest
 
-Navigates using a constructed WebResourceRequest object.
+Navigates using a constructed [ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md#icorewebview2webresourcerequest) object.
 
 > public HRESULT [NavigateWithWebResourceRequest](#navigatewithwebresourcerequest)([ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md#icorewebview2webresourcerequest) * request)
 
-This lets you provide post data or additional request headers during navigation. The headers in the WebResourceRequest override headers added by WebView2 runtime except for Cookie headers. Method can only be either "GET" or "POST". Provided post data will only be sent only if the method is "POST" and the uri scheme is HTTP(S). 
+This lets you provide post data or additional request headers during navigation. The headers in the [ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md#icorewebview2webresourcerequest) override headers added by WebView2 runtime except for Cookie headers. Method can only be either "GET" or "POST". Provided post data will only be sent if the method is "POST" and the uri scheme is HTTP(S).
+
+The headers are sent with the initial request and with every redirect, including redirects to a different origin. They are also stored with the navigation history entry, so reload and back or forward navigations send them again. Do not include credentials, such as an `Authorization` header, unless you trust every server to which the navigation might be redirected. To control which origins receive a header, omit it from the [ICoreWebView2WebResourceRequest](icorewebview2webresourcerequest.md#icorewebview2webresourcerequest) and add it for trusted origins in a `WebResourceRequested` event handler. Alternatively, use `WebResourceRequested` to remove the header when a redirect targets an untrusted origin. 
 ```cpp
         wil::com_ptr<ICoreWebView2Environment2> webviewEnvironment2;
         CHECK_FAILURE(appWindow->GetWebViewEnvironment()->QueryInterface(

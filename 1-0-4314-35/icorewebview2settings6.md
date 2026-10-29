@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Settings interface to manage swipe navigation.
 title: WebView2 Win32 C++ ICoreWebView2Settings6
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings6
 topic_type: 
 - APIRef
@@ -58,7 +58,7 @@ When this property is `TRUE`, then all configured navigation gestures are enable
 
 1. Swiping left and right to navigate forward and backward is always configured.
 
-1. Swiping down to refresh is off by default and not exposed via our API currently, it requires the "--pull-to-refresh" option to be included in the additional browser arguments to be configured. (See put_AdditionalBrowserArguments.)
+1. Swiping down to refresh is off by default and not exposed via our API currently, it requires the "--pull-to-refresh" option to be included in the additional browser arguments to be configured. (See [ICoreWebView2EnvironmentOptions::put_AdditionalBrowserArguments](icorewebview2environmentoptions.md#put_additionalbrowserarguments).)
 
 When set to `FALSE`, the end user cannot swipe to navigate or pull to refresh. This API only affects the overscrolling navigation functionality and has no effect on the scrolling interaction used to explore the web content shown in WebView2.
 

@@ -1,7 +1,7 @@
 ---
 description: View of the HTTP representation for a web resource response.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceResponseView
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2WebResourceResponseView
 topic_type: 
 - APIRef
@@ -74,7 +74,7 @@ Get the response content asynchronously.
 
 The handler will receive the response content stream.
 
-This method returns null if content size is more than 123MB or for navigations that become downloads or if response is downloadable content type (e.g., application/octet-stream). See `add_DownloadStarting` event to handle the response.
+The handler will receive a null stream if content size is more than 123MB or for navigations that become downloads or if response is downloadable content type (e.g., application/octet-stream). See `add_DownloadStarting` event to handle the response.
 
 If this method is being called again before a first call has completed, the handler will be invoked at the same time the handlers from prior calls are invoked. If this method is being called after a first call has completed, the handler will be invoked immediately. 
 ```cpp

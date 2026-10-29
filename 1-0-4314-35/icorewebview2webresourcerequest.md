@@ -1,7 +1,7 @@
 ---
 description: An HTTP request used with the `WebResourceRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2WebResourceRequest
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2WebResourceRequest
 topic_type: 
 - APIRef
@@ -56,7 +56,7 @@ The HTTP request message body as stream.
 
 > public HRESULT [get_Content](#get_content)(IStream ** content)
 
-POST data should be here. If a stream is set, which overrides the message body, the stream must have all the content data available by the time the `WebResourceRequested` event deferral of this response is completed. Stream should be agile or be created from a background STA to prevent performance impact to the UI thread. `Null` means no content data. `IStream` semantics apply (return `S_OK` to `Read` runs until all data is exhausted).
+POST data should be here. If a stream is set, which overrides the message body, the stream must have all the content data available by the time the `WebResourceRequested` event deferral of this request is completed. Stream should be agile or be created from a background STA to prevent performance impact to the UI thread. `Null` means no content data. `IStream` semantics apply (return `S_OK` to `Read` runs until all data is exhausted).
 
 #### get_Headers
 

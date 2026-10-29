@@ -1,7 +1,7 @@
 ---
 description: Provides crash signature data captured at the moment of process failure.
 title: WebView2 Win32 C++ ICoreWebView2CrashReport
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CrashReport
 topic_type: 
 - APIRef
@@ -110,7 +110,7 @@ CrashReport is null when the failure did not produce a crash report (normal exit
 
 Product                         | Introduced
 --------------------------------|---------------------------------------------
-WebView2 Win32            |    N/A
+WebView2 Win32            |    1.0.4314.35
 WebView2 Win32 Prerelease |    1.0.4312
 
 ## Members

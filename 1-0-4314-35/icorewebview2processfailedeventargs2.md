@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2ProcessFailedEventArgs interface.
 title: WebView2 Win32 C++ ICoreWebView2ProcessFailedEventArgs2
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ProcessFailedEventArgs2
 topic_type: 
 - APIRef
@@ -31,7 +31,7 @@ A continuation of the [ICoreWebView2ProcessFailedEventArgs](icorewebview2process
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
 [get_ExitCode](#get_exitcode) | The exit code of the failing process, for telemetry purposes.
-[get_FrameInfosForFailedProcess](#get_frameinfosforfailedprocess) | The collection of `FrameInfo`s for frames in the [ICoreWebView2](icorewebview2.md#icorewebview2) that were being rendered by the failed process.
+[get_FrameInfosForFailedProcess](#get_frameinfosforfailedprocess) | The collection of [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo)s for frames in the [ICoreWebView2](icorewebview2.md#icorewebview2) that were being rendered by the failed process.
 [get_ProcessDescription](#get_processdescription) | Description of the process assigned by the WebView2 Runtime.
 [get_Reason](#get_reason) | The reason for the process failure.
 
@@ -54,7 +54,7 @@ The exit code is always `STILL_ACTIVE` (`259`) when `ProcessFailedKind` is `CORE
 
 #### get_FrameInfosForFailedProcess
 
-The collection of `FrameInfo`s for frames in the [ICoreWebView2](icorewebview2.md#icorewebview2) that were being rendered by the failed process.
+The collection of [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo)s for frames in the [ICoreWebView2](icorewebview2.md#icorewebview2) that were being rendered by the failed process.
 
 > public HRESULT [get_FrameInfosForFailedProcess](#get_frameinfosforfailedprocess)([ICoreWebView2FrameInfoCollection](icorewebview2frameinfocollection.md#icorewebview2frameinfocollection) ** frames)
 

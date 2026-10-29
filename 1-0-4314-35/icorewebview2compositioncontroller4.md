@@ -1,7 +1,7 @@
 ---
 description: This Interface includes an API which enables non-client hit-testing support for WebView2.
 title: WebView2 Win32 C++ ICoreWebView2CompositionController4
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CompositionController4
 topic_type: 
 - APIRef
@@ -31,7 +31,7 @@ This Interface includes an API which enables non-client hit-testing support for 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
 [add_NonClientRegionChanged](#add_nonclientregionchanged) | This method is used to add a listener for NonClientRegionChanged.
-[GetNonClientRegionAtPoint](#getnonclientregionatpoint) | If you are hosting a WebView2 using CoreWebView2CompositionController, you can call this method in your Win32 WndProc to determine if the mouse is moving over or clicking on WebView2 web content that should be considered part of a non-client region.
+[GetNonClientRegionAtPoint](#getnonclientregionatpoint) | If you are hosting a WebView2 using [ICoreWebView2CompositionController](icorewebview2compositioncontroller.md#icorewebview2compositioncontroller), you can call this method in your Win32 WndProc to determine if the mouse is moving over or clicking on WebView2 web content that should be considered part of a non-client region.
 [QueryNonClientRegion](#querynonclientregion) | This method is used to get the collection of rects that correspond to a particular COREWEBVIEW2_NON_CLIENT_REGION_KIND.
 [remove_NonClientRegionChanged](#remove_nonclientregionchanged) | This method is used to remove an event handler previously added with add_NonClientRegionChanged.
 
@@ -82,7 +82,7 @@ void ScenarioNonClientRegionSupport::AddChangeListener()
 
 #### GetNonClientRegionAtPoint
 
-If you are hosting a WebView2 using CoreWebView2CompositionController, you can call this method in your Win32 WndProc to determine if the mouse is moving over or clicking on WebView2 web content that should be considered part of a non-client region.
+If you are hosting a WebView2 using [ICoreWebView2CompositionController](icorewebview2compositioncontroller.md#icorewebview2compositioncontroller), you can call this method in your Win32 WndProc to determine if the mouse is moving over or clicking on WebView2 web content that should be considered part of a non-client region.
 
 > public HRESULT [GetNonClientRegionAtPoint](#getnonclientregionatpoint)(POINT point, COREWEBVIEW2_NON_CLIENT_REGION_KIND * value)
 
@@ -124,7 +124,7 @@ This method is used to get the collection of rects that correspond to a particul
 
 > public HRESULT [QueryNonClientRegion](#querynonclientregion)(COREWEBVIEW2_NON_CLIENT_REGION_KIND kind, [ICoreWebView2RegionRectCollectionView](icorewebview2regionrectcollectionview.md#icorewebview2regionrectcollectionview) ** rects)
 
-This is to be used in the callback of add_NonClientRegionChanged whose event args object contains a region property of type COREWEBVIEW2_NON_CLIENT_REGION_KIND.
+This is to be used in the callback of add_NonClientRegionChanged whose event args object contains a RegionKind property of type COREWEBVIEW2_NON_CLIENT_REGION_KIND.
 
 ```cpp
 void ScenarioNonClientRegionSupport::AddChangeListener()

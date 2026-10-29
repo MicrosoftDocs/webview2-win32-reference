@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2_4 interface to support ClientCertificateRequested event.
 title: WebView2 Win32 C++ ICoreWebView2_5
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_5
 topic_type: 
 - APIRef
@@ -46,7 +46,7 @@ Adds an event handler for the `ClientCertificateRequested` event.
 
 > public HRESULT [add_ClientCertificateRequested](#add_clientcertificaterequested)([ICoreWebView2ClientCertificateRequestedEventHandler](icorewebview2clientcertificaterequestedeventhandler.md#icorewebview2clientcertificaterequestedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the ClientCertificateRequested event. The ClientCertificateRequested event is raised when the WebView2 is making a request to an HTTP server that needs a client certificate for HTTP authentication. Read more about HTTP client certificates at [RFC 8446 The Transport Layer Security (TLS) Protocol Version 1.3](https://tools.ietf.org/html/rfc8446).
+The ClientCertificateRequested event is raised when the WebView2 is making a request to an HTTP server that needs a client certificate for HTTP authentication. Read more about HTTP client certificates at [RFC 8446 The Transport Layer Security (TLS) Protocol Version 1.3](https://tools.ietf.org/html/rfc8446).
 
 With this event you have several options for responding to client certificate requests:
 

@@ -1,7 +1,7 @@
 ---
 description: This is the profile interface that manages profile deletion.
 title: WebView2 Win32 C++ ICoreWebView2Profile8
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile8
 topic_type: 
 - APIRef
@@ -48,7 +48,7 @@ Add an event handler for the `Deleted` event.
 
 > public HRESULT [add_Deleted](#add_deleted)([ICoreWebView2ProfileDeletedEventHandler](icorewebview2profiledeletedeventhandler.md#icorewebview2profiledeletedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-The `Deleted` event is raised when the profile is marked for deletion. When this event is raised, the CoreWebView2Profile and its corresponding CoreWebView2s have been closed, and cannot be used anymore.
+The `Deleted` event is raised when the profile is marked for deletion. When this event is raised, the [ICoreWebView2Profile](icorewebview2profile.md#icorewebview2profile) and its corresponding ICoreWebView2s have been closed, and cannot be used anymore.
 
 ```cpp
     auto webView2_13 = m_webView.try_query<ICoreWebView2_13>();
@@ -82,7 +82,7 @@ After the API is called, the profile will be marked for deletion.
 
 > public HRESULT [Delete](#delete)()
 
-The local profile's directory will be deleted at browser process exit. If it fails to delete, because something else is holding the files open, WebView2 will try to delete the profile at all future browser process starts until successful. The corresponding CoreWebView2s will be closed and the CoreWebView2Profile.Deleted event will be raised. See `CoreWebView2Profile.Deleted` for more information. If you try to create a new profile with the same name as an existing profile that has been marked as deleted but hasn't yet been deleted, profile creation will fail with HRESULT_FROM_WIN32(ERROR_DELETE_PENDING).
+The local profile's directory will be deleted at browser process exit. If it fails to delete, because something else is holding the files open, WebView2 will try to delete the profile at all future browser process starts until successful. The corresponding ICoreWebView2s will be closed and the `ICoreWebView2Profile8::Deleted` event will be raised. See [ICoreWebView2Profile8::add_Deleted](#add_deleted) for more information. If you try to create a new profile with the same name as an existing profile that has been marked as deleted but hasn't yet been deleted, profile creation will fail with HRESULT_FROM_WIN32(ERROR_DELETE_PENDING).
 
 ```cpp
             CHECK_FEATURE_RETURN(m_webView2_13);

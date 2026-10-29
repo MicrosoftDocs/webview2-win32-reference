@@ -1,7 +1,7 @@
 ---
 description: This is a deprecated interface to control Enhanced Security Mode (ESM) level.
 title: WebView2 Win32 C++ ICoreWebView2SaveFileSecurityCheckStartingEventArgs
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2SaveFileSecurityCheckStartingEventArgs
 topic_type: 
 - APIRef
@@ -40,8 +40,8 @@ This is a deprecated interface to control Enhanced Security Mode (ESM) level.
 [get_FilePath](#get_filepath) | Get the full path of file to be saved.
 [get_SuppressDefaultPolicy](#get_suppressdefaultpolicy) | Gets the `SuppressDefaultPolicy` property.
 [GetDeferral](#getdeferral) | Returns an [ICoreWebView2Deferral](icorewebview2deferral.md#icorewebview2deferral) object.
-[put_CancelSave](#put_cancelsave) | Set if cancel the upcoming save/download.
-[put_SuppressDefaultPolicy](#put_suppressdefaultpolicy) | Set if the default policy checking and security warning will be suppressed.
+[put_CancelSave](#put_cancelsave) | Gets or sets whether to cancel the upcoming save or download.
+[put_SuppressDefaultPolicy](#put_suppressdefaultpolicy) | Gets or sets whether the default policy checking and security warning will be suppressed.
 
 Use ICoreWebView2ExperimentalProfile17 and `EnhancedSecurityModeState` instead. The event args for `SaveFileSecurityCheckStarting` event.
 
@@ -90,7 +90,7 @@ Get the full path of file to be saved.
 
 This includes the file name and extension.
 
-This method doesn't provide path validation, the returned string may longer than MAX_PATH.
+This method doesn't provide path validation, the returned string may be longer than MAX_PATH.
 
 The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
 
@@ -106,13 +106,13 @@ Returns an [ICoreWebView2Deferral](icorewebview2deferral.md#icorewebview2deferra
 
 > public HRESULT [GetDeferral](#getdeferral)([ICoreWebView2Deferral](icorewebview2deferral.md#icorewebview2deferral) ** value)
 
-Use this operation to complete the SaveFileSecurityCheckStartingEvent.
+Use this operation to complete the `SaveFileSecurityCheckStarting` event.
 
 The default policy checking and any default UI will be blocked temporarily, saving file to local won't start, until the deferral is completed.
 
 #### put_CancelSave
 
-Set if cancel the upcoming save/download.
+Gets or sets whether to cancel the upcoming save or download.
 
 > public HRESULT [put_CancelSave](#put_cancelsave)(BOOL value)
 
@@ -122,7 +122,7 @@ The default value is `FALSE`.
 
 #### put_SuppressDefaultPolicy
 
-Set if the default policy checking and security warning will be suppressed.
+Gets or sets whether the default policy checking and security warning will be suppressed.
 
 > public HRESULT [put_SuppressDefaultPolicy](#put_suppressdefaultpolicy)(BOOL value)
 

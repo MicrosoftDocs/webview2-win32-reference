@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_6 that supports printing to PDF.
 title: WebView2 Win32 C++ ICoreWebView2_7
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_7
 topic_type: 
 - APIRef
@@ -48,7 +48,7 @@ See [ICoreWebView2PrintSettings](icorewebview2printsettings.md#icorewebview2prin
 
 Use `resultFilePath` to specify the path to the PDF file. The host should provide an absolute path, including file name. If the path points to an existing file, the file will be overwritten. If the path is not valid, the method fails with `E_INVALIDARG`.
 
-The async `PrintToPdf` operation completes when the data has been written to the PDF file. At this time the [ICoreWebView2PrintToPdfCompletedHandler](icorewebview2printtopdfcompletedhandler.md#icorewebview2printtopdfcompletedhandler) is invoked. If the application exits before printing is complete, the file is not saved. Only one `Printing` operation can be in progress at a time. If `PrintToPdf` is called while a `PrintToPdf` or `PrintToPdfStream` or `Print` or `ShowPrintUI` job is in progress, the completed handler is immediately invoked with `isSuccessful` set to FALSE.
+The async `PrintToPdf` operation completes when the data has been written to the PDF file. At this time the [ICoreWebView2PrintToPdfCompletedHandler](icorewebview2printtopdfcompletedhandler.md#icorewebview2printtopdfcompletedhandler) is invoked. If the application exits before printing is complete, the file is not saved. Only one printing operation can be in progress at a time. If `PrintToPdf` is called while a `PrintToPdf` or `PrintToPdfStream` or `Print` or `ShowPrintUI` job is in progress, the completed handler is immediately invoked with `isSuccessful` set to FALSE.
 
 ```cpp
 // Shows the user a file selection dialog, then uses the selected path when

@@ -1,7 +1,7 @@
 ---
 description: Provides a set of properties that are used to manage an ICoreWebView2Cookie.
 title: WebView2 Win32 C++ ICoreWebView2Cookie
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Cookie
 topic_type: 
 - APIRef
@@ -44,7 +44,7 @@ Provides a set of properties that are used to manage an ICoreWebView2Cookie.
 [get_Expires](#get_expires) | The expiration date and time for the cookie as the number of seconds since the UNIX epoch.
 [get_IsHttpOnly](#get_ishttponly) | Whether this cookie is http-only.
 [get_IsSecure](#get_issecure) | The security level of this cookie.
-[get_IsSession](#get_issession) | Whether this is a session cookie. The default is false.
+[get_IsSession](#get_issession) | Whether this is a session cookie. The default is true.
 [get_Name](#get_name) | Cookie name.
 [get_Path](#get_path) | The path for which the cookie is valid.
 [get_SameSite](#get_samesite) | SameSite status of the cookie which represents the enforcement mode of the cookie.
@@ -151,7 +151,7 @@ True if the client is only to return the cookie in subsequent requests if those 
 
 #### get_IsSession
 
-Whether this is a session cookie. The default is false.
+Whether this is a session cookie. The default is true.
 
 > public HRESULT [get_IsSession](#get_issession)(BOOL * isSession)
 

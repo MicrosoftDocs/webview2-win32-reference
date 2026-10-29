@@ -1,7 +1,7 @@
 ---
-description: The AdditionalAllowedFrameAncestors API that enable developers to provide additional allowed frame ancestors.
+description: The AdditionalAllowedFrameAncestors API that enables developers to provide additional allowed frame ancestors.
 title: WebView2 Win32 C++ ICoreWebView2NavigationStartingEventArgs2
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NavigationStartingEventArgs2
 topic_type: 
 - APIRef
@@ -22,7 +22,7 @@ interface ICoreWebView2NavigationStartingEventArgs2
   : public ICoreWebView2NavigationStartingEventArgs
 ```
 
-The AdditionalAllowedFrameAncestors API that enable developers to provide additional allowed frame ancestors.
+The AdditionalAllowedFrameAncestors API that enables developers to provide additional allowed frame ancestors.
 
 ## Summary
 

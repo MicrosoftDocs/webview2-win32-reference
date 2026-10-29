@@ -1,7 +1,7 @@
 ---
-description: This interface is an extension of ICoreWebView2_14 that supports status Favicons.
+description: This interface is an extension of ICoreWebView2_14 that supports Favicons.
 title: WebView2 Win32 C++ ICoreWebView2_15
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_15
 topic_type: 
 - APIRef
@@ -24,7 +24,7 @@ interface ICoreWebView2_15
   : public ICoreWebView2_14
 ```
 
-This interface is an extension of [ICoreWebView2_14](icorewebview2_14.md#icorewebview2_14) that supports status Favicons.
+This interface is an extension of [ICoreWebView2_14](icorewebview2_14.md#icorewebview2_14) that supports Favicons.
 
 ## Summary
 
@@ -50,7 +50,7 @@ Add an event handler for the `FaviconChanged` event.
 
 > public HRESULT [add_FaviconChanged](#add_faviconchanged)([ICoreWebView2FaviconChangedEventHandler](icorewebview2faviconchangedeventhandler.md#icorewebview2faviconchangedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-The `FaviconChanged` event is raised when the [favicon](https://developer.mozilla.org/docs/Glossary/Favicon) had a different URL then the previous URL. The FaviconChanged event will be raised for first navigating to a new document, whether or not a document declares a Favicon in HTML if the favicon is different from the previous fav icon. The event will be raised again if a favicon is declared in its HTML or has script to set its favicon. The favicon information can then be retrieved with `GetFavicon` and `FaviconUri`.
+The `FaviconChanged` event is raised when the [favicon](https://developer.mozilla.org/docs/Glossary/Favicon) had a different URL than the previous URL. The FaviconChanged event will be raised for first navigating to a new document, whether or not a document declares a Favicon in HTML if the favicon is different from the previous favicon. The event will be raised again if a favicon is declared in its HTML or has script to set its favicon. The favicon information can then be retrieved with `GetFavicon` and `FaviconUri`.
 
 #### get_FaviconUri
 
@@ -58,7 +58,7 @@ Get the current Uri of the favicon as a string.
 
 > public HRESULT [get_FaviconUri](#get_faviconuri)(LPWSTR * value)
 
-If the value is null, then the return value is `E_POINTER`, otherwise it is `S_OK`. If a page has no favicon then the value is an empty string.
+If `value` is null, then the return value is `E_POINTER`, otherwise it is `S_OK`. If a page has no favicon then the value is an empty string.
 
 #### GetFavicon
 

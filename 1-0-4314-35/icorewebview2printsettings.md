@@ -1,7 +1,7 @@
 ---
 description: Settings used by the `PrintToPdf` method.
 title: WebView2 Win32 C++ ICoreWebView2PrintSettings
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PrintSettings
 topic_type: 
 - APIRef
@@ -69,7 +69,7 @@ Settings used by the `PrintToPdf` method.
 [put_HeaderTitle](#put_headertitle) | Set the `HeaderTitle` property.
 [put_MarginBottom](#put_marginbottom) | Sets the `MarginBottom` property.
 [put_MarginLeft](#put_marginleft) | Sets the `MarginLeft` property.
-[put_MarginRight](#put_marginright) | Set the `MarginRight` property.A margin cannot be less than zero.
+[put_MarginRight](#put_marginright) | Set the `MarginRight` property.
 [put_MarginTop](#put_margintop) | Sets the `MarginTop` property.
 [put_Orientation](#put_orientation) | Sets the `Orientation` property.
 [put_PageHeight](#put_pageheight) | Sets the `PageHeight` property.
@@ -216,11 +216,11 @@ A margin cannot be less than zero. Returns `E_INVALIDARG` if an invalid value is
 
 #### put_MarginRight
 
-Set the `MarginRight` property.A margin cannot be less than zero.
+Set the `MarginRight` property.
 
 > public HRESULT [put_MarginRight](#put_marginright)(double marginRight)
 
-Returns `E_INVALIDARG` if an invalid value is provided, and the current value is not changed.
+A margin cannot be less than zero. Returns `E_INVALIDARG` if an invalid value is provided, and the current value is not changed.
 
 #### put_MarginTop
 

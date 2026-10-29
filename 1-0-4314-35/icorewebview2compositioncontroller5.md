@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2CompositionController4 interface.
 title: WebView2 Win32 C++ ICoreWebView2CompositionController5
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CompositionController5
 topic_type: 
 - APIRef
@@ -48,13 +48,13 @@ Adds an event handler for the `DragStarting` event.
 
 > public HRESULT [add_DragStarting](#add_dragstarting)([ICoreWebView2DragStartingEventHandler](icorewebview2dragstartingeventhandler.md#icorewebview2dragstartingeventhandler) * eventHandler, EventRegistrationToken * token)
 
-`DragStarting` is a deferrable event that is raised when the WebView2 detects a drag started within the WebView2. WebView2's default drag behavior is to synchronously call DoDragDrop when it detects drag. This event's args expose the data WebView2 uses to call DoDragDrop to allow users to implement their own drag logic and override WebView2's. Handlers of this event must set the `Handled` event to true in order to override WebView2's default logic. When invoking drag logic asynchronously using a deferral, handlers must take care to follow these steps in order:
+`DragStarting` is a deferrable event that is raised when the WebView2 detects a drag started within the WebView2. WebView2's default drag behavior is to synchronously call DoDragDrop when it detects drag. This event's args expose the data WebView2 uses to call DoDragDrop to allow users to implement their own drag logic and override WebView2's. Handlers of this event must set the `Handled` property to `TRUE` in order to override WebView2's default logic. When invoking drag logic asynchronously using a deferral, handlers must take care to follow these steps in order:
 
 * Invoke asynchronous drag logic
 
-* Set the event args `Handled` property true
+* Set the event args `Handled` property to `TRUE`
 
-* Complete the deferral In the asynchronous case, WebView2 decides whether or not to invoke its default drag logic when the deferral completes. So the event args' `Handled` property must be true when the deferral is completed. 
+* Complete the deferral In the asynchronous case, WebView2 decides whether or not to invoke its default drag logic when the deferral completes. So the event args' `Handled` property must be `TRUE` when the deferral is completed. 
 ```cpp
     // Using DragStarting to simply make a synchronous DoDragDrop call instead of
     // having WebView2 do it.

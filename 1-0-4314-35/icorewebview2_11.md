@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_10 that supports sessionId for CDP method calls and ContextMenuRequested event.
 title: WebView2 Win32 C++ ICoreWebView2_11
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_11
 topic_type: 
 - APIRef
@@ -70,6 +70,11 @@ Add an event handler for the `ContextMenuRequested` event.
                             wil::com_ptr<ICoreWebView2ContextMenuTarget> target;
                             CHECK_FAILURE(args->get_ContextMenuTarget(&target));
 
+                            if (TryShowSpellCheckContextMenu(args, items, target))
+                            {
+                                return S_OK;
+                            }
+
                             COREWEBVIEW2_CONTEXT_MENU_TARGET_KIND targetKind;
                             CHECK_FAILURE(target->get_Kind(&targetKind));
                             // Custom UI Context Menu rendered if invoked on selected text
@@ -79,29 +84,30 @@ Add an event handler for the `ContextMenuRequested` event.
                                 auto showMenu = [this, args, itemsCount, items, target]
                                 {
                                     CHECK_FAILURE(args->put_Handled(true));
-                                    HMENU hPopupMenu = CreatePopupMenu();
-                                    AddMenuItems(hPopupMenu, items);
+                                    wil::unique_hmenu hPopupMenu(CreatePopupMenu());
+                                    AddMenuItems(hPopupMenu.get(), items);
                                     HWND hWnd;
-                                    m_controller->get_ParentWindow(&hWnd);
+                                    CHECK_FAILURE(m_controller->get_ParentWindow(&hWnd));
                                     SetForegroundWindow(hWnd);
                                     RECT rct;
                                     GetClientRect(hWnd, &rct);
-                                    POINT topLeft;
-                                    topLeft.x = rct.left;
-                                    topLeft.y = rct.top;
+                                    POINT topLeft = {rct.left, rct.top};
                                     ClientToScreen(hWnd, &topLeft);
-                                    POINT p;
-                                    CHECK_FAILURE(args->get_Location(&p));
+                                    POINT location;
+                                    CHECK_FAILURE(args->get_Location(&location));
                                     RECT bounds;
                                     CHECK_FAILURE(m_controller->get_Bounds(&bounds));
                                     double scale;
-                                    m_controller3->get_RasterizationScale(&scale);
+                                    CHECK_FAILURE(
+                                        m_controller3->get_RasterizationScale(&scale));
                                     INT32 selectedCommandId = TrackPopupMenu(
-                                        hPopupMenu,
+                                        hPopupMenu.get(),
                                         TPM_TOPALIGN | TPM_LEFTALIGN | TPM_RETURNCMD,
-                                        bounds.left + topLeft.x + ((int)(p.x * scale)),
-                                        bounds.top + topLeft.y + ((int)(p.y * scale)), 0, hWnd,
-                                        NULL);
+                                        bounds.left + topLeft.x +
+                                            static_cast<int>(location.x * scale),
+                                        bounds.top + topLeft.y +
+                                            static_cast<int>(location.y * scale),
+                                        0, hWnd, nullptr);
                                     CHECK_FAILURE(
                                         args->put_SelectedCommandId(selectedCommandId));
                                 };
@@ -212,7 +218,7 @@ Runs an asynchronous `DevToolsProtocol` method for a specific session of an atta
 
 > public HRESULT [CallDevToolsProtocolMethodForSession](#calldevtoolsprotocolmethodforsession)(LPCWSTR sessionId, LPCWSTR methodName, LPCWSTR parametersAsJson, [ICoreWebView2CallDevToolsProtocolMethodCompletedHandler](icorewebview2calldevtoolsprotocolmethodcompletedhandler.md#icorewebview2calldevtoolsprotocolmethodcompletedhandler) * handler)
 
-There could be multiple `DevToolsProtocol` targets in a WebView. Besides the top level page, iframes from different origin and web workers are also separate targets. Attaching to these targets allows interaction with them. When the DevToolsProtocol is attached to a target, the connection is identified by a sessionId. To use this API, you must set the `flatten` parameter to true when calling `Target.attachToTarget` or `Target.setAutoAttach``DevToolsProtocol` method. Using `Target.setAutoAttach` is recommended as that would allow you to attach to dedicated worker targets, which are not discoverable via other APIs like `Target.getTargets`. For more information about targets and sessions, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot/Target). For more information about available methods, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot) The `sessionId` parameter is the sessionId for an attached target. nullptr or empty string is treated as the session for the default target for the top page. The `methodName` parameter is the full name of the method in the `{domain}.{method}` format. The `parametersAsJson` parameter is a JSON formatted string containing the parameters for the corresponding method. The `Invoke` method of the `handler` is run when the method asynchronously completes. `Invoke` is run with the return object of the method as a JSON string. This function returns E_INVALIDARG if the `methodName` is unknown or the `parametersAsJson` has an error. In the case of such an error, the `returnObjectAsJson` parameter of the handler will include information about the error.
+There could be multiple `DevToolsProtocol` targets in a WebView. Besides the top level page, iframes from different origin and web workers are also separate targets. Attaching to these targets allows interaction with them. When the DevToolsProtocol is attached to a target, the connection is identified by a sessionId. To use this API, you must set the `flatten` parameter to true when calling `Target.attachToTarget` or `Target.setAutoAttach``DevToolsProtocol` method. Using `Target.setAutoAttach` is recommended as that would allow you to attach to dedicated worker targets, which are not discoverable via other APIs like `Target.getTargets`. For more information about targets and sessions, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot/Target). For more information about available methods, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot). The `sessionId` parameter is the sessionId for an attached target. nullptr or empty string is treated as the session for the default target for the top page. The `methodName` parameter is the full name of the method in the `{domain}.{method}` format. The `parametersAsJson` parameter is a JSON formatted string containing the parameters for the corresponding method. The `Invoke` method of the `handler` is run when the method asynchronously completes. `Invoke` is run with the return object of the method as a JSON string. If the `methodName` is unknown or the `parametersAsJson` has an error, `Invoke` is run with `E_INVALIDARG` as the `errorCode` and the `returnObjectAsJson` parameter of the handler will include information about the error.
 
 ```cpp
 void ScriptComponent::HandleCDPTargets()

@@ -1,7 +1,7 @@
 ---
 description: Event args for the `ContextMenuRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2ContextMenuRequestedEventArgs
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ContextMenuRequestedEventArgs
 topic_type: 
 - APIRef
@@ -37,7 +37,7 @@ Event args for the `ContextMenuRequested` event.
 [get_ContextMenuTarget](#get_contextmenutarget) | Gets the target information associated with the requested context menu.
 [get_Handled](#get_handled) | Gets whether the `ContextMenuRequested` event is handled by host.
 [get_Location](#get_location) | Gets the coordinates where the context menu request occurred in relation to the upper left corner of the WebView bounds.
-[get_MenuItems](#get_menuitems) | Gets the collection of `ContextMenuItem` objects.
+[get_MenuItems](#get_menuitems) | Gets the collection of [ICoreWebView2ContextMenuItem](icorewebview2contextmenuitem.md#icorewebview2contextmenuitem) objects.
 [get_SelectedCommandId](#get_selectedcommandid) | Gets the selected CommandId.
 [GetDeferral](#getdeferral) | Returns an [ICoreWebView2Deferral](icorewebview2deferral.md#icorewebview2deferral) object.
 [put_Handled](#put_handled) | Sets whether the `ContextMenuRequested` event is handled by host after the event handler completes or if there is a deferral then after the deferral is completed.
@@ -76,7 +76,7 @@ Gets the coordinates where the context menu request occurred in relation to the 
 
 #### get_MenuItems
 
-Gets the collection of `ContextMenuItem` objects.
+Gets the collection of [ICoreWebView2ContextMenuItem](icorewebview2contextmenuitem.md#icorewebview2contextmenuitem) objects.
 
 > public HRESULT [get_MenuItems](#get_menuitems)([ICoreWebView2ContextMenuItemCollection](icorewebview2contextmenuitemcollection.md#icorewebview2contextmenuitemcollection) ** value)
 
@@ -110,5 +110,5 @@ Sets the selected context menu item's command ID.
 
 > public HRESULT [put_SelectedCommandId](#put_selectedcommandid)(INT32 value)
 
-When this is set, WebView will execute the selected command. This value should always be obtained via the selected `ContextMenuItem`'s `CommandId` property. The default value is -1 which means that no selection occurred. The app can also report the selected command ID for a custom context menu item, which will cause the `CustomItemSelected` event to be fired for the custom item, however while command IDs for each custom context menu item is unique during a ContextMenuRequested event, CoreWebView2 may reassign command ID values of deleted custom ContextMenuItems to new objects and the command ID assigned to the same custom item can be different between each app runtime.
+When this is set, WebView will execute the selected command. This value should always be obtained via the selected [ICoreWebView2ContextMenuItem](icorewebview2contextmenuitem.md#icorewebview2contextmenuitem)'s `CommandId` property. The default value is -1 which means that no selection occurred. The app can also report the selected command ID for a custom context menu item, which will cause the `CustomItemSelected` event to be fired for the custom item, however while command IDs for each custom context menu item are unique during a `ContextMenuRequested` event, WebView may reassign command ID values of deleted custom [ICoreWebView2ContextMenuItem](icorewebview2contextmenuitem.md#icorewebview2contextmenuitem) objects to new objects and the command ID assigned to the same custom item can be different between each app runtime.
 

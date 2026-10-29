@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2_3 interface to support FrameCreated and DownloadStarting events.
 title: WebView2 Win32 C++ ICoreWebView2_4
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_4
 topic_type: 
 - APIRef
@@ -162,7 +162,7 @@ Raised when a new iframe is created.
 
 > public HRESULT [add_FrameCreated](#add_framecreated)([ICoreWebView2FrameCreatedEventHandler](icorewebview2framecreatedeventhandler.md#icorewebview2framecreatedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Handle this event to get access to [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) objects. Use [ICoreWebView2Frame.add_Destroyed](icorewebview2frame.md#add_destroyed) to listen for when this iframe goes away.
+Handle this event to get access to [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) objects. Use [ICoreWebView2Frame::add_Destroyed](icorewebview2frame.md#add_destroyed) to listen for when this iframe goes away.
 
 #### remove_DownloadStarting
 

@@ -1,7 +1,7 @@
 ---
 description: Settings used by the `Print` method.
 title: WebView2 Win32 C++ ICoreWebView2PrintSettings2
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PrintSettings2
 topic_type: 
 - APIRef
@@ -136,7 +136,7 @@ Defaults to empty string, which means print all pages. If the Page range is empt
 
 The PageRanges property is a list of page ranges specifying one or more pages that should be printed separated by commas. Any whitespace between page ranges is ignored. A valid page range is either a single integer identifying the page to print, or a range in the form `[start page]-[last page]` where `start page` and `last page` are integers identifying the first and last inclusive pages respectively to print. Every page identifier is an integer greater than 0 unless wildcards are used (see below examples). The first page is 1.
 
-In a page range of the form `[start page]-[last page]` the start page number must be larger than 0 and less than or equal to the document's total page count. If the `start page` is not present, then 1 is used as the `start page`. The `last page` must be larger than the `start page`. If the `last page` is not present, then the document total page count is used as the `last page`.
+In a page range of the form `[start page]-[last page]` the start page number must be larger than 0 and less than or equal to the document's total page count. If the `start page` is not present, then 1 is used as the `start page`. The `last page` must be larger than or equal to the `start page`. If the `last page` is not present, then the document total page count is used as the `last page`.
 
 Repeating a page does not print it multiple times. To print multiple times, use the `Copies` property.
 
@@ -225,7 +225,7 @@ Set the `PagesPerSide` property.
 
 Returns `E_INVALIDARG` if an invalid value is provided, and the current value is not changed.
 
-Below examples shows print output for PagesPerSide and Duplex.
+Below examples show print output for PagesPerSide and Duplex.
 
 PagesPerSide   |Total pages   |Two-sided printing   |Result
 --------- | --------- | --------- | ---------

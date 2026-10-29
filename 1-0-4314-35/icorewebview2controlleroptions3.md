@@ -1,7 +1,7 @@
 ---
 description: Controller option used to expose the DefaultBackgroundColor property early in the loading process.
 title: WebView2 Win32 C++ ICoreWebView2ControllerOptions3
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ControllerOptions3
 topic_type: 
 - APIRef
@@ -52,9 +52,9 @@ This property allows users to initialize the `DefaultBackgroundColor` early, pre
 
 > public HRESULT [put_DefaultBackgroundColor](#put_defaultbackgroundcolor)([COREWEBVIEW2_COLOR](corewebview2_color.md#corewebview2_color) value)
 
-With early initialization, the color remains consistent from the start. After initialization, `CoreWebView2Controller.DefaultBackgroundColor` will return the value set using this API.
+With early initialization, the color remains consistent from the start. After initialization, `ICoreWebView2Controller2::DefaultBackgroundColor` will return the value set using this API.
 
-The `CoreWebView2Controller.DefaultBackgroundColor` can be set via the WEBVIEW2_DEFAULT_BACKGROUND_COLOR environment variable, which will remain supported for cases where this solution is being used. It is encouraged to transition away from the environment variable and use this API solution to apply the property. It is important to highlight that when set, the enviroment variable overrides ControllerOptions::DefaultBackgroundColor and becomes the initial value of Controller::DefaultBackgroundColor.
+The `ICoreWebView2Controller2::DefaultBackgroundColor` can be set via the WEBVIEW2_DEFAULT_BACKGROUND_COLOR environment variable, which will remain supported for cases where this solution is being used. It is encouraged to transition away from the environment variable and use this API solution to apply the property. It is important to highlight that when set, the environment variable overrides `ICoreWebView2ControllerOptions3::DefaultBackgroundColor` and becomes the initial value of `ICoreWebView2Controller2::DefaultBackgroundColor`.
 
 The `DefaultBackgroundColor` is the color that renders underneath all web content. This means WebView2 renders this color when there is no web content loaded. When no background color is defined in WebView2, it uses the `DefaultBackgroundColor` property to render the background. By default, this color is set to white.
 

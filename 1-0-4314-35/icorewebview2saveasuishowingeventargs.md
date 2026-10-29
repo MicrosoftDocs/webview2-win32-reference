@@ -1,7 +1,7 @@
 ---
 description: The event args for `SaveAsUIShowing` event.
 title: WebView2 Win32 C++ ICoreWebView2SaveAsUIShowingEventArgs
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2SaveAsUIShowingEventArgs
 topic_type: 
 - APIRef
@@ -142,9 +142,9 @@ Set the `SaveAsFilePath` property for Save As.
 
 > public HRESULT [put_SaveAsFilePath](#put_saveasfilepath)(LPCWSTR value)
 
-`SaveAsFilePath` is an absolute path of the location. It includes the file name and extension. If `SaveAsFilePath` is not valid (for example, the root drive does not exist), Save As is denied and `COREWEBVIEW2_SAVE_AS_INVALID_PATH` is returned.
+`SaveAsFilePath` is an absolute path of the location. It includes the file name and extension. If `SaveAsFilePath` is not valid (for example, the root drive does not exist), Save As is denied and `COREWEBVIEW2_SAVE_AS_UI_RESULT_INVALID_PATH` is returned.
 
-If the associated download completes successfully, a target file is saved at this location. If the Kind property is `COREWEBVIEW2_SAVE_AS_KIND_COMPLETE`, there will be an additional directory with resources files.
+If the associated download completes successfully, a target file is saved at this location. If the Kind property is `COREWEBVIEW2_SAVE_AS_KIND_COMPLETE`, there will be an additional directory with resource files.
 
 The default value is a system suggested path, based on users' local environment.
 
@@ -154,7 +154,7 @@ Sets the `SuppressDefaultDialog` property, which indicates whether the system de
 
 > public HRESULT [put_SuppressDefaultDialog](#put_suppressdefaultdialog)(BOOL value)
 
-When `SuppressDefaultDialog` is `FALSE`, the default Save As dialog is shown and the values assigned through `SaveAsFilePath`, `AllowReplace` and `Kind` are ignored when the event args invoke completed.
+When `SuppressDefaultDialog` is `FALSE`, the default Save As dialog is shown and the values assigned through `SaveAsFilePath`, `AllowReplace` and `Kind` are ignored when the event handler completes.
 
 Set `SuppressDefaultDialog` to `TRUE` to perform a silent Save As. When `SuppressDefaultDialog` is `TRUE`, the system dialog is skipped and the `SaveAsFilePath`, `AllowReplace` and `Kind` values are used.
 

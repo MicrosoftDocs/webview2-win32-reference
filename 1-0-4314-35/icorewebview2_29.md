@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2 interface to manage dedicated workers.
 title: WebView2 Win32 C++ ICoreWebView2_29
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_29
 topic_type: 
 - APIRef
@@ -48,7 +48,7 @@ Adds an event handler for the `DedicatedWorkerCreated` event.
 
 Subscribe to this event that gets raised when a new dedicated worker is created.
 
-A Dedicated Worker is a type of web worker that allows you to run Javascript code in the background without blocking the main thread, making them useful for tasks like heavy computations, data processing, and parallel execution. It is "dedicated" because it is linked to a single parent document and cannot be shared with other scripts.
+A Dedicated Worker is a type of web worker that allows you to run JavaScript code in the background without blocking the main thread, making them useful for tasks like heavy computations, data processing, and parallel execution. It is "dedicated" because it is linked to a single parent document and cannot be shared with other scripts.
 
 This event is raised when a web application creates a dedicated worker using the `new Worker("/worker.js")` method. See the [Worker](https://developer.mozilla.org/docs/Web/API/Worker/Worker) for more information.
 

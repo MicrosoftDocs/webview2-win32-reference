@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2 that supports the ScreenCaptureStarting event.
 title: WebView2 Win32 C++ ICoreWebView2_27
-ms.date: 10/19/2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_27
 topic_type: 
 - APIRef
@@ -46,7 +46,7 @@ Adds an event handler for the `ScreenCaptureStarting` event.
 
 > public HRESULT [add_ScreenCaptureStarting](#add_screencapturestarting)([ICoreWebView2ScreenCaptureStartingEventHandler](icorewebview2screencapturestartingeventhandler.md#icorewebview2screencapturestartingeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the `ScreenCaptureStarting` event. `ScreenCaptureStarting` event is raised when the [Screen Capture API](https://www.w3.org/TR/screen-capture/) is requested by the user using getDisplayMedia(). 
+`ScreenCaptureStarting` event is raised when the [Screen Capture API](https://www.w3.org/TR/screen-capture/) is requested by the user using getDisplayMedia(). 
 ```cpp
     m_webView2_27 = m_webView.try_query<ICoreWebView2_27>();
     if (m_webView2_27)
