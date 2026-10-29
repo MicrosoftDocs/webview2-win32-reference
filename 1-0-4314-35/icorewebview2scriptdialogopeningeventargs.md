@@ -1,7 +1,7 @@
 ---
 description: Event args for the `ScriptDialogOpening` event.
 title: WebView2 Win32 C++ ICoreWebView2ScriptDialogOpeningEventArgs
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ScriptDialogOpeningEventArgs
 topic_type: 
 - APIRef
@@ -58,7 +58,7 @@ The host may run this to respond with **OK** to `confirm`, `prompt`, and `before
 
 > public HRESULT [Accept](#accept)()
 
-Do not run this method to indicate cancel. From JavaScript, this means that the `confirm` and `beforeunload` function returns `TRUE` if `Accept` is run. And for the prompt function it returns the value of `ResultText` if `Accept` is run and otherwise returns `FALSE`.
+Do not run this method to indicate cancel. From JavaScript, this means that the `confirm` and `beforeunload` function returns `TRUE` if `Accept` is run. And for the prompt function it returns the value of `ResultText` if `Accept` is run and otherwise returns `null`.
 
 #### get_DefaultText
 
@@ -94,7 +94,7 @@ The return value from the JavaScript prompt function if `Accept` is run.
 
 > public HRESULT [get_ResultText](#get_resulttext)(LPWSTR * resultText)
 
-This value is ignored for dialog kinds other than prompt. If `Accept` is not run, this value is ignored and `FALSE` is returned from prompt.
+This value is ignored for dialog kinds other than prompt. If `Accept` is not run, this value is ignored and `null` is returned from prompt.
 
 The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
 

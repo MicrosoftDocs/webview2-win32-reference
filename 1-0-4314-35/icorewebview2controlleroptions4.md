@@ -1,7 +1,7 @@
 ---
 description: Controller option used to allow user input pass through the browser and make them received in the host app process.
 title: WebView2 Win32 C++ ICoreWebView2ControllerOptions4
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ControllerOptions4
 topic_type: 
 - APIRef
@@ -52,7 +52,7 @@ Gets the `AllowHostInputProcessing` property.
 
 > public HRESULT [put_AllowHostInputProcessing](#put_allowhostinputprocessing)(BOOL value)
 
-This property is only applicable to controllers created with `CoreWebView2Environment.CreateCoreWebView2ControllerAsync` and not composition controllers created with `CoreWebView2Environment.CreateCoreWebView2CompositionControllerAsync`. By default the value is `FALSE`. Setting this property has no effect when using visual hosting. 
+This property is only applicable to controllers created with [ICoreWebView2Environment::CreateCoreWebView2Controller](icorewebview2environment.md#createcorewebview2controller) and not composition controllers created with [ICoreWebView2Environment3::CreateCoreWebView2CompositionController](icorewebview2environment3.md#createcorewebview2compositioncontroller). By default the value is `FALSE`. Setting this property has no effect when using visual hosting. 
 ```cpp
     if (m_creationModeId == IDM_CREATION_MODE_HOST_INPUT_PROCESSING)
     {

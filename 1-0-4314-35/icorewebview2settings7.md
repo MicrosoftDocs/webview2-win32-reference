@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Settings interface to hide Pdf toolbar items.
 title: WebView2 Win32 C++ ICoreWebView2Settings7
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Settings7
 topic_type: 
 - APIRef
@@ -52,7 +52,7 @@ Gets the `HiddenPdfToolbarItems` property.
 
 > public HRESULT [put_HiddenPdfToolbarItems](#put_hiddenpdftoolbaritems)(COREWEBVIEW2_PDF_TOOLBAR_ITEMS value)
 
-By default, it is COREWEBVIEW2_PDF_TOOLBAR_ITEMS_NONE and so it displays all of the items. Changes to this property apply to all CoreWebView2s in the same environment and using the same profile. Changes to this setting apply only after the next navigation. 
+By default, it is `COREWEBVIEW2_PDF_TOOLBAR_ITEMS_NONE` and so it displays all of the items. Changes to this property apply to all [ICoreWebView2](icorewebview2.md#icorewebview2)s in the same environment and using the same profile. Changes to this setting apply only after the next navigation. 
 ```cpp
             CHECK_FEATURE_RETURN(m_settings7);
 

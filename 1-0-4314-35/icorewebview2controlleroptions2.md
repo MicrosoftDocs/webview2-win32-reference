@@ -1,7 +1,7 @@
 ---
-description: This is the interface in ControllerOptions for ScriptLocale.
+description: This is the interface in ICoreWebView2ControllerOptions for ScriptLocale.
 title: WebView2 Win32 C++ ICoreWebView2ControllerOptions2
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ControllerOptions2
 topic_type: 
 - APIRef
@@ -22,7 +22,7 @@ interface ICoreWebView2ControllerOptions2
   : public ICoreWebView2ControllerOptions
 ```
 
-This is the interface in ControllerOptions for ScriptLocale.
+This is the interface in [ICoreWebView2ControllerOptions](icorewebview2controlleroptions.md#icorewebview2controlleroptions) for ScriptLocale.
 
 ## Summary
 
@@ -56,9 +56,9 @@ The default locale for the WebView2.
 
 It sets the default locale for all Intl JavaScript APIs and other JavaScript APIs that depend on it, namely `Intl.DateTimeFormat()` which affects string formatting like in the time/date formats. Example: `Intl.DateTimeFormat().format(new Date())` The intended locale value is in the format of BCP 47 Language Tags. More information can be found from [IETF BCP47](https://www.ietf.org/rfc/bcp/bcp47.html).
 
-This property sets the locale for a CoreWebView2Environment used to create the WebView2ControllerOptions object, which is passed as a parameter in `CreateCoreWebView2ControllerWithOptions`.
+This property sets the locale for an [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) used to create the [ICoreWebView2ControllerOptions](icorewebview2controlleroptions.md#icorewebview2controlleroptions) object, which is passed as a parameter in `CreateCoreWebView2ControllerWithOptions`.
 
-Changes to the ScriptLocale property apply to renderer processes created after the change. Any existing renderer processes will continue to use the previous ScriptLocale value. To ensure changes are applied to all renderer process, close and restart the CoreWebView2Environment and all associated WebView2 objects.
+Changes to the ScriptLocale property apply to renderer processes created after the change. Any existing renderer processes will continue to use the previous ScriptLocale value. To ensure changes are applied to all renderer processes, close and restart the [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) and all associated WebView2 objects.
 
 The default value for ScriptLocale will depend on the WebView2 language and OS region. If the language portions of the WebView2 language and OS region match, then it will use the OS region. Otherwise, it will use the WebView2 language.
 

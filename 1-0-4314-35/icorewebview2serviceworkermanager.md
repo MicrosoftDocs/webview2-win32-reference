@@ -1,7 +1,7 @@
 ---
 description: This interface manages registrations for service workers in WebView2.
 title: WebView2 Win32 C++ ICoreWebView2ServiceWorkerManager
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ServiceWorkerManager
 topic_type: 
 - APIRef
@@ -177,9 +177,9 @@ Gets a list of the service worker registrations under the same profile.
 
 > public HRESULT [GetServiceWorkerRegistrations](#getserviceworkerregistrations)([ICoreWebView2GetServiceWorkerRegistrationsCompletedHandler](icorewebview2getserviceworkerregistrationscompletedhandler.md#icorewebview2getserviceworkerregistrationscompletedhandler) * handler)
 
-This method returns a list of `CoreWebView2ServiceWorkerRegistration` objects, each representing a service worker registration.
+This method returns a list of [ICoreWebView2ServiceWorkerRegistration](icorewebview2serviceworkerregistration.md#icorewebview2serviceworkerregistration) objects, each representing a service worker registration.
 
-This method corresponds to the `getRegistrations` method of the `ServiceWorkerContainer` object in the DOM which returns a Promise that resolves to an array of `ServiceWorkerRegistration` objects. See the [MDN documentation] (https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations) for more information.
+This method corresponds to the `getRegistrations` method of the `ServiceWorkerContainer` object in the DOM which returns a Promise that resolves to an array of `ServiceWorkerRegistration` objects. See the [MDN documentation](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistrations) for more information.
 
 #### GetServiceWorkerRegistrationsForScope
 
@@ -187,15 +187,15 @@ Gets the service worker registrations associated with the specified scope.
 
 > public HRESULT [GetServiceWorkerRegistrationsForScope](#getserviceworkerregistrationsforscope)(LPCWSTR scopeUri, [ICoreWebView2GetServiceWorkerRegistrationsCompletedHandler](icorewebview2getserviceworkerregistrationscompletedhandler.md#icorewebview2getserviceworkerregistrationscompletedhandler) * handler)
 
-If a service worker has been registered for the given scope, it gets the list of `CoreWebView2ServiceWorkerRegistration` objects otherwise returns empty list.
+If a service worker has been registered for the given scope, it gets the list of [ICoreWebView2ServiceWorkerRegistration](icorewebview2serviceworkerregistration.md#icorewebview2serviceworkerregistration) objects otherwise returns empty list.
 
 If the service worker is registered with a `scope` of '/app/' for an application at https://example.com/, you should specify the full qualified URI i.e., https://example.com/app/ when calling this method. If the scope was not explicitly specified during registration, you should use the directory where the service worker script resides, for example, https://example.com/app/.
 
-Refer to the Host Name Canonicalization for details on how provided `scriptUri` normalization is performed. For example, `HTTPS://m????nchen.de/` will be normalized to `https://www.xn--kfk.com` for comparison.
+Refer to the Host Name Canonicalization for details on how provided `scopeUri` normalization is performed. For example, `HTTPS://münchen.de/` will be normalized to `https://xn--mnchen-3ya.de/` for comparison.
 
-This corresponds to the `getRegistration` method of the `ServiceWorkerContainer` object in the DOM which returns a Promise that resolves to a `ServiceWorkerRegistration` object. See the [MDN documentation] (https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration) for more information.
+This corresponds to the `getRegistration` method of the `ServiceWorkerContainer` object in the DOM which returns a Promise that resolves to a `ServiceWorkerRegistration` object. See the [MDN documentation](https://developer.mozilla.org/docs/Web/API/ServiceWorkerContainer/getRegistration) for more information.
 
-If scopeUri is empty string or null or invalid, the completed handler immediately returns `E_INVALIDARG` and with a null pointer.
+If `scopeUri` is empty string or null or invalid, the `GetServiceWorkerRegistrationsForScope` method returns `E_INVALIDARG`.
 
 #### remove_ServiceWorkerRegistered
 

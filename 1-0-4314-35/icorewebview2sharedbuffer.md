@@ -1,7 +1,7 @@
 ---
 description: The shared buffer object that is created by CreateSharedBuffer.
 title: WebView2 Win32 C++ ICoreWebView2SharedBuffer
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2SharedBuffer
 topic_type: 
 - APIRef
@@ -54,9 +54,9 @@ Release the backing shared memory.
 
 > public HRESULT [Close](#close)()
 
-The application should call this API when no access to the buffer is needed any more, to ensure that the underlying resources are released timely even if the shared buffer object itself is not released due to some leaked reference. After the shared buffer is closed, the buffer address and file mapping handle previously obtained becomes invalid and cannot be used anymore. Accessing properties of the object will fail with `RO_E_CLOSED`. Operations like Read or Write on the IStream objects returned from `OpenStream` will fail with `RO_E_CLOSED`. `PostSharedBufferToScript` will also fail with `RO_E_CLOSED`.
+The application should call this API when no access to the buffer is needed any more, to ensure that the underlying resources are released timely even if the shared buffer object itself is not released due to some leaked reference. After the shared buffer is closed, the buffer address and file mapping handle previously obtained become invalid and cannot be used anymore. Accessing properties of the object will fail with `RO_E_CLOSED`. Operations like Read or Write on the IStream objects returned from `OpenStream` will fail with `RO_E_CLOSED`. `PostSharedBufferToScript` will also fail with `RO_E_CLOSED`.
 
-The script code should call `chrome.webview.releaseBuffer` with the shared buffer as the parameter to release underlying resources as soon as it does not need access the shared buffer any more. When script tries to access the buffer after calling `chrome.webview.releaseBuffer`, JavaScript `TypeError` exception will be raised complaining about accessing a detached ArrayBuffer, the same exception when trying to access a transferred ArrayBuffer.
+The script code should call `chrome.webview.releaseBuffer` with the shared buffer as the parameter to release underlying resources as soon as it does not need access to the shared buffer any more. When script tries to access the buffer after calling `chrome.webview.releaseBuffer`, JavaScript `TypeError` exception will be raised complaining about accessing a detached ArrayBuffer, the same exception when trying to access a transferred ArrayBuffer.
 
 Closing the buffer object on native side doesn't impact access from Script and releasing the buffer from script doesn't impact access to the buffer from native side. The underlying shared memory will be released by the OS when both native and script side release the buffer.
 

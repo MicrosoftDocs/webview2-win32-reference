@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Environment2 interface.
 title: WebView2 Win32 C++ ICoreWebView2Environment3
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment3
 topic_type: 
 - APIRef
@@ -50,7 +50,7 @@ parentWindow is the HWND in which the app will connect the visual tree of the We
 
 HWND_MESSAGE is not a valid parameter for `parentWindow` for visual hosting. The underlying implementation of supporting HWND_MESSAGE would break accessibility for visual hosting. This is supported in windowed WebViews - see CreateCoreWebView2Controller.
 
-Use put_RootVisualTarget on the created CoreWebView2CompositionController to provide a visual to host the browser's visual tree.
+Use put_RootVisualTarget on the created [ICoreWebView2CompositionController](icorewebview2compositioncontroller.md#icorewebview2compositioncontroller) to provide a visual to host the browser's visual tree.
 
 It is recommended that the application set Application User Model ID for the process or the application window. If none is set, during WebView creation a generated Application User Model ID is set to root window of parentWindow. 
 ```cpp

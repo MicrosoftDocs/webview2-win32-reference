@@ -1,7 +1,7 @@
 ---
 description: This interface manages shared workers in WebView2.
 title: WebView2 Win32 C++ ICoreWebView2SharedWorkerManager
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2SharedWorkerManager
 topic_type: 
 - APIRef
@@ -47,8 +47,6 @@ WebView2 Win32 Prerelease |    1.0.4015
 Adds an event handler for the `SharedWorkerCreated` event.
 
 > public HRESULT [add_SharedWorkerCreated](#add_sharedworkercreated)([ICoreWebView2SharedWorkerCreatedEventHandler](icorewebview2sharedworkercreatedeventhandler.md#icorewebview2sharedworkercreatedeventhandler) * eventHandler, EventRegistrationToken * token)
-
-Add an event handler for the `SharedWorkerCreated` event.
 
 A SharedWorker is a specific type of worker that can be accessed from several browsing contexts, such as multiple windows, iframes, or even other workers. Unlike Dedicated Workers, which have their own separate global scope, SharedWorkers share a common global scope called SharedWorkerGlobalScope.
 

@@ -1,7 +1,7 @@
 ---
 description: This is a continuation of the ICoreWebView2AcceleratorKeyPressedEventArgs interface.
 title: WebView2 Win32 C++ ICoreWebView2AcceleratorKeyPressedEventArgs2
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2AcceleratorKeyPressedEventArgs2
 topic_type: 
 - APIRef
@@ -76,11 +76,11 @@ This property does not disable accelerator keys related to movement and text edi
 
 * Ctrl-Z for Undo
 
-The `CoreWebView2Settings.AreBrowserAcceleratorKeysEnabled` API is a convenient setting for developers to disable all the browser accelerator keys together, and sets the default value for the `IsBrowserAcceleratorKeyEnabled` property. By default, `CoreWebView2Settings.AreBrowserAcceleratorKeysEnabled` is `TRUE` and `IsBrowserAcceleratorKeyEnabled` is `TRUE`. When developers change `CoreWebView2Settings.AreBrowserAcceleratorKeysEnabled` setting to `FALSE`, this will change default value for `IsBrowserAcceleratorKeyEnabled` to `FALSE`. If developers want specific keys to be handled by the browser after changing the `CoreWebView2Settings.AreBrowserAcceleratorKeysEnabled` setting to `FALSE`, they need to enable these keys by setting `IsBrowserAcceleratorKeyEnabled` to `TRUE`. This API will give the event arg higher priority over the `CoreWebView2Settings.AreBrowserAcceleratorKeysEnabled` setting when we handle the keys.
+The `ICoreWebView2Settings3::AreBrowserAcceleratorKeysEnabled` API is a convenient setting for developers to disable all the browser accelerator keys together, and sets the default value for the `IsBrowserAcceleratorKeyEnabled` property. By default, `ICoreWebView2Settings3::AreBrowserAcceleratorKeysEnabled` is `TRUE` and `IsBrowserAcceleratorKeyEnabled` is `TRUE`. When developers change `ICoreWebView2Settings3::AreBrowserAcceleratorKeysEnabled` setting to `FALSE`, this will change default value for `IsBrowserAcceleratorKeyEnabled` to `FALSE`. If developers want specific keys to be handled by the browser after changing the `ICoreWebView2Settings3::AreBrowserAcceleratorKeysEnabled` setting to `FALSE`, they need to enable these keys by setting `IsBrowserAcceleratorKeyEnabled` to `TRUE`. This API will give the event arg higher priority over the `ICoreWebView2Settings3::AreBrowserAcceleratorKeysEnabled` setting when we handle the keys.
 
 For browser accelerator keys, when an accelerator key is pressed, the propagation and processing order is:
 
-1. A CoreWebView2Controller.AcceleratorKeyPressed event is raised
+1. An `ICoreWebView2Controller::AcceleratorKeyPressed` event is raised
 
 1. WebView2 browser feature accelerator key handling
 
@@ -130,5 +130,5 @@ For browser accelerator keys, when an accelerator key is pressed, the propagatio
             &m_acceleratorKeyPressedToken));
     }
 ```
- Gets the `IsBrowserAcceleratorKeyEnabled` property.
+ Sets the `IsBrowserAcceleratorKeyEnabled` property.
 

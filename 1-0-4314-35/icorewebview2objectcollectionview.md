@@ -1,7 +1,7 @@
 ---
 description: A collection of objects.
 title: WebView2 Win32 C++ ICoreWebView2ObjectCollectionView
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ObjectCollectionView
 topic_type: 
 - APIRef
@@ -28,7 +28,7 @@ A collection of objects.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[get_Count](#get_count) | Gets the number of objects contained in the `ContextMenuItemCollection`.
+[get_Count](#get_count) | Gets the number of objects contained in the collection.
 [GetValueAtIndex](#getvalueatindex) | Gets the object at the specified index.
 
 ## Applies to
@@ -42,7 +42,7 @@ WebView2 Win32 Prerelease |    1.0.1777
 
 #### get_Count
 
-Gets the number of objects contained in the `ContextMenuItemCollection`.
+Gets the number of objects contained in the collection.
 
 > public HRESULT [get_Count](#get_count)(UINT32 * value)
 

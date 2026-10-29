@@ -1,7 +1,7 @@
 ---
 description: Additional options used to create the WebView2 Environment that support specifying the `ReleaseChannels` and `ChannelSearchKind`.
 title: WebView2 Win32 C++ ICoreWebView2EnvironmentOptions7
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2EnvironmentOptions7
 topic_type: 
 - APIRef
@@ -72,7 +72,7 @@ Sets the `ReleaseChannels`, which is a mask of one or more `COREWEBVIEW2_RELEASE
 
 > public HRESULT [put_ReleaseChannels](#put_releasechannels)(COREWEBVIEW2_RELEASE_CHANNELS value)
 
-OR operation(s) can be applied to multiple `COREWEBVIEW2_RELEASE_CHANNELS` to create a mask. The default value is a a mask of all the channels. By default, environment creation searches for channels from most to least stable, using the first channel found on the device. When `ReleaseChannels` is provided, environment creation will only search for the channels specified in the set. Set `ChannelSearchKind` to `COREWEBVIEW2_CHANNEL_SEARCH_KIND_LEAST_STABLE` to reverse the search order so environment creation searches for least stable build first. See `COREWEBVIEW2_RELEASE_CHANNELS` for descriptions of each channel.
+OR operation(s) can be applied to multiple `COREWEBVIEW2_RELEASE_CHANNELS` to create a mask. The default value is a mask of all the channels. By default, environment creation searches for channels from most to least stable, using the first channel found on the device. When `ReleaseChannels` is provided, environment creation will only search for the channels specified in the set. Passing only `COREWEBVIEW2_RELEASE_CHANNELS_NONE` is treated as if `ReleaseChannels` were not set, so all channels are searched. Set `ChannelSearchKind` to `COREWEBVIEW2_CHANNEL_SEARCH_KIND_LEAST_STABLE` to reverse the search order so environment creation searches for least stable build first. See `COREWEBVIEW2_RELEASE_CHANNELS` for descriptions of each channel.
 
 `CreateCoreWebView2EnvironmentWithOptions` fails with `HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)` if environment creation is unable to find any channel from the `ReleaseChannels` installed on the device. Use `GetAvailableCoreWebView2BrowserVersionStringWithOptions` on [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) to verify which channel is used when this option is set.
 

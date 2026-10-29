@@ -1,7 +1,7 @@
 ---
 description: This is the interface for getting string and exception with ExecuteScriptWithResult.
 title: WebView2 Win32 C++ ICoreWebView2_21
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_21
 topic_type: 
 - APIRef
@@ -27,7 +27,7 @@ This is the interface for getting string and exception with ExecuteScriptWithRes
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[ExecuteScriptWithResult](#executescriptwithresult) | Run JavaScript code from the JavaScript parameter in the current top-level document rendered in the WebView.
+[ExecuteScriptWithResult](#executescriptwithresult) | Run JavaScript code from the `javaScript` parameter in the current top-level document rendered in the WebView.
 
 ## Applies to
 
@@ -40,11 +40,11 @@ WebView2 Win32 Prerelease |    1.0.2357
 
 #### ExecuteScriptWithResult
 
-Run JavaScript code from the JavaScript parameter in the current top-level document rendered in the WebView.
+Run JavaScript code from the `javaScript` parameter in the current top-level document rendered in the WebView.
 
 > public HRESULT [ExecuteScriptWithResult](#executescriptwithresult)(LPCWSTR javaScript, [ICoreWebView2ExecuteScriptWithResultCompletedHandler](icorewebview2executescriptwithresultcompletedhandler.md#icorewebview2executescriptwithresultcompletedhandler) * handler)
 
-The result of the execution is returned asynchronously in the CoreWebView2ExecuteScriptResult object which has methods and properties to obtain the successful result of script execution as well as any unhandled JavaScript exceptions. If this method is run after the NavigationStarting event during a navigation, the script runs in the new document when loading it, around the time ContentLoading is run. This operation executes the script even if ICoreWebView2Settings::IsScriptEnabled is set to FALSE.
+The result of the execution is returned asynchronously in the [ICoreWebView2ExecuteScriptResult](icorewebview2executescriptresult.md#icorewebview2executescriptresult) object which has methods and properties to obtain the successful result of script execution as well as any unhandled JavaScript exceptions. If this method is run after the NavigationStarting event during a navigation, the script runs in the new document when loading it, around the time ContentLoading is run. This operation executes the script even if ICoreWebView2Settings::IsScriptEnabled is set to FALSE.
 
 ```cpp
 void ScriptComponent::ExecuteScriptWithResult()

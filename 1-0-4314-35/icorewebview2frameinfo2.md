@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2FrameInfo interface that provides `ParentFrameInfo`, `FrameId` and `FrameKind` properties.
 title: WebView2 Win32 C++ ICoreWebView2FrameInfo2
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2FrameInfo2
 topic_type: 
 - APIRef
@@ -48,7 +48,7 @@ The unique identifier of the frame associated with the current `FrameInfo`.
 
 > public HRESULT [get_FrameId](#get_frameid)(UINT32 * id)
 
-It's the same kind of ID as with the `FrameId` in `CoreWebView2` and via `CoreWebView2Frame`. `FrameId` will only be populated (non-zero) when obtained calling `CoreWebView2ProcessExtendedInfo.AssociatedFrameInfos`. `CoreWebView2FrameInfo` objects obtained via `CoreWebView2.ProcessFailed` will always have an invalid frame Id 0. Note that this `FrameId` could be out of date as it's a snapshot. If there's WebView2 created or destroyed or `FrameCreated/FrameDestroyed` events after the asynchronous call `CoreWebView2Environment.GetProcessExtendedInfos` starts, you may want to call asynchronous method again to get the updated `FrameInfo`s.
+It's the same kind of ID as with the `FrameId` in [ICoreWebView2](icorewebview2.md#icorewebview2) and via [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame). `FrameId` will only be populated (non-zero) when obtained calling [ICoreWebView2ProcessExtendedInfo::get_AssociatedFrameInfos](icorewebview2processextendedinfo.md#get_associatedframeinfos). [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo) objects obtained via [ICoreWebView2::add_ProcessFailed](icorewebview2.md#add_processfailed) will always have an invalid frame Id 0. Note that this `FrameId` could be out of date as it's a snapshot. If there's WebView2 created or destroyed or `FrameCreated/FrameDestroyed` events after the asynchronous call [ICoreWebView2Environment13::GetProcessExtendedInfos](icorewebview2environment13.md#getprocessextendedinfos) starts, you may want to call the asynchronous method again to get the updated `FrameInfo`s.
 
 #### get_FrameKind
 
@@ -56,7 +56,7 @@ The frame kind of the frame.
 
 > public HRESULT [get_FrameKind](#get_framekind)(COREWEBVIEW2_FRAME_KIND * kind)
 
-`FrameKind` will only be populated when obtained calling `CoreWebView2ProcessExtendedInfo.AssociatedFrameInfos`. `CoreWebView2FrameInfo` objects obtained via `CoreWebView2.ProcessFailed` will always have the default value `COREWEBVIEW2_FRAME_KIND_UNKNOWN`. Note that this `FrameKind` could be out of date as it's a snapshot.
+`FrameKind` will only be populated when obtained calling [ICoreWebView2ProcessExtendedInfo::get_AssociatedFrameInfos](icorewebview2processextendedinfo.md#get_associatedframeinfos). [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo) objects obtained via [ICoreWebView2::add_ProcessFailed](icorewebview2.md#add_processfailed) will always have the default value `COREWEBVIEW2_FRAME_KIND_UNKNOWN`. Note that this `FrameKind` could be out of date as it's a snapshot.
 
 #### get_ParentFrameInfo
 
@@ -64,5 +64,5 @@ This parent frame's `FrameInfo`.
 
 > public HRESULT [get_ParentFrameInfo](#get_parentframeinfo)([ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo) ** frameInfo)
 
-`ParentFrameInfo` will only be populated when obtained via calling `CoreWebView2ProcessExtendedInfo.AssociatedFrameInfos`. `CoreWebView2FrameInfo` objects obtained via `CoreWebView2.ProcessFailed` will always have a `null ParentFrameInfo`. This property is also `null` for the main frame in the WebView2 which has no parent frame. Note that this `ParentFrameInfo` could be out of date as it's a snapshot.
+`ParentFrameInfo` will only be populated when obtained via calling [ICoreWebView2ProcessExtendedInfo::get_AssociatedFrameInfos](icorewebview2processextendedinfo.md#get_associatedframeinfos). [ICoreWebView2FrameInfo](icorewebview2frameinfo.md#icorewebview2frameinfo) objects obtained via [ICoreWebView2::add_ProcessFailed](icorewebview2.md#add_processfailed) will always have a `null``ParentFrameInfo`. This property is also `null` for the main frame in the WebView2 which has no parent frame. Note that this `ParentFrameInfo` could be out of date as it's a snapshot.
 

@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_12 that supports Profile API.
 title: WebView2 Win32 C++ ICoreWebView2_13
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_13
 topic_type: 
 - APIRef
@@ -44,7 +44,7 @@ The associated [ICoreWebView2Profile](icorewebview2profile.md#icorewebview2profi
 
 > public HRESULT [get_Profile](#get_profile)([ICoreWebView2Profile](icorewebview2profile.md#icorewebview2profile) ** value)
 
-If this CoreWebView2 was created with a CoreWebView2ControllerOptions, the CoreWebView2Profile will match those specified options. Otherwise if this CoreWebView2 was created without a CoreWebView2ControllerOptions, then this will be the default CoreWebView2Profile for the corresponding CoreWebView2Environment.
+If this [ICoreWebView2](icorewebview2.md#icorewebview2) was created with a [ICoreWebView2ControllerOptions](icorewebview2controlleroptions.md#icorewebview2controlleroptions), the [ICoreWebView2Profile](icorewebview2profile.md#icorewebview2profile) will match those specified options. Otherwise if this [ICoreWebView2](icorewebview2.md#icorewebview2) was created without a [ICoreWebView2ControllerOptions](icorewebview2controlleroptions.md#icorewebview2controlleroptions), then this will be the default [ICoreWebView2Profile](icorewebview2profile.md#icorewebview2profile) for the corresponding [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment).
 
 ```cpp
         auto webView2_13 = coreWebView2.try_query<ICoreWebView2_13>();

@@ -1,7 +1,7 @@
 ---
-description: This interface is an extension of ICoreWebView2_8 that default download dialog positioning and anchoring.
+description: This interface is an extension of ICoreWebView2_8 that supports default download dialog positioning and anchoring.
 title: WebView2 Win32 C++ ICoreWebView2_9
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_9
 topic_type: 
 - APIRef
@@ -29,7 +29,7 @@ interface ICoreWebView2_9
   : public ICoreWebView2_8
 ```
 
-This interface is an extension of [ICoreWebView2_8](icorewebview2_8.md#icorewebview2_8) that default download dialog positioning and anchoring.
+This interface is an extension of [ICoreWebView2_8](icorewebview2_8.md#icorewebview2_8) that supports default download dialog positioning and anchoring.
 
 ## Summary
 
@@ -60,7 +60,7 @@ Raised when the `IsDefaultDownloadDialogOpen` property changes.
 
 > public HRESULT [add_IsDefaultDownloadDialogOpenChanged](#add_isdefaultdownloaddialogopenchanged)([ICoreWebView2IsDefaultDownloadDialogOpenChangedEventHandler](icorewebview2isdefaultdownloaddialogopenchangedeventhandler.md#icorewebview2isdefaultdownloaddialogopenchangedeventhandler) * handler, EventRegistrationToken * token)
 
-This event comes after the `DownloadStarting` event. Setting the `Handled` property on the `DownloadStartingEventArgs` disables the default download dialog and ensures that this event is never raised.
+This event comes after the `DownloadStarting` event. Setting the `Handled` property on the [ICoreWebView2DownloadStartingEventArgs](icorewebview2downloadstartingeventargs.md#icorewebview2downloadstartingeventargs) disables the default download dialog and ensures that this event is never raised.
 
 #### CloseDefaultDownloadDialog
 

@@ -1,7 +1,7 @@
 ---
 description: Event args for the `NavigationStarting` event.
 title: WebView2 Win32 C++ ICoreWebView2NavigationStartingEventArgs
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NavigationStartingEventArgs
 topic_type: 
 - APIRef
@@ -56,7 +56,7 @@ The host may set this flag to cancel the navigation.
 
 > public HRESULT [get_Cancel](#get_cancel)(BOOL * cancel)
 
-If set, the navigation is not longer present and the content of the current page is intact. For performance reasons, `GET` HTTP requests may happen, while the host is responding. You may set cookies and use part of a request for the navigation. Navigations to about schemes are cancellable, unless `msWebView2CancellableAboutNavigations` feature flag is disabled. Cancellation of frame navigation to `srcdoc` is not supported and wil be ignored. A cancelled navigation will fire a `NavigationCompleted` event with a `WebErrorStatus` of `COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED`.
+If set, the navigation is no longer present and the content of the current page is intact. For performance reasons, `GET` HTTP requests may happen, while the host is responding. You may set cookies and use part of a request for the navigation. Navigations to about schemes are cancellable, unless `msWebView2CancellableAboutNavigations` feature flag is disabled. Cancellation of frame navigation to `srcdoc` is not supported and will be ignored. A cancelled navigation will fire a `NavigationCompleted` event with a `WebErrorStatus` of `COREWEBVIEW2_WEB_ERROR_STATUS_OPERATION_CANCELED`.
 
 #### get_IsRedirected
 
@@ -84,8 +84,9 @@ The HTTP request headers for the navigation.
 
 > public HRESULT [get_RequestHeaders](#get_requestheaders)([ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md#icorewebview2httprequestheaders) ** requestHeaders)
 
-> [!NOTE]
-> You are not able to modify the HTTP request headers in a `NavigationStarting` event.
+[!NOTE] You are not able to modify the HTTP request headers in a 
+
+`NavigationStarting` event.
 
 #### get_Uri
 

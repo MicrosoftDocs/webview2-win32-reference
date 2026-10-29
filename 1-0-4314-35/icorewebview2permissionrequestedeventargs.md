@@ -1,7 +1,7 @@
 ---
 description: Event args for the `PermissionRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2PermissionRequestedEventArgs
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PermissionRequestedEventArgs
 topic_type: 
 - APIRef
@@ -34,7 +34,7 @@ Event args for the `PermissionRequested` event.
 --------------------------------|---------------------------------------------
 [get_IsUserInitiated](#get_isuserinitiated) | `TRUE` when the permission request was initiated through a user gesture.
 [get_PermissionKind](#get_permissionkind) | The type of the permission that is requested.
-[get_State](#get_state) | The status of a permission request, (for example is the request is granted).
+[get_State](#get_state) | The status of a permission request (for example, whether the request is granted).
 [get_Uri](#get_uri) | The origin of the web content that requests the permission.
 [GetDeferral](#getdeferral) | Gets an [ICoreWebView2Deferral](icorewebview2deferral.md#icorewebview2deferral) object.
 [put_State](#put_state) | Sets the `State` property.
@@ -54,8 +54,9 @@ WebView2 Win32 Prerelease |    0.9.488
 
 > public HRESULT [get_IsUserInitiated](#get_isuserinitiated)(BOOL * isUserInitiated)
 
-> [!NOTE]
-> Being initiated through a user gesture does not mean that user intended to access the associated resource.
+[!NOTE] Being initiated through a user gesture does not mean that user intended 
+
+to access the associated resource.
 
 #### get_PermissionKind
 
@@ -65,7 +66,7 @@ The type of the permission that is requested.
 
 #### get_State
 
-The status of a permission request, (for example is the request is granted).
+The status of a permission request (for example, whether the request is granted).
 
 > public HRESULT [get_State](#get_state)(COREWEBVIEW2_PERMISSION_STATE * state)
 

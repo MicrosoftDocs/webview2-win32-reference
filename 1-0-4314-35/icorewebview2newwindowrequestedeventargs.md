@@ -1,7 +1,7 @@
 ---
 description: Event args for the `NewWindowRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2NewWindowRequestedEventArgs
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NewWindowRequestedEventArgs
 topic_type: 
 - APIRef
@@ -41,9 +41,9 @@ Event args for the `NewWindowRequested` event.
 [get_WindowFeatures](#get_windowfeatures) | Window features specified by the `window.open`.
 [GetDeferral](#getdeferral) | Obtain an [ICoreWebView2Deferral](icorewebview2deferral.md#icorewebview2deferral) object and put the event into a deferred state.
 [put_Handled](#put_handled) | Sets whether the `NewWindowRequested` event is handled by host.
-[put_NewWindow](#put_newwindow) | Sets a CoreWebView2 as a result of the NewWindowRequested event.
+[put_NewWindow](#put_newwindow) | Sets an [ICoreWebView2](icorewebview2.md#icorewebview2) as a result of the `NewWindowRequested` event.
 
-The event is run when content inside webview requested to a open a new window (through `window.open()` and so on).
+The event is run when content inside webview requested to open a new window (through `window.open()` and so on).
 
 ## Applies to
 
@@ -110,17 +110,17 @@ Sets whether the `NewWindowRequested` event is handled by host.
 
 > public HRESULT [put_Handled](#put_handled)(BOOL handled)
 
-If this is `FALSE` and no `NewWindow` is set, the WebView opens a popup window and it returns as opened `WindowProxy`. If set to `TRUE` and no `NewWindow` is set for `window.open`, the opened `WindowProxy` is for an testing window object and no window loads. The default value is `FALSE`.
+If this is `FALSE` and no `NewWindow` is set, the WebView opens a popup window and it returns as opened `WindowProxy`. If set to `TRUE` and no `NewWindow` is set for `window.open`, the opened `WindowProxy` is for a testing window object and no window loads. The default value is `FALSE`.
 
 #### put_NewWindow
 
-Sets a CoreWebView2 as a result of the NewWindowRequested event.
+Sets an [ICoreWebView2](icorewebview2.md#icorewebview2) as a result of the `NewWindowRequested` event.
 
 > public HRESULT [put_NewWindow](#put_newwindow)([ICoreWebView2](icorewebview2.md#icorewebview2) * newWindow)
 
-Provides a WebView as the target for a `window.open()` from inside the requesting WebView. If this is set, the top-level window of this WebView is returned as the opened [WindowProxy](https://developer.mozilla.org/docs/glossary/windowproxy) to the opener script. If this is not set, then `Handled` is checked to determine behavior for NewWindowRequested event. CoreWebView2 provided in the `NewWindow` property must be on the same Environment as the opener WebView and should not have been navigated previously. Don't use methods that cause navigation or interact with the DOM on this CoreWebView2 until the target content has loaded. Setting event handlers, changing Settings properties, or other methods are fine to call. Changes to settings should be made before `put_NewWindow` is called to ensure that those settings take effect for the newly setup WebView. Once the NewWindow is set the underlying web contents of this CoreWebView2 will be replaced and navigated as appropriate for the new window. After setting new window it cannot be changed and error will be return otherwise.
+Provides a WebView as the target for a `window.open()` from inside the requesting WebView. If this is set, the top-level window of this WebView is returned as the opened [WindowProxy](https://developer.mozilla.org/docs/glossary/windowproxy) to the opener script. If this is not set, then `Handled` is checked to determine behavior for `NewWindowRequested` event. [ICoreWebView2](icorewebview2.md#icorewebview2) provided in the `NewWindow` property must be on the same [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) as the opener WebView and should not have been navigated previously. Don't use methods that cause navigation or interact with the DOM on this [ICoreWebView2](icorewebview2.md#icorewebview2) until the target content has loaded. Setting event handlers, changing `Settings` properties, or other methods are fine to call. Changes to settings should be made before `put_NewWindow` is called to ensure that those settings take effect for the newly setup WebView. Once the `NewWindow` is set the underlying web contents of this [ICoreWebView2](icorewebview2.md#icorewebview2) will be replaced and navigated as appropriate for the new window. After setting new window it cannot be changed and error will be returned otherwise.
 
-The methods which should affect the new web contents like AddScriptToExecuteOnDocumentCreated has to be called and completed before setting NewWindow. Other methods which should affect the new web contents like add_WebResourceRequested have to be called after setting NewWindow. It is best not to use RemoveScriptToExecuteOnDocumentCreated before setting NewWindow, otherwise it may not work for later added scripts.
+The methods which should affect the new web contents like `AddScriptToExecuteOnDocumentCreated` have to be called and completed before setting `NewWindow`. Other methods which should affect the new web contents like `add_WebResourceRequested` have to be called after setting `NewWindow`. It is best not to use `RemoveScriptToExecuteOnDocumentCreated` before setting `NewWindow`, otherwise it may not work for later added scripts.
 
 The new WebView must have the same profile as the opener WebView.
 

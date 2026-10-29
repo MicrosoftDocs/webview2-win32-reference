@@ -1,7 +1,7 @@
 ---
 description: This interface represents a JavaScript exception.
 title: WebView2 Win32 C++ ICoreWebView2ScriptException
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ScriptException
 topic_type: 
 - APIRef
@@ -37,7 +37,7 @@ This interface represents a JavaScript exception.
 [get_Name](#get_name) | The Name is the exception's class name.
 [get_ToJson](#get_tojson) | This will return all details of the exception as a JSON string.
 
-If the CoreWebView2.ExecuteScriptWithResult result has Succeeded as false, you can use the result's Exception property to get the script exception.
+If the [ICoreWebView2_21::ExecuteScriptWithResult](icorewebview2_21.md#executescriptwithresult) result has Succeeded as false, you can use the result's Exception property to get the script exception.
 
 ## Applies to
 

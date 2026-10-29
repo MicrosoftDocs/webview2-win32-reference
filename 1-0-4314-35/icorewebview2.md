@@ -1,7 +1,7 @@
 ---
 description: WebView2 enables you to host web content using the latest Microsoft Edge browser and web technology.
 title: WebView2 Win32 C++ ICoreWebView2
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2
 topic_type: 
 - APIRef
@@ -105,7 +105,7 @@ WebView2 enables you to host web content using the latest Microsoft Edge browser
 [AddWebResourceRequestedFilter](#addwebresourcerequestedfilter) | Warning: This method is deprecated and does not behave as expected for iframes.
 [CallDevToolsProtocolMethod](#calldevtoolsprotocolmethod) | Runs an asynchronous `DevToolsProtocol` method.
 [CapturePreview](#capturepreview) | Capture an image of what WebView is displaying.
-[ExecuteScript](#executescript) | Run JavaScript code from the javascript parameter in the current top-level document rendered in the WebView.
+[ExecuteScript](#executescript) | Run JavaScript code from the `javaScript` parameter in the current top-level document rendered in the WebView.
 [get_BrowserProcessId](#get_browserprocessid) | The process ID of the browser process that hosts the WebView.
 [get_CanGoBack](#get_cangoback) | `TRUE` if the WebView is able to navigate to a previous page in the navigation history.
 [get_CanGoForward](#get_cangoforward) | `TRUE` if the WebView is able to navigate to a next page in the navigation history.
@@ -119,7 +119,7 @@ WebView2 enables you to host web content using the latest Microsoft Edge browser
 [Navigate](#navigate) | Cause a navigation of the top-level document to run to the specified URI.
 [NavigateToString](#navigatetostring) | Initiates a navigation to htmlContent as source HTML of a new document.
 [OpenDevToolsWindow](#opendevtoolswindow) | Opens the DevTools window for the current document in the WebView.
-[PostWebMessageAsJson](#postwebmessageasjson) | Post the specified webMessage to the top level document in this WebView.
+[PostWebMessageAsJson](#postwebmessageasjson) | Post the specified `webMessageAsJson` to the top level document in this WebView.
 [PostWebMessageAsString](#postwebmessageasstring) | Posts a message that is a simple string rather than a JSON string representation of a JavaScript object.
 [Reload](#reload) | Reload the current page.
 [remove_ContainsFullScreenElementChanged](#remove_containsfullscreenelementchanged) | Remove an event handler previously added with `add_ContainsFullScreenElementChanged`.
@@ -638,15 +638,16 @@ Add an event handler for the `ProcessFailed` event.
 
 > public HRESULT [add_ProcessFailed](#add_processfailed)([ICoreWebView2ProcessFailedEventHandler](icorewebview2processfailedeventhandler.md#icorewebview2processfailedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-`ProcessFailed` runs when any of the processes in the [WebView2 Process Group](/microsoft-edge/webview2/concepts/process-model?tabs=csharp#processes-in-the-webview2-runtime) encounters one of the following conditions:
+`ProcessFailed` runs when any of the processes in the [WebView2 Process Group](/microsoft-edge/webview2/concepts/process-model#processes-in-the-webview2-runtime) encounters one of the following conditions:
 
 Condition   |Details
 --------- | ---------
 Unexpected exit   |The process indicated by the event args has exited unexpectedly (usually due to a crash). The failure might or might not be recoverable and some failures are auto-recoverable.
 Unresponsiveness   |The process indicated by the event args has become unresponsive to user input. This is only reported for renderer processes, and will run every few seconds until the process becomes responsive again.
 
-> [!NOTE]
-> When the failing process is the browser process, a `ICoreWebView2Environment5::BrowserProcessExited` event will run too.
+[!NOTE] When the failing process is the browser process, a 
+
+`ICoreWebView2Environment5::BrowserProcessExited` event will run too.
 
 Your application can use [ICoreWebView2ProcessFailedEventArgs](icorewebview2processfailedeventargs.md#icorewebview2processfailedeventargs) and [ICoreWebView2ProcessFailedEventArgs2](icorewebview2processfailedeventargs2.md#icorewebview2processfailedeventargs2) to identify which condition and process the event is for, and to collect diagnostics and handle recovery if necessary. For more details about which cases need to be handled by your application, see `COREWEBVIEW2_PROCESS_FAILED_KIND`.
 
@@ -1140,14 +1141,13 @@ Add the provided host object to script running in the WebView with the specified
 
 > public HRESULT [AddHostObjectToScript](#addhostobjecttoscript)(LPCWSTR name, VARIANT * object)
 
-Host objects are exposed as host object proxies using `window.chrome.webview.hostObjects.{name}`. Host object proxies are promises and resolves to an object representing the host object. The promise is rejected if the app has not added an object with the name. When JavaScript code access a property or method of the object, a promise is return, which resolves to the value returned from the host for the property or method, or rejected in case of error, for example, no property or method on the object or parameters are not valid.
+Host objects are exposed as host object proxies using `window.chrome.webview.hostObjects.{name}`. Host object proxies are promises and resolve to an object representing the host object. The promise is rejected if the app has not added an object with the name. When JavaScript code accesses a property or method of the object, a promise is returned, which resolves to the value returned from the host for the property or method, or rejected in case of error, for example, no property or method on the object or parameters are not valid.
 
-> [!NOTE]
-> While simple types, `IDispatch` and array are supported, and `IUnknown` objects that also implement `IDispatch` are treated as `IDispatch`, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Such callback method invocations will return immediately and will not wait for the JavaScript function to run and so will not provide the return value of the JavaScript function. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`.
+[!NOTE] While simple types, `IDispatch` and array are supported, and `IUnknown` objects that also implement `IDispatch` are treated as `IDispatch`, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Such callback method invocations will return immediately and will not wait for the JavaScript function to run and so will not provide the return value of the JavaScript function. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`. 
 
 Additionally, all host objects are exposed as `window.chrome.webview.hostObjects.sync.{name}`. Here the host objects are exposed as synchronous host object proxies. These are not promises and function runtimes or property access synchronously block running script waiting to communicate cross process for the host code to run. Accordingly the result may have reliability issues and it is recommended that you use the promise-based asynchronous `window.chrome.webview.hostObjects.{name}` API.
 
-Synchronous host object proxies and asynchronous host object proxies may both use a proxy to the same host object. Remote changes made by one proxy propagates to any other proxy of that same host object whether the other proxies and synchronous or asynchronous.
+Synchronous host object proxies and asynchronous host object proxies may both use a proxy to the same host object. Remote changes made by one proxy propagates to any other proxy of that same host object whether the other proxies are synchronous or asynchronous.
 
 While JavaScript is blocked on a synchronous run to native code, that native code is unable to run back to JavaScript. Attempts to do so fail with `HRESULT_FROM_WIN32(ERROR_POSSIBLE_DEADLOCK)`.
 
@@ -1175,11 +1175,11 @@ Method name   |Details
 `getLocalProperty`, `setLocalProperty`|Perform property get, or property set locally. Use the methods to force getting or setting a property on the host object proxy rather than on the host object it represents. For instance, `proxy.unknownProperty` gets the property named `unknownProperty` from the host proxied object. But proxy.getLocalProperty('unknownProperty') gets the value of the property `unknownProperty` on the proxy object.
 `sync`|Asynchronous host object proxies expose a sync method which returns a promise for a synchronous host object proxy for the same host object. For example, `chrome.webview.hostObjects.sample.methodCall()` returns an asynchronous host object proxy. Use the `sync` method to obtain a synchronous host object proxy instead: `const syncProxy = await chrome.webview.hostObjects.sample.methodCall().sync()`.
 `async`|Synchronous host object proxies expose an async method which blocks and returns an asynchronous host object proxy for the same host object. For example, `chrome.webview.hostObjects.sync.sample.methodCall()` returns a synchronous host object proxy. Running the `async` method on this blocks and then returns an asynchronous host object proxy for the same host object: `const asyncProxy = chrome.webview.hostObjects.sync.sample.methodCall().async()`.
-`then`|Asynchronous host object proxies have a `then` method. Allows proxies to be awaitable. `then` returns a promise that resolves with a representation of the host object. If the proxy represents a JavaScript literal, a copy of that is returned locally. If the proxy represents a function, a non-awaitable proxy is returned. If the proxy represents a JavaScript object with a mix of literal properties and function properties, the a copy of the object is returned with some properties as host object proxies.
+`then`|Asynchronous host object proxies have a `then` method. Allows proxies to be awaitable. `then` returns a promise that resolves with a representation of the host object. If the proxy represents a JavaScript literal, a copy of that is returned locally. If the proxy represents a function, a non-awaitable proxy is returned. If the proxy represents a JavaScript object with a mix of literal properties and function properties, a copy of the object is returned with some properties as host object proxies.
 
 All other property and method invocations (other than the above Remote object proxy methods, `forceLocalProperties` list, and properties on Function and Object prototypes) are run remotely. Asynchronous host object proxies return a promise representing asynchronous completion of remotely invoking the method, or getting the property. The promise resolves after the remote operations complete and the promises resolve to the resulting value of the operation. Synchronous host object proxies work similarly, but block running JavaScript and wait for the remote operation to complete.
 
-Setting a property on an asynchronous host object proxy works slightly differently. The set returns immediately and the return value is the value that is set. This is a requirement of the JavaScript Proxy object. If you need to asynchronously wait for the property set to complete, use the `setHostProperty` method which returns a promise as described above. Synchronous object property set property synchronously blocks until the property is set.
+Setting a property on an asynchronous host object proxy works slightly differently. The set returns immediately and the return value is the value that is set. This is a requirement of the JavaScript Proxy object. If you need to asynchronously wait for the property set to complete, use the `setHostProperty` method which returns a promise as described above. Synchronous object property set synchronously blocks until the property is set.
 
 For example, suppose you have a COM object with the following interface.
 
@@ -1226,7 +1226,7 @@ Add an instance of this interface into your JavaScript with `AddHostObjectToScri
                     remoteObjectAsVariant.pdispVal->Release();
 ```
 
-In the HTML document, use the COM object using `chrome.webview.hostObjects.sample`. Note that `CoreWebView2.AddHostObjectToScript` only applies to the top-level document and not to frames. To add host objects to frames use `CoreWebView2Frame.AddHostObjectToScript`.
+In the HTML document, use the COM object using `chrome.webview.hostObjects.sample`. Note that [ICoreWebView2::AddHostObjectToScript](#addhostobjecttoscript) only applies to the top-level document and not to frames. To add host objects to frames use `ICoreWebView2Frame::AddHostObjectToScript`.
 
 ```html
     document.getElementById("getPropertyAsyncButton").addEventListener("click", async () => {
@@ -1317,8 +1317,9 @@ This method injects a script that runs on all top-level document and child frame
 
 If the method is run in add_NewWindowRequested handler it should be called before the new window is set. If called after setting the NewWindow property, the initial script may or may not apply to the initial navigation and may only apply to the subsequent navigation. For more details see [ICoreWebView2NewWindowRequestedEventArgs::put_NewWindow](icorewebview2newwindowrequestedeventargs.md#put_newwindow).
 
-> [!NOTE]
-> If an HTML document is running in a sandbox of some kind using [sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) properties or the [Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
+[!NOTE] If an HTML document is running in a sandbox of some kind using 
+
+[sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) properties or the [Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
 
 ```cpp
 // Prompt the user for some script and register it to execute whenever a new page loads.
@@ -1391,7 +1392,7 @@ Runs an asynchronous `DevToolsProtocol` method.
 
 > public HRESULT [CallDevToolsProtocolMethod](#calldevtoolsprotocolmethod)(LPCWSTR methodName, LPCWSTR parametersAsJson, [ICoreWebView2CallDevToolsProtocolMethodCompletedHandler](icorewebview2calldevtoolsprotocolmethodcompletedhandler.md#icorewebview2calldevtoolsprotocolmethodcompletedhandler) * handler)
 
-For more information about available methods, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot) . The `methodName` parameter is the full name of the method in the `{domain}.{method}` format. The `parametersAsJson` parameter is a JSON formatted string containing the parameters for the corresponding method. The `Invoke` method of the `handler` is run when the method asynchronously completes. `Invoke` is run with the return object of the method as a JSON string. This function returns E_INVALIDARG if the `methodName` is unknown or the `parametersAsJson` has an error. In the case of such an error, the `returnObjectAsJson` parameter of the handler will include information about the error. Note even though WebView2 dispatches the CDP messages in the order called, CDP method calls may be processed out of order. If you require CDP methods to run in a particular order, you should wait for the previous method's completed handler to run before calling the next method. If the method is to run in add_NewWindowRequested handler it should be called before the new window is set if the cdp message should affect the initial navigation. If called after setting the NewWindow property, the cdp messages may or may not apply to the initial navigation and may only apply to the subsequent navigation. For more details see [ICoreWebView2NewWindowRequestedEventArgs::put_NewWindow](icorewebview2newwindowrequestedeventargs.md#put_newwindow).
+For more information about available methods, navigate to [DevTools Protocol Viewer](https://chromedevtools.github.io/devtools-protocol/tot) . The `methodName` parameter is the full name of the method in the `{domain}.{method}` format. The `parametersAsJson` parameter is a JSON formatted string containing the parameters for the corresponding method. The `Invoke` method of the `handler` is run when the method asynchronously completes. `Invoke` is run with the return object of the method as a JSON string. If the `methodName` is unknown or the `parametersAsJson` has an error, `Invoke` is run with `E_INVALIDARG` as the `errorCode` and the `returnObjectAsJson` parameter of the handler will include information about the error. Note even though WebView2 dispatches the CDP messages in the order called, CDP method calls may be processed out of order. If you require CDP methods to run in a particular order, you should wait for the previous method's completed handler to run before calling the next method. If the method is to run in add_NewWindowRequested handler it should be called before the new window is set if the cdp message should affect the initial navigation. If called after setting the NewWindow property, the cdp messages may or may not apply to the initial navigation and may only apply to the subsequent navigation. For more details see [ICoreWebView2NewWindowRequestedEventArgs::put_NewWindow](icorewebview2newwindowrequestedeventargs.md#put_newwindow).
 
 ```cpp
 // Prompt the user for the name and parameters of a CDP method, then call it.
@@ -1459,14 +1460,15 @@ void FileComponent::SaveScreenshot()
 
 #### ExecuteScript
 
-Run JavaScript code from the javascript parameter in the current top-level document rendered in the WebView.
+Run JavaScript code from the `javaScript` parameter in the current top-level document rendered in the WebView.
 
 > public HRESULT [ExecuteScript](#executescript)(LPCWSTR javaScript, [ICoreWebView2ExecuteScriptCompletedHandler](icorewebview2executescriptcompletedhandler.md#icorewebview2executescriptcompletedhandler) * handler)
 
-The result of evaluating the provided JavaScript is used in this parameter. The result value is a JSON encoded string. If the result is undefined, contains a reference cycle, or otherwise is not able to be encoded into JSON, then the result is considered to be null, which is encoded in JSON as the string "null".
+The result of evaluating the provided JavaScript is passed to the completion handler. The result value is a JSON encoded string. If the result is undefined, contains a reference cycle, or otherwise is not able to be encoded into JSON, then the result is considered to be null, which is encoded in JSON as the string "null".
 
-> [!NOTE]
-> A function that has no explicit return value returns undefined. If the script that was run throws an unhandled exception, then the result is also "null". This method is applied asynchronously. If the method is run after the `NavigationStarting` event during a navigation, the script runs in the new document when loading it, around the time `ContentLoading` is run. This operation executes the script even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
+[!NOTE] A function that has no explicit return value returns undefined. If the 
+
+script that was run throws an unhandled exception, then the result is also "null". This method is applied asynchronously. If the method is run after the `NavigationStarting` event during a navigation, the script runs in the new document when loading it, around the time `ContentLoading` is run. This operation executes the script even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
 
 ```cpp
 // Prompt the user for some script and then execute it.
@@ -1658,8 +1660,9 @@ Cause a navigation of the top-level document to run to the specified URI.
 
 For more information, navigate to [Navigation events](/microsoft-edge/webview2/concepts/navigation-events).
 
-> [!NOTE]
-> This operation starts a navigation and the corresponding `NavigationStarting` event triggers sometime after `Navigate` runs.
+[!NOTE] This operation starts a navigation and the corresponding 
+
+`NavigationStarting` event triggers sometime after `Navigate` runs.
 
 ```cpp
 void ControlComponent::NavigateToAddressBar()
@@ -1710,12 +1713,12 @@ SetVirtualHostNameToFolderMapping(
     L"appassets.example", L"assets",
     COREWEBVIEW2_HOST_RESOURCE_ACCESS_KIND_DENY);
 
-WCHAR c_navString[] = LR"
+WCHAR c_navString[] = LR"(
 <head><link rel='stylesheet' href ='http://appassets.example/wv2.css'/></head>
 <body>
   <img src='http://appassets.example/wv2.png' />
   <p><a href='http://appassets.example/winrt_test.txt'>Click me</a></p>
-</body>";
+</body>)";
 m_webView->NavigateToString(c_navString);
 ```
 
@@ -1737,18 +1740,18 @@ Does nothing if run when the DevTools window is already open.
 
 #### PostWebMessageAsJson
 
-Post the specified webMessage to the top level document in this WebView.
+Post the specified `webMessageAsJson` to the top level document in this WebView.
 
 > public HRESULT [PostWebMessageAsJson](#postwebmessageasjson)(LPCWSTR webMessageAsJson)
 
 The main page receives the message by subscribing to the `message` event of the `window.chrome.webview` of the page document.
 
-```cpp
+```js
 window.chrome.webview.addEventListener('message', handler)
 window.chrome.webview.removeEventListener('message', handler)
 ```
 
-The event args is an instance of `MessageEvent`. The `ICoreWebView2Settings::IsWebMessageEnabled` setting must be `TRUE` or the web message will not be sent. The `data` property of the event arg is the `webMessage` string parameter parsed as a JSON string into a JavaScript object. The `source` property of the event arg is a reference to the `window.chrome.webview` object. For information about sending messages from the HTML document in the WebView to the host, navigate to [add_WebMessageReceived](/microsoft-edge/webview2/reference/win32/icorewebview2#add_webmessagereceived). The message is delivered asynchronously. If a navigation occurs before the message is posted to the page, the message is discarded.
+The event args is an instance of `MessageEvent`. The `ICoreWebView2Settings::IsWebMessageEnabled` setting must be `TRUE` or the web message will not be sent. The `data` property of the event arg is the `webMessageAsJson` string parameter parsed as a JSON string into a JavaScript object. The `source` property of the event arg is a reference to the `window.chrome.webview` object. For information about sending messages from the HTML document in the WebView to the host, navigate to [add_WebMessageReceived](/microsoft-edge/webview2/reference/win32/icorewebview2#add_webmessagereceived). The message is delivered asynchronously. If a navigation occurs before the message is posted to the page, the message is discarded.
 
 ```cpp
     // Setup the web message received event handler before navigating to
@@ -1921,7 +1924,7 @@ Remove the host object specified by the name so that it is no longer accessible 
 
 > public HRESULT [RemoveHostObjectFromScript](#removehostobjectfromscript)(LPCWSTR name)
 
-While new access attempts are denied, if the object is already obtained by JavaScript code in the WebView, the JavaScript code continues to have access to that object. Run this method for a name that is already removed or never added fails.
+While new access attempts are denied, if the object is already obtained by JavaScript code in the WebView, the JavaScript code continues to have access to that object. Calling this method for a name that is already removed or never added fails.
 
 #### RemoveScriptToExecuteOnDocumentCreated
 
@@ -1929,7 +1932,7 @@ Remove the corresponding JavaScript added using `AddScriptToExecuteOnDocumentCre
 
 > public HRESULT [RemoveScriptToExecuteOnDocumentCreated](#removescripttoexecuteondocumentcreated)(LPCWSTR id)
 
-The script ID should be the one returned by the `AddScriptToExecuteOnDocumentCreated`. Both use `AddScriptToExecuteOnDocumentCreated` and this method in `NewWindowRequested` event handler at the same time sometimes causes trouble. Since invalid scripts will be ignored, the script IDs you got may not be valid anymore.
+The script ID should be the one returned by the `AddScriptToExecuteOnDocumentCreated`. Using both `AddScriptToExecuteOnDocumentCreated` and this method in `NewWindowRequested` event handler at the same time sometimes causes trouble. Since invalid scripts will be ignored, the script IDs you got may not be valid anymore.
 
 #### RemoveWebResourceRequestedFilter
 

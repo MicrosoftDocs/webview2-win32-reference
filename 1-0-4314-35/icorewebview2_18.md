@@ -1,7 +1,7 @@
 ---
 description: This interface is an extension of ICoreWebView2_17 that manages navigation requests to URI schemes registered with the OS.
 title: WebView2 Win32 C++ ICoreWebView2_18
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2_18
 topic_type: 
 - APIRef
@@ -46,16 +46,15 @@ Adds an event handler for the `LaunchingExternalUriScheme` event.
 
 > public HRESULT [add_LaunchingExternalUriScheme](#add_launchingexternalurischeme)([ICoreWebView2LaunchingExternalUriSchemeEventHandler](icorewebview2launchingexternalurischemeeventhandler.md#icorewebview2launchingexternalurischemeeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the `LaunchingExternalUriScheme` event. The `LaunchingExternalUriScheme` event is raised when a navigation request is made to a URI scheme that is registered with the OS. The `LaunchingExternalUriScheme` event handler may suppress the default dialog or replace the default dialog with a custom dialog.
+The `LaunchingExternalUriScheme` event is raised when a navigation request is made to a URI scheme that is registered with the OS. The `LaunchingExternalUriScheme` event handler may suppress the default dialog or replace the default dialog with a custom dialog.
 
 If a deferral is not taken on the event args, the external URI scheme launch is blocked until the event handler returns. If a deferral is taken, the external URI scheme launch is blocked until the deferral is completed. The host also has the option to cancel the URI scheme launch.
 
-The `NavigationStarting` and `NavigationCompleted` events will be raised, regardless of whether the `Cancel` property is set to `TRUE` or `FALSE`. The `NavigationCompleted` event will be raised with the `IsSuccess` property set to `FALSE` and the `WebErrorStatus` property set to `ConnectionAborted` regardless of whether the host sets the `Cancel` property on the [ICoreWebView2LaunchingExternalUriSchemeEventArgs](icorewebview2launchingexternalurischemeeventargs.md#icorewebview2launchingexternalurischemeeventargs). The `SourceChanged`, `ContentLoading`, and `HistoryChanged` events will not be raised for this navigation to the external URI scheme regardless of the `Cancel` property. The `LaunchingExternalUriScheme` event will be raised after the `NavigationStarting` event and before the `NavigationCompleted` event. The default `CoreWebView2Settings` will also be updated upon navigation to an external URI scheme. If a setting on the `CoreWebView2Settings` interface has been changed, navigating to an external URI scheme will trigger the `CoreWebView2Settings` to update.
+The `NavigationStarting` and `NavigationCompleted` events will be raised, regardless of whether the `Cancel` property is set to `TRUE` or `FALSE`. The `NavigationCompleted` event will be raised with the `IsSuccess` property set to `FALSE` and the `WebErrorStatus` property set to `ConnectionAborted` regardless of whether the host sets the `Cancel` property on the [ICoreWebView2LaunchingExternalUriSchemeEventArgs](icorewebview2launchingexternalurischemeeventargs.md#icorewebview2launchingexternalurischemeeventargs). The `SourceChanged`, `ContentLoading`, and `HistoryChanged` events will not be raised for this navigation to the external URI scheme regardless of the `Cancel` property. The `LaunchingExternalUriScheme` event will be raised after the `NavigationStarting` event and before the `NavigationCompleted` event. The default [ICoreWebView2Settings](icorewebview2settings.md#icorewebview2settings) will also be updated upon navigation to an external URI scheme. If a setting on the [ICoreWebView2Settings](icorewebview2settings.md#icorewebview2settings) interface has been changed, navigating to an external URI scheme will trigger the [ICoreWebView2Settings](icorewebview2settings.md#icorewebview2settings) to update.
 
-The WebView2 may not display the default dialog based on user settings, browser settings, and whether the origin is determined as a [trustworthy origin](https://w3c.github.io/webappsec-secure-contexts#
-potentially-trustworthy-origin); however, the event will still be raised.
+The WebView2 may not display the default dialog based on user settings, browser settings, and whether the origin is determined as a [trustworthy origin](https://w3c.github.io/webappsec-secure-contexts#potentially-trustworthy-origin); however, the event will still be raised.
 
-If the request is initiated by a cross-origin frame without a user gesture, the request will be blocked and the `LaunchingExternalUriScheme` event will not be raised. 
+If the request is initiated by a cross-origin frame without a user gesture, the request will be blocked and the `LaunchingExternalUriScheme` event will not be raised. A URI scheme may be blocked for safety reasons. In this case the `LaunchingExternalUriScheme` event will not be raised. The default dialog may show an "always allow" checkbox which allows the user to opt-in to relaxed security (i.e. skipping future default dialogs) for the combination of the URI scheme and the origin of the page initiating this external URI scheme launch. The checkbox is offered so long as the group policy to show the checkbox is not explicitly disabled and there is a trustworthy initiating origin. If the user has checked this box, future attempts to launch this URI scheme will still raise the event. 
 ```cpp
             m_launchingExternalUriScheme = !m_launchingExternalUriScheme;
             CHECK_FEATURE_RETURN(m_webView2_18);

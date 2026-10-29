@@ -1,7 +1,7 @@
 ---
 description: Interfaces in profile for managing browser extensions.
 title: WebView2 Win32 C++ ICoreWebView2Profile7
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Profile7
 topic_type: 
 - APIRef
@@ -46,7 +46,7 @@ Adds the [browser extension](https://developer.mozilla.org/docs/Mozilla/Add-ons/
 
 > public HRESULT [AddBrowserExtension](#addbrowserextension)(LPCWSTR extensionFolderPath, [ICoreWebView2ProfileAddBrowserExtensionCompletedHandler](icorewebview2profileaddbrowserextensioncompletedhandler.md#icorewebview2profileaddbrowserextensioncompletedhandler) * handler)
 
-Extension is running right after installation. The extension folder path is the topmost folder of an unpacked browser extension and contains the browser extension manifest file. If the `extensionFolderPath` is an invalid path or doesn't contain the extension manifest.json file, this function will return `ERROR_FILE_NOT_FOUND` to callers. Installed extension will default `IsEnabled` to true. When `AreBrowserExtensionsEnabled` is `FALSE`, `AddBrowserExtension` will fail and return HRESULT `ERROR_NOT_SUPPORTED`. During installation, the content of the extension is not copied to the user data folder. Once the extension is installed, changing the content of the extension will cause the extension to be removed from the installed profile. When an extension is added the extension is persisted in the corresponding profile. The extension will still be installed the next time you use this profile. When an extension is installed from a folder path, adding the same extension from the same folder path means reinstalling this extension. When two extensions with the same Id are installed, only the later installed extension will be kept.
+Extension is running right after installation. The extension folder path is the topmost folder of an unpacked browser extension and contains the browser extension manifest file. If the `extensionFolderPath` is an invalid path or doesn't contain the extension manifest.json file, this function will return `HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)` to callers. Installed extension will default `IsEnabled` to `TRUE`. When `AreBrowserExtensionsEnabled` is `FALSE`, `AddBrowserExtension` will fail and return HRESULT `HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)`. During installation, the content of the extension is not copied to the user data folder. Once the extension is installed, changing the content of the extension will cause the extension to be removed from the installed profile. When an extension is added the extension is persisted in the corresponding profile. The extension will still be installed the next time you use this profile. When an extension is installed from a folder path, adding the same extension from the same folder path means reinstalling this extension. When two extensions with the same Id are installed, only the later installed extension will be kept.
 
 Extensions that are designed to include any UI interactions (e.g. icon, badge, pop up, etc.) can be loaded and used but will have missing UI entry points due to the lack of browser UI elements to host these entry points in WebView2.
 

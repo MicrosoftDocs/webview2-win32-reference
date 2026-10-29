@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Environment4 interface that supports the `BrowserProcessExited` event.
 title: WebView2 Win32 C++ ICoreWebView2Environment5
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment5
 topic_type: 
 - APIRef
@@ -46,13 +46,13 @@ Adds an event handler for the `BrowserProcessExited` event.
 
 > public HRESULT [add_BrowserProcessExited](#add_browserprocessexited)([ICoreWebView2BrowserProcessExitedEventHandler](icorewebview2browserprocessexitedeventhandler.md#icorewebview2browserprocessexitedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the `BrowserProcessExited` event. The `BrowserProcessExited` event is raised when the collection of WebView2 Runtime processes for the browser process of this environment terminate due to browser process failure or normal shutdown (for example, when all associated WebViews are closed), after all resources have been released (including the user data folder). To learn about what these processes are, go to [Process model](/microsoft-edge/webview2/concepts/process-model).
+The `BrowserProcessExited` event is raised when the collection of WebView2 Runtime processes for the browser process of this environment terminate due to browser process failure or normal shutdown (for example, when all associated WebViews are closed), after all resources have been released (including the user data folder). To learn about what these processes are, go to [Process model](/microsoft-edge/webview2/concepts/process-model).
 
 A handler added with this method is called until removed with `remove_BrowserProcessExited`, even if a new browser process is bound to this environment after earlier `BrowserProcessExited` events are raised.
 
 Multiple app processes can share a browser process by creating their webviews from a [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) with the same user data folder. When the entire collection of WebView2Runtime processes for the browser process exit, all associated [ICoreWebView2Environment](icorewebview2environment.md#icorewebview2environment) objects receive the `BrowserProcessExited` event. Multiple processes sharing the same browser process need to coordinate their use of the shared user data folder to avoid race conditions and unnecessary waits. For example, one process should not clear the user data folder at the same time that another process recovers from a crash by recreating its WebView controls; one process should not block waiting for the event if other app processes are using the same browser process (the browser process will not exit until those other processes have closed their webviews too).
 
-Note this is an event from the [ICoreWebView2Environment3](icorewebview2environment3.md#icorewebview2environment3) interface, not the [ICoreWebView2](icorewebview2.md#icorewebview2) one. The difference between `BrowserProcessExited` and [ICoreWebView2](icorewebview2.md#icorewebview2)'s `ProcessFailed` is that `BrowserProcessExited` is raised for any **browser process** exit (expected or unexpected, after all associated processes have exited too), while `ProcessFailed` is raised for **unexpected** process exits of any kind (browser, render, GPU, and all other types), or for main frame **render process** unresponsiveness. To learn more about the WebView2 Process Model, go to [Process model](/microsoft-edge/webview2/concepts/process-model).
+Note this is an event from the ICoreWebView2Environment5 interface, not the [ICoreWebView2](icorewebview2.md#icorewebview2) one. The difference between `BrowserProcessExited` and [ICoreWebView2](icorewebview2.md#icorewebview2)'s `ProcessFailed` is that `BrowserProcessExited` is raised for any **browser process** exit (expected or unexpected, after all associated processes have exited too), while `ProcessFailed` is raised for **unexpected** process exits of any kind (browser, render, GPU, and all other types), or for main frame **render process** unresponsiveness. To learn more about the WebView2 Process Model, go to [Process model](/microsoft-edge/webview2/concepts/process-model).
 
 In the case the browser process crashes, both `BrowserProcessExited` and `ProcessFailed` events are raised, but the order is not guaranteed. These events are intended for different scenarios. It is up to the app to coordinate the handlers so they do not try to perform reliability recovery while also trying to move to a new WebView2 Runtime version or remove the user data folder.
 

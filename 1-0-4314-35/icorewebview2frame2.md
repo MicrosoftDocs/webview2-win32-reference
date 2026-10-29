@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Frame interface with navigation events, executing script and posting web messages.
 title: WebView2 Win32 C++ ICoreWebView2Frame2
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Frame2
 topic_type: 
 - APIRef
@@ -44,8 +44,8 @@ A continuation of the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2fr
 [add_NavigationCompleted](#add_navigationcompleted) | Add an event handler for the `NavigationCompleted` event.
 [add_NavigationStarting](#add_navigationstarting) | Add an event handler for the `NavigationStarting` event.
 [add_WebMessageReceived](#add_webmessagereceived) | Add an event handler for the `WebMessageReceived` event.
-[ExecuteScript](#executescript) | Run JavaScript code from the javascript parameter in the current frame.
-[PostWebMessageAsJson](#postwebmessageasjson) | Posts the specified webMessage to the frame.
+[ExecuteScript](#executescript) | Run JavaScript code from the `javaScript` parameter in the current frame.
+[PostWebMessageAsJson](#postwebmessageasjson) | Posts the specified `webMessageAsJson` to the frame.
 [PostWebMessageAsString](#postwebmessageasstring) | Posts a message that is a simple string rather than a JSON string representation of a JavaScript object.
 [remove_ContentLoading](#remove_contentloading) | Remove an event handler previously added with `add_ContentLoading`.
 [remove_DOMContentLoaded](#remove_domcontentloaded) | Remove an event handler previously added with add_DOMContentLoaded.
@@ -84,7 +84,7 @@ Add an event handler for the `NavigationCompleted` event.
 
 > public HRESULT [add_NavigationCompleted](#add_navigationcompleted)([ICoreWebView2FrameNavigationCompletedEventHandler](icorewebview2framenavigationcompletedeventhandler.md#icorewebview2framenavigationcompletedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-`NavigationCompleted` runs when the CoreWebView2Frame has completely loaded (concurrently when `body.onload` runs) or loading stopped with error.
+`NavigationCompleted` runs when the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) has completely loaded (concurrently when `body.onload` runs) or loading stopped with error.
 
 #### add_NavigationStarting
 
@@ -92,9 +92,9 @@ Add an event handler for the `NavigationStarting` event.
 
 > public HRESULT [add_NavigationStarting](#add_navigationstarting)([ICoreWebView2FrameNavigationStartingEventHandler](icorewebview2framenavigationstartingeventhandler.md#icorewebview2framenavigationstartingeventhandler) * eventHandler, EventRegistrationToken * token)
 
-A frame navigation will raise a `NavigationStarting` event and a `CoreWebView2.FrameNavigationStarting` event. All of the `FrameNavigationStarting` event handlers for the current frame will be run before the `NavigationStarting` event handlers. All of the event handlers share a common `NavigationStartingEventArgs` object. Whichever event handler is last to change the `NavigationStartingEventArgs.Cancel` property will decide if the frame navigation will be cancelled. Redirects raise this event as well, and the navigation id is the same as the original one.
+A frame navigation will raise a `NavigationStarting` event and an [ICoreWebView2::add_FrameNavigationStarting](icorewebview2.md#add_framenavigationstarting) event. All of the `FrameNavigationStarting` event handlers for the current frame will be run before the `NavigationStarting` event handlers. All of the event handlers share a common [ICoreWebView2NavigationStartingEventArgs](icorewebview2navigationstartingeventargs.md#icorewebview2navigationstartingeventargs) object. Whichever event handler is last to change the [ICoreWebView2NavigationStartingEventArgs::put_Cancel](icorewebview2navigationstartingeventargs.md#put_cancel) property will decide if the frame navigation will be cancelled. Redirects raise this event as well, and the navigation id is the same as the original one.
 
-Navigations will be blocked until all `NavigationStarting` and `CoreWebView2.FrameNavigationStarting` event handlers return.
+Navigations will be blocked until all `NavigationStarting` and [ICoreWebView2::add_FrameNavigationStarting](icorewebview2.md#add_framenavigationstarting) event handlers return.
 
 #### add_WebMessageReceived
 
@@ -187,14 +187,15 @@ When the frame calls `postMessage`, the object parameter is converted to a JSON 
 
 #### ExecuteScript
 
-Run JavaScript code from the javascript parameter in the current frame.
+Run JavaScript code from the `javaScript` parameter in the current frame.
 
 > public HRESULT [ExecuteScript](#executescript)(LPCWSTR javaScript, [ICoreWebView2ExecuteScriptCompletedHandler](icorewebview2executescriptcompletedhandler.md#icorewebview2executescriptcompletedhandler) * handler)
 
 The result of evaluating the provided JavaScript is passed to the completion handler. The result value is a JSON encoded string. If the result is undefined, contains a reference cycle, or otherwise is not able to be encoded into JSON, then the result is considered to be null, which is encoded in JSON as the string "null".
 
-> [!NOTE]
-> A function that has no explicit return value returns undefined. If the script that was run throws an unhandled exception, then the result is also "null". This method is applied asynchronously. If the method is run before `ContentLoading`, the script will not be executed and the string "null" will be returned. This operation executes the script even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
+[!NOTE] A function that has no explicit return value returns undefined. If the 
+
+script that was run throws an unhandled exception, then the result is also "null". This method is applied asynchronously. If the method is run before `ContentLoading`, the script will not be executed and the string "null" will be returned. This operation executes the script even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
 
 ```cpp
     wil::com_ptr<ICoreWebView2_4> webview2_4 = m_webView.try_query<ICoreWebView2_4>();
@@ -243,18 +244,18 @@ The result of evaluating the provided JavaScript is passed to the completion han
 
 #### PostWebMessageAsJson
 
-Posts the specified webMessage to the frame.
+Posts the specified `webMessageAsJson` to the frame.
 
 > public HRESULT [PostWebMessageAsJson](#postwebmessageasjson)(LPCWSTR webMessageAsJson)
 
 The frame receives the message by subscribing to the `message` event of the `window.chrome.webview` of the frame document.
 
-```cpp
+```js
 window.chrome.webview.addEventListener('message', handler)
 window.chrome.webview.removeEventListener('message', handler)
 ```
 
-The event args is an instances of `MessageEvent`. The `ICoreWebView2Settings::IsWebMessageEnabled` setting must be `TRUE` or the message will not be sent. The `data` property of the event args is the `webMessage` string parameter parsed as a JSON string into a JavaScript object. The `source` property of the event args is a reference to the `window.chrome.webview` object. For information about sending messages from the HTML document in the WebView to the host, navigate to [add_WebMessageReceived](/microsoft-edge/webview2/reference/win32/icorewebview2#add_webmessagereceived). The message is delivered asynchronously. If a navigation occurs before the message is posted to the page, the message is discarded.
+The event args is an instance of `MessageEvent`. The `ICoreWebView2Settings::IsWebMessageEnabled` setting must be `TRUE` or the message will not be sent. The `data` property of the event args is the `webMessageAsJson` string parameter parsed as a JSON string into a JavaScript object. The `source` property of the event args is a reference to the `window.chrome.webview` object. For information about sending messages from the HTML document in the WebView to the host, navigate to [add_WebMessageReceived](/microsoft-edge/webview2/reference/win32/icorewebview2#add_webmessagereceived). The message is delivered asynchronously. If a navigation occurs before the message is posted to the page, the message is discarded.
 
 #### PostWebMessageAsString
 

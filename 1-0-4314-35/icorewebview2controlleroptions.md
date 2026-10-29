@@ -1,7 +1,7 @@
 ---
-description: This interface is used to manage profile options that created by 'CreateCoreWebView2ControllerOptions'.
+description: This interface is used to manage profile options that are created by 'CreateCoreWebView2ControllerOptions'.
 title: WebView2 Win32 C++ ICoreWebView2ControllerOptions
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ControllerOptions
 topic_type: 
 - APIRef
@@ -24,7 +24,7 @@ interface ICoreWebView2ControllerOptions
   : public IUnknown
 ```
 
-This interface is used to manage profile options that created by 'CreateCoreWebView2ControllerOptions'.
+This interface is used to manage profile options that are created by 'CreateCoreWebView2ControllerOptions'.
 
 ## Summary
 

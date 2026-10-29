@@ -1,7 +1,7 @@
 ---
 description: This interface represents a shared worker in WebView2 and provides methods and properties for interacting with it, such as listening to destroying events, getting the script URI, origin, and top-level origin of the worker etc.
 title: WebView2 Win32 C++ ICoreWebView2SharedWorker
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2SharedWorker
 topic_type: 
 - APIRef
@@ -52,9 +52,9 @@ Adds an event handler for the `Destroying` event.
 
 > public HRESULT [add_Destroying](#add_destroying)([ICoreWebView2SharedWorkerDestroyingEventHandler](icorewebview2sharedworkerdestroyingeventhandler.md#icorewebview2sharedworkerdestroyingeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the `Destroying` event that is raised when the worker object is Destroying.
+Raised when the worker object is being destroyed.
 
-A worker object is Destroying when the worker script is terminated or when the `CoreWebView2SharedWorker` object is Destroying.
+A worker object is being destroyed when the worker script is terminated or when the ICoreWebView2SharedWorker object is being destroyed.
 
 If the worker has already been destroyed before the event handler is registered, the handler will never be called.
 
@@ -64,7 +64,7 @@ A string representing the URI of the origin where the worker is executing.
 
 > public HRESULT [get_Origin](#get_origin)(LPWSTR * value)
 
-If a worker created with `ScriptUri` set to https://example.com/worker.js, the origin will be https://example.com/.
+If a worker is created with `ScriptUri` set to https://example.com/worker.js, the origin will be https://example.com/.
 
 Refer to the Host Name Canonicalization for details on how normalization is performed.
 
@@ -76,9 +76,9 @@ A string representing the Uri of the script that the worker is executing.
 
 > public HRESULT [get_ScriptUri](#get_scripturi)(LPWSTR * value)
 
-The `scriptUri` is a fully qualified URI, including the scheme, host, and path. In contrast, the `scriptURL` property of the `Worker` object in the DOM returns the relative URL of the script being executed by the worker. For more details on DOM API, see the [DOM API documentation](https://developer.mozilla.org/docs/Web/API/Worker/scriptURL).
+The `scriptUri` is a fully qualified URI, including the scheme, host, and path. In contrast, the script URL passed to the `SharedWorker` constructor in the DOM can be relative. For more details on DOM API, see the [DOM API documentation](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker).
 
-Refer to the Host Name Canonicalization for details on how normalization is performed. The same process applies to the `scriptURL` when a worker is created from DOM API. The `scriptUri` property reflects this normalization, ensuring that the URL is standardized. For example, `HTTPS://EXAMPLE.COM/worker.js` is canonicalized to `https://example.com/worker.js`; `https://b????cher.de/worker.js` is canonicalized to `https://xn--bcher-kva.de/worker.js`.
+Refer to the Host Name Canonicalization for details on how normalization is performed. The same process applies to the script URL when a worker is created from DOM API. The `scriptUri` property reflects this normalization, ensuring that the URL is standardized. For example, `HTTPS://EXAMPLE.COM/worker.js` is canonicalized to `https://example.com/worker.js`; `https://bücher.de/worker.js` is canonicalized to `https://xn--bcher-kva.de/worker.js`.
 
 The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
 
@@ -88,7 +88,7 @@ A string representing the URI of the top-level document that the worker is assoc
 
 > public HRESULT [get_TopLevelOrigin](#get_toplevelorigin)(LPWSTR * value)
 
-If a worker is created with `ScriptUri` set to https://example.com/worker.js, the top-level origin is https://example.com/. If the same worker is created from a iframe at https://example.com/ which is hosted on https://example2.com/, the top-level origin is https://example2.com/.
+If a worker is created with `ScriptUri` set to https://example.com/worker.js, the top-level origin is https://example.com/. If the same worker is created from an iframe at https://example.com/ which is hosted on https://example2.com/, the top-level origin is https://example2.com/.
 
 Refer to the Host Name Canonicalization for details on how normalization is performed.
 

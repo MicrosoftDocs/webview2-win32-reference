@@ -1,7 +1,7 @@
 ---
 description: This interface is the continuation of the ICoreWebView2CompositionController2 interface to manage drag and drop.
 title: WebView2 Win32 C++ ICoreWebView2CompositionController3
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2CompositionController3
 topic_type: 
 - APIRef
@@ -50,7 +50,7 @@ This function corresponds to [IDropTarget::DragEnter](/windows/win32/api/oleidl/
 
 > public HRESULT [DragEnter](#dragenter)(IDataObject * dataObject, DWORD keyState, POINT point, DWORD * effect)
 
-This function has a dependency on AllowExternalDrop property of CoreWebView2Controller and return E_FAIL to callers to indicate this operation is not allowed if AllowExternalDrop property is set to false.
+This function has a dependency on AllowExternalDrop property of [ICoreWebView2Controller4](icorewebview2controller4.md#icorewebview2controller4) and returns E_FAIL to callers to indicate this operation is not allowed if AllowExternalDrop property is set to FALSE.
 
 The hosting application must register as an IDropTarget and implement and forward DragEnter calls to this function.
 
@@ -73,7 +73,7 @@ This function corresponds to [IDropTarget::DragLeave](/windows/win32/api/oleidl/
 
 > public HRESULT [DragLeave](#dragleave)()
 
-This function has a dependency on AllowExternalDrop property of CoreWebView2Controller and return E_FAIL to callers to indicate this operation is not allowed if AllowExternalDrop property is set to false.
+This function has a dependency on AllowExternalDrop property of [ICoreWebView2Controller4](icorewebview2controller4.md#icorewebview2controller4) and returns E_FAIL to callers to indicate this operation is not allowed if AllowExternalDrop property is set to FALSE.
 
 The hosting application must register as an IDropTarget and implement and forward DragLeave calls to this function.
 
@@ -90,7 +90,7 @@ This function corresponds to [IDropTarget::DragOver](/windows/win32/api/oleidl/n
 
 > public HRESULT [DragOver](#dragover)(DWORD keyState, POINT point, DWORD * effect)
 
-This function has a dependency on AllowExternalDrop property of CoreWebView2Controller and return E_FAIL to callers to indicate this operation is not allowed if AllowExternalDrop property is set to false.
+This function has a dependency on AllowExternalDrop property of [ICoreWebView2Controller4](icorewebview2controller4.md#icorewebview2controller4) and returns E_FAIL to callers to indicate this operation is not allowed if AllowExternalDrop property is set to FALSE.
 
 The hosting application must register as an IDropTarget and implement and forward DragOver calls to this function.
 
@@ -113,7 +113,7 @@ This function corresponds to [IDropTarget::Drop](/windows/win32/api/oleidl/nf-ol
 
 > public HRESULT [Drop](#drop)(IDataObject * dataObject, DWORD keyState, POINT point, DWORD * effect)
 
-This function has a dependency on AllowExternalDrop property of CoreWebView2Controller and return E_FAIL to callers to indicate this operation is not allowed if AllowExternalDrop property is set to false.
+This function has a dependency on AllowExternalDrop property of [ICoreWebView2Controller4](icorewebview2controller4.md#icorewebview2controller4) and returns E_FAIL to callers to indicate this operation is not allowed if AllowExternalDrop property is set to FALSE.
 
 The hosting application must register as an IDropTarget and implement and forward Drop calls to this function.
 

@@ -1,7 +1,7 @@
 ---
-description: A collection of LPCWSTR.
+description: A collection of LPWSTR.
 title: WebView2 Win32 C++ ICoreWebView2StringCollection
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2StringCollection
 topic_type: 
 - APIRef
@@ -22,7 +22,7 @@ interface ICoreWebView2StringCollection
   : public IUnknown
 ```
 
-A collection of LPCWSTR.
+A collection of LPWSTR.
 
 ## Summary
 

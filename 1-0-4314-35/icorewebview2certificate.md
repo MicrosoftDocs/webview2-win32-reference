@@ -1,7 +1,7 @@
 ---
 description: Provides access to the certificate metadata.
 title: WebView2 Win32 C++ ICoreWebView2Certificate
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Certificate
 topic_type: 
 - APIRef
@@ -58,7 +58,7 @@ Base64 encoding of DER encoded serial number of the certificate.
 
 > public HRESULT [get_DerEncodedSerialNumber](#get_derencodedserialnumber)(LPWSTR * value)
 
-Read more about DER at [RFC 7468 DER] (https://tools.ietf.org/html/rfc7468#appendix-B).
+Read more about DER at [RFC 7468 DER](https://tools.ietf.org/html/rfc7468#appendix-B).
 
 The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
 
@@ -68,7 +68,7 @@ Display name for a certificate.
 
 > public HRESULT [get_DisplayName](#get_displayname)(LPWSTR * value)
 
-The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings)
+The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
 
 #### get_Issuer
 
@@ -112,7 +112,7 @@ PEM encoded data for the certificate.
 
 > public HRESULT [ToPemEncoding](#topemencoding)(LPWSTR * pemEncodedData)
 
-Returns Base64 encoding of DER encoded certificate. Read more about PEM at [RFC 1421 Privacy Enhanced Mail] (https://tools.ietf.org/html/rfc1421).
+Returns Base64 encoding of DER encoded certificate. Read more about PEM at [RFC 1421 Privacy Enhanced Mail](https://tools.ietf.org/html/rfc1421).
 
-The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings)
+The caller must free the returned string with `CoTaskMemFree`. See [API Conventions](/microsoft-edge/webview2/concepts/win32-api-conventions#strings).
 

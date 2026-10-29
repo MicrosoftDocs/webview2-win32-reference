@@ -1,7 +1,7 @@
 ---
 description: This is an extension of the ICoreWebView2Frame interface that supports PermissionRequested.
 title: WebView2 Win32 C++ ICoreWebView2Frame3
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Frame3
 topic_type: 
 - APIRef
@@ -46,11 +46,11 @@ Adds an event handler for the `PermissionRequested` event.
 
 > public HRESULT [add_PermissionRequested](#add_permissionrequested)([ICoreWebView2FramePermissionRequestedEventHandler](icorewebview2framepermissionrequestedeventhandler.md#icorewebview2framepermissionrequestedeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the `PermissionRequested` event. `PermissionRequested` is raised when content in an iframe any of its descendant iframes requests permission to privileged resources.
+`PermissionRequested` is raised when content in an iframe or any of its descendant iframes requests permission to privileged resources.
 
-This relates to the `PermissionRequested` event on the `CoreWebView2`. Both these events will be raised in the case of an iframe requesting permission. The `CoreWebView2Frame`'s event handlers will be invoked before the event handlers on the `CoreWebView2`. If the `Handled` property of the `PermissionRequestedEventArgs` is set to TRUE within the `CoreWebView2Frame` event handler, then the event will not be raised on the `CoreWebView2`, and it's event handlers will not be invoked.
+This relates to the `PermissionRequested` event on the [ICoreWebView2](icorewebview2.md#icorewebview2). Both these events will be raised in the case of an iframe requesting permission. The [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame)'s event handlers will be invoked before the event handlers on the [ICoreWebView2](icorewebview2.md#icorewebview2). If the `Handled` property of the [ICoreWebView2PermissionRequestedEventArgs2](icorewebview2permissionrequestedeventargs2.md#icorewebview2permissionrequestedeventargs2) is set to TRUE within the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) event handler, then the event will not be raised on the [ICoreWebView2](icorewebview2.md#icorewebview2), and its event handlers will not be invoked.
 
-In the case of nested iframes, if the `PermissionRequested` event is handled in the current nested iframe (i.e., the Handled property of the `PermissionRequestedEventArgs` is set to TRUE), the event will not be raised on the parent `CoreWebView2Frame`. However, if the `PermissionRequested` event is not handled in that nested iframe, the event will be raised from its nearest tracked parent `CoreWebView2Frame`. It will iterate through the parent frame chain up to the main frame until a parent frame handles the request.
+In the case of nested iframes, if the `PermissionRequested` event is handled in the current nested iframe (i.e., the `Handled` property of the [ICoreWebView2PermissionRequestedEventArgs2](icorewebview2permissionrequestedeventargs2.md#icorewebview2permissionrequestedeventargs2) is set to TRUE), the event will not be raised on the parent [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame). However, if the `PermissionRequested` event is not handled in that nested iframe, the event will be raised from its nearest tracked parent [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame). It will iterate through the parent frame chain up to the main frame until a parent frame handles the request.
 
 If a deferral is not taken on the event args, the subsequent scripts are blocked until the event handler returns. If a deferral is taken, the scripts are blocked until the deferral is completed.
 

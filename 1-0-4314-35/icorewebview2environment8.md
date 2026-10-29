@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Environment7 interface that supports the `ProcessInfosChanged` event.
 title: WebView2 Win32 C++ ICoreWebView2Environment8
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment8
 topic_type: 
 - APIRef
@@ -47,8 +47,6 @@ WebView2 Win32 Prerelease |    1.0.1133
 Adds an event handler for the `ProcessInfosChanged` event.
 
 > public HRESULT [add_ProcessInfosChanged](#add_processinfoschanged)([ICoreWebView2ProcessInfosChangedEventHandler](icorewebview2processinfoschangedeventhandler.md#icorewebview2processinfoschangedeventhandler) * eventHandler, EventRegistrationToken * token)
-
-Adds an event handler for the `ProcessInfosChanged` event.
 
 ```cpp
         CHECK_FAILURE(environment8->add_ProcessInfosChanged(

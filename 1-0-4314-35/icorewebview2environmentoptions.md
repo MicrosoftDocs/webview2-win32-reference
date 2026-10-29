@@ -1,7 +1,7 @@
 ---
 description: Options used to create WebView2 Environment.
 title: WebView2 Win32 C++ ICoreWebView2EnvironmentOptions
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2EnvironmentOptions
 topic_type: 
 - APIRef
@@ -158,9 +158,9 @@ Changes the behavior of the WebView.
 
 The arguments are passed to the browser process as part of the command. For more information about using command-line switches with Chromium browser processes, navigate to [Run Chromium with Flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags). The value appended to a switch is appended to the browser process, for example, in `--edge-webview-switches=xxx` the value is `xxx`. If you specify a switch that is important to WebView functionality, it is ignored, for example, `--user-data-dir`. Specific features are disabled internally and blocked from being enabled. If a switch is specified multiple times, only the last instance is used.
 
-> [!NOTE]
-> A merge of the different values of the same switch is not attempted, except for disabled and enabled features. The features specified by `--enable-features` and `--disable-features` are merged with simple logic.
-> * The features is the union of the specified features and built-in features. If a feature is disabled, it is removed from the enabled features list.
+[!NOTE] A merge of the different values of the same switch is not attempted, except for disabled and enabled features. The features specified by `--enable-features` and `--disable-features` are merged with simple logic.
+
+* The features are the union of the specified features and built-in features. If a feature is disabled, it is removed from the enabled features list. 
 
 If you specify command-line switches and use the `additionalBrowserArguments` parameter, the `--edge-webview-switches` value takes precedence and is processed last. If a switch fails to parse, the switch is ignored. The default state for the operation is to run the browser process with no extra flags.
 
@@ -172,7 +172,7 @@ The `AllowSingleSignOnUsingOSPrimaryAccount` property is used to enable single s
 
 > public HRESULT [get_AllowSingleSignOnUsingOSPrimaryAccount](#get_allowsinglesignonusingosprimaryaccount)(BOOL * allow)
 
-All AAD accounts, connected to Windows and shared for all apps, are supported. For MSA, SSO is only enabled for the account associated for Windows account login, if any. Default is disabled. Universal Windows Platform apps must also declare `enterpriseCloudSSO`[Restricted capabilities](/windows/uwp/packaging/app-capability-declarations\#restricted-capabilities) for the single sign on (SSO) to work.
+All AAD accounts, connected to Windows and shared for all apps, are supported. For MSA, SSO is only enabled for the account associated for Windows account login, if any. Default is disabled. Universal Windows Platform apps must also declare `enterpriseCloudSSO`[Restricted capabilities](/windows/uwp/packaging/app-capability-declarations#restricted-capabilities) for the single sign on (SSO) to work.
 
 #### get_Language
 
@@ -200,7 +200,7 @@ Sets the `AdditionalBrowserArguments` property.
 
 > public HRESULT [put_AdditionalBrowserArguments](#put_additionalbrowserarguments)(LPCWSTR value)
 
-Please note that calling this API twice will replace the previous value rather than appending to it. If there are multiple switches, there should be a space in between them. The one exception is if multiple features are being enabled/disabled for a single switch, in which case the features should be comma-seperated. Ex. "--disable-features=feature1,feature2 --some-other-switch --do-something"
+Please note that calling this API twice will replace the previous value rather than appending to it. If there are multiple switches, there should be a space in between them. The one exception is if multiple features are being enabled/disabled for a single switch, in which case the features should be comma-separated. Ex. "--disable-features=feature1,feature2 --some-other-switch --do-something"
 
 #### put_AllowSingleSignOnUsingOSPrimaryAccount
 

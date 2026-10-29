@@ -1,7 +1,7 @@
 ---
 description: ICoreWebView2Frame provides direct access to the iframes information.
 title: WebView2 Win32 C++ ICoreWebView2Frame
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Frame
 topic_type: 
 - APIRef
@@ -34,7 +34,7 @@ ICoreWebView2Frame provides direct access to the iframes information.
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[add_Destroyed](#add_destroyed) | The Destroyed event is raised when the iframe corresponding to this CoreWebView2Frame object is removed or the document containing that iframe is destroyed.
+[add_Destroyed](#add_destroyed) | The Destroyed event is raised when the iframe corresponding to this ICoreWebView2Frame object is removed or the document containing that iframe is destroyed.
 [add_NameChanged](#add_namechanged) | Raised when the iframe changes its window.name property.
 [AddHostObjectToScriptWithOrigins](#addhostobjecttoscriptwithorigins) | Add the provided host object to script running in the iframe with the specified name for the list of the specified origins.
 [get_Name](#get_name) | The value of iframe's window.name property.
@@ -56,7 +56,7 @@ WebView2 Win32 Prerelease |    1.0.902
 
 #### add_Destroyed
 
-The Destroyed event is raised when the iframe corresponding to this CoreWebView2Frame object is removed or the document containing that iframe is destroyed.
+The Destroyed event is raised when the iframe corresponding to this ICoreWebView2Frame object is removed or the document containing that iframe is destroyed.
 
 > public HRESULT [add_Destroyed](#add_destroyed)([ICoreWebView2FrameDestroyedEventHandler](icorewebview2framedestroyedeventhandler.md#icorewebview2framedestroyedeventhandler) * eventHandler, EventRegistrationToken * token)
 
@@ -78,7 +78,7 @@ The host object will be accessible for this iframe only if the iframe's origin d
 
 1. list with origins - during access to host object from iframe the origin will be checked that it belongs to this list;
 
-1. list with "*" element - host object will be available for iframe for all origins. We suggest not to use this feature without understanding security implications of giving access to host object from from iframes with unknown origins.
+1. list with "*" element - host object will be available for iframe for all origins. We suggest not to use this feature without understanding security implications of giving access to host object from iframes with unknown origins.
 
 1. list with "file://" element - host object will be available for iframes loaded via file protocol. Calling this method fails if it is called after the iframe is destroyed. 
 ```cpp

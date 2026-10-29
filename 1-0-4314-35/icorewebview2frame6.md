@@ -1,7 +1,7 @@
 ---
 description: This is an extension of the ICoreWebView2Frame interface that supports ScreenCaptureStarting.
 title: WebView2 Win32 C++ ICoreWebView2Frame6
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Frame6
 topic_type: 
 - APIRef
@@ -46,9 +46,9 @@ Adds an event handler for the `ScreenCaptureStarting` event.
 
 > public HRESULT [add_ScreenCaptureStarting](#add_screencapturestarting)([ICoreWebView2FrameScreenCaptureStartingEventHandler](icorewebview2framescreencapturestartingeventhandler.md#icorewebview2framescreencapturestartingeventhandler) * eventHandler, EventRegistrationToken * token)
 
-Add an event handler for the `ScreenCaptureStarting` event. `ScreenCaptureStarting` is raised when content in an iframe or any of its descendant iframes requests permission to use the Screen Capture API from getDisplayMedia().
+`ScreenCaptureStarting` is raised when content in an iframe or any of its descendant iframes requests permission to use the Screen Capture API from getDisplayMedia().
 
-This relates to the `ScreenCaptureStarting` event on the `CoreWebView2`. Both these events will be raised in the case of an iframe requesting screen capture. The `CoreWebView2Frame`'s event handlers will be invoked before the event handlers on the `CoreWebView2`. If the `Handled` property of the `ScreenCaptureStartingEventArgs` is set to TRUE within the`CoreWebView2Frame` event handler, then the event will not be raised on the `CoreWebView2`, and its event handlers will not be invoked.
+This relates to the `ScreenCaptureStarting` event on the [ICoreWebView2](icorewebview2.md#icorewebview2). Both these events will be raised in the case of an iframe requesting screen capture. The [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame)'s event handlers will be invoked before the event handlers on the [ICoreWebView2](icorewebview2.md#icorewebview2). If the `Handled` property of the [ICoreWebView2ScreenCaptureStartingEventArgs](icorewebview2screencapturestartingeventargs.md#icorewebview2screencapturestartingeventargs) is set to TRUE within the [ICoreWebView2Frame](icorewebview2frame.md#icorewebview2frame) event handler, then the event will not be raised on the [ICoreWebView2](icorewebview2.md#icorewebview2), and its event handlers will not be invoked.
 
 ```cpp
     m_webView4 = m_webView.try_query<ICoreWebView2_4>();

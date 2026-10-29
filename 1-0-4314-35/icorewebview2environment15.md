@@ -1,7 +1,7 @@
 ---
-description: Interface that provides methods related to the environment settings of CoreWebView2.
+description: Interface that provides methods related to the environment settings of ICoreWebView2.
 title: WebView2 Win32 C++ ICoreWebView2Environment15
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Environment15
 topic_type: 
 - APIRef
@@ -21,15 +21,15 @@ interface ICoreWebView2Environment15
   : public ICoreWebView2Environment14
 ```
 
-Interface that provides methods related to the environment settings of CoreWebView2.
+Interface that provides methods related to the environment settings of [ICoreWebView2](icorewebview2.md#icorewebview2).
 
 ## Summary
 
  Members                        | Descriptions
 --------------------------------|---------------------------------------------
-[CreateFindOptions](#createfindoptions) | Creates a new instance of a CoreWebView2FindOptions object.
+[CreateFindOptions](#createfindoptions) | Creates a new instance of an [ICoreWebView2FindOptions](icorewebview2findoptions.md#icorewebview2findoptions) object.
 
-This interface allows for the creation of new `FindOptions` objects.
+This interface allows for the creation of new [ICoreWebView2FindOptions](icorewebview2findoptions.md#icorewebview2findoptions) objects.
 
 ## Applies to
 
@@ -42,9 +42,9 @@ WebView2 Win32 Prerelease |    1.0.3415
 
 #### CreateFindOptions
 
-Creates a new instance of a CoreWebView2FindOptions object.
+Creates a new instance of an [ICoreWebView2FindOptions](icorewebview2findoptions.md#icorewebview2findoptions) object.
 
 > public HRESULT [CreateFindOptions](#createfindoptions)([ICoreWebView2FindOptions](icorewebview2findoptions.md#icorewebview2findoptions) ** value)
 
-This find options object can be used to define parameters for a find session. Returns the newly created FindOptions object.
+This find options object can be used to define parameters for a find session. Returns the newly created [ICoreWebView2FindOptions](icorewebview2findoptions.md#icorewebview2findoptions) object.
 

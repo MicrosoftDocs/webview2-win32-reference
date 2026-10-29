@@ -1,7 +1,7 @@
 ---
 description: Represents a download operation.
 title: WebView2 Win32 C++ ICoreWebView2DownloadOperation
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2DownloadOperation
 topic_type: 
 - APIRef
@@ -139,7 +139,7 @@ Cancels the download.
 
 > public HRESULT [Cancel](#cancel)()
 
-If canceled, the default download dialog shows that the download was canceled. Host should set the `Cancel` property from `ICoreWebView2SDownloadStartingEventArgs` if the download should be canceled without displaying the default download dialog.
+If canceled, the default download dialog shows that the download was canceled. Host should set the `Cancel` property from [ICoreWebView2DownloadStartingEventArgs](icorewebview2downloadstartingeventargs.md#icorewebview2downloadstartingeventargs) if the download should be canceled without displaying the default download dialog.
 
 #### get_BytesReceived
 

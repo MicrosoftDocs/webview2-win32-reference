@@ -1,7 +1,7 @@
 ---
 description: Event args for the `NotificationReceived` event.
 title: WebView2 Win32 C++ ICoreWebView2NotificationReceivedEventArgs
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NotificationReceivedEventArgs
 topic_type: 
 - APIRef
@@ -107,7 +107,7 @@ The notification that was received.
 
 > public HRESULT [get_Notification](#get_notification)([ICoreWebView2Notification](icorewebview2notification.md#icorewebview2notification) ** value)
 
-You can access the properties on the Notification object to show your own notification.
+You can access the properties on the [ICoreWebView2Notification](icorewebview2notification.md#icorewebview2notification) object to show your own notification.
 
 #### get_SenderOrigin
 
@@ -131,5 +131,5 @@ Sets whether the `NotificationReceived` event is handled by the host after the e
 
 > public HRESULT [put_Handled](#put_handled)(BOOL value)
 
-If `Handled` is set to TRUE then WebView will not display the notification with the default UI, and the host will be responsible for handling the notification and for letting the web content know that the notification has been displayed, clicked, or closed. You must set `Handled` to `TRUE` before you call `ReportShown`, `ReportClicked`, `ReportClickedWithActionIndex` and `ReportClosed`, otherwise they will fail with `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)`. If after the event handler or deferral completes `Handled` is set to FALSE then WebView will display the default notification UI. Note that you cannot un-handle this event once you have set `Handled` to be `TRUE`. The initial value is FALSE.
+If `Handled` is set to TRUE then WebView will not display the notification with the default UI, and the host will be responsible for handling the notification and for letting the web content know that the notification has been displayed, clicked, or closed. You must set `Handled` to `TRUE` before you call `ReportShown`, `ReportClicked` and `ReportClosed`, otherwise they will fail with `HRESULT_FROM_WIN32(ERROR_INVALID_STATE)`. If after the event handler or deferral completes `Handled` is set to FALSE then WebView will display the default notification UI. Note that you cannot un-handle this event once you have set `Handled` to be `TRUE`. The initial value is FALSE.
 

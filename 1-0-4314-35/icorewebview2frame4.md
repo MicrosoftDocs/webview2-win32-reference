@@ -1,7 +1,7 @@
 ---
 description: This is an extension of the ICoreWebView2Frame interface that supports shared buffer based on file mapping.
 title: WebView2 Win32 C++ ICoreWebView2Frame4
-ms.date: 10/19/2026
+ms.date: 10-29-2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Frame4
 topic_type: 
 - APIRef
@@ -117,5 +117,5 @@ In the HTML document,
         }
 ```
 
-Sharing a buffer to script has security risk. You should only share buffer with trusted site. If a buffer is shared to a untrusted site, possible sensitive information could be leaked. If a buffer is shared as modifiable by the script and the script modifies it in an unexpected way, it could result in corrupted data that might even crash the application.
+Sharing a buffer to script has security risk. You should only share buffer with trusted site. If a buffer is shared to an untrusted site, possible sensitive information could be leaked. If a buffer is shared as modifiable by the script and the script modifies it in an unexpected way, it could result in corrupted data that might even crash the application.
 
