@@ -1,7 +1,7 @@
 ---
 description: Event args for the `NavigationStarting` event.
 title: WebView2 Win32 C++ ICoreWebView2NavigationStartingEventArgs
-ms.date: 10-29-2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2NavigationStartingEventArgs
 topic_type: 
 - APIRef
@@ -84,9 +84,8 @@ The HTTP request headers for the navigation.
 
 > public HRESULT [get_RequestHeaders](#get_requestheaders)([ICoreWebView2HttpRequestHeaders](icorewebview2httprequestheaders.md#icorewebview2httprequestheaders) ** requestHeaders)
 
-[!NOTE] You are not able to modify the HTTP request headers in a 
-
-`NavigationStarting` event.
+> [!NOTE]
+> You are not able to modify the HTTP request headers in a `NavigationStarting` event.
 
 #### get_Uri
 

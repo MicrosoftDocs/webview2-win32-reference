@@ -1,7 +1,7 @@
 ---
 description: This interface represents a shared worker in WebView2 and provides methods and properties for interacting with it, such as listening to destroying events, getting the script URI, origin, and top-level origin of the worker etc.
 title: WebView2 Win32 C++ ICoreWebView2SharedWorker
-ms.date: 10-29-2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2SharedWorker
 topic_type: 
 - APIRef

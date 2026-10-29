@@ -1,7 +1,7 @@
 ---
 description: A continuation of the ICoreWebView2Frame interface with navigation events, executing script and posting web messages.
 title: WebView2 Win32 C++ ICoreWebView2Frame2
-ms.date: 10-29-2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2Frame2
 topic_type: 
 - APIRef
@@ -193,9 +193,8 @@ Run JavaScript code from the `javaScript` parameter in the current frame.
 
 The result of evaluating the provided JavaScript is passed to the completion handler. The result value is a JSON encoded string. If the result is undefined, contains a reference cycle, or otherwise is not able to be encoded into JSON, then the result is considered to be null, which is encoded in JSON as the string "null".
 
-[!NOTE] A function that has no explicit return value returns undefined. If the 
-
-script that was run throws an unhandled exception, then the result is also "null". This method is applied asynchronously. If the method is run before `ContentLoading`, the script will not be executed and the string "null" will be returned. This operation executes the script even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
+> [!NOTE]
+> A function that has no explicit return value returns undefined. If the script that was run throws an unhandled exception, then the result is also "null". This method is applied asynchronously. If the method is run before `ContentLoading`, the script will not be executed and the string "null" will be returned. This operation executes the script even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
 
 ```cpp
     wil::com_ptr<ICoreWebView2_4> webview2_4 = m_webView.try_query<ICoreWebView2_4>();

@@ -1,7 +1,7 @@
 ---
 description: Event args for `LaunchingExternalUriScheme` event.
 title: WebView2 Win32 C++ ICoreWebView2LaunchingExternalUriSchemeEventArgs
-ms.date: 10-29-2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2LaunchingExternalUriSchemeEventArgs
 topic_type: 
 - APIRef
@@ -70,9 +70,8 @@ The origin will be an empty string if the request is initiated by calling [ICore
 
 > public HRESULT [get_IsUserInitiated](#get_isuserinitiated)(BOOL * value)
 
-[!NOTE] Being initiated through a user gesture does not mean that user intended 
-
-to access the associated resource.
+> [!NOTE]
+> Being initiated through a user gesture does not mean that user intended to access the associated resource.
 
 #### get_Uri
 

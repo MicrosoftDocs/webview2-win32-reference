@@ -1,7 +1,7 @@
 ---
 description: WebView2 enables you to host web content using the latest Microsoft Edge browser and web technology.
 title: WebView2 Win32 C++ ICoreWebView2
-ms.date: 10-29-2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2
 topic_type: 
 - APIRef
@@ -645,9 +645,8 @@ Condition   |Details
 Unexpected exit   |The process indicated by the event args has exited unexpectedly (usually due to a crash). The failure might or might not be recoverable and some failures are auto-recoverable.
 Unresponsiveness   |The process indicated by the event args has become unresponsive to user input. This is only reported for renderer processes, and will run every few seconds until the process becomes responsive again.
 
-[!NOTE] When the failing process is the browser process, a 
-
-`ICoreWebView2Environment5::BrowserProcessExited` event will run too.
+> [!NOTE]
+> When the failing process is the browser process, a `ICoreWebView2Environment5::BrowserProcessExited` event will run too.
 
 Your application can use [ICoreWebView2ProcessFailedEventArgs](icorewebview2processfailedeventargs.md#icorewebview2processfailedeventargs) and [ICoreWebView2ProcessFailedEventArgs2](icorewebview2processfailedeventargs2.md#icorewebview2processfailedeventargs2) to identify which condition and process the event is for, and to collect diagnostics and handle recovery if necessary. For more details about which cases need to be handled by your application, see `COREWEBVIEW2_PROCESS_FAILED_KIND`.
 
@@ -1143,7 +1142,8 @@ Add the provided host object to script running in the WebView with the specified
 
 Host objects are exposed as host object proxies using `window.chrome.webview.hostObjects.{name}`. Host object proxies are promises and resolve to an object representing the host object. The promise is rejected if the app has not added an object with the name. When JavaScript code accesses a property or method of the object, a promise is returned, which resolves to the value returned from the host for the property or method, or rejected in case of error, for example, no property or method on the object or parameters are not valid.
 
-[!NOTE] While simple types, `IDispatch` and array are supported, and `IUnknown` objects that also implement `IDispatch` are treated as `IDispatch`, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Such callback method invocations will return immediately and will not wait for the JavaScript function to run and so will not provide the return value of the JavaScript function. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`. 
+> [!NOTE]
+> While simple types, `IDispatch` and array are supported, and `IUnknown` objects that also implement `IDispatch` are treated as `IDispatch`, generic `IUnknown`, `VT_DECIMAL`, or `VT_RECORD` variant is not supported. Remote JavaScript objects like callback functions are represented as an `VT_DISPATCH``VARIANT` with the object implementing `IDispatch`. The JavaScript callback method may be invoked using `DISPID_VALUE` for the `DISPID`. Such callback method invocations will return immediately and will not wait for the JavaScript function to run and so will not provide the return value of the JavaScript function. Nested arrays are supported up to a depth of 3. Arrays of by reference types are not supported. `VT_EMPTY` and `VT_NULL` are mapped into JavaScript as `null`. In JavaScript, `null` and undefined are mapped to `VT_EMPTY`.
 
 Additionally, all host objects are exposed as `window.chrome.webview.hostObjects.sync.{name}`. Here the host objects are exposed as synchronous host object proxies. These are not promises and function runtimes or property access synchronously block running script waiting to communicate cross process for the host code to run. Accordingly the result may have reliability issues and it is recommended that you use the promise-based asynchronous `window.chrome.webview.hostObjects.{name}` API.
 
@@ -1317,9 +1317,8 @@ This method injects a script that runs on all top-level document and child frame
 
 If the method is run in add_NewWindowRequested handler it should be called before the new window is set. If called after setting the NewWindow property, the initial script may or may not apply to the initial navigation and may only apply to the subsequent navigation. For more details see [ICoreWebView2NewWindowRequestedEventArgs::put_NewWindow](icorewebview2newwindowrequestedeventargs.md#put_newwindow).
 
-[!NOTE] If an HTML document is running in a sandbox of some kind using 
-
-[sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) properties or the [Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
+> [!NOTE]
+> If an HTML document is running in a sandbox of some kind using [sandbox](https://developer.mozilla.org/docs/Web/HTML/Element/iframe#attr-sandbox) properties or the [Content-Security-Policy](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy) HTTP header affects the script that runs. For example, if the `allow-modals` keyword is not set then requests to run the `alert` function are ignored.
 
 ```cpp
 // Prompt the user for some script and register it to execute whenever a new page loads.
@@ -1466,9 +1465,8 @@ Run JavaScript code from the `javaScript` parameter in the current top-level doc
 
 The result of evaluating the provided JavaScript is passed to the completion handler. The result value is a JSON encoded string. If the result is undefined, contains a reference cycle, or otherwise is not able to be encoded into JSON, then the result is considered to be null, which is encoded in JSON as the string "null".
 
-[!NOTE] A function that has no explicit return value returns undefined. If the 
-
-script that was run throws an unhandled exception, then the result is also "null". This method is applied asynchronously. If the method is run after the `NavigationStarting` event during a navigation, the script runs in the new document when loading it, around the time `ContentLoading` is run. This operation executes the script even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
+> [!NOTE]
+> A function that has no explicit return value returns undefined. If the script that was run throws an unhandled exception, then the result is also "null". This method is applied asynchronously. If the method is run after the `NavigationStarting` event during a navigation, the script runs in the new document when loading it, around the time `ContentLoading` is run. This operation executes the script even if `ICoreWebView2Settings::IsScriptEnabled` is set to `FALSE`.
 
 ```cpp
 // Prompt the user for some script and then execute it.
@@ -1660,9 +1658,8 @@ Cause a navigation of the top-level document to run to the specified URI.
 
 For more information, navigate to [Navigation events](/microsoft-edge/webview2/concepts/navigation-events).
 
-[!NOTE] This operation starts a navigation and the corresponding 
-
-`NavigationStarting` event triggers sometime after `Navigate` runs.
+> [!NOTE]
+> This operation starts a navigation and the corresponding `NavigationStarting` event triggers sometime after `Navigate` runs.
 
 ```cpp
 void ControlComponent::NavigateToAddressBar()

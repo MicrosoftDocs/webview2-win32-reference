@@ -1,7 +1,7 @@
 ---
 description: This interface represents a service worker registration in WebView2 and provides methods and properties for interacting with it, such as getting the scope uri, active service worker, listening for service worker activation, unregistering events etc.
 title: WebView2 Win32 C++ ICoreWebView2ServiceWorkerRegistration
-ms.date: 10-29-2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2ServiceWorkerRegistration
 topic_type: 
 - APIRef

@@ -1,7 +1,7 @@
 ---
 description: Event args for the `PermissionRequested` event.
 title: WebView2 Win32 C++ ICoreWebView2PermissionRequestedEventArgs
-ms.date: 10-29-2026
+ms.date: 10/29/2026
 keywords: IWebView2, IWebView2WebView, webview2, webview, win32 apps, win32, edge, ICoreWebView2, ICoreWebView2Controller, browser control, edge html, ICoreWebView2PermissionRequestedEventArgs
 topic_type: 
 - APIRef
@@ -54,9 +54,8 @@ WebView2 Win32 Prerelease |    0.9.488
 
 > public HRESULT [get_IsUserInitiated](#get_isuserinitiated)(BOOL * isUserInitiated)
 
-[!NOTE] Being initiated through a user gesture does not mean that user intended 
-
-to access the associated resource.
+> [!NOTE]
+> Being initiated through a user gesture does not mean that user intended to access the associated resource.
 
 #### get_PermissionKind
 
