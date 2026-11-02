@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2HistoryChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2HistoryChangedEventHandler
   : public IUnknown

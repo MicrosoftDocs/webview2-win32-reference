@@ -23,6 +23,8 @@ api_location:
 
 # interface ICoreWebView2CookieManager
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2CookieManager
   : public IUnknown

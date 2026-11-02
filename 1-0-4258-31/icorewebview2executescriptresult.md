@@ -19,6 +19,8 @@ api_location:
 
 # interface ICoreWebView2ExecuteScriptResult
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ExecuteScriptResult
   : public IUnknown

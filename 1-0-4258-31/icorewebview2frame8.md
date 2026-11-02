@@ -17,6 +17,8 @@ api_location:
 
 # interface ICoreWebView2Frame8
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2Frame8
   : public ICoreWebView2Frame7
