@@ -22,6 +22,8 @@ api_location:
 
 # interface ICoreWebView2CrashReport
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2CrashReport
   : public IUnknown

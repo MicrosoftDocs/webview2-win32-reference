@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2FrameWebMessageReceivedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2FrameWebMessageReceivedEventHandler
   : public IUnknown
