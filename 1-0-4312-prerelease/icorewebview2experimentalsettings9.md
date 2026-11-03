@@ -23,6 +23,8 @@ api_location:
 
 # interface ICoreWebView2ExperimentalSettings9
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
