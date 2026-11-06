@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2SetPermissionStateCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2SetPermissionStateCompletedHandler
   : public IUnknown

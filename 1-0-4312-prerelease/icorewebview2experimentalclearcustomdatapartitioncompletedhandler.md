@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2ExperimentalClearCustomDataPartitionCompletedHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```
