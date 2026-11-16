@@ -31,6 +31,8 @@ api_location:
 
 # struct COREWEBVIEW2_MATRIX_4X4
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 Matrix that represents a 3D transform.
 
 ## Summary
