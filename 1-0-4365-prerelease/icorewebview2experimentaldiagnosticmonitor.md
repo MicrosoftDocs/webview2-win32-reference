@@ -20,6 +20,8 @@ api_location:
 
 # interface ICoreWebView2ExperimentalDiagnosticMonitor
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 [!INCLUDE [prerelease-note](../includes/prerelease-note.md)]
 
 ```

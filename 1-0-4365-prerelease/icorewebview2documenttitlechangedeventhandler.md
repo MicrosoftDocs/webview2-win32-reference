@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2DocumentTitleChangedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2DocumentTitleChangedEventHandler
   : public IUnknown
