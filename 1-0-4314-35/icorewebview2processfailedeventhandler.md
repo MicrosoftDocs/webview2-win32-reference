@@ -16,6 +16,8 @@ api_location:
 
 # interface ICoreWebView2ProcessFailedEventHandler
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2ProcessFailedEventHandler
   : public IUnknown

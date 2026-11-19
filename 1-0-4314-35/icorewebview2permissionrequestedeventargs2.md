@@ -17,6 +17,8 @@ api_location:
 
 # interface ICoreWebView2PermissionRequestedEventArgs2
 
+[!INCLUDE [deprecation-note](../includes/deprecation-note.md)]
+
 ```
 interface ICoreWebView2PermissionRequestedEventArgs2
   : public ICoreWebView2PermissionRequestedEventArgs
